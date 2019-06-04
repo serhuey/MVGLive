@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVGLive", "MVGLive\MVGLive.csproj", "{5CC87435-4483-46A8-B589-E9E6E27B7BD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVGAPI", "MVGAPI\MVGAPI.csproj", "{4AB3C3E6-8CDB-44D6-ADA8-64044812A216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVGTimeTable", "MVGTimeTable\MVGTimeTable.csproj", "{EBFD0D1A-B6E9-4EB7-ABC7-76E136215775}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CC87435-4483-46A8-B589-E9E6E27B7BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CC87435-4483-46A8-B589-E9E6E27B7BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CC87435-4483-46A8-B589-E9E6E27B7BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CC87435-4483-46A8-B589-E9E6E27B7BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB3C3E6-8CDB-44D6-ADA8-64044812A216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB3C3E6-8CDB-44D6-ADA8-64044812A216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB3C3E6-8CDB-44D6-ADA8-64044812A216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB3C3E6-8CDB-44D6-ADA8-64044812A216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBFD0D1A-B6E9-4EB7-ABC7-76E136215775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBFD0D1A-B6E9-4EB7-ABC7-76E136215775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBFD0D1A-B6E9-4EB7-ABC7-76E136215775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBFD0D1A-B6E9-4EB7-ABC7-76E136215775}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC2DC2DE-498E-4E9E-A105-A0AB4C72E231}
+	EndGlobalSection
+EndGlobal

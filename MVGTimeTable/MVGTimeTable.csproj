@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBFD0D1A-B6E9-4EB7-ABC7-76E136215775}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>MVGTimeTable</RootNamespace>
+    <AssemblyName>MVGTimeTable</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MVGTimeTable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Common.cs" />
+    <Compile Include="Converters\AdditionalDestinationMVC.cs" />
+    <Compile Include="Converters\ImageMinutesValueMVC.cs" />
+    <Compile Include="Converters\LabelMultiValueConverter.cs" />
+    <Compile Include="Converters\MainDestinationMVC.cs" />
+    <Compile Include="Converters\MarginConverter.cs" />
+    <Compile Include="Converters\ProductImageConverter.cs" />
+    <Compile Include="Converters\ProductLabelMVC.cs" />
+    <Compile Include="Converters\TextMinutesValueMVC.cs" />
+    <Compile Include="MVGTimeTable.xaml.cs">
+      <DependentUpon>MVGTimeTable.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVGAPI\MVGAPI.csproj">
+      <Project>{4ab3c3e6-8cdb-44d6-ada8-64044812a216}</Project>
+      <Name>MVGAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Bus.png" />
+    <Resource Include="Icons\Jetzt.png" />
+    <Resource Include="Icons\NBus.png" />
+    <Resource Include="Icons\Night.png" />
+    <Resource Include="Icons\NSevBus.png" />
+    <Resource Include="Icons\NTram.png" />
+    <Resource Include="Icons\S1.png" />
+    <Resource Include="Icons\S1FH.png" />
+    <Resource Include="Icons\S2.png" />
+    <Resource Include="Icons\S20.png" />
+    <Resource Include="Icons\S3.png" />
+    <Resource Include="Icons\S4.png" />
+    <Resource Include="Icons\S6.png" />
+    <Resource Include="Icons\S7.png" />
+    <Resource Include="Icons\S8.png" />
+    <Resource Include="Icons\S8FH.png" />
+    <Resource Include="Icons\SBahn.png" />
+    <Resource Include="Icons\Sev.png" />
+    <Resource Include="Icons\SevBus.png" />
+    <Resource Include="Icons\Tram.png" />
+    <Resource Include="Icons\U1.png" />
+    <Resource Include="Icons\U2.png" />
+    <Resource Include="Icons\U3.png" />
+    <Resource Include="Icons\U4.png" />
+    <Resource Include="Icons\U5.png" />
+    <Resource Include="Icons\U6.png" />
+    <Resource Include="Icons\U7.png" />
+    <Resource Include="Icons\U8.png" />
+    <Resource Include="Icons\UBahn.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
