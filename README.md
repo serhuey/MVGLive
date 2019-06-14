@@ -5,7 +5,7 @@ This is an example of using MVGTimeTable user control.
 The main application displays three controls with station's name and a clock. 
 The example of usage:
 
-    MVGLive.exe Hauptbahnhof Karlsplatz Odeonsplatz
+    MVGLive.exe Hauptbahnhof Karlsplatz Marienplatz
 
 Default stations are "Hirschgarten", "Briefzentrum", "Steubenplatz".
 Each MVGTimeTable control refresh its data with time interval defined in code. For my point of view, 15 seconds interval is a good compromise.
