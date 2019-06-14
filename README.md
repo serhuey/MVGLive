@@ -1,9 +1,9 @@
 # MVGLive
 Small WPF-based application to display time-tables for public transportation of Munich.
 
-This is an example of using MVGTimeTable user control. 
-The main application displays three controls with station's name and a clock. 
-The example of usage:
+This application is an example of using MVGTimeTable user control. 
+It displays three controls with station's name and a simple digital clock in the right upper corner. 
+The example of usage with a command string:
 
     MVGLive.exe Hauptbahnhof Karlsplatz Marienplatz
 
