@@ -14,13 +14,15 @@ namespace MVGAPI
     {
         static string StationType = "station";
         static string api_key = "5af1beca494712ed38d313714d4caff6";
-        static string query_url_name = "https://www.mvg.de/fahrinfo/api/location/queryWeb?q=";  //for station names
+        static string root_url_name = "https://www.mvg.de/api/fahrinfo";
+
+        static string query_url_name = root_url_name + "/location/queryWeb?q=";  //for station names
 
 #pragma warning disable 169, 414
-        static string query_url_id = "https://www.mvg.de/fahrinfo/api/location/query?q=";       // #for station ids, not used now 
+        static string query_url_id = root_url_name + "/location/query?q=";       // #for station ids, not used now 
 #pragma warning restore 169, 414
 
-        static string departure_url = "https://www.mvg.de/fahrinfo/api/departure/";
+        static string departure_url = root_url_name + "/departure/";
         static string departure_url_postfix = "?footway=0";
 
         /// <summary>
