@@ -10,4 +10,4 @@ The example of usage with a command string:
 Default stations are "Hirschgarten", "Briefzentrum", "Steubenplatz".
 Each MVGTimeTable control refresh its data with time interval defined in code. I think, 15 seconds interval is a good compromise.
 
-![Screenshot v.1.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/ScreenShotV1.0.png)
+![Screenshot v.1.1.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/ScreenShotV1.1.png)
