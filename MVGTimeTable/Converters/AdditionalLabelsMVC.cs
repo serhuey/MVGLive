@@ -4,16 +4,13 @@ using System.Windows.Data;
 
 namespace MVGTimeTable
 {
-    /// <summary>
-    /// Return destination string without additional destination if it exists
-    /// </summary>
-    public class MainDestinationMVC : IMultiValueConverter
+    public class AdditionalLabelsMVC : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values.Length == 0) return null;
 
-            return ParseDestination.GetMainDestination(values[0].ToString(), true) + " ";
+            return ParseDestination.Get_U_S_Image(ParseDestination.GetAdditionalDestination(values[0].ToString()));
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
@@ -21,5 +18,5 @@ namespace MVGTimeTable
             return null;
         }
     }
-
 }
+

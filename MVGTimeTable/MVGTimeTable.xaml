@@ -16,6 +16,8 @@
         <local:ImageMinutesValueMVC x:Key="ImageMinutesValueMVC" />
         <local:TextMinutesValueMVC x:Key="TextMinutesValueMVC" />
         <local:MarginConverter x:Key="MarginConverter" />
+        <local:AdditionalLabelsMVC x:Key="AdditionalLabelsMVC" />
+        <local:MainLabelsMVC x:Key="MainLabelsMVC" />
 
         <Style x:Key="alternatingStyle" TargetType="{x:Type ListViewItem}">
             <Style.Triggers>
@@ -113,26 +115,46 @@
                                             <Binding Path="destination" />
                                         </MultiBinding>
                                     </Label>
+                                    <Image Height="{Binding FontSize, ElementName=listViewTimeTable}" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Right">
+                                        <Image.Source>
+                                            <MultiBinding Converter="{StaticResource MainLabelsMVC}">
+                                                <Binding Path="destination" />
+                                               </MultiBinding>
+                                        </Image.Source>
+                                    </Image>
                                     <Label Foreground="#55F1F1F1" >
                                         <MultiBinding Converter="{StaticResource AdditionalDestinationMVC}">
                                             <Binding Path="destination" />
                                         </MultiBinding>
                                     </Label>
+                                    <Image Height="{Binding FontSize, ElementName=listViewTimeTable}" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Right">
+                                        <Image.Source>
+                                            <MultiBinding Converter="{StaticResource AdditionalLabelsMVC}">
+                                                <Binding Path="destination" />
+                                               </MultiBinding>
+                                        </Image.Source>
+                                    </Image>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <!--<GridViewColumn DisplayMemberBinding="{Binding Path=destination}"/>-->
-                    <GridViewColumn>
+                    <GridViewColumn x:Name="colTimeToDeparture">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel x:Name="stackPanelMinutes" Orientation ="Horizontal" HorizontalAlignment="Left">
+                                <StackPanel x:Name="stackPanelMinutes" Orientation ="Horizontal" HorizontalAlignment="Right" FlowDirection="LeftToRight" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                                     <StackPanel.Margin>
                                         <MultiBinding Converter="{StaticResource MarginConverter}" ConverterParameter="stackPanelMinutes">
                                             <Binding Path="fontSize" />
                                         </MultiBinding>
                                     </StackPanel.Margin>
-                                    <Image x:Name="Now" Height="{Binding FontSize, ElementName=listViewTimeTable}" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Right">
+                                    
+                                    <Label x:Name="labelTimeToDeparture" Foreground="#FFE8E8E8" HorizontalAlignment="Right" Width="Auto" >
+                                        <MultiBinding Converter="{StaticResource TextMinutesValueMVC}">
+                                            <Binding Path="minutesToDeparture" />
+                                        </MultiBinding>
+                                    </Label>
+                                    <Image x:Name="Now" Height="{Binding FontSize, ElementName=listViewTimeTable}" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Left">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource ImageMinutesValueMVC}">
                                                 <Binding Path="minutesToDeparture" />
@@ -149,11 +171,6 @@
                                             </EventTrigger>
                                         </Image.Triggers>
                                     </Image>
-                                    <Label Foreground="#FFE8E8E8" >
-                                        <MultiBinding Converter="{StaticResource TextMinutesValueMVC}">
-                                            <Binding Path="minutesToDeparture" />
-                                        </MultiBinding>
-                                    </Label>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

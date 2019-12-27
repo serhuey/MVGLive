@@ -2,7 +2,8 @@
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text;
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -38,7 +39,7 @@ namespace MVGTimeTable
 
         public MVGTimeTable()
         {
-           InitializeComponent();
+            InitializeComponent();
         }
 
         /// <summary>
@@ -49,12 +50,12 @@ namespace MVGTimeTable
         /// <param name="_timerRefreshStartInterval">Pause before first request</param>
         /// <param name="_fontSize">Font size in pixels</param>
         /// <param name="_fontFamily">Font family</param>
-        public void SetProperties(  
-                                    string   _stationName               = "Hauptbahnhof",
-                                    int      _timerRefreshInterval      = 15,
-                                    int      _timerRefreshStartInterval = 1,
-                                    int      _fontSize                  = 20,
-                                    string   _fontFamily                = "Arial"
+        public void SetProperties(
+                                    string _stationName = "Hauptbahnhof",
+                                    int _timerRefreshInterval = 15,
+                                    int _timerRefreshStartInterval = 1,
+                                    int _fontSize = 20,
+                                    string _fontFamily = "Arial"
                                   )
         {
             stationName = _stationName;
@@ -72,6 +73,8 @@ namespace MVGTimeTable
             SetStackPanelMargin("stackPanelMainDestination", new Thickness(fontSize / 2.0, 0, fontSize / 2.0, 0));
             SetStackPanelMargin("stackPanelMinutes", new Thickness(fontSize / 3.0, 0, fontSize / 3.0, 0));
 
+            SetLabelWidth("labelTimeToDeparture", GetTextWidth("00:00 Std..", (Control)(FindName("labelTimeToDeparture"))));
+
             propertiesDefined = true;
         }
 
@@ -80,7 +83,7 @@ namespace MVGTimeTable
         /// </summary>
         public void Start()
         {
-            if(!propertiesDefined)
+            if (!propertiesDefined)
             {
                 throw new Exception("Properties of the MVGTimeTable user control are not defined");
             }
@@ -121,6 +124,18 @@ namespace MVGTimeTable
             if (ob is StackPanel)
             {
                 ((StackPanel)ob).Margin = margin;
+                result = true;
+            }
+            return result;
+        }
+
+        private bool SetLabelWidth(string labelName, double width)
+        {
+            bool result = false;
+            object ob = this.FindName(labelName);
+            if (ob is Label)
+            {
+                ((Label)ob).Width = width;
                 result = true;
             }
             return result;
@@ -169,7 +184,7 @@ namespace MVGTimeTable
                 if (_stationName != savedStationName)
                 {
                     savedStationName = _stationName;
-                    savedStationID = MVGAPI.MVGAPI.GetIdForStation(_stationName).ToString();
+                    savedStationID = MVGAPI.MVGAPI.GetIdForStation(_stationName);//.ToString();
                     return savedStationID;
                 }
                 else
@@ -215,9 +230,6 @@ namespace MVGTimeTable
             if (!string.IsNullOrEmpty(stationID))
             {
                 departureResponse = MVGAPI.MVGAPI.GetDeserializedDepartures(stationID) ?? departureResponse;
-#if DEBUG
-                Console.WriteLine("Departure request " + stationName);
-#endif
             }
         }
 
@@ -235,14 +247,15 @@ namespace MVGTimeTable
 
                 if (departureResponse != null)
                 {
+                    MVGAPI.MVGAPI.FormatNewAPItoOld(ref departureResponse);
+                    MVGAPI.MVGAPI.DeleteDuplicates(ref departureResponse);
+
                     Array.Sort(departureResponse, delegate (DeserializedDepartures dp1, DeserializedDepartures dp2)
                     {
-                        return dp1.departureTime.CompareTo(dp2.departureTime);
+                        return (dp1.departureTime).CompareTo(dp2.departureTime);
                     });
                     foreach (DeserializedDepartures dp in departureResponse)
                     {
-                        StringBuilder sb = new StringBuilder();
-
                         DateTime now = DateTime.Now;
                         DateTime localDateTimeOffset = DateTimeOffset.FromUnixTimeMilliseconds(dp.departureTime).DateTime.ToLocalTime();
                         TimeSpan difference = localDateTimeOffset.Subtract(now);
@@ -251,15 +264,21 @@ namespace MVGTimeTable
                         fd.product = dp.product;
                         fd.label = dp.label;
                         fd.destination = dp.destination;
-                        fd.minutesToDeparture = ((int)difference.TotalMinutes).ToString() + " min";
-#if DEBUG
-                        Console.WriteLine(fd.minutesToDeparture);
-#endif
-                        fd.departureTime = String.Format("{0:D2}:{1:D2}:{2:D2}", localDateTimeOffset.Hour, localDateTimeOffset.Minute, localDateTimeOffset.Second);
+                        if ((int)difference.TotalMinutes < 60)
+                        {
+                            fd.minutesToDeparture = ((int)difference.TotalMinutes).ToString() + "  Min.";
+                        }
+                        else
+                        {
+                            int hours = (int)difference.TotalMinutes / 60;
+                            int minutes = (int)difference.TotalMinutes % 60;
+                            fd.minutesToDeparture = String.Format("{0:D1}:{1:D2}  Std.", hours, minutes);
+                        }
+
+                        fd.departureTime = String.Format("{0:D2}:{1:D2}", localDateTimeOffset.Hour, localDateTimeOffset.Minute) + (dp.delay > 0 ? (" (+" + dp.delay.ToString() + ")") : "");
                         fd.fontSize = fontSize.ToString();
                         fd.sev = dp.sev;
                         departureDataSource.Add(fd);
-                        sb.Append(dp.product + " " + dp.label + " " + dp.destination + " " + ((int)difference.TotalMinutes).ToString() + "min." + Environment.NewLine);
                     }
                 }
             }
@@ -276,6 +295,34 @@ namespace MVGTimeTable
             }
         }
 
+        private double GetTextWidth(string text, Control control)
+        {
+            FormattedText formattedText = null;
+            Typeface controlTypeface = null;
+
+            if (control != null)
+            {
+                foreach (Typeface tf in control.FontFamily.GetTypefaces())
+                {
+                    controlTypeface = tf;
+                    break;
+                }
+
+                if (controlTypeface != null)
+                {
+                    formattedText = new FormattedText(text,
+                                        Thread.CurrentThread.CurrentCulture,
+                                        FlowDirection.LeftToRight,
+                                        controlTypeface,
+                                        control.FontSize,
+                                        Brushes.Black);
+                    return formattedText.Width;
+                }
+
+            }
+
+            return 0;
+        }
 
         protected virtual void Dispose(bool disposing)
         {

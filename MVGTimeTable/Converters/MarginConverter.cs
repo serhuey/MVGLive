@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
@@ -19,12 +15,12 @@ namespace MVGTimeTable
             if (parameter == null) return null;
             if (!double.TryParse((values[0].ToString()), out double fontSize)) return null;
 
-            switch(parameter.ToString())
+            switch (parameter.ToString())
             {
                 case "stackPanelProductLabel":
                     th = new Thickness(fontSize / 2.5, 0, fontSize / 1.5, 0); break;
                 case "stackPanelMainDestination":
-                    th = new Thickness(fontSize / 2.5, 0, fontSize / 1.5, 0);  break;
+                    th = new Thickness(fontSize / 2.5, 0, fontSize / 1.5, 0); break;
                 case "stackPanelMinutes":
                     th = new Thickness(fontSize / 2.5, 0, fontSize / 2.5, 0); break;
                 default: return null;

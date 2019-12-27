@@ -12,54 +12,19 @@ namespace MVGAPI
 {
     public static class MVGAPI
     {
-        static string StationType = "station";
-        static string api_key = "5af1beca494712ed38d313714d4caff6";
-        static string root_url_name = "https://www.mvg.de/api/fahrinfo";
+        static string stationType = "station";
 
-        static string query_url_name = root_url_name + "/location/queryWeb?q=";  //for station names
+        static string rootUrlName = "https://www.mvg.de/api/fahrinfo";
+
+        static string queryUrlName = rootUrlName + "/location/queryWeb?q=";  //for station names
 
 #pragma warning disable 169, 414
-        static string query_url_id = root_url_name + "/location/query?q=";       // #for station ids, not used now 
+        static string queryUrlId = rootUrlName + "/location/query?q=";       // #for station ids, not used now 
 #pragma warning restore 169, 414
 
-        static string departure_url = root_url_name + "/departure/";
-        static string departure_url_postfix = "?footway=0";
+        static string departureUrl = rootUrlName + "/departure/";
+        static string departureUrlPostfix = "?footway=0";
 
-        /// <summary>
-        /// Get XAML-prepared departures for the given station ID
-        /// </summary>
-        /// <param name="stationID"></param>
-        /// <returns></returns>
-        public static ObservableCollection<PreparedDeparture> GetPreparedDepartures(string stationID)
-        {
-            ObservableCollection<PreparedDeparture> preparedDepartures = null;
-            DeserializedDepartures[] departureResponse = GetDeserializedDepartures(stationID);
-            if (departureResponse != null)
-            {
-                preparedDepartures = new ObservableCollection<PreparedDeparture>();
-                Array.Sort(departureResponse, delegate (DeserializedDepartures dp1, DeserializedDepartures dp2)
-                {
-                    return dp1.departureTime.CompareTo(dp2.departureTime);
-                });
-                foreach (DeserializedDepartures dp in departureResponse)
-                {
-                    DateTime now = DateTime.Now;
-                    DateTime localDateTimeOffset = DateTimeOffset.FromUnixTimeMilliseconds(dp.departureTime).DateTime.ToLocalTime();
-                    TimeSpan difference = localDateTimeOffset.Subtract(now);
-
-                    PreparedDeparture fd = new PreparedDeparture();
-                    fd.product = dp.product;
-                    fd.label = dp.label;
-                    fd.destination = dp.destination;
-                    fd.minutesToDeparture = ((int)difference.TotalMinutes).ToString() + " min";
-
-                    fd.departureTime = String.Format("{0:D2}:{1:D2}:{2:D2}", localDateTimeOffset.Hour, localDateTimeOffset.Minute, localDateTimeOffset.Second);
-                    fd.sev = dp.sev;
-                    preparedDepartures.Add(fd);
-                }
-            }
-            return preparedDepartures;
-        }
 
         /// <summary>
         /// Get deserialized departures for the station with ID
@@ -101,11 +66,11 @@ namespace MVGAPI
 
             if (int.TryParse(query, out int iQuery))
             {
-                url = query_url_name + iQuery.ToString();
+                url = queryUrlName + iQuery.ToString();
             }
             else
             {
-                url = query_url_name + query;
+                url = queryUrlName + query;
             }
             jsonString = PerformApiRequest(url);
             return jsonString;
@@ -121,7 +86,7 @@ namespace MVGAPI
             try
             {
                 Locations locs = JsonConvert.DeserializeObject<Locations>(GetLocations(stationName));
-                if (locs != null && locs.locations.Length > 0 && locs.locations[0].type == StationType)
+                if (locs != null && locs.locations.Length > 0 && locs.locations[0].type == stationType)
                 {
                     return locs.locations[0];
                 }
@@ -137,16 +102,16 @@ namespace MVGAPI
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
         /// <returns>Station ID, if station name exists, -1 otherwise</returns>
-        static public int GetIdForStation(string stationName)
+        static public string GetIdForStation(string stationName)
         {
             Location locs;
 
             locs = GetStations(stationName);
-            if (locs != null && locs.id != 0)
+            if (locs != null && !String.IsNullOrEmpty(locs.id))
             {
                 return locs.id;
             }
-            return -1;
+            return "";
         }
 
         /// <summary>
@@ -156,7 +121,7 @@ namespace MVGAPI
         /// <returns></returns>
         static public string GetJsonDepartures(string stationID)
         {
-            string url = departure_url + stationID + departure_url_postfix;
+            string url = departureUrl + stationID + departureUrlPostfix;
             string result = PerformApiRequest(url);
             return result;
         }
@@ -170,7 +135,6 @@ namespace MVGAPI
         {
             HttpWebRequest requests = (HttpWebRequest)WebRequest.Create(url);
             requests.ContentType = "application/json; charset=utf-8";
-            requests.Headers.Add("X-MVG-Authorization-Key", api_key);
             requests.Method = "GET";
 
             string result;
@@ -181,6 +145,41 @@ namespace MVGAPI
                 result = reader.ReadToEnd();
             }
             return result;
+        }
+
+        /// <summary>
+        /// Format new API deserialized departure to an old one. 
+        /// </summary>
+        /// <param name="deserializedDepartures">Array with deserialized departures in new format on the beginning and in an old format on the exit</param>
+        static public void FormatNewAPItoOld(ref DeserializedDepartures[] deserializedDepartures)
+        {
+            foreach (DeserializedDepartures dD in deserializedDepartures)
+            {
+                dD.departureTime = dD.departureTime + dD.delay * 1000 * 60;
+            }
+        }
+
+        /// <summary>
+        /// Create array without duplcates
+        /// </summary>
+        /// <param name="deserializedDepartures"></param>
+        static public void DeleteDuplicates(ref DeserializedDepartures[] deserializedDepartures)
+        {
+            //Dictionary<int, int> arrayHashes = new Dictionary<int, int>();
+            List<DeserializedDepartures> departuresNewList = new List<DeserializedDepartures>();
+            List<int> arrayHashes = new List<int>();
+
+            for (int i = 0; i < deserializedDepartures.Length; i++)
+            {
+                int hash = deserializedDepartures[i].GetHashCode();
+                if (!arrayHashes.Contains(hash))
+                {
+                    arrayHashes.Add(hash);
+                    departuresNewList.Add(deserializedDepartures[i]);
+                }
+            }
+
+            deserializedDepartures = departuresNewList.ToArray();
         }
 
     }

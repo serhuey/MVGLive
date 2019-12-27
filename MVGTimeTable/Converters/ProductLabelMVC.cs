@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 
 namespace MVGTimeTable
 {
@@ -30,6 +25,7 @@ namespace MVGTimeTable
             bool tram = product.Contains("TRAM");
             bool ubahn = product.Contains("UBAHN");
             bool sbahn = product.Contains("SBAHN");
+            bool xbus = label.Contains("X");
 
             if (bus)
             {
@@ -54,8 +50,16 @@ namespace MVGTimeTable
                     }
                     else
                     {
+                        // ExpressBUS
+                        if (xbus)
+                        {
+                            uriSource = new Uri(Common.ImagePath + "ExpressBus.png");
+                        }
                         // BUS
-                        uriSource = new Uri(Common.ImagePath + "Bus.png");
+                        else
+                        {
+                            uriSource = new Uri(Common.ImagePath + "Bus.png");
+                        }
                     }
                 }
             }

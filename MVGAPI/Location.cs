@@ -11,7 +11,7 @@ namespace MVGAPI
         public string type;
         public float latitude;
         public float longitude;
-        public int id;
+        public string id;
         public string place;
         public string name;
         public bool hasLiveData;

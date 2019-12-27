@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
@@ -22,9 +18,9 @@ namespace MVGTimeTable
             int iMinutes;
 
             Match m = Regex.Match(minutes, @"^-?\d*");
-            if(m.Success && int.TryParse(m.Value, out iMinutes) && iMinutes <= 0 && iMinutes > -3)
+            if (m.Success && int.TryParse(m.Value, out iMinutes) && iMinutes <= 0 && iMinutes > -3)
             {
-                    return new BitmapImage(new Uri(Common.ImagePath + "Jetzt.png"));
+                return new BitmapImage(new Uri(Common.ImagePath + "Jetzt.png"));
             }
             else return null;
         }

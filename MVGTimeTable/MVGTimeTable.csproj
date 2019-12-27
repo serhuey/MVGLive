@@ -55,10 +55,13 @@
     </Page>
     <Compile Include="Common.cs" />
     <Compile Include="Converters\AdditionalDestinationMVC.cs" />
+    <Compile Include="Converters\AdditionalLabelsMVC.cs" />
     <Compile Include="Converters\ImageMinutesValueMVC.cs" />
     <Compile Include="Converters\LabelMultiValueConverter.cs" />
     <Compile Include="Converters\MainDestinationMVC.cs" />
+    <Compile Include="Converters\MainLabelsMVC.cs" />
     <Compile Include="Converters\MarginConverter.cs" />
+    <Compile Include="ParseDestination.cs" />
     <Compile Include="Converters\ProductImageConverter.cs" />
     <Compile Include="Converters\ProductLabelMVC.cs" />
     <Compile Include="Converters\TextMinutesValueMVC.cs" />
@@ -126,6 +129,16 @@
     <Resource Include="Icons\U7.png" />
     <Resource Include="Icons\U8.png" />
     <Resource Include="Icons\UBahn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\USBahns_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\SBahn_50.png" />
+    <Resource Include="Icons\UBahn_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\ExpressBus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace MVGTimeTable
@@ -15,23 +11,45 @@ namespace MVGTimeTable
         {
             if (values.Length < 1) return null;
             string minutes = values[0].ToString();
+            string addition = "  ";
             int iMinutes;
 
-            Match m = Regex.Match(minutes, @"^-?\d*");
-            if(m.Success && int.TryParse(m.Value, out iMinutes) && iMinutes <= 0)
+            if(minutes.Contains("Std."))
             {
-                if (iMinutes > -3)
+                return minutes;
+            }
+
+            // 
+            Match m = Regex.Match(minutes, @"^-?\d*");
+            bool parseResult = int.TryParse(m.Value, out iMinutes);
+
+            if (m.Success && parseResult)
+            {
+                // Something is wrong in received data - the vehicle had to departure more than three minutes ago.
+                if(iMinutes <= -3)
+                {
+                    return "???";
+                }
+
+                // "Jetzt" picture is showing, no need to display string with Min.
+                if(iMinutes <= 0 && iMinutes > -3)
                 {
                     return null;
                 }
-                else return "???";
+
+                // Add one space instead of "0" before minutes - not very good idea, but with the "right to left flow" in flow panel the results are
+                // very strange - the text changes order and looks like ".Min 2". 
+                if(iMinutes < 10)
+                {
+                    return addition + minutes;
+                }
+
             }
-            else return minutes;
+            return minutes;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
-
             return null;
         }
     }

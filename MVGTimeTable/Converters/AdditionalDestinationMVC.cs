@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace MVGTimeTable
@@ -16,27 +12,16 @@ namespace MVGTimeTable
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values.Length == 0) return null;
-
-            string destination = values[0].ToString();
-            string[] splittedDestination = destination.Split(' ');
-            StringBuilder outputString = new StringBuilder();
-            bool startBuilding = false;
-            foreach (string str in splittedDestination)
+            string additionalDestination;
+            string mainDestination;
+            ParseDestination.GetBothDestinations(values[0].ToString(), out mainDestination, out additionalDestination, false, true);
+            if (!String.IsNullOrEmpty(additionalDestination) && !String.IsNullOrEmpty(mainDestination) && ParseDestination.IsStringContains_U_S(mainDestination))
             {
-                if (str.ToUpperInvariant() == "VIA" || startBuilding)
-                {
-                    startBuilding = true;
-                    outputString.Append(str + " ");
-                }
+                //Double space after label in main destination (if it presents)
+                additionalDestination = "  " + additionalDestination;
             }
-            if (outputString.Length > 2)
-            {
-                return outputString.ToString(0, outputString.Length - 1);
-            }
-            else
-            {
-                return null;
-            }
+            //Space before label in additional destination
+            return additionalDestination + " ";
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
