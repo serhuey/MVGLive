@@ -12,7 +12,13 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values.Length < 4) return null;
+            if (values == null ||
+                values.Length < 4 ||
+                values[0] == null ||
+                values[1] == null ||
+                values[2] == null ||
+                values[3] == null)
+                return null;
 
             Uri uriSource = null;
             string product = values[0].ToString().ToUpperInvariant();

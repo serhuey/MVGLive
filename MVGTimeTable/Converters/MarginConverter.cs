@@ -9,11 +9,14 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            Thickness th;
+            Thickness th = new Thickness(0);
 
-            if (values.Length == 0) return null;
-            if (parameter == null) return null;
-            if (!double.TryParse((values[0].ToString()), out double fontSize)) return null;
+            if (values == null ||
+                values.Length == 0 ||
+                parameter == null ||
+                values[0] == null || 
+                !double.TryParse(values[0].ToString(), out double fontSize))
+                return th;
 
             switch (parameter.ToString())
             {
@@ -23,7 +26,7 @@ namespace MVGTimeTable
                     th = new Thickness(fontSize / 2.5, 0, fontSize / 1.5, 0); break;
                 case "stackPanelMinutes":
                     th = new Thickness(fontSize / 2.5, 0, fontSize / 2.5, 0); break;
-                default: return null;
+                default: return th;
             }
             return th;
         }

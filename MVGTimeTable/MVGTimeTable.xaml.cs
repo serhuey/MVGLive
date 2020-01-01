@@ -2,7 +2,6 @@
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Globalization;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,8 +33,6 @@ namespace MVGTimeTable
         private string fontFamily;
         private DeserializedDepartures[] departureResponse;
         public ObservableCollection<PreparedDeparture> departureDataSource;
-
-
 
         public MVGTimeTable()
         {
@@ -90,24 +87,24 @@ namespace MVGTimeTable
 
             departureDataSource = new ObservableCollection<PreparedDeparture>();
             listViewTimeTable.ItemsSource = departureDataSource;
-            departureDataSource.CollectionChanged += departureDataSource_CollectionChanged;
+            departureDataSource.CollectionChanged += DepartureDataSource_CollectionChanged;
 
             // Table Refresh timer
             timerRefresh = new DispatcherTimer();
             timerRefresh.Interval = TimeSpan.FromSeconds(timerRefreshStartInterval); //will be updated in handler
-            timerRefresh.Tick += timerRefresh_Tick;
+            timerRefresh.Tick += TimerRefresh_Tick;
             timerRefresh.Start();
 
             // Clock Refresh Timer
             timerClock = new DispatcherTimer();
             timerClock.Interval = TimeSpan.FromSeconds(1);
-            timerClock.Tick += timerClock_Tick;
+            timerClock.Tick += TimerClock_Tick;
             timerClock.Start();
 
             // Background Worker for asynchronic data receiving
             backgroundWorker1 = new BackgroundWorker();
-            backgroundWorker1.DoWork += new DoWorkEventHandler(backgroundWorker1_DoWork);
-            backgroundWorker1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(backgroundWorker1_RunWorkerCompleted);
+            backgroundWorker1.DoWork += new DoWorkEventHandler(BackgroundWorker1_DoWork);
+            backgroundWorker1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorker1_RunWorkerCompleted);
         }
 
 
@@ -129,6 +126,12 @@ namespace MVGTimeTable
             return result;
         }
 
+        /// <summary>
+        /// Set the width of the label
+        /// </summary>
+        /// <param name="labelName"></param>
+        /// <param name="width"></param>
+        /// <returns></returns>
         private bool SetLabelWidth(string labelName, double width)
         {
             bool result = false;
@@ -146,7 +149,7 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void departureDataSource_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        private void DepartureDataSource_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             AutoSizeColumns();
         }
@@ -183,8 +186,8 @@ namespace MVGTimeTable
             {
                 if (_stationName != savedStationName)
                 {
-                    savedStationName = _stationName;
-                    savedStationID = MVGAPI.MVGAPI.GetIdForStation(_stationName);//.ToString();
+                    savedStationID = MVGAPI.MVGAPI.GetIdForStation(_stationName);
+                    if (!MVGAPI.MVGAPI.NoConnection) savedStationName = _stationName;
                     return savedStationID;
                 }
                 else
@@ -201,7 +204,7 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void timerRefresh_Tick(object sender, EventArgs e)
+        void TimerRefresh_Tick(object sender, EventArgs e)
         {
             if (!backgroundWorker1.IsBusy)
                 backgroundWorker1.RunWorkerAsync();
@@ -213,7 +216,7 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void timerClock_Tick(object sender, EventArgs e)
+        void TimerClock_Tick(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
             string time = now.Hour.ToString() + ":" + now.Minute.ToString() + ":" + now.Second.ToString();
@@ -224,7 +227,7 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             string stationID = GetStationID(stationName);
             if (!string.IsNullOrEmpty(stationID))
@@ -238,10 +241,9 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-
-            if (e.Error == null)
+            if (e.Error == null && !MVGAPI.MVGAPI.NoConnection)
             {
                 departureDataSource.Clear();
 
@@ -254,6 +256,7 @@ namespace MVGTimeTable
                     {
                         return (dp1.departureTime).CompareTo(dp2.departureTime);
                     });
+
                     foreach (DeserializedDepartures dp in departureResponse)
                     {
                         DateTime now = DateTime.Now;
@@ -264,6 +267,7 @@ namespace MVGTimeTable
                         fd.product = dp.product;
                         fd.label = dp.label;
                         fd.destination = dp.destination;
+
                         if ((int)difference.TotalMinutes < 60)
                         {
                             fd.minutesToDeparture = ((int)difference.TotalMinutes).ToString() + "  Min.";
@@ -295,6 +299,12 @@ namespace MVGTimeTable
             }
         }
 
+        /// <summary>
+        /// Get the width of the text with font' parameters of the control
+        /// </summary>
+        /// <param name="text">Measured text</param>
+        /// <param name="control">Control with font' parameters</param>
+        /// <returns>Text width</returns>
         private double GetTextWidth(string text, Control control)
         {
             FormattedText formattedText = null;
@@ -318,9 +328,7 @@ namespace MVGTimeTable
                                         Brushes.Black);
                     return formattedText.Width;
                 }
-
             }
-
             return 0;
         }
 

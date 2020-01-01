@@ -11,7 +11,7 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values.Length == 0) return null;
+            if (values == null || values.Length == 0) return null;
             string additionalDestination;
             string mainDestination;
             ParseDestination.GetBothDestinations(values[0].ToString(), out mainDestination, out additionalDestination, false, true);

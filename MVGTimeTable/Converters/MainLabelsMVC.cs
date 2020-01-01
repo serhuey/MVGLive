@@ -8,7 +8,7 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values.Length == 0) return null;
+            if (values == null || values.Length == 0) return null;
 
             return ParseDestination.Get_U_S_Image(ParseDestination.GetMainDestination(values[0].ToString()));
         }

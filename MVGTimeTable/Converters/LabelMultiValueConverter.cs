@@ -11,7 +11,7 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values.Length < 2) return null;
+            if (values == null || values.Length < 2) return null;
 
             string product = values[0].ToString().ToUpperInvariant();
             string label = values[1].ToString().ToUpperInvariant();

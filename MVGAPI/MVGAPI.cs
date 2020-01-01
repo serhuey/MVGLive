@@ -1,30 +1,23 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MVGAPI
 {
     public static class MVGAPI
     {
-        static string stationType = "station";
-
-        static string rootUrlName = "https://www.mvg.de/api/fahrinfo";
-
-        static string queryUrlName = rootUrlName + "/location/queryWeb?q=";  //for station names
-
+        static public bool NoConnection { get; set; }
+        static readonly string stationType = "station";
+        static readonly string rootUrlName = "https://www.mvg.de/api/fahrinfo";
+        static readonly string queryUrlName = rootUrlName + "/location/queryWeb?q=";  
+        static readonly string departureUrl = rootUrlName + "/departure/";
+        static readonly string departureUrlPostfix = "?footway=0";
 #pragma warning disable 169, 414
-        static string queryUrlId = rootUrlName + "/location/query?q=";       // #for station ids, not used now 
+        static readonly string queryUrlId = rootUrlName + "/location/query?q=";       // #for station ids, not used now 
 #pragma warning restore 169, 414
-
-        static string departureUrl = rootUrlName + "/departure/";
-        static string departureUrlPostfix = "?footway=0";
-
 
         /// <summary>
         /// Get deserialized departures for the station with ID
@@ -33,6 +26,11 @@ namespace MVGAPI
         /// <returns></returns>
         public static DeserializedDepartures[] GetDeserializedDepartures(string stationID)
         {
+            if(string.IsNullOrEmpty(stationID))
+            {
+                return null;
+            }
+
             Departures dD;
             try
             {
@@ -101,7 +99,7 @@ namespace MVGAPI
         /// Get numeric ID for the station name in German
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
-        /// <returns>Station ID, if station name exists, -1 otherwise</returns>
+        /// <returns>Station ID, if station name exists, "" otherwise</returns>
         static public string GetIdForStation(string stationName)
         {
             Location locs;
@@ -137,13 +135,23 @@ namespace MVGAPI
             requests.ContentType = "application/json; charset=utf-8";
             requests.Method = "GET";
 
-            string result;
-            HttpWebResponse response = requests.GetResponse() as HttpWebResponse;
-            using (Stream responseStream = response.GetResponseStream())
+            NoConnection = false;
+            string result = null;
+
+            try
             {
-                StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
-                result = reader.ReadToEnd();
+                HttpWebResponse response = requests.GetResponse() as HttpWebResponse;
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+                    result = reader.ReadToEnd();
+                }
             }
+            catch(Exception ex) when (ex is WebException || ex is System.Net.Sockets.SocketException)
+            {
+                NoConnection = true;
+            }
+
             return result;
         }
 
@@ -165,7 +173,6 @@ namespace MVGAPI
         /// <param name="deserializedDepartures"></param>
         static public void DeleteDuplicates(ref DeserializedDepartures[] deserializedDepartures)
         {
-            //Dictionary<int, int> arrayHashes = new Dictionary<int, int>();
             List<DeserializedDepartures> departuresNewList = new List<DeserializedDepartures>();
             List<int> arrayHashes = new List<int>();
 
@@ -181,6 +188,5 @@ namespace MVGAPI
 
             deserializedDepartures = departuresNewList.ToArray();
         }
-
     }
 }

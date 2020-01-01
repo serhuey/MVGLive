@@ -74,11 +74,11 @@ namespace MVGTimeTable
         /// <summary>
         /// Get both destinations if they are all needed. It's little bit faster than getting them separetely
         /// </summary>
-        /// <param name="destination"></param>
-        /// <param name="mainDestination"></param>
-        /// <param name="additionalDestination"></param>
-        /// <param name="remove_U_S_main"></param>
-        /// <param name="remove_U_S_additional"></param>
+        /// <param name="destination">Full destination string</param>
+        /// <param name="mainDestination">Reference to the string with main destination</param>
+        /// <param name="additionalDestination">Reference to the string with additional destination</param>
+        /// <param name="remove_U_S_main">Remove letters U and S in main destination if true</param>
+        /// <param name="remove_U_S_additional">Remove letters U and S in additional destination if true</param>
         static public void GetBothDestinations(string destination, out string mainDestination, out string additionalDestination, bool remove_U_S_main = false, bool remove_U_S_additional = false)
         {
 
@@ -137,7 +137,10 @@ namespace MVGTimeTable
             if (!String.IsNullOrEmpty(destination))
             {
                 destination += " ";
-                result = (destination.IndexOf(" S ") > 0) | (destination.IndexOf(" U ") > 0);
+                result =    (destination.IndexOf(" S ") > 0) | 
+                            (destination.IndexOf(" U ") > 0) |
+                            (destination.IndexOf(" US ") > 0) |
+                            (destination.IndexOf(" SU ") > 0);
             }
 
             return result;
@@ -173,6 +176,12 @@ namespace MVGTimeTable
                 {
                     SbahnPresent = true;
                 }
+
+                if (str.ToUpperInvariant() == "SU" || str.ToUpperInvariant() == "US")
+                {
+                    SbahnPresent = true;
+                    UbahnPresent = true;
+                }
             }
 
             products = (UbahnPresent ? 1 : 0) + (SbahnPresent ? 2 : 0);
@@ -198,13 +207,15 @@ namespace MVGTimeTable
         /// <summary>
         /// Remove Letter U and S from destination string
         /// </summary>
-        /// <param name="destination"></param>
+        /// <param name="destination">Destination string</param>
         /// <returns>New string without U and S</returns>
         static private string Remove_U_S(string destination)
         {
             if (String.IsNullOrEmpty(destination)) return null;
 
             destination += " ";
+            destination = destination.Replace(" US ", " ");
+            destination = destination.Replace(" SU ", " ");
             destination = destination.Replace(" U S ", " ");
             destination = destination.Replace(" S U ", " ");
             destination = destination.Replace(" U ", " ");

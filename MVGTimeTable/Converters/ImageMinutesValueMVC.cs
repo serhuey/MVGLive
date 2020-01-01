@@ -13,7 +13,7 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values.Length < 1) return null;
+            if (values == null || values.Length < 1) return null;
             string minutes = values[0].ToString();
             int iMinutes;
 
