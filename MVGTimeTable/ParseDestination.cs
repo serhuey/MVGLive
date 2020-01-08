@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Windows.Media.Imaging;
 
@@ -14,9 +15,9 @@ namespace MVGTimeTable
         /// <returns>New string with main destination</returns>
         static public string GetMainDestination(string destination, bool remove_U_S = false)
         {
-            if (String.IsNullOrEmpty(destination)) return null;
+            if (string.IsNullOrEmpty(destination)) return null;
 
-            StringBuilder outputString = new StringBuilder();
+            StringBuilder outputstring = new StringBuilder();
 
             if (remove_U_S) destination = Remove_U_S(destination);
 
@@ -25,11 +26,11 @@ namespace MVGTimeTable
             foreach (string str in splittedDestination)
             {
                 if (str.ToUpperInvariant() == "VIA") break;
-                outputString.Append(str + " ");
+                outputstring.Append(str + " ");
             }
-            if (outputString.Length > 2)
+            if (outputstring.Length > 2)
             {
-                return (outputString.ToString(0, outputString.Length - 1)).TrimEnd(' ');
+                return (outputstring.ToString(0, outputstring.Length - 1)).TrimEnd(' ');
             }
             else
             {
@@ -45,25 +46,25 @@ namespace MVGTimeTable
         /// <returns>New string with additional destination</returns>
         static public string GetAdditionalDestination(string destination, bool remove_U_S = false)
         {
-            if (String.IsNullOrEmpty(destination)) return null;
+            if (string.IsNullOrEmpty(destination)) return null;
 
             if (remove_U_S) destination = Remove_U_S(destination);
 
             string[] splittedDestination = destination.Split(' ');
 
-            StringBuilder outputString = new StringBuilder();
+            StringBuilder outputstring = new StringBuilder();
             bool startBuilding = false;
             foreach (string str in splittedDestination)
             {
                 if (str.ToUpperInvariant() == "VIA" || startBuilding)
                 {
                     startBuilding = true;
-                    outputString.Append(str + " ");
+                    outputstring.Append(str + " ");
                 }
             }
-            if (outputString.Length > 2)
+            if (outputstring.Length > 2)
             {
-                return (outputString.ToString(0, outputString.Length - 1)).TrimEnd(' ');
+                return (outputstring.ToString(0, outputstring.Length - 1)).TrimEnd(' ');
             }
             else
             {
@@ -85,40 +86,40 @@ namespace MVGTimeTable
             mainDestination = "";
             additionalDestination = "";
 
-            if (String.IsNullOrEmpty(destination)) return;
+            if (string.IsNullOrEmpty(destination)) return;
 
             string[] splittedDestination = destination.Split(' ');
 
-            StringBuilder outputMainString = new StringBuilder();
-            StringBuilder outputAdditionalString = new StringBuilder();
+            StringBuilder outputMainstring = new StringBuilder();
+            StringBuilder outputAdditionalstring = new StringBuilder();
 
-            bool startBuildingAdditionalString = false;
-            bool endBuildingMainString = false;
+            bool startBuildingAdditionalstring = false;
+            bool endBuildingMainstring = false;
 
             foreach (string str in splittedDestination)
             {
-                if (str.ToUpperInvariant() == "VIA" || startBuildingAdditionalString)
+                if (str.ToUpperInvariant() == "VIA" || startBuildingAdditionalstring)
                 {
-                    startBuildingAdditionalString = true;
-                    outputAdditionalString.Append(str + " ");
+                    startBuildingAdditionalstring = true;
+                    outputAdditionalstring.Append(str + " ");
                 }
 
-                if (!endBuildingMainString)
+                if (!endBuildingMainstring)
                 {
-                    if (str.ToUpperInvariant() == "VIA") endBuildingMainString = true;
-                    outputMainString.Append(str + " ");
+                    if (str.ToUpperInvariant() == "VIA") endBuildingMainstring = true;
+                    outputMainstring.Append(str + " ");
                 }
             }
 
-            if (outputAdditionalString.Length > 2)
+            if (outputAdditionalstring.Length > 2)
             {
-                additionalDestination = (outputAdditionalString.ToString(0, outputAdditionalString.Length - 1)).TrimEnd(' ');
+                additionalDestination = (outputAdditionalstring.ToString(0, outputAdditionalstring.Length - 1)).TrimEnd(' ');
                 if (remove_U_S_additional) additionalDestination = Remove_U_S(additionalDestination);
             }
 
-            if (outputMainString.Length > 2)
+            if (outputMainstring.Length > 2)
             {
-                mainDestination = (outputMainString.ToString(0, outputMainString.Length - 1)).TrimEnd(' ');
+                mainDestination = (outputMainstring.ToString(0, outputMainstring.Length - 1)).TrimEnd(' ');
                 if (remove_U_S_main) mainDestination = Remove_U_S(mainDestination);
             }
 
@@ -134,10 +135,10 @@ namespace MVGTimeTable
         {
             bool result = false;
 
-            if (!String.IsNullOrEmpty(destination))
+            if (!string.IsNullOrEmpty(destination))
             {
                 destination += " ";
-                result =    (destination.IndexOf(" S ") > 0) | 
+                result = (destination.IndexOf(" S ") > 0) |
                             (destination.IndexOf(" U ") > 0) |
                             (destination.IndexOf(" US ") > 0) |
                             (destination.IndexOf(" SU ") > 0);
@@ -148,56 +149,78 @@ namespace MVGTimeTable
 
 
         /// <summary>
-        /// Get image with "U", "S" or "U S" for destination
+        /// Get image with "U", "S", "U S", Ball oder Zoo for destination
         /// </summary>
         /// <param name="destination">Destination string</param>
         /// <returns></returns>
-        static public BitmapImage Get_U_S_Image(string destination)
+        static public BitmapImage GetDestinationImage(string destination, string label = "", string currentStation = "", bool mainLabel = true)
         {
-            if (String.IsNullOrEmpty(destination)) return null;
+            if (string.IsNullOrEmpty(destination)) return null;
 
-            Uri uriSource = null;
+            string iconKey = null;
 
-            bool UbahnPresent = false;
-            bool SbahnPresent = false;
-
-            int products = 0;
-
-            string[] splittedDestination = destination.Split(' ');
-
-            foreach (string str in splittedDestination)
+            if (!string.IsNullOrEmpty(label) && !string.IsNullOrEmpty(currentStation))
             {
-                if (str.ToUpperInvariant() == "U")
+                if (IsFussballDestination(currentStation, destination, label))
                 {
-                    UbahnPresent = true;
+                    iconKey = "Fussball";
                 }
-
-                if (str.ToUpperInvariant() == "S")
+                if (IsZooDestination(currentStation, destination, label))
                 {
-                    SbahnPresent = true;
+                    iconKey = "Zoo";
                 }
-
-                if (str.ToUpperInvariant() == "SU" || str.ToUpperInvariant() == "US")
+                if (IsMesseDestination(currentStation, destination, label))
                 {
-                    SbahnPresent = true;
-                    UbahnPresent = true;
+                    iconKey = "Messe";
+                }
+                if (IsOlympiaDestination(currentStation, destination, label))
+                {
+                    iconKey = "Olympia";
                 }
             }
 
-            products = (UbahnPresent ? 1 : 0) + (SbahnPresent ? 2 : 0);
-
-            switch (products)
+            if (string.IsNullOrEmpty(iconKey))
             {
-                case 1: uriSource = new Uri(Common.ImagePath + "UBahn_50.png"); break;
-                case 2: uriSource = new Uri(Common.ImagePath + "SBahn_50.png"); break;
-                case 3: uriSource = new Uri(Common.ImagePath + "USBahns_50.png"); break;
-                default: break;
+                bool UbahnPresent = false;
+                bool SbahnPresent = false;
+
+                int products = 0;
+
+                string[] splittedDestination = destination.Split(' ');
+
+                foreach (string str in splittedDestination)
+                {
+                    if (str.ToUpperInvariant() == "U")
+                    {
+                        UbahnPresent = true;
+                    }
+
+                    if (str.ToUpperInvariant() == "S")
+                    {
+                        SbahnPresent = true;
+                    }
+
+                    if (str.ToUpperInvariant() == "SU" || str.ToUpperInvariant() == "US")
+                    {
+                        SbahnPresent = true;
+                        UbahnPresent = true;
+                    }
+                }
+
+                products = (UbahnPresent ? 1 : 0) + (SbahnPresent ? 2 : 0);
+
+                switch (products)
+                {
+                    case 1: iconKey = mainLabel ? "UBahn_100" : "UBahn_50"; break;
+                    case 2: iconKey = mainLabel ? "UBahn_100" : "SBahn_50"; break;
+                    case 3: iconKey = mainLabel ? "USBahns_100" : "USBahns_50"; break;
+                    default: break;
+                }
             }
 
-            if (uriSource != null)
+            if (!string.IsNullOrEmpty(iconKey) && Common.icons.ContainsKey(iconKey = iconKey.ToLowerInvariant()))
             {
-                BitmapImage bitmapImage = new BitmapImage(uriSource);
-                return bitmapImage;
+                return Common.icons[iconKey];
             }
             else
                 return null;
@@ -211,7 +234,7 @@ namespace MVGTimeTable
         /// <returns>New string without U and S</returns>
         static private string Remove_U_S(string destination)
         {
-            if (String.IsNullOrEmpty(destination)) return null;
+            if (string.IsNullOrEmpty(destination)) return null;
 
             destination += " ";
             destination = destination.Replace(" US ", " ");
@@ -223,6 +246,76 @@ namespace MVGTimeTable
             destination = destination.TrimEnd(' ');
 
             return destination;
+        }
+
+        /// <summary>
+        /// Check football destination
+        /// </summary>
+        /// <param name="destination">Destination</param>
+        /// <param name="label">MVV Line number</param>
+        /// <returns>True if line is going to the Alliance Arena</returns>
+        static private bool IsFussballDestination(string currentStation, string destination, string label)
+        {
+            return IsTargetDestination(currentStation, destination, label, Common.FussballDestinations);
+        }
+
+        /// <summary>
+        /// Check Zoo destination
+        /// </summary>
+        /// <param name="destination">Destination</param>
+        /// <param name="label">MVV Line number</param>
+        /// <returns>True if line is going to the Tierpark Hellabrunn</returns>
+        static private bool IsZooDestination(string currentStation, string destination, string label)
+        {
+            return IsTargetDestination(currentStation, destination, label, Common.ZooDestinations);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="currentStation"></param>
+        /// <param name="destination"></param>
+        /// <param name="label"></param>
+        /// <returns></returns>
+        static private bool IsMesseDestination(string currentStation, string destination, string label)
+        {
+            return IsTargetDestination(currentStation, destination, label, Common.MesseDestinations);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="currentStation"></param>
+        /// <param name="destination"></param>
+        /// <param name="label"></param>
+        /// <returns></returns>
+        static private bool IsOlympiaDestination(string currentStation, string destination, string label)
+        {
+            return IsTargetDestination(currentStation, destination, label, Common.OlympiaDestinations);
+        }
+
+
+        /// <summary>
+        /// Check target destination
+        /// </summary>
+        /// <param name="destination">Destination</param>
+        /// <param name="label">MVV Line number</param>
+        /// <param name="targetDictionary">Target Dictionary</param>
+        /// <returns></returns>
+        static private bool IsTargetDestination(string currentStation, string destination, string label, Dictionary<string, string[]> targetDictionary)
+        {
+            bool destinationDetected = false;
+            bool targetPassed = false;
+            foreach (string key in targetDictionary.Keys)
+            {
+                if (string.Compare(key.ToUpperInvariant(), label.ToUpperInvariant()) != 0) continue;
+                foreach (string targetDestination in targetDictionary[key])
+                {
+                    if (string.Compare(currentStation.ToUpperInvariant(), targetDestination.ToUpperInvariant()) == 0) targetPassed = true;
+                    if (string.Compare(targetDestination.ToUpperInvariant(), destination.ToUpperInvariant()) == 0) destinationDetected = true;
+                }
+            }
+            return !targetPassed & destinationDetected;
         }
     }
 }

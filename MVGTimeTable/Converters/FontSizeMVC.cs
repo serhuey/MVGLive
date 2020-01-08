@@ -1,34 +1,27 @@
 ﻿using System;
 using System.Globalization;
-using System.Windows;
 using System.Windows.Data;
 
 namespace MVGTimeTable
 {
-    class MarginConverter : IMultiValueConverter
+    public class FontSizeMVC : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            Thickness th = new Thickness(0);
-
             if (values == null ||
                 values.Length == 0 ||
                 parameter == null ||
-                values[0] == null || 
+                values[0] == null ||
                 !double.TryParse(values[0].ToString(), out double fontSize))
-                return th;
+                return 0.01;            // 0 is not acceptable for FontSize property
+
 
             switch (parameter.ToString())
             {
-                case "stackPanelProductLabel":
-                    th = new Thickness(fontSize / 2.5, 0, fontSize / 1.5, 0); break;
-                case "stackPanelMainDestination":
-                    th = new Thickness(fontSize / 2.5, 0, fontSize / 1.5, 0); break;
-                case "stackPanelMinutes":
-                    th = new Thickness(fontSize / 2.5, 0, fontSize / 2.5, 0); break;
-                default: return th;
+                case "labelDelay":
+                    fontSize = fontSize * 0.55; break;
             }
-            return th;
+            return fontSize;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
@@ -38,3 +31,5 @@ namespace MVGTimeTable
 
     }
 }
+
+

@@ -14,7 +14,6 @@
         public bool sev { get; set; }
         public string platform { get; set; }
 
-
         public override bool Equals(object obj)
         {
             //Check for null and compare run-time types.

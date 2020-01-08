@@ -20,7 +20,8 @@ namespace MVGTimeTable
             Match m = Regex.Match(minutes, @"^-?\d*");
             if (m.Success && int.TryParse(m.Value, out iMinutes) && iMinutes <= 0 && iMinutes > -3)
             {
-                return new BitmapImage(new Uri(Common.ImagePath + "Jetzt.png"));
+                //return new BitmapImage("Jetzt");
+                return Common.icons["jetzt"];
             }
             else return null;
         }

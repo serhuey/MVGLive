@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
 
+
 namespace MVGTimeTable
 {
 
@@ -15,6 +16,11 @@ namespace MVGTimeTable
     {
         #region Properties
         public PreparedDeparture[] departures { get; set; }
+        public bool noConnection
+        {
+            get
+            { return noConnectionTimeoutCounter == 0 ? false : true; }
+        }
         #endregion
 
         private bool propertiesDefined = false;
@@ -34,6 +40,13 @@ namespace MVGTimeTable
         private DeserializedDepartures[] departureResponse;
         public ObservableCollection<PreparedDeparture> departureDataSource;
 
+
+        private int noConnectionTimeoutCounter = 0;
+        private const int noConnectionTimeoutThreshold = 10;
+
+        public delegate void ConnectionStatusChanged(object sender, EventArgs e);
+        public event ConnectionStatusChanged ConnectionStatusChangedEvent;
+
         public MVGTimeTable()
         {
             InitializeComponent();
@@ -52,7 +65,7 @@ namespace MVGTimeTable
                                     int _timerRefreshInterval = 15,
                                     int _timerRefreshStartInterval = 1,
                                     int _fontSize = 20,
-                                    string _fontFamily = "Arial"
+                                    string _fontFamily = "Segoe UI"
                                   )
         {
             stationName = _stationName;
@@ -71,6 +84,8 @@ namespace MVGTimeTable
             SetStackPanelMargin("stackPanelMinutes", new Thickness(fontSize / 3.0, 0, fontSize / 3.0, 0));
 
             SetLabelWidth("labelTimeToDeparture", GetTextWidth("00:00 Std..", (Control)(FindName("labelTimeToDeparture"))));
+
+            Common.CreateIconsDictionaryFromPNG(out Common.icons, fontSize); //Create from SVG will be added in the future
 
             propertiesDefined = true;
         }
@@ -91,14 +106,14 @@ namespace MVGTimeTable
 
             // Table Refresh timer
             timerRefresh = new DispatcherTimer();
-            timerRefresh.Interval = TimeSpan.FromSeconds(timerRefreshStartInterval); //will be updated in handler
             timerRefresh.Tick += TimerRefresh_Tick;
+            timerRefresh.Interval = TimeSpan.FromSeconds(timerRefreshStartInterval); //interval is updated in the TimerRefresh_Tick
             timerRefresh.Start();
 
             // Clock Refresh Timer
             timerClock = new DispatcherTimer();
-            timerClock.Interval = TimeSpan.FromSeconds(1);
             timerClock.Tick += TimerClock_Tick;
+            timerClock.Interval = TimeSpan.FromSeconds(1);
             timerClock.Start();
 
             // Background Worker for asynchronic data receiving
@@ -243,7 +258,24 @@ namespace MVGTimeTable
         /// <param name="e"></param>
         private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Error == null && !MVGAPI.MVGAPI.NoConnection)
+            if (!MVGAPI.MVGAPI.NoConnection) // && e.Error == null)
+            {
+                if (noConnectionTimeoutCounter != 0)
+                {
+                    noConnectionTimeoutCounter = 0;
+                    ConnectionStatusChangedEvent?.Invoke(this, new EventArgs());
+                }
+            }
+            else
+            {
+                noConnectionTimeoutCounter++;
+                if (noConnectionTimeoutCounter == 1)
+                {
+                    ConnectionStatusChangedEvent?.Invoke(this, new EventArgs());
+                }
+            }
+
+            if (noConnectionTimeoutCounter <= noConnectionTimeoutThreshold)
             {
                 departureDataSource.Clear();
 
@@ -254,19 +286,35 @@ namespace MVGTimeTable
 
                     Array.Sort(departureResponse, delegate (DeserializedDepartures dp1, DeserializedDepartures dp2)
                     {
-                        return (dp1.departureTime).CompareTo(dp2.departureTime);
+                        if (dp1.departureTime == dp2.departureTime)
+                        {
+                            return (dp1.departureId).CompareTo(dp2.departureId);
+                        }
+                        else
+                        {
+                            return (dp1.departureTime).CompareTo(dp2.departureTime);
+                        }
                     });
+
+                    if (noConnectionTimeoutCounter > 0)
+                    {
+                        departureDataSource.Add(SetServiceMessage("NO_CONNECTION", "Keine Verbindung."));
+                        departureDataSource.Add(SetServiceMessage("WARNING", "Die Daten sind möglicherweise nicht relevant."));
+                    }
 
                     foreach (DeserializedDepartures dp in departureResponse)
                     {
                         DateTime now = DateTime.Now;
                         DateTime localDateTimeOffset = DateTimeOffset.FromUnixTimeMilliseconds(dp.departureTime).DateTime.ToLocalTime();
+                        DateTime scheduledTime = DateTimeOffset.FromUnixTimeMilliseconds(dp.departureTime - dp.delay * 1000 * 60).DateTime.ToLocalTime();
                         TimeSpan difference = localDateTimeOffset.Subtract(now);
 
                         PreparedDeparture fd = new PreparedDeparture();
                         fd.product = dp.product;
                         fd.label = dp.label;
                         fd.destination = dp.destination;
+                        fd.platform = dp.platform;
+                        fd.station = stationName;
 
                         if ((int)difference.TotalMinutes < 60)
                         {
@@ -276,12 +324,13 @@ namespace MVGTimeTable
                         {
                             int hours = (int)difference.TotalMinutes / 60;
                             int minutes = (int)difference.TotalMinutes % 60;
-                            fd.minutesToDeparture = String.Format("{0:D1}:{1:D2}  Std.", hours, minutes);
+                            fd.minutesToDeparture = string.Format("{0:D1}:{1:D2}  Std.", hours, minutes);
                         }
 
-                        fd.departureTime = String.Format("{0:D2}:{1:D2}", localDateTimeOffset.Hour, localDateTimeOffset.Minute) + (dp.delay > 0 ? (" (+" + dp.delay.ToString() + ")") : "");
+                        fd.departureTime = string.Format("{0:D2}:{1:D2}", localDateTimeOffset.Hour, localDateTimeOffset.Minute);
                         fd.fontSize = fontSize.ToString();
                         fd.sev = dp.sev;
+                        fd.delay = "";// (dp.delay == 0) ? "" : ("gepl. " + string.Format("{0:D2}:{1:D2}", scheduledTime.Hour, scheduledTime.Minute));
                         departureDataSource.Add(fd);
                     }
                 }
@@ -289,13 +338,7 @@ namespace MVGTimeTable
             else
             {
                 departureDataSource.Clear();
-                PreparedDeparture fd = new PreparedDeparture();
-                fd.departureTime = "";
-                fd.label = "";
-                fd.minutesToDeparture = "";
-                fd.product = "";
-                fd.destination = "Failed to connect https://www.mvg.de";
-                departureDataSource.Add(fd);
+                departureDataSource.Add(SetServiceMessage("NO_CONNECTION", "www.mvg.de - Verbindung fehlgeschlagen"));
             }
         }
 
@@ -330,6 +373,19 @@ namespace MVGTimeTable
                 }
             }
             return 0;
+        }
+
+
+        private PreparedDeparture SetServiceMessage(string type, string message)
+        {
+            PreparedDeparture fd = new PreparedDeparture();
+            fd.departureTime = "";
+            fd.label = "";
+            fd.minutesToDeparture = "";
+            fd.product = type;
+            fd.destination = message;
+            fd.fontSize = fontSize.ToString();
+            return fd;
         }
 
         protected virtual void Dispose(bool disposing)

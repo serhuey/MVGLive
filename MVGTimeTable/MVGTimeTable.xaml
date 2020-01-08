@@ -8,16 +8,17 @@
              d:DesignHeight="450" d:DesignWidth="800" Background="#FF00056C" ScrollViewer.VerticalScrollBarVisibility="Disabled">
 
     <UserControl.Resources>
-        <local:ProductImageConverter x:Key="ProductImageConverter"/>
         <local:ProductLabelMVC x:Key="ProductLabelMultiValueConverter"/>
-        <local:LabelMultiValueConverter x:Key="LabelMultiValueConverter"/>
+        <local:LabelMVC x:Key="LabelMVC"/>
         <local:MainDestinationMVC x:Key="MainDestinationMVC" />
         <local:AdditionalDestinationMVC x:Key="AdditionalDestinationMVC" />
         <local:ImageMinutesValueMVC x:Key="ImageMinutesValueMVC" />
         <local:TextMinutesValueMVC x:Key="TextMinutesValueMVC" />
-        <local:MarginConverter x:Key="MarginConverter" />
+        <local:MarginMVC x:Key="MarginMVC" />
         <local:AdditionalLabelsMVC x:Key="AdditionalLabelsMVC" />
         <local:MainLabelsMVC x:Key="MainLabelsMVC" />
+        <local:SBahnGleisMVC x:Key="SBahnGleisMVC" />
+        <local:FontSizeMVC x:Key="FontSizeMVC" />
 
         <Style x:Key="alternatingStyle" TargetType="{x:Type ListViewItem}">
             <Style.Triggers>
@@ -76,11 +77,11 @@
                             <DataTemplate>
                                 <StackPanel x:Name="stackPanelProductLabel" Orientation ="Horizontal" HorizontalAlignment="Left">
                                     <StackPanel.Margin>
-                                        <MultiBinding Converter="{StaticResource MarginConverter}" ConverterParameter="stackPanelProductLabel">
+                                        <MultiBinding Converter="{StaticResource MarginMVC}" ConverterParameter="stackPanelProductLabel">
                                             <Binding Path="fontSize" />
                                         </MultiBinding>
                                     </StackPanel.Margin>
-                                    <Image Height="{Binding FontSize, ElementName=listViewTimeTable}" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Right">
+                                    <Image HorizontalAlignment="Right" Stretch="None">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource ProductLabelMultiValueConverter}">
                                                 <Binding Path="product" />
@@ -91,7 +92,7 @@
                                         </Image.Source>
                                     </Image>
                                     <Label Foreground="#FFE8E8E8" >
-                                        <MultiBinding Converter="{StaticResource LabelMultiValueConverter}">
+                                        <MultiBinding Converter="{StaticResource LabelMVC}">
                                             <Binding Path="product" />
                                             <Binding Path="label" />
                                         </MultiBinding>
@@ -100,13 +101,12 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <!--<GridViewColumn DisplayMemberBinding="{Binding Path=label}"/>-->
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel x:Name="stackPanelMainDestination" Orientation ="Horizontal" HorizontalAlignment="Left">
                                     <StackPanel.Margin>
-                                        <MultiBinding Converter="{StaticResource MarginConverter}" ConverterParameter="stackPanelMainDestination">
+                                        <MultiBinding Converter="{StaticResource MarginMVC}" ConverterParameter="stackPanelMainDestination">
                                             <Binding Path="fontSize" />
                                         </MultiBinding>
                                     </StackPanel.Margin>
@@ -115,11 +115,13 @@
                                             <Binding Path="destination" />
                                         </MultiBinding>
                                     </Label>
-                                    <Image Height="{Binding FontSize, ElementName=listViewTimeTable}" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Right">
+                                    <Image HorizontalAlignment="Right" Stretch="None">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource MainLabelsMVC}">
                                                 <Binding Path="destination" />
-                                               </MultiBinding>
+                                                <Binding Path="label" />
+                                                <Binding Path="station" />
+                                            </MultiBinding>
                                         </Image.Source>
                                     </Image>
                                     <Label Foreground="#55F1F1F1" >
@@ -127,34 +129,46 @@
                                             <Binding Path="destination" />
                                         </MultiBinding>
                                     </Label>
-                                    <Image Height="{Binding FontSize, ElementName=listViewTimeTable}" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Right">
+                                    <Image HorizontalAlignment="Right" Stretch="None">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource AdditionalLabelsMVC}">
                                                 <Binding Path="destination" />
-                                               </MultiBinding>
+                                            </MultiBinding>
                                         </Image.Source>
                                     </Image>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <!--<GridViewColumn DisplayMemberBinding="{Binding Path=destination}"/>-->
+                    <GridViewColumn x:Name="colSBahnGleis">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label x:Name="labelSBahnGleis" Foreground="#FFE8E8E8" HorizontalAlignment="Right" Width="Auto" OpacityMask="#99000000" >
+                                    <MultiBinding Converter="{StaticResource SBahnGleisMVC}">
+                                        <Binding Path="product" />
+                                        <Binding Path="platform" />
+                                        <Binding Path="station" />
+                                    </MultiBinding>
+                                </Label>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn x:Name="colTimeToDeparture">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel x:Name="stackPanelMinutes" Orientation ="Horizontal" HorizontalAlignment="Right" FlowDirection="LeftToRight" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                                     <StackPanel.Margin>
-                                        <MultiBinding Converter="{StaticResource MarginConverter}" ConverterParameter="stackPanelMinutes">
+                                        <MultiBinding Converter="{StaticResource MarginMVC}" ConverterParameter="stackPanelMinutes">
                                             <Binding Path="fontSize" />
                                         </MultiBinding>
                                     </StackPanel.Margin>
-                                    
+
                                     <Label x:Name="labelTimeToDeparture" Foreground="#FFE8E8E8" HorizontalAlignment="Right" Width="Auto" >
                                         <MultiBinding Converter="{StaticResource TextMinutesValueMVC}">
                                             <Binding Path="minutesToDeparture" />
                                         </MultiBinding>
                                     </Label>
-                                    <Image x:Name="Now" Height="{Binding FontSize, ElementName=listViewTimeTable}" RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Left">
+                                    <Image x:Name="Now" HorizontalAlignment="Left" Stretch="None">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource ImageMinutesValueMVC}">
                                                 <Binding Path="minutesToDeparture" />
@@ -175,27 +189,34 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <!--<GridViewColumn DisplayMemberBinding="{Binding Path=minutesToDeparture}"/>-->
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Label Foreground="#55F1F1F1" Background="#00000000" >
-                                    <Binding Path="departureTime" />
-                                </Label>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Foreground="#55F1F1F1" Background="#00000000" HorizontalContentAlignment="Right" HorizontalAlignment="Right" >
+                                        <Binding Path="departureTime" />
+                                    </Label>
+                                    <Label x:Name="labelDelay" Foreground="#55F1F1F1" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <Label.FontSize>
+                                            <MultiBinding Converter="{StaticResource FontSizeMVC}" ConverterParameter="labelDelay">
+                                                <Binding Path="fontSize" />
+                                            </MultiBinding>
+                                        </Label.FontSize>
+                                        <Label.Margin>
+                                            <MultiBinding Converter="{StaticResource MarginMVC}" ConverterParameter="labelDelay">
+                                                <Binding Path="fontSize" />
+                                            </MultiBinding>
+                                        </Label.Margin>
+                                        <Binding Path="delay" />
+                                    </Label>
+
+                                </StackPanel>
+
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
-            <ListView.GroupStyle>
-                <GroupStyle>
-                    <GroupStyle.HeaderTemplate>
-                        <DataTemplate>
-                            <TextBlock FontWeight="Bold" FontSize="114" Text="{Binding Name}"/>
-                        </DataTemplate>
-                    </GroupStyle.HeaderTemplate>
-                </GroupStyle>
-            </ListView.GroupStyle>
         </ListView>
     </DockPanel>
 

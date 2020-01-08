@@ -7,7 +7,7 @@ namespace MVGTimeTable
     /// <summary>
     /// Return string with line number for lines without graphic logo like most of U- and S-Bahn
     /// </summary>
-    public class LabelMultiValueConverter : IMultiValueConverter
+    public class LabelMVC : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -16,6 +16,7 @@ namespace MVGTimeTable
             string product = values[0].ToString().ToUpperInvariant();
             string label = values[1].ToString().ToUpperInvariant();
 
+            if (product.Contains("NO_CONNECTION") || product.Contains("WARNING")) return null;
             if (product.Contains("TRAM") || product.Contains("BUS")) return label;
             if (product == "UBAHN")
             {

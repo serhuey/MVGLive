@@ -20,7 +20,7 @@ namespace MVGTimeTable
                 values[3] == null)
                 return null;
 
-            Uri uriSource = null;
+            string iconKey = null;
             string product = values[0].ToString().ToUpperInvariant();
             string label = values[1].ToString().ToUpperInvariant();
             string destination = values[2].ToString().ToUpperInvariant();
@@ -31,7 +31,9 @@ namespace MVGTimeTable
             bool tram = product.Contains("TRAM");
             bool ubahn = product.Contains("UBAHN");
             bool sbahn = product.Contains("SBAHN");
-            bool xbus = label.Contains("X");
+            bool xbus = label.Contains("X") && label[0] == 'X';
+            bool noConnection = product.Contains("NO_CONNECTION");
+            bool warning = product.Contains("WARNING");
 
             if (bus)
             {
@@ -39,12 +41,13 @@ namespace MVGTimeTable
                 {
                     if (night)
                     {
-                        uriSource = new Uri(Common.ImagePath + "NSevBus.png");
+                        //uriSource = "NSevBus";
+                        iconKey = "NSevBus";
                     }
                     else
                     {
                         // SEV BUS
-                        uriSource = new Uri(Common.ImagePath + "SevBus.png");
+                        iconKey = "SevBus";
                     }
                 }
                 else
@@ -52,19 +55,19 @@ namespace MVGTimeTable
                     if (night)
                     {
                         // NIGHT BUS
-                        uriSource = new Uri(Common.ImagePath + "NBus.png");
+                        iconKey = "NBus";
                     }
                     else
                     {
                         // ExpressBUS
                         if (xbus)
                         {
-                            uriSource = new Uri(Common.ImagePath + "ExpressBus.png");
+                            iconKey = "ExpressBus";
                         }
                         // BUS
                         else
                         {
-                            uriSource = new Uri(Common.ImagePath + "Bus.png");
+                            iconKey = "Bus";
                         }
                     }
                 }
@@ -75,12 +78,12 @@ namespace MVGTimeTable
                 if (night)
                 {
                     // NIGHT TRAM
-                    uriSource = new Uri(Common.ImagePath + "NTram.png");
+                    iconKey = "NTram";
                 }
                 else
                 {
                     // TRAM
-                    uriSource = new Uri(Common.ImagePath + "Tram.png");
+                    iconKey = "Tram";
                 }
             }
 
@@ -89,31 +92,31 @@ namespace MVGTimeTable
                 switch (label)
                 {
                     case "U1":
-                        uriSource = new Uri(Common.ImagePath + "U1.png");
+                        iconKey = "U1";
                         break;
                     case "U2":
-                        uriSource = new Uri(Common.ImagePath + "U2.png");
+                        iconKey = "U2";
                         break;
                     case "U3":
-                        uriSource = new Uri(Common.ImagePath + "U3.png");
+                        iconKey = "U3";
                         break;
                     case "U4":
-                        uriSource = new Uri(Common.ImagePath + "U4.png");
+                        iconKey = "U4";
                         break;
                     case "U5":
-                        uriSource = new Uri(Common.ImagePath + "U5.png");
+                        iconKey = "U5";
                         break;
                     case "U6":
-                        uriSource = new Uri(Common.ImagePath + "U6.png");
+                        iconKey = "U6";
                         break;
                     case "U7":
-                        uriSource = new Uri(Common.ImagePath + "U7.png");
+                        iconKey = "U7";
                         break;
                     case "U8":
-                        uriSource = new Uri(Common.ImagePath + "U8.png");
+                        iconKey = "U8";
                         break;
                     default:
-                        uriSource = new Uri(Common.ImagePath + "UBahn.png");
+                        iconKey = "UBahn";
                         break;
                 }
             }
@@ -124,44 +127,53 @@ namespace MVGTimeTable
                 {
                     case "S1":
                         if (destination.Contains("FLUGHAFEN"))
-                            uriSource = new Uri(Common.ImagePath + "S1FH.png");
+                            iconKey = "S1FH";
                         else
-                            uriSource = new Uri(Common.ImagePath + "S1.png");
+                            iconKey = "S1";
                         break;
                     case "S2":
-                        uriSource = new Uri(Common.ImagePath + "S2.png");
+                        iconKey = "S2";
                         break;
                     case "S3":
-                        uriSource = new Uri(Common.ImagePath + "S3.png");
+                        iconKey = "S3";
                         break;
                     case "S4":
-                        uriSource = new Uri(Common.ImagePath + "S4.png");
+                        iconKey = "S4";
                         break;
                     case "S6":
-                        uriSource = new Uri(Common.ImagePath + "S6.png");
+                        iconKey = "S6";
                         break;
                     case "S7":
-                        uriSource = new Uri(Common.ImagePath + "S7.png");
+                        iconKey = "S7";
                         break;
                     case "S8":
                         if (destination.Contains("FLUGHAFEN"))
-                            uriSource = new Uri(Common.ImagePath + "S8FH.png");
+                            iconKey = "S8FH";
                         else
-                            uriSource = new Uri(Common.ImagePath + "S8.png");
+                            iconKey = "S8";
                         break;
                     case "S20":
-                        uriSource = new Uri(Common.ImagePath + "S20.png");
+                        iconKey = "S20";
                         break;
                     default:
-                        uriSource = new Uri(Common.ImagePath + "SBahn.png");
+                        iconKey = "SBahn";
                         break;
                 }
             }
 
-            if (uriSource != null)
+            if(warning)
             {
-                BitmapImage bitmapImage = new BitmapImage(uriSource);
-                return bitmapImage;
+                iconKey = "Warning";
+            }
+
+            if(noConnection)
+            {
+                iconKey = "NoConnection";
+            }
+
+            if (!string.IsNullOrEmpty(iconKey) && Common.icons.ContainsKey(iconKey = iconKey.ToLowerInvariant()))
+            {
+                return Common.icons[iconKey];
             }
             else
                 return null;
@@ -169,7 +181,6 @@ namespace MVGTimeTable
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
         {
-
             return null;
         }
     }

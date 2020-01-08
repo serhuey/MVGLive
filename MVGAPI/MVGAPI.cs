@@ -32,9 +32,13 @@ namespace MVGAPI
             }
 
             Departures dD;
+
             try
             {
                 string jsonResponse = GetJsonDepartures(stationID);
+
+                if (string.IsNullOrEmpty(jsonResponse)) return null;
+
                 dD = JsonConvert.DeserializeObject<Departures>(jsonResponse);
                 if (dD != null && dD.departures.Length > 0)
                 {
@@ -59,7 +63,7 @@ namespace MVGAPI
         /// <returns></returns>
         static string GetLocations(string query)
         {
-            string jsonString;
+            string jsonstring;
             string url;
 
             if (int.TryParse(query, out int iQuery))
@@ -70,8 +74,8 @@ namespace MVGAPI
             {
                 url = queryUrlName + query;
             }
-            jsonString = PerformApiRequest(url);
-            return jsonString;
+            jsonstring = PerformApiRequest(url);
+            return jsonstring;
         }
 
         /// <summary>
@@ -83,7 +87,10 @@ namespace MVGAPI
         {
             try
             {
-                Locations locs = JsonConvert.DeserializeObject<Locations>(GetLocations(stationName));
+                string locations = GetLocations(stationName);
+                if (string.IsNullOrEmpty(locations)) return null;
+
+                Locations locs = JsonConvert.DeserializeObject<Locations>(locations);
                 if (locs != null && locs.locations.Length > 0 && locs.locations[0].type == stationType)
                 {
                     return locs.locations[0];
@@ -105,7 +112,7 @@ namespace MVGAPI
             Location locs;
 
             locs = GetStations(stationName);
-            if (locs != null && !String.IsNullOrEmpty(locs.id))
+            if (locs != null && !string.IsNullOrEmpty(locs.id))
             {
                 return locs.id;
             }
@@ -147,7 +154,7 @@ namespace MVGAPI
                     result = reader.ReadToEnd();
                 }
             }
-            catch(Exception ex) when (ex is WebException || ex is System.Net.Sockets.SocketException)
+            catch(Exception ex) when (ex is WebException || ex is System.Net.Sockets.SocketException || ex is ObjectDisposedException)
             {
                 NoConnection = true;
             }

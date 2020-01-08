@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="MVGLive.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#FF00056C" WindowState="Maximized" Cursor="None" ResizeMode="NoResize" WindowStyle="None">
+        Title="MainWindow" Height="450" Width="800" Background="#FF00056C" WindowState="Maximized" Cursor="None" ResizeMode="NoResize" WindowStyle="None" Loaded="Window_Loaded" Closed="Window_Closed">
 
     <Grid x:Name="gridMain" Background="#FF00056C" DockPanel.Dock="Bottom" Cursor="None">
         <Grid.RowDefinitions>
@@ -21,13 +21,13 @@
 
         <Border BorderBrush="#FF7477AC" BorderThickness="3" SnapsToDevicePixels="True" Margin="0" Grid.RowSpan="2" Grid.Row="1">
             <StackPanel Margin="0">
-                <Label x:Name="Text1" Margin="14,10,0,10" Background="{x:Null}" Foreground="#FFE2E2E2" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold">
-                    <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type Label}, Mode=FindAncestor}}" >
-                        <TextBlock.Effect>
-                            <DropShadowEffect Opacity="0.8" ShadowDepth="3"/>
-                        </TextBlock.Effect>
-                    </TextBlock>
-                </Label>
+                    <Label x:Name="Text1" Margin="14,10,0,10" Background="{x:Null}" Foreground="#FFE2E2E2" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold">
+                        <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type Label}, Mode=FindAncestor}}" >
+                            <TextBlock.Effect>
+                                <DropShadowEffect Opacity="0.8" ShadowDepth="3"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Label>
                 <MVGTimeTable:MVGTimeTable x:Name="Table1" />
             </StackPanel>
         </Border>

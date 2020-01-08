@@ -8,7 +8,7 @@
     <OutputType>library</OutputType>
     <RootNamespace>MVGTimeTable</RootNamespace>
     <AssemblyName>MVGTimeTable</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,13 +57,14 @@
     <Compile Include="Common.cs" />
     <Compile Include="Converters\AdditionalDestinationMVC.cs" />
     <Compile Include="Converters\AdditionalLabelsMVC.cs" />
+    <Compile Include="Converters\FontSizeMVC.cs" />
     <Compile Include="Converters\ImageMinutesValueMVC.cs" />
-    <Compile Include="Converters\LabelMultiValueConverter.cs" />
+    <Compile Include="Converters\LabelMVC.cs" />
     <Compile Include="Converters\MainDestinationMVC.cs" />
     <Compile Include="Converters\MainLabelsMVC.cs" />
-    <Compile Include="Converters\MarginConverter.cs" />
+    <Compile Include="Converters\MarginMVC.cs" />
+    <Compile Include="Converters\SBahnGleisMVC.cs" />
     <Compile Include="ParseDestination.cs" />
-    <Compile Include="Converters\ProductImageConverter.cs" />
     <Compile Include="Converters\ProductLabelMVC.cs" />
     <Compile Include="Converters\TextMinutesValueMVC.cs" />
     <Compile Include="MVGTimeTable.xaml.cs">
@@ -88,6 +90,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,6 +142,68 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\ExpressBus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Fussball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Zoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\Bus.svg" />
+    <Resource Include="SVGIcons\ExpressBus.svg" />
+    <Resource Include="SVGIcons\Fussball.svg" />
+    <Resource Include="SVGIcons\Jetzt.svg" />
+    <Resource Include="SVGIcons\Messe.svg" />
+    <Resource Include="SVGIcons\Nacht.svg" />
+    <Resource Include="SVGIcons\NBus.svg" />
+    <Resource Include="SVGIcons\NSevBus.svg" />
+    <Resource Include="SVGIcons\NTram.svg" />
+    <Resource Include="SVGIcons\Olympia.svg" />
+    <Resource Include="SVGIcons\Regional.svg" />
+    <Resource Include="SVGIcons\S1.svg" />
+    <Resource Include="SVGIcons\S1FH.svg" />
+    <Resource Include="SVGIcons\S2.svg" />
+    <Resource Include="SVGIcons\S20.svg" />
+    <Resource Include="SVGIcons\S3.svg" />
+    <Resource Include="SVGIcons\S4.svg" />
+    <Resource Include="SVGIcons\S6.svg" />
+    <Resource Include="SVGIcons\S7.svg" />
+    <Resource Include="SVGIcons\S8.svg" />
+    <Resource Include="SVGIcons\S8FH.svg" />
+    <Resource Include="SVGIcons\SBahn.svg" />
+    <Resource Include="SVGIcons\SBahn_100.svg" />
+    <Resource Include="SVGIcons\SBahn_50.svg" />
+    <Resource Include="SVGIcons\SevBus.svg" />
+    <Resource Include="SVGIcons\Tram.svg" />
+    <Resource Include="SVGIcons\U1.svg" />
+    <Resource Include="SVGIcons\U2.svg" />
+    <Resource Include="SVGIcons\U3.svg" />
+    <Resource Include="SVGIcons\U4.svg" />
+    <Resource Include="SVGIcons\U5.svg" />
+    <Resource Include="SVGIcons\U6.svg" />
+    <Resource Include="SVGIcons\U7.svg" />
+    <Resource Include="SVGIcons\U8.svg" />
+    <Resource Include="SVGIcons\UBahn.svg" />
+    <Resource Include="SVGIcons\UBahn_100.svg" />
+    <Resource Include="SVGIcons\UBahn_50.svg" />
+    <Resource Include="SVGIcons\USBahns_100.svg" />
+    <Resource Include="SVGIcons\USBahns_50.svg" />
+    <Resource Include="SVGIcons\Zoo.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Messe.png" />
+    <Resource Include="Icons\Olympia.png" />
+    <Resource Include="Icons\Regional.png" />
+    <Resource Include="Icons\SBahn_100.png" />
+    <Resource Include="Icons\UBahn_100.png" />
+    <Resource Include="Icons\USBahns_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\NoConnection.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

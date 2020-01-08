@@ -15,7 +15,7 @@ namespace MVGTimeTable
             string additionalDestination;
             string mainDestination;
             ParseDestination.GetBothDestinations(values[0].ToString(), out mainDestination, out additionalDestination, false, true);
-            if (!String.IsNullOrEmpty(additionalDestination) && !String.IsNullOrEmpty(mainDestination) && ParseDestination.IsStringContains_U_S(mainDestination))
+            if (!string.IsNullOrEmpty(additionalDestination) && !string.IsNullOrEmpty(mainDestination) && ParseDestination.IsStringContains_U_S(mainDestination))
             {
                 //Double space after label in main destination (if it presents)
                 additionalDestination = "  " + additionalDestination;

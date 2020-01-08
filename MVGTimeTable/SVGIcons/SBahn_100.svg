@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.3.0.31-->
+<svg fill="none" fill-rule="evenodd" stroke="black" stroke-width="0.501" stroke-linejoin="bevel" stroke-miterlimit="10" font-family="Times New Roman" font-size="16" style="font-variant-ligatures:none" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="212.435pt" height="249.007pt" viewBox="266.881 -893.492 212.435 249.007">
+ <defs>
+	</defs>
+ <g id="Layer 1" transform="scale(1 -1)">
+  <g id="Group" stroke="none" stroke-width="0.485">
+   <rect x="266.882" y="644.486" width="212.434" height="249.007" stroke-linejoin="miter" stroke-linecap="round"/>
+   <path d="M 316.577,696.636 L 316.641,726.807 C 329.289,708.63 352.267,694.656 375.415,694.656 C 389.606,694.656 400.947,702.813 400.947,711.373 C 400.947,744.099 315.331,723.887 315.331,780.253 C 315.331,809.895 344.272,825.745 370.221,825.745 C 391.867,825.745 411.272,818.69 426.664,806.755 L 426.607,781.577 C 413.278,795.941 393.221,808.587 369.69,808.587 C 356.419,808.587 348.841,801.495 348.841,793.247 C 348.841,790.405 349.159,788.003 350.364,785.867 C 363.775,762.083 427.701,776.943 435.242,733.231 C 435.63,730.821 435.834,728.235 435.834,725.457 C 435.834,702.219 413.326,675.203 375.415,675.203 C 354.319,675.203 329.917,684.696 316.577,696.636 Z" stroke-linejoin="round" stroke-linecap="square" fill="#ffffff" marker-start="none" marker-end="none"/>
+   <path d="M 267.194,750.474 C 267.194,808.979 314.677,856.462 373.183,856.462 C 431.688,856.462 479.171,808.979 479.171,750.474 C 479.171,691.968 431.688,644.485 373.183,644.485 C 314.677,644.485 267.194,691.968 267.194,750.474 Z M 468.832,750.474 C 468.832,803.272 425.981,846.123 373.183,846.123 C 320.384,846.123 277.533,803.272 277.533,750.474 C 277.533,697.675 320.384,654.824 373.183,654.824 C 425.981,654.824 468.832,697.675 468.832,750.474 Z" stroke-linejoin="round" stroke-linecap="square" fill="#ffffff" marker-start="none" marker-end="none"/>
+  </g>
+ </g>
+</svg>
