@@ -28,13 +28,13 @@ namespace MVGTimeTable
                 // Something is wrong in received data - the vehicle had to departure more than three minutes ago.
                 if (iMinutes <= -3)
                 {
-                    return "???";
+                    return addition + "???";
                 }
 
                 // "Jetzt" picture is showing, no need to display string with Min.
                 if (iMinutes <= 0 && iMinutes > -3)
                 {
-                    return null;
+                    return addition;
                 }
 
                 // Add one space instead of "0" before minutes - not very good idea, but with the "right to left flow" in flow panel the results are
