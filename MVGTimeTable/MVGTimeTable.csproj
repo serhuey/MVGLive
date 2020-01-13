@@ -60,6 +60,7 @@
     <Compile Include="Converters\FontSizeMVC.cs" />
     <Compile Include="Converters\ImageMinutesValueMVC.cs" />
     <Compile Include="Converters\LabelMVC.cs" />
+    <Compile Include="Converters\MainDestinationForegroundMVC.cs" />
     <Compile Include="Converters\MainDestinationMVC.cs" />
     <Compile Include="Converters\MainLabelsMVC.cs" />
     <Compile Include="Converters\MarginMVC.cs" />

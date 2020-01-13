@@ -19,6 +19,7 @@
         <local:MainLabelsMVC x:Key="MainLabelsMVC" />
         <local:SBahnGleisMVC x:Key="SBahnGleisMVC" />
         <local:FontSizeMVC x:Key="FontSizeMVC" />
+        <local:MainDestinationForegroundMVC x:Key="MainDestinationForegroundMVC" />
 
         <Style x:Key="alternatingStyle" TargetType="{x:Type ListViewItem}">
             <Style.Triggers>
@@ -110,10 +111,15 @@
                                             <Binding Path="fontSize" />
                                         </MultiBinding>
                                     </StackPanel.Margin>
-                                    <Label Foreground="#FFE8E8E8" >
+                                    <Label>
                                         <MultiBinding Converter="{StaticResource MainDestinationMVC}">
                                             <Binding Path="destination" />
                                         </MultiBinding>
+                                        <Label.Foreground>
+                                            <MultiBinding Converter="{StaticResource MainDestinationForegroundMVC}">
+                                                <Binding Path="product" />
+                                            </MultiBinding>
+                                        </Label.Foreground>
                                     </Label>
                                     <Image HorizontalAlignment="Right" Stretch="None">
                                         <Image.Source>

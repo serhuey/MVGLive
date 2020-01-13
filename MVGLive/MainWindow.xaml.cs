@@ -30,7 +30,7 @@ namespace MVGLive
             }
 
             // ToDo: Move all this parameters from code to the settings form or settings xml-file
-            fontSize = 30;
+            fontSize = 32;
             //string fontFamily = "PT Sans";
             string fontFamily = "Segoe UI";
             string defaultDirection1 = "Hirschgarten";
