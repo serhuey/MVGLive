@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.  
+
+using System;
 using System.Globalization;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Data;
 
 namespace MVGTimeTable
 {
-    public class SBahnGleisMVC : IMultiValueConverter
+    public class SBahnGleisMvc : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -22,18 +23,17 @@ namespace MVGTimeTable
             string gleis = values[1].ToString();
             string station = values[2].ToString().ToUpperInvariant();
 
-            if ((Common.multiplatformSbahnStations.Contains(station) &&
-                product.Contains("SBAHN")) ||
-                (Common.multiplatformTramStations.Contains(station) &&
-                product.Contains("TRAM")) &&
+            if ((Common.MultiplatformSbahnStations.Contains(station) &&
+                product.Contains(Common.SBahnMarker)) ||
+                (Common.MultiplatformTramStations.Contains(station) &&
+                product.Contains(Common.TramMarker)) &&
                 !string.IsNullOrEmpty(gleis))
             {
-                int index;
                 string gleisSymbol = null;
-                
-                if(int.TryParse(Regex.Match(gleis, @"\d+").Value, out index) && index > 0 && index < Common.digits.Length)
+
+                if (int.TryParse(Regex.Match(gleis, @"\d+").Value, out int index) && index > 0 && index < Common.PlatformSign.Length)
                 {
-                    gleisSymbol = Common.digits[index];
+                    gleisSymbol = Common.PlatformSign[index];
                 }
                 return gleisSymbol; 
             }

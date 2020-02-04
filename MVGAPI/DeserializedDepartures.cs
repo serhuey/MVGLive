@@ -1,42 +1,20 @@
-﻿namespace MVGAPI
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.  
+
+namespace MVGAPI
 {
     public class DeserializedDepartures
     {
-        public long departureTime { get; set; }
-        public string product { get; set; }
-        public string label { get; set; }
-        public string destination { get; set; }
-        public bool live { get; set; }
-        public long delay { get; set; }
-        public bool canceled { get; set; }
-        public string lineBackgroundColor { get; set; }
-        public string departureId { get; set; }
-        public bool sev { get; set; }
-        public string platform { get; set; }
-
-        public override bool Equals(object obj)
-        {
-            //Check for null and compare run-time types.
-            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
-            {
-                return false;
-            }
-            else
-            {
-                return ((DeserializedDepartures)obj).departureTime == departureTime &&
-                        string.Compare(((DeserializedDepartures)obj).destination, destination) == 0 &&
-                        string.Compare(((DeserializedDepartures)obj).departureId, destination) == 0;
-            }
-        }
-
-        public override int GetHashCode()
-        {
-            if (!string.IsNullOrEmpty(destination) && !string.IsNullOrEmpty(departureId))
-            {
-                return departureTime.GetHashCode() + destination.GetHashCode() + departureId.GetHashCode();
-            }
-            else
-                return 0;
-        }
+        public long departureTime;
+        public string product;
+        public string label;
+        public string destination;
+        public bool live;
+        public long delay;
+        public bool canceled;
+        public string lineBackgroundColor;
+        public string departureId;
+        public bool sev;
+        public string platform;
     }
 }

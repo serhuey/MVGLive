@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.  
+
+using System;
 using System.Globalization;
 using System.Windows.Data;
 
@@ -7,7 +10,7 @@ namespace MVGTimeTable
     /// <summary>
     /// Return string with line number for lines without graphic logo like most of U- and S-Bahn
     /// </summary>
-    public class LabelMVC : IMultiValueConverter
+    public class LabelMvc : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -16,43 +19,13 @@ namespace MVGTimeTable
             string product = values[0].ToString().ToUpperInvariant();
             string label = values[1].ToString().ToUpperInvariant();
 
-            if (product.Contains("NO_CONNECTION") || product.Contains("WARNING")) return null;
-            if (product.Contains("TRAM") || product.Contains("BUS")) return label;
-            if (product == "UBAHN")
-            {
-                switch (label)
-                {
-                    case "U":
-                    case "U1":
-                    case "U2":
-                    case "U3":
-                    case "U4":
-                    case "U5":
-                    case "U6":
-                    case "U7":
-                    case "U8":
-                        return null;
-                    default:
-                        return label;
-                }
-            }
-            if (product == "SBAHN")
-            {
-                switch (label)
-                {
-                    case "S1":
-                    case "S2":
-                    case "S3":
-                    case "S4":
-                    case "S6":
-                    case "S7":
-                    case "S8":
-                    case "S20":
-                        return null;
-                    default:
-                        return label;
-                }
-            }
+            if (product.Contains(Common.WarnMessageType[MessageType.NoConnection]) || product.Contains(Common.WarnMessageType[MessageType.Warning])) return null;
+            if (product.Contains(Common.TramMarker) || product.Contains(Common.BusMarker)) return label;
+            if (product.Contains(Common.UBahnMarker))
+                return string.IsNullOrEmpty(Array.Find<string>(Common.UBahnIconKey, str => str.Contains(label))) ? label : null;
+            if (product.Contains(Common.SBahnMarker))
+                return string.IsNullOrEmpty(Array.Find<string>(Common.SBahnIconKey, str => str.Contains(label))) ? label : null;
+
             return null;
         }
 

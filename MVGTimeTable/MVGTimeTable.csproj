@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -55,18 +56,19 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Common.cs" />
-    <Compile Include="Converters\AdditionalDestinationMVC.cs" />
-    <Compile Include="Converters\AdditionalLabelsMVC.cs" />
-    <Compile Include="Converters\FontSizeMVC.cs" />
-    <Compile Include="Converters\ImageMinutesValueMVC.cs" />
-    <Compile Include="Converters\LabelMVC.cs" />
-    <Compile Include="Converters\MainDestinationForegroundMVC.cs" />
-    <Compile Include="Converters\MainDestinationMVC.cs" />
-    <Compile Include="Converters\MainLabelsMVC.cs" />
-    <Compile Include="Converters\MarginMVC.cs" />
-    <Compile Include="Converters\SBahnGleisMVC.cs" />
+    <Compile Include="Converters\AdditionalDestinationMvc.cs" />
+    <Compile Include="Converters\AdditionalLabelsMvc.cs" />
+    <Compile Include="Converters\FontSizeMvc.cs" />
+    <Compile Include="Converters\ImageMinutesValueMvc.cs" />
+    <Compile Include="Converters\LabelMvc.cs" />
+    <Compile Include="Converters\MainDestinationForegroundMvc.cs" />
+    <Compile Include="Converters\MainDestinationMvc.cs" />
+    <Compile Include="Converters\MainLabelsMvc.cs" />
+    <Compile Include="Converters\MarginMvc.cs" />
+    <Compile Include="Converters\SBahnGleisMvc.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="ParseDestination.cs" />
-    <Compile Include="Converters\ProductLabelMVC.cs" />
+    <Compile Include="Converters\ProductLabelMvc.cs" />
     <Compile Include="Converters\TextMinutesValueMVC.cs" />
     <Compile Include="MVGTimeTable.xaml.cs">
       <DependentUpon>MVGTimeTable.xaml</DependentUpon>

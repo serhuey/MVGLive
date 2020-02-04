@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
 
@@ -82,9 +81,11 @@ namespace MVGLive
             Text3.Margin = labelMargin;
 
             // Clock Refresh Timer
-            timerClock = new DispatcherTimer();
-            timerClock.Interval = TimeSpan.FromSeconds(1);
-            timerClock.Tick += timerClock_Tick;
+            timerClock = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
+            timerClock.Tick += TimerClock_Tick;
             timerClock.Start();
         }
 
@@ -106,7 +107,7 @@ namespace MVGLive
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void timerClock_Tick(object sender, EventArgs e)
+        void TimerClock_Tick(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
             string time = now.Hour.ToString("D2") + ":" + now.Minute.ToString("D2") + ":" + now.Second.ToString("D2");

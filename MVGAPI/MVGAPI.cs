@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.  
+
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,14 +12,14 @@ namespace MVGAPI
 {
     public static class MVGAPI
     {
-        static public bool NoConnection { get; set; }
-        static readonly string stationType = "station";
-        static readonly string rootUrlName = "https://www.mvg.de/api/fahrinfo";
-        static readonly string queryUrlName = rootUrlName + "/location/queryWeb?q=";  
-        static readonly string departureUrl = rootUrlName + "/departure/";
-        static readonly string departureUrlPostfix = "?footway=0";
+        static public bool IsConnected { get; set; }
+        const string stationType = "station";
+        const string rootUrlName = "https://www.mvg.de/api/fahrinfo";
+        const string queryUrlName = rootUrlName + "/location/queryWeb?q=";  
+        const string departureUrl = rootUrlName + "/departure/";
+        const string departureUrlPostfix = "?footway=0";
 #pragma warning disable 169, 414
-        static readonly string queryUrlId = rootUrlName + "/location/query?q=";       // #for station ids, not used now 
+        const string queryUrlId = rootUrlName + "/location/query?q=";       // #for station ids, not used now 
 #pragma warning restore 169, 414
 
         /// <summary>
@@ -96,8 +99,9 @@ namespace MVGAPI
                     return locs.locations[0];
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
             }
             return null;
         }
@@ -142,7 +146,7 @@ namespace MVGAPI
             requests.ContentType = "application/json; charset=utf-8";
             requests.Method = "GET";
 
-            NoConnection = false;
+            IsConnected = true;
             string result = null;
 
             try
@@ -156,7 +160,7 @@ namespace MVGAPI
             }
             catch(Exception ex) when (ex is WebException || ex is System.Net.Sockets.SocketException || ex is ObjectDisposedException)
             {
-                NoConnection = true;
+                IsConnected = false;
             }
 
             return result;
@@ -194,6 +198,26 @@ namespace MVGAPI
             }
 
             deserializedDepartures = departuresNewList.ToArray();
+        }
+
+        /// <summary>
+        /// Sort deserializedDepartures
+        /// Primary key, of course, is departureTime
+        /// Secondary key is string product+label
+        /// </summary>
+        static public void Sort(ref DeserializedDepartures[] deserializedDepartures)
+        {
+            Array.Sort(deserializedDepartures, delegate (DeserializedDepartures dp1, DeserializedDepartures dp2)
+            {
+                if (dp1.departureTime == dp2.departureTime)
+                {
+                    return (dp1.product + dp1.label).CompareTo(dp2.product + dp2.label);
+                }
+                else
+                {
+                    return (dp1.departureTime).CompareTo(dp2.departureTime);
+                }
+            });
         }
     }
 }

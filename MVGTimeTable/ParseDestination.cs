@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.  
+
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Media.Imaging;
@@ -25,7 +27,7 @@ namespace MVGTimeTable
 
             foreach (string str in splittedDestination)
             {
-                if (str.ToUpperInvariant() == "VIA") break;
+                if (str.ToUpperInvariant() == Common.AdditionalDestinationMarker) break;
                 outputstring.Append(str + " ");
             }
             if (outputstring.Length > 2)
@@ -56,7 +58,7 @@ namespace MVGTimeTable
             bool startBuilding = false;
             foreach (string str in splittedDestination)
             {
-                if (str.ToUpperInvariant() == "VIA" || startBuilding)
+                if (str.ToUpperInvariant() == Common.AdditionalDestinationMarker || startBuilding)
                 {
                     startBuilding = true;
                     outputstring.Append(str + " ");
@@ -98,7 +100,7 @@ namespace MVGTimeTable
 
             foreach (string str in splittedDestination)
             {
-                if (str.ToUpperInvariant() == "VIA" || startBuildingAdditionalstring)
+                if (str.ToUpperInvariant() == Common.AdditionalDestinationMarker || startBuildingAdditionalstring)
                 {
                     startBuildingAdditionalstring = true;
                     outputAdditionalstring.Append(str + " ");
@@ -106,7 +108,7 @@ namespace MVGTimeTable
 
                 if (!endBuildingMainstring)
                 {
-                    if (str.ToUpperInvariant() == "VIA") endBuildingMainstring = true;
+                    if (str.ToUpperInvariant() == Common.AdditionalDestinationMarker) endBuildingMainstring = true;
                     outputMainstring.Append(str + " ");
                 }
             }
@@ -138,7 +140,7 @@ namespace MVGTimeTable
             if (!string.IsNullOrEmpty(destination))
             {
                 destination += " ";
-                result = (destination.IndexOf(" S ") > 0) |
+                result =    (destination.IndexOf(" S ") > 0) |
                             (destination.IndexOf(" U ") > 0) |
                             (destination.IndexOf(" US ") > 0) |
                             (destination.IndexOf(" SU ") > 0);
@@ -149,7 +151,7 @@ namespace MVGTimeTable
 
 
         /// <summary>
-        /// Get image with "U", "S", "U S", Ball oder Zoo for destination
+        /// Get image with "U", "S", "U S", Ball, Zoo, Messe and Olymplic signs for destination
         /// </summary>
         /// <param name="destination">Destination string</param>
         /// <returns></returns>
@@ -163,19 +165,19 @@ namespace MVGTimeTable
             {
                 if (IsFussballDestination(currentStation, destination, label))
                 {
-                    iconKey = "Fussball";
+                    iconKey = Common.FussballIconKey;
                 }
                 if (IsZooDestination(currentStation, destination, label))
                 {
-                    iconKey = "Zoo";
+                    iconKey = Common.ZooIconKey;
                 }
                 if (IsMesseDestination(currentStation, destination, label))
                 {
-                    iconKey = "Messe";
+                    iconKey = Common.MesseIconKey;
                 }
                 if (IsOlympiaDestination(currentStation, destination, label))
                 {
-                    iconKey = "Olympia";
+                    iconKey = Common.OlympiaIconKey;
                 }
             }
 
@@ -211,9 +213,9 @@ namespace MVGTimeTable
 
                 switch (products)
                 {
-                    case 1: iconKey = mainLabel ? "UBahn_100" : "UBahn_50"; break;
-                    case 2: iconKey = mainLabel ? "UBahn_100" : "SBahn_50"; break;
-                    case 3: iconKey = mainLabel ? "USBahns_100" : "USBahns_50"; break;
+                    case 1: iconKey = mainLabel ? Common.UBahnMonoFullIconKey : Common.UBahnMonoHalfIconKey; break;
+                    case 2: iconKey = mainLabel ? Common.SBahnMonoFullIconKey : Common.SBahnMonoHalfIconKey; break;
+                    case 3: iconKey = mainLabel ? Common.USBahnsMonoFullIconKey : Common.USBahnsMonoHalfIconKey; break;
                     default: break;
                 }
             }

@@ -1,10 +1,13 @@
-﻿using System;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.  
+
+using System;
 using System.Globalization;
 using System.Windows.Data;
 
 namespace MVGTimeTable
 {
-    public class FontSizeMVC : IMultiValueConverter
+    public class FontSizeMvc : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -19,7 +22,7 @@ namespace MVGTimeTable
             switch (parameter.ToString())
             {
                 case "labelDelay":
-                    fontSize = fontSize * 0.55; break;
+                    fontSize = fontSize * Common.DelayFontSizeCoeff; break;
             }
             return fontSize;
         }
