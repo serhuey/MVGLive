@@ -11,7 +11,7 @@ namespace MVGAPI
         public string destination;
         public bool live;
         public long delay;
-        public bool canceled;
+        public bool cancelled;
         public string lineBackgroundColor;
         public string departureId;
         public bool sev;

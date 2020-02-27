@@ -5,7 +5,9 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 
 namespace MVGAPI
@@ -13,14 +15,22 @@ namespace MVGAPI
     public static class MVGAPI
     {
         static public bool IsConnected { get; set; }
-        const string stationType = "station";
-        const string rootUrlName = "https://www.mvg.de/api/fahrinfo";
-        const string queryUrlName = rootUrlName + "/location/queryWeb?q=";  
-        const string departureUrl = rootUrlName + "/departure/";
-        const string departureUrlPostfix = "?footway=0";
-#pragma warning disable 169, 414
-        const string queryUrlId = rootUrlName + "/location/query?q=";       // #for station ids, not used now 
-#pragma warning restore 169, 414
+        private const string StationType = "station";
+        private const string RootUrlName = "https://www.mvg.de/api/fahrinfo";
+        private const string QueryUrlName = RootUrlName + "/location/queryWeb?q=";
+        private const string DepartureUrl = RootUrlName + "/departure/";
+        private const string DepartureUrlPostfix = "?footway=0";
+
+        private const string IdMvvStations = "MVVStations.txt";
+        private static Dictionary<string, string> localIdCash;
+
+        /// <summary>
+        /// Static constructor
+        /// </summary>
+        static MVGAPI()
+        {
+            BuildLocalStationIdCash();
+        }
 
         /// <summary>
         /// Get deserialized departures for the station with ID
@@ -29,7 +39,7 @@ namespace MVGAPI
         /// <returns></returns>
         public static DeserializedDepartures[] GetDeserializedDepartures(string stationID)
         {
-            if(string.IsNullOrEmpty(stationID))
+            if (string.IsNullOrEmpty(stationID))
             {
                 return null;
             }
@@ -54,8 +64,7 @@ namespace MVGAPI
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                return null;
+                throw new Exception("Exception in GetDeserializedDepartures", ex);
             }
         }
 
@@ -71,11 +80,11 @@ namespace MVGAPI
 
             if (int.TryParse(query, out int iQuery))
             {
-                url = queryUrlName + iQuery.ToString();
+                url = QueryUrlName + iQuery.ToString();
             }
             else
             {
-                url = queryUrlName + query;
+                url = QueryUrlName + query;
             }
             jsonstring = PerformApiRequest(url);
             return jsonstring;
@@ -94,33 +103,45 @@ namespace MVGAPI
                 if (string.IsNullOrEmpty(locations)) return null;
 
                 Locations locs = JsonConvert.DeserializeObject<Locations>(locations);
-                if (locs != null && locs.locations.Length > 0 && locs.locations[0].type == stationType)
+                if (locs != null && locs.locations.Length > 0 && locs.locations[0].type == StationType)
                 {
                     return locs.locations[0];
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new Exception("Exception in GetStations", ex);
             }
             return null;
         }
 
         /// <summary>
-        /// Get numeric ID for the station name in German
+        /// Get ID for the station name in German
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
         /// <returns>Station ID, if station name exists, "" otherwise</returns>
         static public string GetIdForStation(string stationName)
         {
-            Location locs;
-
-            locs = GetStations(stationName);
-            if (locs != null && !string.IsNullOrEmpty(locs.id))
+            if (localIdCash.ContainsKey(stationName))
             {
-                return locs.id;
+                return localIdCash[stationName];
             }
-            return "";
+            else
+            {
+                Location locs;
+
+                locs = GetStations(stationName);
+                if (locs != null && !string.IsNullOrEmpty(locs.id))
+                {
+                    localIdCash.Add(stationName, locs.id);
+                    return locs.id;
+                }
+                else
+                {
+                    localIdCash.Add(stationName, "");
+                    return "";
+                }
+            }
         }
 
         /// <summary>
@@ -130,7 +151,7 @@ namespace MVGAPI
         /// <returns></returns>
         static public string GetJsonDepartures(string stationID)
         {
-            string url = departureUrl + stationID + departureUrlPostfix;
+            string url = DepartureUrl + stationID + DepartureUrlPostfix;
             string result = PerformApiRequest(url);
             return result;
         }
@@ -158,7 +179,7 @@ namespace MVGAPI
                     result = reader.ReadToEnd();
                 }
             }
-            catch(Exception ex) when (ex is WebException || ex is System.Net.Sockets.SocketException || ex is ObjectDisposedException)
+            catch (Exception ex) when (ex is WebException || ex is System.Net.Sockets.SocketException || ex is ObjectDisposedException)
             {
                 IsConnected = false;
             }
@@ -174,12 +195,12 @@ namespace MVGAPI
         {
             foreach (DeserializedDepartures dD in deserializedDepartures)
             {
-                dD.departureTime = dD.departureTime + dD.delay * 1000 * 60;
+                dD.departureTime += dD.delay * 1000 * 60;
             }
         }
 
         /// <summary>
-        /// Create array without duplcates
+        /// Create array without duplicates
         /// </summary>
         /// <param name="deserializedDepartures"></param>
         static public void DeleteDuplicates(ref DeserializedDepartures[] deserializedDepartures)
@@ -189,7 +210,7 @@ namespace MVGAPI
 
             for (int i = 0; i < deserializedDepartures.Length; i++)
             {
-                int hash = deserializedDepartures[i].GetHashCode();
+                int hash = (deserializedDepartures[i].departureId + deserializedDepartures[i].destination).GetHashCode();
                 if (!arrayHashes.Contains(hash))
                 {
                     arrayHashes.Add(hash);
@@ -202,8 +223,8 @@ namespace MVGAPI
 
         /// <summary>
         /// Sort deserializedDepartures
-        /// Primary key, of course, is departureTime
-        /// Secondary key is string product+label
+        /// Primary key - departureTime,
+        /// Secondary key - product+label
         /// </summary>
         static public void Sort(ref DeserializedDepartures[] deserializedDepartures)
         {
@@ -219,5 +240,76 @@ namespace MVGAPI
                 }
             });
         }
+
+        /// <summary>
+        /// Build local dictionary with stations ID from embedded resource file
+        /// This file was made from xls file downloaded here: https://www.opendata-oepnv.de/ht/de/organisation/verkehrsverbuende/mvv/startseite
+        /// Each line of this file must content two strings (key and value) separated with tab
+        /// </summary>
+        static private void BuildLocalStationIdCash()
+        {
+            string fileContent = ReadResource(IdMvvStations);
+            string separator = "\t";
+            string[] splitContent;
+            string line;
+
+            localIdCash = new Dictionary<string, string>();
+
+            using (StringReader reader = new StringReader(fileContent))
+            {
+
+                while ((line = reader.ReadLine()) != null)
+                {
+                    splitContent = line.Split(separator.ToCharArray());
+
+                    if (splitContent == null ||
+                        splitContent.Length < 2 ||
+                        string.IsNullOrEmpty(splitContent[0]) ||
+                        string.IsNullOrEmpty(splitContent[1]) ||
+                        localIdCash.ContainsKey(splitContent[0]))
+                    {
+                        continue;
+                    }
+
+                    localIdCash.Add(splitContent[0], splitContent[1]);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Read embedded resource file as a string
+        /// </summary>
+        /// <param name="name">Name of the embedded resource file</param>
+        /// <returns>String from resource file or empty string if file doesn't exists</returns>
+        private static string ReadResource(string name)
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            string[] resources = assembly.GetManifestResourceNames();
+            string resourcePath = resources.Single(str => str.EndsWith(name));
+
+            if (string.IsNullOrEmpty(resourcePath))
+            {
+                return "";
+            }
+
+            // This is not very obvious. See https://docs.microsoft.com/en-us/visualstudio/code-quality/ca2202?view=vs-2019&redirectedfrom=MSDN
+            Stream stream = null;
+            string returnedString;
+            try
+            {
+                stream = assembly.GetManifestResourceStream(resourcePath);
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    stream = null;
+                    returnedString = reader.ReadToEnd();
+                }
+            }
+            finally
+            {
+                    stream?.Dispose();
+            }
+            return returnedString;
+        }
+
     }
 }

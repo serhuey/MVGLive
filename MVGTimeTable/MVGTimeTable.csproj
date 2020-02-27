@@ -29,14 +29,26 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MVGLive.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fizzler, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4ebff4844e382110, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fizzler.1.2.0\lib\netstandard2.0\Fizzler.dll</HintPath>
+    </Reference>
+    <Reference Include="Svg, Version=3.0.0.0, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Svg.3.0.102\lib\net452\Svg.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,11 +77,10 @@
     <Compile Include="Converters\MainDestinationMvc.cs" />
     <Compile Include="Converters\MainLabelsMvc.cs" />
     <Compile Include="Converters\MarginMvc.cs" />
-    <Compile Include="Converters\SBahnGleisMvc.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Converters\GleisMvc.cs" />
     <Compile Include="ParseDestination.cs" />
     <Compile Include="Converters\ProductLabelMvc.cs" />
-    <Compile Include="Converters\TextMinutesValueMVC.cs" />
+    <Compile Include="Converters\TextMinutesValueMvc.cs" />
     <Compile Include="MVGTimeTable.xaml.cs">
       <DependentUpon>MVGTimeTable.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -94,6 +105,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,53 +116,6 @@
       <Project>{4ab3c3e6-8cdb-44d6-ada8-64044812a216}</Project>
       <Name>MVGAPI</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Bus.png" />
-    <Resource Include="Icons\Jetzt.png" />
-    <Resource Include="Icons\NBus.png" />
-    <Resource Include="Icons\Night.png" />
-    <Resource Include="Icons\NSevBus.png" />
-    <Resource Include="Icons\NTram.png" />
-    <Resource Include="Icons\S1.png" />
-    <Resource Include="Icons\S1FH.png" />
-    <Resource Include="Icons\S2.png" />
-    <Resource Include="Icons\S20.png" />
-    <Resource Include="Icons\S3.png" />
-    <Resource Include="Icons\S4.png" />
-    <Resource Include="Icons\S6.png" />
-    <Resource Include="Icons\S7.png" />
-    <Resource Include="Icons\S8.png" />
-    <Resource Include="Icons\S8FH.png" />
-    <Resource Include="Icons\SBahn.png" />
-    <Resource Include="Icons\Sev.png" />
-    <Resource Include="Icons\SevBus.png" />
-    <Resource Include="Icons\Tram.png" />
-    <Resource Include="Icons\U1.png" />
-    <Resource Include="Icons\U2.png" />
-    <Resource Include="Icons\U3.png" />
-    <Resource Include="Icons\U4.png" />
-    <Resource Include="Icons\U5.png" />
-    <Resource Include="Icons\U6.png" />
-    <Resource Include="Icons\U7.png" />
-    <Resource Include="Icons\U8.png" />
-    <Resource Include="Icons\UBahn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\USBahns_50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\SBahn_50.png" />
-    <Resource Include="Icons\UBahn_50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\ExpressBus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Fussball.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Zoo.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="SVGIcons\Bus.svg" />
@@ -195,18 +160,69 @@
     <Resource Include="SVGIcons\Zoo.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Messe.png" />
-    <Resource Include="Icons\Olympia.png" />
-    <Resource Include="Icons\Regional.png" />
-    <Resource Include="Icons\SBahn_100.png" />
-    <Resource Include="Icons\UBahn_100.png" />
-    <Resource Include="Icons\USBahns_100.png" />
+    <Resource Include="SVGIcons\NoConnection.svg" />
+    <Resource Include="SVGIcons\Warning.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Warning.png" />
+    <Resource Include="SVGIcons\Gleis1.svg" />
+    <Resource Include="SVGIcons\Gleis10.svg" />
+    <Resource Include="SVGIcons\Gleis11.svg" />
+    <Resource Include="SVGIcons\Gleis12.svg" />
+    <Resource Include="SVGIcons\Gleis13.svg" />
+    <Resource Include="SVGIcons\Gleis14.svg" />
+    <Resource Include="SVGIcons\Gleis15.svg" />
+    <Resource Include="SVGIcons\Gleis16.svg" />
+    <Resource Include="SVGIcons\Gleis2.svg" />
+    <Resource Include="SVGIcons\Gleis3.svg" />
+    <Resource Include="SVGIcons\Gleis4.svg" />
+    <Resource Include="SVGIcons\Gleis5.svg" />
+    <Resource Include="SVGIcons\Gleis6.svg" />
+    <Resource Include="SVGIcons\Gleis7.svg" />
+    <Resource Include="SVGIcons\Gleis8.svg" />
+    <Resource Include="SVGIcons\Gleis9.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\NoConnection.png" />
+    <Resource Include="SVGIcons\Haltestelle.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\SGleis1.svg" />
+    <Resource Include="SVGIcons\SGleis10.svg" />
+    <Resource Include="SVGIcons\SGleis11.svg" />
+    <Resource Include="SVGIcons\SGleis12.svg" />
+    <Resource Include="SVGIcons\SGleis13.svg" />
+    <Resource Include="SVGIcons\SGleis14.svg" />
+    <Resource Include="SVGIcons\SGleis15.svg" />
+    <Resource Include="SVGIcons\SGleis16.svg" />
+    <Resource Include="SVGIcons\SGleis2.svg" />
+    <Resource Include="SVGIcons\SGleis3.svg" />
+    <Resource Include="SVGIcons\SGleis4.svg" />
+    <Resource Include="SVGIcons\SGleis5.svg" />
+    <Resource Include="SVGIcons\SGleis6.svg" />
+    <Resource Include="SVGIcons\SGleis7.svg" />
+    <Resource Include="SVGIcons\SGleis8.svg" />
+    <Resource Include="SVGIcons\SGleis9.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\Tram12.svg" />
+    <Resource Include="SVGIcons\Tram15.svg" />
+    <Resource Include="SVGIcons\Tram16.svg" />
+    <Resource Include="SVGIcons\Tram17.svg" />
+    <Resource Include="SVGIcons\Tram18.svg" />
+    <Resource Include="SVGIcons\Tram19.svg" />
+    <Resource Include="SVGIcons\Tram20.svg" />
+    <Resource Include="SVGIcons\Tram21.svg" />
+    <Resource Include="SVGIcons\Tram23.svg" />
+    <Resource Include="SVGIcons\Tram25.svg" />
+    <Resource Include="SVGIcons\Tram27.svg" />
+    <Resource Include="SVGIcons\Tram28.svg" />
+    <Resource Include="SVGIcons\Tram29.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MVGLive.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\FirstS1.svg" />
+    <Resource Include="SVGIcons\LastS1.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

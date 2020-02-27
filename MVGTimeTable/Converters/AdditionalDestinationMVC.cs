@@ -10,20 +10,13 @@ namespace MVGTimeTable
     /// <summary>
     /// Return string with additional destination, beginning with "via" word
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Mvc")]
     public class AdditionalDestinationMvc : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values == null || values.Length == 0) return null;
-            ParseDestination.GetBothDestinations(values[0].ToString(), out string mainDestination, out string additionalDestination, false, true);
-            if (!string.IsNullOrEmpty(additionalDestination) && !string.IsNullOrEmpty(mainDestination) && ParseDestination.IsStringContains_U_S(mainDestination))
-            {
-                //Double space after label in main destination (if it presents)
-                additionalDestination = "  " + additionalDestination;
-            }
-            //Space before label in additional destination
-            return additionalDestination + " ";
+            if (values == null || values.Length == 0 || values[0] == null) return null;
+
+            return ParseDestination.GetAdditionalDestination(values[0].ToString(), remove_U_S: true);
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

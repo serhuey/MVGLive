@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.3.0.31-->
+<svg fill="none" fill-rule="evenodd" stroke="black" stroke-width="0.501" stroke-linejoin="bevel" stroke-miterlimit="10" font-family="Times New Roman" font-size="16" style="font-variant-ligatures:none" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="251.495pt" height="251.495pt" viewBox="3617.67 -658.865 251.495 251.495">
+ <defs>
+	</defs>
+ <g id="Layer 1" transform="scale(1 -1)">
+  <g id="Group" stroke="none">
+   <path d="M 3618.91,533.118 C 3618.91,601.843 3674.69,657.621 3743.42,657.621 C 3812.14,657.621 3867.92,601.843 3867.92,533.118 C 3867.92,464.392 3812.14,408.614 3743.42,408.614 C 3674.69,408.614 3618.91,464.392 3618.91,533.118 Z" fill="#ffe600" stroke-linejoin="miter" marker-start="none" marker-end="none"/>
+   <path d="M 3622.82,533.119 C 3622.82,599.689 3676.84,653.716 3743.42,653.716 C 3809.99,653.716 3864.01,599.689 3864.01,533.119 C 3864.01,466.546 3809.99,412.519 3743.42,412.519 C 3676.84,412.519 3622.82,466.546 3622.82,533.119 Z M 3847.14,533.119 C 3847.14,590.375 3800.67,636.845 3743.42,636.845 C 3686.16,636.845 3639.69,590.375 3639.69,533.119 C 3639.69,475.86 3686.16,429.39 3743.42,429.39 C 3800.67,429.39 3847.14,475.86 3847.14,533.119 Z" fill="#009642" stroke-linejoin="miter" marker-start="none" marker-end="none"/>
+   <path d="M 3669.65,477.255 L 3669.65,494.355 L 3695.39,494.355 L 3695.39,575.535 L 3667.67,560.055 L 3666.05,578.955 L 3696.11,595.336 L 3717.71,595.336 L 3717.71,494.355 L 3741.65,494.355 L 3741.65,477.255 L 3669.65,477.255 Z" fill-rule="nonzero" stroke-linejoin="round" stroke-width="0.25" fill="#009642" marker-start="none" marker-end="none"/>
+   <path d="M 3794.72,576.975 L 3792.92,576.975 L 3764.3,522.615 L 3794.72,522.615 L 3794.72,576.975 Z M 3816.14,506.595 L 3816.14,477.255 L 3794.72,477.255 L 3794.72,506.595 L 3746.66,506.595 L 3746.66,520.635 L 3787.52,595.336 L 3815.6,595.336 L 3815.6,522.615 L 3829.46,522.615 L 3829.46,506.595 L 3816.14,506.595 Z" fill-rule="nonzero" stroke-linejoin="round" stroke-width="0.25" fill="#009642" marker-start="none" marker-end="none"/>
+   <path d="M 3617.67,658.865 L 3617.67,407.37 L 3869.16,407.37 L 3869.16,658.865 L 3617.67,658.865 Z" stroke-width="0.499" stroke-linejoin="miter" stroke-linecap="round" marker-start="none" marker-end="none"/>
+  </g>
+ </g>
+</svg>

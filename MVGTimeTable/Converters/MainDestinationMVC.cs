@@ -14,9 +14,9 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values == null || values.Length == 0) return null;
+            if (values == null || values.Length == 0 || values[0] == null) return null;
 
-            return ParseDestination.GetMainDestination(values[0].ToString(), true) + " ";
+            return ParseDestination.GetMainDestination(values[0].ToString(), removeUS: true, removeSplitMarkers: true);
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

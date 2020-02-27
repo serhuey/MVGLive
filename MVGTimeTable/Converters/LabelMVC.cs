@@ -14,17 +14,35 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values == null || values.Length < 2) return null;
+            if (values == null || values.Length < 2 || values[0] == null || values[1] == null) return null;
 
             string product = values[0].ToString().ToUpperInvariant();
             string label = values[1].ToString().ToUpperInvariant();
 
-            if (product.Contains(Common.WarnMessageType[MessageType.NoConnection]) || product.Contains(Common.WarnMessageType[MessageType.Warning])) return null;
-            if (product.Contains(Common.TramMarker) || product.Contains(Common.BusMarker)) return label;
-            if (product.Contains(Common.UBahnMarker))
-                return string.IsNullOrEmpty(Array.Find<string>(Common.UBahnIconKey, str => str.Contains(label))) ? label : null;
-            if (product.Contains(Common.SBahnMarker))
-                return string.IsNullOrEmpty(Array.Find<string>(Common.SBahnIconKey, str => str.Contains(label))) ? label : null;
+            if (product.Contains(Common.WarnMessageType[MessageType.NoConnection]) || product.Contains(Common.WarnMessageType[MessageType.Warning]))
+            {
+                return null;
+            }
+
+            if (ParseDestination.IsMarkerPresent(product, Common.BusMarkers))
+            {
+                return label;
+            }
+
+            if (ParseDestination.IsMarkerPresent(product, Common.TramMarkers))
+            {
+                return string.IsNullOrEmpty(Array.Find(Common.TramIconKey, str => str.Contains(Common.DefaultTramIconKey.ToUpperInvariant() + label))) ? label : null;
+            }
+
+            if (ParseDestination.IsMarkerPresent(product, Common.UBahnMarkers))
+            {
+                return string.IsNullOrEmpty(Array.Find(Common.UBahnIconKey, str => str.Contains(label))) ? label : null;
+            }
+
+            if (ParseDestination.IsMarkerPresent(product, Common.SBahnMarkers))
+            {
+                return string.IsNullOrEmpty(Array.Find(Common.SBahnIconKey, str => str.Contains(label))) ? label : null;
+            }
 
             return null;
         }

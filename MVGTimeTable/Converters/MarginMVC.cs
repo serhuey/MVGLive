@@ -17,7 +17,7 @@ namespace MVGTimeTable
             if (values == null ||
                 values.Length == 0 ||
                 parameter == null ||
-                values[0] == null || 
+                values[0] == null ||
                 !double.TryParse(values[0].ToString(), out double fontSize))
                 return th;
 
@@ -29,8 +29,10 @@ namespace MVGTimeTable
                     th = new Thickness(fontSize / 2.5, 0, fontSize / 1.5, 0); break;
                 case "stackPanelMinutes":
                     th = new Thickness(fontSize / 2.5, 0, fontSize / 2.5, 0); break;
-                case "labelDelay":
-                    th = new Thickness(0, fontSize * 0.17, 0, 0); break;
+                case "labelAdditionalDestination":
+                    th = new Thickness(fontSize * 0.2, 0, fontSize * 0.2, 0); break;
+                case "labelMainDestination":
+                    th = new Thickness(fontSize * 0.2, 0, fontSize * 0.2, 0); break;
                 default: return th;
             }
             return th;

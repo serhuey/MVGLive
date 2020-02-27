@@ -1,0 +1,5741 @@
+Karlsplatz (Stachus)	de:09162:1
+Karlsplatz	de:09162:1
+Marienplatz	de:09162:2
+Isartor	de:09162:3
+Rosenheimer Platz	de:09162:4
+Ostbahnhof	de:09162:5
+Hauptbahnhof	de:09162:6
+Hackerbrücke	de:09162:7
+Donnersbergerbrücke	de:09162:8
+Laim	de:09162:9
+Pasing	de:09162:10
+Leonrodplatz	de:09162:11
+Hochschule München (Lothstr.)	de:09162:12
+Sandstraße	de:09162:13
+Karlspl.(Stachus) Nord	de:09162:14
+Karlstraße	de:09162:15
+Lenbachplatz	de:09162:16
+Nationaltheater	de:09162:17
+Kammerspiele	de:09162:18
+Maxmonument	de:09162:19
+Marienplatz (Theatinerstr.)	de:09162:20
+Theatinerstraße	de:09162:20
+Maximilianeum	de:09162:21
+Flurstraße	de:09162:22
+Grillparzerstraße	de:09162:23
+Prinzregenten-/Grillparzerstr.	de:09162:24
+Alter Messeplatz	de:09162:25
+Isartor/Zweibrückenstraße	de:09162:26
+Ridlerstraße	de:09162:27
+Landshuter Allee	de:09162:29
+Poccistraße	de:09162:30
+Hirschgarten	de:09162:31
+Hochschule München	de:09162:32
+Hofgarten	
+Nordbad	de:09162:34
+Görresstraße	de:09162:35
+Georgenstraße	de:09162:36
+Müllerstraße	de:09162:38
+Goetheplatz	de:09162:40
+Eduard-Schmid-Straße	de:09162:41
+Mariahilfplatz	de:09162:42
+Kurfürstenplatz	de:09162:43
+Winzererstraße	de:09162:44
+Infanteriestraße Süd	de:09162:45
+Haidenauplatz	de:09162:46
+Elisabethplatz	de:09162:47
+Nordendstraße	de:09162:48
+Schellingstraße	de:09162:49
+Sendlinger Tor	de:09162:50
+Pinakotheken	de:09162:51
+Karolinenplatz	de:09162:52
+Ottostraße	de:09162:53
+Donnersbergerstraße	de:09162:54
+Hermann-Lingg-Straße	de:09162:55
+Georg-Hirth-Platz	de:09162:56
+Beethovenplatz	de:09162:57
+Kapuzinerplatz/ Arbeitsagentur	de:09162:58
+Kapuzinerstraße	de:09162:59
+Odeonsplatz	de:09162:60
+Baldeplatz	de:09162:61
+Claude-Lorrain-Straße	de:09162:62
+Humboldtstraße	de:09162:63
+Barthstraße	de:09162:64
+Trappentreustraße	de:09162:65
+Schrenkstraße	de:09162:66
+Holzapfelstraße	de:09162:67
+Reichenbachplatz	de:09162:68
+Deutsches Museum	de:09162:69
+Universität	de:09162:70
+Am Gasteig	de:09162:71
+Wiener Platz	de:09162:72
+Friedensengel/Villa Stuck	de:09162:73
+Holbeinstraße	de:09162:74
+Sternwartstraße	de:09162:75
+Herkomerplatz	de:09162:76
+Mauerkircherstraße	de:09162:77
+Tivolistraße	de:09162:78
+Paradiesstraße	de:09162:79
+Giselastraße	de:09162:80
+Nationalmuseum/Haus d.Kunst	de:09162:81
+Astallerstraße	de:09162:82
+Tumblingerstraße	de:09162:83
+Mariannenplatz	de:09162:84
+Kazmairstraße	de:09162:85
+Maxvorstadt/Sammlg. Brandhorst	de:09162:86
+Bergmannstraße	de:09162:87
+Wörthstraße	de:09162:88
+Orleansstraße	de:09162:89
+Holzkirchner Bahnhof	de:09162:90
+Bundesfinanzhof	de:09162:91
+Kustermannpark	de:09162:92
+Tal	de:09162:93
+Pinakotheken Süd	de:09162:94
+Technische Universität	de:09162:95
+Klenzestraße	de:09162:96
+Amalienstraße	de:09162:97
+Seidlstraße	de:09162:99
+Hauptbahnhof (Gl. 5-36)	de:09162:100
+Hans-Fischer-Straße	de:09162:101
+Gollierplatz	de:09162:102
+Schlörstraße	de:09162:103
+Albrechtstraße	de:09162:104
+Fasaneriestraße	de:09162:105
+Infanteriestraße	de:09162:106
+Barbarastraße	de:09162:107
+Hohenzollernstraße	de:09162:108
+Friedrichstraße	de:09162:109
+Königsplatz	de:09162:110
+Regerplatz	de:09162:111
+Viktualienmarkt	de:09162:112
+Blumenstraße	de:09162:113
+Gärtnerplatztheater	de:09162:114
+Baaderstraße	de:09162:115
+Schweigerstraße	de:09162:116
+Taubenstraße	de:09162:117
+Kirchenstraße	de:09162:118
+Boschbrücke	de:09162:119
+Theresienstraße	de:09162:120
+Reitmorstraße/Sammlung Schack	de:09162:121
+Ludwigsbrücke	de:09162:122
+Königinstraße	de:09162:123
+Von-der-Tann-Straße	de:09162:124
+Türkenstraße	de:09162:125
+Arcisstraße	de:09162:126
+Luisenstraße	de:09162:127
+Augustenstraße	de:09162:128
+Roecklplatz	de:09162:129
+Josephsplatz	de:09162:130
+St.-Jakobs-Platz	de:09162:131
+Hirschauer Straße	de:09162:132
+Galileiplatz	de:09162:133
+Wehrlestraße	de:09162:134
+Chinesischer Turm	de:09162:135
+Thiemestraße	de:09162:136
+Am Tucherpark	de:09162:137
+Schwester-Eubulina-Platz	de:09162:138
+Auerfeldstraße	de:09162:139
+Hohenzollernplatz	de:09162:140
+Stephansplatz	de:09162:141
+Maistraße	de:09162:142
+Waltherstraße	de:09162:143
+Zenettistraße	de:09162:144
+ZOB	de:09162:145
+Ehrengutstraße	de:09162:146
+Reichersbeuern Gh. Altwirt	de:09173:149
+Fraunhoferstraße	de:09162:150
+Corneliusbrücke	de:09162:151
+Aurbacherstraße	de:09162:152
+Dom-Pedro-Straße	de:09162:153
+Elisenstraße	de:09162:156
+Nymphenburg Süd	de:09162:157
+Hubertusbrunnen	de:09162:158
+Kolumbusplatz (Nord)	de:09162:159
+Kolumbusplatz	de:09162:160
+St.-Cajetan-Straße	de:09162:161
+Kolumbusplatz/Humboldtstraße	de:09162:162
+Volkartstraße Ost	de:09162:163
+Hanebergstraße	de:09162:164
+Marienplatz (Rindermarkt)	de:09162:166
+Marienplatz Süd	de:09162:166
+Stiglmaierplatz	de:09162:170
+Maillingerstraße	de:09162:180
+Gaiglstraße	de:09162:185
+Rotkreuzplatz	de:09162:190
+Oskar-von-Miller-Ring	de:09162:197
+Westfriedhof	de:09162:200
+Dantebad	de:09162:201
+Klugstraße	de:09162:202
+St.-Galler-Straße	de:09162:203
+Neuhausen	de:09162:204
+Volkartstraße	de:09162:205
+Sadelerstraße	de:09162:206
+Winthirplatz	de:09162:207
+Wilderich-Lang-Straße	de:09162:208
+Dankwartstraße	de:09162:209
+Amalienburgstraße	de:09162:210
+Botanischer Garten	de:09162:211
+Maria-Ward-Straße	de:09162:212
+Dall'Armistraße	de:09162:213
+Schloss Nymphenburg	de:09162:214
+Romanplatz	de:09162:215
+Steubenplatz	de:09162:216
+Briefzentrum	de:09162:217
+Burghausener Straße	de:09162:218
+Kriemhildenstraße	de:09162:219
+Renatastraße	de:09162:220
+Hubertusstraße	de:09162:221
+Marsstraße	de:09162:222
+Deroystraße	de:09162:223
+Mettenstraße	de:09162:224
+Herthastraße	de:09162:225
+Kemnatenstraße	de:09162:226
+Hirschgartenallee	de:09162:227
+Nederlinger Straße	de:09162:228
+Netzerstraße	de:09162:229
+Skagerrakstraße	de:09162:230
+Baubergerstraße	de:09162:231
+Hopfenstraße	de:09162:232
+Amphionpark	de:09162:233
+Schragenhofstraße	de:09162:234
+Lustheimstraße	de:09162:235
+In den Kirschen	de:09162:236
+Bunzlauer Platz	de:09162:237
+Winfriedstraße	de:09162:238
+Nederlinger Straße (West)	de:09162:239
+Theresienwiese	de:09162:240
+Theresienwiese Ost	
+Schwanthalerhöhe	de:09162:250
+Theresienhöhe	de:09162:251
+Westendstraße	de:09162:260
+Friedenheimer Straße	de:09162:270
+Laimer Platz	de:09162:280
+Stadtwerke München	de:09162:285
+Olympiasee	de:09162:290
+Sapporobogen	de:09162:291
+Angererstraße	de:09162:292
+Georg-Birk-Straße	de:09162:293
+Ackermannbogen	de:09162:294
+Olympiapark Süd	de:09162:295
+Deidesheimer Straße	de:09162:296
+Therese-Studer-Straße	de:09162:297
+Margarete-Steiff-Straße	de:09162:299
+Moosach	de:09162:300
+Moosach Bf.	de:09162:300
+Pelkovenstraße	de:09162:301
+Hugo-Troendle-Straße	de:09162:302
+Wintrichring	de:09162:303
+Hanauer Straße	de:09162:304
+Borstei	de:09162:305
+Olympiapark West	de:09162:306
+Goethe-Institut	de:09162:307
+Heideckstraße	de:09162:307
+Gartenstraße	de:09162:308
+Ackermannstraße	de:09162:309
+Fasanerie	de:09162:310
+Herzogstraße	de:09162:311
+Georg-Brauchle-Ring	de:09162:312
+Ehrenbreitsteiner Straße	de:09162:313
+Riesstraße	de:09162:314
+Bingener Straße	de:09162:316
+Olympia-Einkaufszentrum West	de:09162:318
+Olympia-Einkaufszentrum Ost	de:09162:319
+Feldmoching	de:09162:320
+Olympia-Pressestadt	de:09162:321
+Lassallestraße	de:09162:322
+Olympiapark Nord	de:09162:323
+Lerchenauer Straße	de:09162:324
+Olympiapark Eissportstadion	de:09162:325
+Curt-Mezger-Platz	de:09162:326
+Korbinianstraße	de:09162:327
+Andernacher Straße	de:09162:328
+Anhalter Platz	de:09162:329
+Gärtnerstraße	de:09162:330
+Moosacher Straße	de:09162:331
+Olympia-Einkaufszentrum Süd	de:09162:332
+Dessauerstraße	de:09162:333
+Milbertshofener Platz	de:09162:334
+Schopenhauerstraße	de:09162:335
+Lüneburger Straße	de:09162:336
+Detmoldstraße	de:09162:337
+Schittgablerstraße	de:09162:338
+Heidelerchenstraße	de:09162:339
+Petuelring	de:09162:340
+Himmelschlüsselstraße	de:09162:341
+Lerchenauer See	de:09162:342
+Max-Wönner-Straße	de:09162:343
+Franz-Sperr-Weg	de:09162:344
+Gneisenaustraße	de:09162:345
+Paidarstraße	de:09162:346
+Hasenbergl (Rainfarnstr.)	de:09162:347
+Frühlingsanger	de:09162:348
+Stanigplatz	de:09162:349
+Olympiazentrum	de:09162:350
+Stösserstraße	de:09162:351
+Irisstraße	de:09162:352
+Robinienstraße	de:09162:353
+Goldlackplatz	de:09162:354
+Gundermannstraße	de:09162:355
+Hasenbergl Süd	de:09162:356
+Ittlingerstraße	de:09162:357
+Hasenberglstraße	de:09162:358
+Feldmochinger Anger	de:09162:359
+Olympia-Einkaufszentrum	de:09162:360
+Olympia Einkaufszentrum	de:09162:360
+Kirche	de:09162:361
+Ratkisstraße	de:09162:362
+Pulverturmstraße	de:09162:363
+Detmoldstraße Wendeschleife	de:09162:364
+Feldmochinger Straße	de:09162:365
+Gröbenzeller Straße	de:09162:366
+Feldmoching Bahnhof Ost	de:09162:368
+Riesstraße Süd	de:09162:369
+Moosacher St.-Martins-Platz	de:09162:370
+Dantestadion	de:09162:371
+Werner-v.-Linde-Halle	de:09162:372
+Olympiahalle	de:09162:373
+Zentrale Hochschulsportanlage	de:09162:374
+Kleine Olympiahalle	de:09162:375
+Merseburger Straße	de:09162:376
+Claudiusplatz	de:09162:377
+Petuelring Nord	de:09162:378
+Oberwiesenfeld	de:09162:380
+Ludwigsfeld (Campingplatz)	de:09162:381
+Am Blütenanger	de:09162:382
+Pappelallee	de:09162:383
+Sonnentaustraße	de:09162:384
+Kuckucksblumenstraße	de:09162:385
+Frauenmantelanger	de:09162:396
+Pulverturm	de:09162:397
+Scheidplatz Süd	de:09162:398
+Olschewskibogen	de:09162:399
+Scheidplatz	de:09162:400
+Augustin-Rösch-Straße	de:09162:401
+Röblingweg	de:09162:402
+Feuchtwangerstraße	de:09162:403
+Trenkleweg	de:09162:404
+Weitlstraße	de:09162:405
+Dientzenhoferstraße	de:09162:406
+Abtstraße	de:09162:407
+Weyprechtstraße	de:09162:408
+Rathenaustraße	de:09162:409
+Bonner Platz	de:09162:410
+Hugo-Wolf-Straße	de:09162:411
+Siedlung am Hart	de:09162:413
+Sudetendeutsche Straße	de:09162:414
+Euro-Industriepark West	de:09162:415
+Oberhofer Platz	de:09162:416
+Milbertshofener Straße	de:09162:417
+Mildred-Scheel-Bogen	de:09162:418
+Rümannstraße	de:09162:419
+Freimann	de:09162:420
+Karl-Theodor-Straße	de:09162:421
+Clemensstraße	de:09162:422
+Griegstraße	de:09162:423
+Klopstockstraße	de:09162:424
+Domagkstraße West	de:09162:425
+Ingolstädter Straße	de:09162:426
+Max-Bill-Straße	de:09162:427
+Funkkaserne West	de:09162:427
+Lilienthalallee Süd	de:09162:428
+Funkkaserne	de:09162:428
+Autobahn Nord	de:09162:429
+Joseph-Dollinger-Bogen	de:09162:429
+Kieferngarten	de:09162:430
+Heckscherstraße	de:09162:431
+Wilhelm-Hertz-Straße	de:09162:432
+Parzivalplatz	de:09162:433
+Potsdamer Straße	de:09162:434
+Kölner Platz	de:09162:435
+Neuherbergstraße	de:09162:436
+Anton-Will-Straße	de:09162:437
+Heidemannstraße	de:09162:438
+Gundelkoferstraße	de:09162:439
+Werner-Egk-Bogen	de:09162:440
+Paracelsusstraße	de:09162:441
+Grusonstraße	de:09162:442
+Euro-Industriepark Nord	de:09162:443
+Paul-Hindemith-Allee	de:09162:444
+Bernsteinweg	de:09162:445
+Rockefellerstraße	de:09162:446
+Rose-Pichler-Weg	de:09162:447
+Gertrud-Grunow-Straße	de:09162:448
+Alfred-Arndt-Straße	de:09162:448
+Untere Länge	de:09162:449
+Kollwitzstraße	de:09162:451
+Pündterplatz	de:09162:452
+Keilberthstraße	de:09162:453
+Gustav-Mahler-Straße	de:09162:454
+Bismarckstraße	de:09162:455
+Zaunweg	de:09162:457
+Freiligrathstraße	de:09162:458
+Schwabinger Tor	de:09162:459
+Garching, Forschungszentrum	de:09184:460
+Edmund-Rumpler-Straße	de:09162:464
+Lindberghstraße	de:09162:465
+Freimanner Hölzl	de:09162:466
+Fröttmaning	de:09162:470
+Garching-Hochbrück	de:09184:480
+Garching	de:09184:490
+Münchner Freiheit	de:09162:500
+Am Münchner Tor	de:09162:501
+Domagkstraße	de:09162:502
+Schwabing Nord	de:09162:503
+Dietlindenstraße	de:09162:510
+Osterwaldstraße	de:09162:511
+Herzogpark	de:09162:512
+Barlachstraße	de:09162:513
+Amsterdamer Straße	de:09162:518
+Nordfriedhof	de:09162:520
+Alte Heide	de:09162:530
+Studentenstadt	de:09162:540
+Situlistraße	de:09162:541
+Floriansmühlstraße	de:09162:542
+Emmerigweg	de:09162:543
+Josef-Wirth-Weg	de:09162:544
+Großlappen	de:09162:545
+Wallnerstraße	de:09162:546
+Fröttmaning Auensiedlung	de:09162:547
+Bayerischer Rundfunk	de:09162:548
+Kufsteiner Platz	de:09162:550
+Redwitzstraße	de:09162:551
+Gustav-Freytag-Straße	de:09162:552
+Gellertstraße	de:09162:553
+Rümelinstraße	de:09162:554
+Poschingerstraße	de:09162:555
+Regina-Ullmann-Straße	de:09162:556
+Bichlhofweg	de:09162:557
+Böhmerwaldplatz	de:09162:560
+Prinzregentenplatz	de:09162:570
+Max-Weber-Platz	de:09162:580
+Max-Weber-Platz (Johannispl.)	de:09162:581
+Lehel	de:09162:590
+Grimmeisenstraße	de:09162:599
+St. Emmeram	de:09162:600
+Fritz-Meyer-Weg	de:09162:601
+Johanneskirchner Straße	de:09162:602
+Stegmühlstraße	de:09162:603
+Freischützstraße	de:09162:604
+Englschalkinger Straße	de:09162:605
+Memeler Straße	de:09162:606
+Zoppoter Straße	de:09162:607
+Posener Platz	de:09162:608
+Warthestraße	de:09162:609
+Vollmannstraße	de:09162:610
+Moselstraße	de:09162:611
+Steinhausen	de:09162:612
+Vogelweideplatz	de:09162:612
+Schwarzwaldstraße	de:09162:613
+Odinpark	de:09162:615
+Daphnestraße	de:09162:616
+Priel	de:09162:617
+Effnerstraße	de:09162:618
+Grüntal	de:09162:619
+Isarring	de:09162:620
+Mahirstraße	de:09162:621
+Odinstraße	de:09162:622
+Wahnfriedallee	de:09162:623
+Lohengrinstraße	de:09162:624
+Bürgerpark Oberföhring	de:09162:625
+Oberföhring Post	de:09162:626
+Bernheimerstraße	de:09162:627
+Muspillistraße	de:09162:628
+Sondermeierstraße	de:09162:629
+Altenheim Effnerstraße	de:09162:630
+Salzsenderweg	de:09162:631
+Prinz-Eugen-Park	de:09162:632
+Schlösselgarten	de:09162:633
+Wilhelm-Dieß-Weg	de:09162:634
+Knappertsbuschstraße	de:09162:635
+Bruno-Walter-Ring	de:09162:636
+Taimerhofstraße	de:09162:637
+Pühnstraße	de:09162:638
+Zamdorfer Straße	de:09162:640
+Friedrich-Eckart-Straße	de:09162:641
+Zamdorf Siedlung	de:09162:642
+Süskindstraße	de:09162:643
+Kastenbauerstraße	de:09162:645
+Riedenburger Straße	de:09162:646
+Kronstadter Straße	de:09162:647
+Zamilapark	de:09162:648
+Effnerplatz	de:09162:650
+Arabellastraße	de:09162:651
+Elektrastraße	de:09162:652
+Cosimabad	de:09162:653
+Denninger Straße	de:09162:654
+Arabellapark/Klinikum Bogenh.	de:09162:655
+Rappelhofstraße	de:09162:656
+Ruth-Schaumann-Straße	de:09162:657
+Einsteinstraße	de:09162:662
+Zaubzerstraße	de:09162:663
+Arabellapark	de:09162:670
+Arabellapark Nord	de:09162:671
+Richard-Strauss-Straße	de:09162:680
+Nettelbeckstraße	de:09162:698
+Hermann-Gmeiner-Weg	de:09162:699
+Daglfing	de:09162:700
+Marienburger Straße	de:09162:701
+Schichtlstraße	de:09162:702
+Trabrennbahn	de:09162:703
+Daglfing Bahnhof Ost	de:09162:704
+Daglfing Bahnhof West	de:09162:705
+Englschalking	de:09162:710
+Johanneskirchen	de:09162:720
+Johanneskirchen Bf West	de:09162:721
+Kunihohstraße	de:09162:725
+Brodersenstraße	de:09162:726
+Westerlandanger	de:09162:727
+Lübecker Straße	de:09162:728
+Burgauerstraße	de:09162:730
+Rennbahnstraße	de:09162:731
+Milbertshofen	de:09162:740
+Bremer Straße	de:09162:745
+Frankfurter Ring	de:09162:750
+Korbinianplatz	de:09162:751
+Knorrstraße	de:09162:752
+Max-Diamand-Straße	de:09162:753
+Preußenstraße	de:09162:754
+BMW-FIZ	de:09162:755
+Am Hart Süd	de:09162:756
+Oberhofer Weg	de:09162:757
+Anton-Ditt-Bogen	de:09162:758
+Am Hart	de:09162:760
+Hufelandstraße	de:09162:762
+Wal-Mart	de:09162:763
+Media-Markt	de:09162:764
+Real	de:09162:765
+Spina	de:09162:766
+Lotte-Branz-Straße	de:09162:767
+Margot-Kalinke-Straße	de:09162:768
+Maria-Probst-Straße	de:09162:769
+Harthof	de:09162:770
+Dülferstraße	de:09162:780
+Aschenbrennerstraße	de:09162:788
+Hasenbergl	de:09162:790
+Caracciolastraße	de:09162:792
+Riem (S) Dornach	de:09184:799
+Riem	de:09162:800
+Kirchtruderinger Straße	de:09162:801
+Truchthari-Anger	de:09162:802
+Friedhof Riem	de:09162:803
+Schwankhardtweg	de:09162:804
+Martin-Empl-Ring	de:09162:805
+Heltauer Straße	de:09162:807
+Umschlagbahnhof	de:09162:808
+Hofbräuallee	de:09162:809
+Tierheim	de:09162:810
+Graf-Lehndorff-Straße	de:09162:811
+Willy-Brandt-Platz	de:09162:812
+Am Messesee	de:09162:813
+Paul-Henri-Spaak-Straße	de:09162:814
+An der Point	de:09162:815
+Lehrer-Wirth-Straße	de:09162:816
+Helsinkistraße	de:09162:817
+Mutter-Teresa-Straße	de:09162:818
+Selma-Lagerlöf-Straße	de:09162:819
+Neu-Riem	de:09162:820
+Riem Messe 1	de:09162:821
+Riem Messe 2	de:09162:822
+Riem,Flohmarkt	de:09162:823
+Paul-Wassermann-Straße	de:09162:824
+Riem West	de:09162:830
+Ostbahnhof (Post)	de:09162:891
+Ostbahnhof (Bildungszentrum)	de:09162:892
+Baumkirchner Platz	de:09162:893
+Altöttinger Straße	de:09162:894
+Ostbahnhof Friedenstraße	de:09162:895
+Grafinger Straße	de:09162:896
+Neumarkter Straße	de:09162:897
+Sankt Pius	de:09162:898
+Berg am Laim Bf Süd	de:09162:899
+Leuchtenbergring	de:09162:900
+Ampfingstraße	de:09162:901
+Schlüsselbergstraße	de:09162:902
+Baumkirchner Straße	de:09162:903
+Mutschellestraße	de:09162:904
+St.-Veit-Straße	de:09162:906
+Sankt Michael	de:09162:907
+Schmuckerweg	de:09162:908
+Bajuwarenstraße	de:09162:909
+Berg am Laim	de:09162:910
+Halligenplatz	de:09162:911
+St.-Augustinus-Straße	de:09162:912
+Matterhornstraße	de:09162:913
+Peschelanger	de:09162:914
+Friedrich-Engels-Bogen	de:09162:915
+Hugo-Lang-Bogen	de:09162:916
+Oskar-Maria-Graf-Ring	de:09162:917
+Solalindenstraße	de:09162:919
+Trudering	de:09162:920
+Mühldorfstraße	de:09162:921
+Truderinger Str. (Rangierbf)	de:09162:922
+Truderinger Straße, Brücke	de:09162:923
+Halfinger Straße	de:09162:926
+Truderinger Straße	de:09162:927
+Nikolaus-Prugger-Weg	de:09162:928
+Friedenspromenade	de:09162:929
+Bahnstraße	de:09162:930
+Phantasiestraße	de:09162:931
+Von-Erckert-Straße	de:09162:932
+Florastraße	de:09162:933
+Edeltraudstraße	de:09162:934
+Turnerstraße	de:09162:935
+Birkhahnweg	de:09162:936
+Waldtruderinger Straße	de:09162:936
+Togostraße	de:09162:937
+Sperberstraße	de:09162:938
+Drosselweg	de:09162:939
+Iltisstraße	de:09162:940
+Ursberger Straße	de:09162:941
+Thomas-Hauser-Straße	de:09162:942
+Rofanstraße	de:09162:943
+Gnadenwaldplatz	de:09162:944
+Mönchbergstraße	de:09162:945
+Simplonstraße	de:09162:946
+Himalajastraße	de:09162:947
+Batschkastraße	de:09162:948
+Spertentalstraße	de:09162:949
+Zauberwaldstraße	de:09162:950
+Markgrafenstraße	de:09162:951
+Vogesenstraße	de:09162:952
+Feldbergstraße	de:09162:953
+Am Hochacker	de:09162:954
+Hippelstraße	de:09162:955
+Lamprechtstraße	de:09162:956
+Friesplatz	de:09162:957
+Nauestraße	de:09162:958
+Alois-Hahn-Weg	de:09162:959
+Kafkastraße	de:09162:960
+Sudermannallee	de:09162:961
+Klinikum Neuperlach	de:09162:962
+Tribulaunstraße	de:09162:963
+Im Gefilde	de:09162:964
+Eulenspiegelstraße	de:09162:965
+Waldheimplatz	de:09162:966
+Waldperlach	de:09162:967
+Salzmannstraße	de:09162:968
+Schatzbogen	de:09162:969
+Otto-Hahn-Ring	de:09162:970
+Stahlgruberring	de:09162:971
+Karl-Schmid-Straße	de:09162:972
+Moosfeld Gewerbegebiet	de:09162:973
+Putzbrunner Straße	de:09162:974
+Ottilienstraße	de:09162:975
+Isengaustraße	de:09162:976
+Klara-Ziegler-Bogen	de:09162:977
+Görzer Straße Schule	de:09162:978
+Sigmund-Riefler-Bogen	de:09162:979
+Am Hain	de:09162:981
+Euro-Industriepark Nord, Schle	de:09162:982
+Wilhelm-Hale-Straße	de:09162:983
+Marcel-Breuer-Straße	de:09162:985
+Hannes-Meyer-Straße	de:09162:986
+Mies-van-der -Rohe-Straße	de:09162:987
+Anni-Albers-Straße	de:09162:988
+Bergerwaldstraße	de:09162:989
+Gern	de:09162:990
+Waldperlach (Süd)	de:09162:991
+Wasserburger Landstraße	de:09162:993
+Kulturzentrum Trudering	de:09162:994
+Jagdhornstraße	de:09162:995
+Bad-Schachener-Straße	de:09162:997
+Weidener Straße	de:09162:998
+Bayerwaldstraße	de:09162:999
+Perlach	de:09162:1000
+Anzinger Straße	de:09162:1001
+Nailastraße	de:09162:1002
+Ramersdorf	de:09162:1003
+Hechtseestraße	de:09162:1004
+Krumbadstraße	de:09162:1005
+Rudolf-Zorn-Straße	de:09162:1006
+Heinrich-Wieland-Straße	de:09162:1007
+Hermann-Pünder-Straße	de:09162:1008
+Corinthstraße	de:09162:1009
+Neuperlach Süd	de:09162:1010
+Karl-Marx-Ring	de:09162:1011
+Ludwig-Linsert-Straße	de:09162:1012
+Ludwig-Erhard-Allee	de:09162:1013
+Wilhelm-Hoegner-Straße	de:09162:1014
+Thomas-Dehler-Straße	de:09162:1015
+Jakob-Kaiser-Straße	de:09162:1016
+Holzwiesenstraße	de:09162:1017
+Curd-Jürgens-Straße	de:09162:1018
+Pfanzeltplatz	de:09162:1019
+Therese-Giehse-Allee	de:09162:1020
+Neuer Südfriedhof	de:09162:1021
+Hochäckerstraße	de:09162:1022
+Ständlerstraße	de:09162:1023
+Neuer Südfriedhof West	de:09162:1024
+St.-Martin-Straße Ost	de:09162:1025
+Thomasiusplatz	de:09162:1026
+Aschheimer Straße	de:09162:1027
+Ostpark Eislaufzentrum	de:09162:1028
+Wolframstraße	de:09162:1029
+Neuperlach Zentrum	de:09162:1030
+Diakon-Kerolt-Weg	de:09162:1031
+Woferlstraße	de:09162:1032
+Weddigenstraße	de:09162:1033
+Schumacherring	de:09162:1034
+Friedhof Perlach	de:09162:1035
+Berger-Kreuz-Straße	de:09162:1036
+Hofangerstraße	de:09162:1037
+Emdenstraße	de:09162:1038
+Georg-Brauchle-Haus	de:09162:1039
+Quiddestraße	de:09162:1040
+Nawiaskystraße	de:09162:1041
+Staudingerstraße	de:09162:1042
+Plettstraße	de:09162:1043
+Ungsteiner Straße	de:09162:1044
+Fockensteinstraße	de:09162:1045
+Valeppstraße	de:09162:1046
+Adilostraße	de:09162:1047
+Siegfried-Mollier-Straße	de:09162:1048
+Michaelibad	de:09162:1050
+Fasangartenstraße	de:09162:1053
+Obernzeller Straße	de:09162:1054
+Plassenburgstraße	de:09162:1055
+Balanstraße	de:09162:1056
+Klagenfurter Straße	de:09162:1057
+Mitterweg	de:09162:1058
+Görzer Straße	de:09162:1059
+Innsbrucker Ring	de:09162:1060
+Landrichterstraße	de:09162:1061
+Cincinnatistraße	de:09162:1062
+Langbürgener Straße	de:09162:1064
+Karl-Preis-Platz	de:09162:1070
+St.-Martin-Straße	de:09162:1100
+Ganghoferbrücke	de:09162:1101
+Herzog-Ernst-Platz	de:09162:1102
+Sendlinger Kirche	de:09162:1103
+Margaretenplatz	de:09162:1104
+Ostfriedhof	de:09162:1105
+St.-Martins-Platz	de:09162:1106
+Werinherstraße	de:09162:1107
+Chiemgaustraße	de:09162:1108
+Schwanseestraße	de:09162:1109
+Giesing	de:09162:1110
+Traunsteiner Straße	de:09162:1111
+Pöllatstraße	de:09162:1112
+MVG-Museum	de:09162:1113
+Tegernseer Landstraße	de:09162:1115
+Kurzstraße	de:09162:1117
+Südtiroler Straße	de:09162:1118
+Tiroler Platz	de:09162:1119
+Fasangarten	de:09162:1120
+Authariplatz	de:09162:1121
+Theodolindenplatz	de:09162:1122
+Klinikum Harlaching	de:09162:1123
+Menterschwaige	de:09162:1124
+Großhesseloher Brücke	de:09162:1125
+Schilcherweg	de:09162:1126
+Senserstraße	de:09162:1128
+Am Harras	de:09162:1129
+Harras	de:09162:1130
+Aberlestraße	de:09162:1131
+Lagerhausstraße	de:09162:1132
+Großmarkthalle	de:09162:1133
+Gotzinger Platz	de:09162:1134
+Maria-Einsiedel-Straße	de:09162:1139
+Implerstraße	de:09162:1140
+Zentralländstraße	de:09162:1141
+Bad Maria Einsiedel	de:09162:1142
+Floßlände	de:09162:1143
+Campingplatz Thalkirchen	de:09162:1144
+Hinterbrühl	de:09162:1145
+Spixstraße	de:09162:1146
+Schäftlarnstraße	de:09162:1148
+Heckenstallerstraße	de:09162:1149
+Heimeranplatz	de:09162:1150
+Neuhofen	de:09162:1151
+Steinerstraße	de:09162:1152
+Boschetsrieder Straße	de:09162:1153
+Rupert-Mayer-Straße	de:09162:1154
+Krankenhaus Martha Maria	de:09162:1156
+Flößergasse	de:09162:1157
+Tölzer Straße	de:09162:1158
+Heimeranplatz Süd	de:09162:1159
+Untersbergstraße	de:09162:1160
+Wolfratshauser Straße	de:09162:1161
+Neunkirchner Straße	de:09162:1162
+Jakob-Gelb-Platz	de:09162:1163
+Hans-Mielich-Straße	de:09162:1164
+Tierpark (Alemannenstr.)	de:09162:1165
+Wilhelm-Kuhnert-Straße	de:09162:1166
+Lebscheestraße	de:09162:1167
+Ludmillastraße	de:09162:1168
+Winterstraße	de:09162:1169
+Silberhornstraße	de:09162:1170
+Theodolindenstraße	de:09162:1171
+Autharistraße	de:09162:1172
+Griechenstraße	de:09162:1173
+Säbener Straße	de:09162:1174
+Hollerbusch	de:09162:1175
+Stadelheimer Straße	de:09162:1177
+Frasdorfer Straße	de:09162:1178
+Kiefernstraße	de:09162:1179
+Candidplatz	de:09162:1180
+Minnewitstraße	de:09162:1181
+Lincolnstraße	de:09162:1182
+Stettnerstraße	de:09162:1183
+Soyerhofstraße	de:09162:1184
+Leifstraße	de:09162:1185
+Bad-Wiessee-Straße	de:09162:1186
+Silberhorn-/Ichostraße	de:09162:1187
+Waltramstraße	de:09162:1188
+Peter-Auzinger-Straße	de:09162:1189
+Wettersteinplatz	de:09162:1190
+Gerhardstraße	de:09162:1191
+St.-Quirin-Platz	de:09162:1200
+Hauzenberger Straße	de:09162:1201
+Lautensackstraße	de:09162:1202
+Schäufeleinstraße	de:09162:1203
+Agnes-Bernauer-Straße	de:09162:1204
+Elsenheimerstraße	de:09162:1205
+Am Lokschuppen	de:09162:1206
+Fachnerstraße	de:09162:1208
+Mangfallplatz	de:09162:1210
+Mangfallplatz Süd	de:09162:1211
+Säulingstraße	de:09162:1212
+Stegener Weg	de:09162:1213
+Hans-Thonauer-Straße	de:09162:1214
+Veldener Straße	de:09162:1215
+Siglstraße	de:09162:1216
+Hansastraße	de:09162:1217
+Hansapark	de:09162:1218
+Josephsburg	de:09162:1220
+Garmischer Straße	de:09162:1222
+Siegenburger Straße	de:09162:1224
+Hinterbärenbadstraße	de:09162:1226
+Kreillerstraße	de:09162:1230
+Baumgartnerstraße	de:09162:1232
+Fuggerstraße	de:09162:1234
+Ortlerstraße	de:09162:1236
+Moosfeld	de:09162:1240
+Messestadt West	de:09162:1250
+Messestadt Süd	de:09162:1251
+Messestadt Ost	de:09162:1260
+Mittersendling	de:09162:1300
+Baierbrunner Straße	de:09162:1301
+Hofmannstraße	de:09162:1302
+Ratzingerplatz	de:09162:1303
+Ringelnatzweg	de:09162:1304
+Drachenseestraße	de:09162:1305
+Fernpaßstraße	de:09162:1306
+Luise-Kiesselbach-Platz	de:09162:1307
+Ettalstraße	de:09162:1308
+Werdenfelsstraße	de:09162:1309
+Siemenswerke	de:09162:1310
+Waldfriedhof	de:09162:1311
+Waldfriedhof (Wendeschleife)	de:09162:1312
+Grünstraße	de:09162:1313
+Pilsenseestraße	de:09162:1315
+Höglwörther Straße	de:09162:1316
+Murnauer Straße	de:09162:1317
+Diefenbachstraße	de:09162:1318
+Aichacher Straße	de:09162:1319
+Solln	de:09162:1320
+Adunistraße	de:09162:1321
+Schneemannstraße	de:09162:1322
+Zielstattstraße	de:09162:1323
+Geisenhausenerstraße	de:09162:1324
+Sollner Straße	de:09162:1325
+Melchiorstraße	de:09162:1326
+Gmunder Straße	de:09162:1327
+Friedastraße	de:09162:1328
+Solln Bf Wendeschleife	de:09162:1329
+Partnachplatz	de:09162:1330
+Josephinenstraße	de:09162:1331
+Weltistraße	de:09162:1332
+Carola-Neher-Straße	de:09162:1333
+Fertigstraße	de:09162:1334
+Johann-Clanze-Straße	de:09162:1335
+Friedrich-Hebbel-Straße	de:09162:1336
+Kistlerhofstraße	de:09162:1337
+Leutstettener Straße	de:09162:1338
+Siemensallee	de:09162:1339
+Westpark	de:09162:1340
+Münsinger Straße	de:09162:1341
+Spindlerplatz	de:09162:1342
+Sentilostraße	de:09162:1343
+Bastian-Schmid-Platz	de:09162:1344
+Marienstern	de:09162:1345
+Hofbrunnstraße	de:09162:1346
+Glötzleweg	de:09162:1347
+Kandinskystraße	de:09162:1348
+Wilhelm-Busch-Straße	de:09162:1349
+Munckerstraße	de:09162:1350
+Gulbranssonstraße	de:09162:1351
+Parkstadt Solln	de:09162:1352
+Allescherstraße	de:09162:1353
+Stäblistraße	de:09162:1354
+Nesselwanger Straße	de:09162:1355
+Forstenried	de:09162:1356
+Eberlestraße	de:09162:1357
+Bleibtreustraße	de:09162:1358
+Stridbeckstraße	de:09162:1359
+Gilgstraße	de:09162:1360
+Geretsrieder Straße	de:09162:1361
+Waldfriedhof Solln	de:09162:1362
+Whistlerweg	de:09162:1363
+Aurikelstraße	de:09162:1402
+Plattlinger Straße	de:09162:1403
+Lorettoplatz	de:09162:1404
+Staffelseestraße	de:09162:1405
+Züricher Straße	de:09162:1408
+Limmatstraße	de:09162:1409
+Hatzelweg	de:09162:1411
+Kriegelsteinerstraße	de:09162:1413
+Bad Forstenried	de:09162:1415
+Neurieder Straße	de:09162:1416
+Forstenrieder Park	de:09162:1421
+Mindelheimer Straße	de:09162:1422
+Spielmannsauer Straße	de:09162:1423
+Marchioninistraße	de:09162:1424
+Max-Lebsche-Platz	de:09162:1426
+Brudermühlstraße	de:09162:1430
+Sylvensteinstraße	de:09162:1431
+Zöllerstraße	de:09162:1432
+Ehrenmal	de:09162:1434
+Tischlerstraße	de:09162:1436
+Bellinzonastraße	de:09162:1437
+Forst-Kasten-Allee	de:09162:1438
+Thalkirchen (Tierpark)	de:09162:1440
+Thalkirchen	de:09162:1440
+Maxhofstraße	de:09162:1441
+Gautinger Straße	de:09162:1442
+Vinzenz-Schüpfer-Straße	de:09162:1444
+Allgäuer Straße	de:09162:1446
+Kemptener Straße	de:09162:1448
+Obersendling	de:09162:1450
+Tessiner Straße	de:09162:1452
+Appenzeller Straße	de:09162:1454
+Aidenbachstraße	de:09162:1460
+Waldfriedhof Haupteingang	de:09162:1462
+Drygalski-Allee	de:09162:1464
+Südpark	de:09162:1466
+Machtlfinger Straße	de:09162:1470
+Klinikum Großhadern Ost	de:09162:1472
+Klinikum Großhadern Nord	de:09162:1474
+Klinikum West	de:09162:1476
+Forstenrieder Allee	de:09162:1480
+Basler Straße	de:09162:1490
+Fürstenried West	de:09162:1500
+Kornwegerstraße	de:09162:1502
+Holzapfelkreuth	de:09162:1510
+Andreas-Vöst-Straße	de:09162:1514
+Ammerseestraße	de:09162:1516
+Aindorferstraße	de:09162:1518
+Haderner Stern	de:09162:1520
+Gräfelfinger Straße	de:09162:1524
+Kurparkstraße	de:09162:1525
+Stiftsbogen	de:09162:1526
+Wolkerweg	de:09162:1527
+Guardinistraße	de:09162:1528
+Großhadern	de:09162:1530
+Großhaderner Straße	de:09162:1532
+Gelbhofstraße	de:09162:1533
+Am Ährenfeld	de:09162:1534
+Am Hedernfeld	de:09162:1535
+Haderunstraße	de:09162:1536
+Am Hedernfeld Nord	de:09162:1537
+Krokusstraße	de:09162:1538
+Butenandstraße	de:09162:1539
+Klinikum Großhadern	de:09162:1540
+Hanna-Kirchner-Weg	de:09162:1541
+Terofalstraße	de:09162:1542
+Flemischweg	de:09162:1543
+Wastl-Witt-Straße	de:09162:1544
+Wildanger	de:09162:1545
+Drozzaweg	de:09162:1546
+Senftenauerstraße	de:09162:1552
+Gondrellplatz	de:09162:1554
+Saalburgstraße	de:09162:1562
+Platanenstraße	de:09162:1563
+Zinckgrafstraße	de:09162:1572
+Waldhüterstraße	de:09162:1574
+Fürstenrieder Straße	de:09162:1602
+Agnes-Bernauer-Platz	de:09162:1604
+Pörtschacher Straße	de:09162:1605
+Willibaldplatz	de:09162:1606
+Lohensteinstraße	de:09162:1608
+Westbad	de:09162:1612
+Am Knie	de:09162:1614
+Offenbachstraße	de:09162:1618
+Pasinger Marienplatz	de:09162:1622
+Engelbertstraße	de:09162:1623
+Rathaus Pasing	de:09162:1624
+Planegger Straße	de:09162:1626
+Weinbergerstraße	de:09162:1627
+Siegmannstraße	de:09162:1628
+Kraillinger Weg	de:09162:1629
+Siedlung am Haidelweg	de:09162:1630
+Seeholzenweg	de:09162:1632
+Perlschneiderstraße	de:09162:1633
+Blumenau	de:09162:1634
+Silberdistelstraße	de:09162:1636
+Willibaldstraße	de:09162:1638
+Sulzbeckstraße	de:09162:1642
+Fischer-von-Erlach-Straße	de:09162:1643
+Mitterfeldstraße	de:09162:1644
+Stroblstraße	de:09162:1646
+Pronnerplatz	de:09162:1648
+Hönigschmidplatz	de:09162:1652
+Menaristraße	de:09162:1654
+Guido-Schneble-Straße	de:09162:1656
+Scapinellistraße	de:09162:1662
+Krankenhaus Pasing	de:09162:1664
+Avenariusplatz	de:09162:1666
+Wehnerstraße	de:09162:1668
+Peslmüllerstraße	de:09162:1669
+Turnerschule	de:09162:1670
+Dachstraße	de:09162:1672
+Maria-Eich-Str.	de:09162:1674
+Varnhagenstraße	de:09162:1682
+Volmstraße	de:09162:1683
+Leienfelsstraße	de:09162:1700
+Betschartstraße	de:09162:1701
+Ravensburger Ring	de:09162:1702
+Heimburgstraße	de:09162:1703
+Mainaustraße	de:09162:1704
+Sipplinger Straße	de:09162:1706
+Wertheimer Straße	de:09162:1708
+Anton-Böck-Straße	de:09162:1709
+Aubing	de:09162:1710
+Ubostraße	de:09162:1711
+Altenburgstraße	de:09162:1712
+Mariabrunner Straße	de:09162:1713
+Hohensteinstraße	de:09162:1714
+Kronwinkler Straße	de:09162:1715
+Veldensteinstraße	de:09162:1716
+Jaspersallee	de:09162:1717
+Wiesentfelser Straße	de:09162:1718
+Papinstraße	de:09162:1719
+Westkreuz	de:09162:1720
+Ellis-Kaut-Straße	de:09162:1721
+Riesenburgstraße	de:09162:1722
+Kunreuthstraße	de:09162:1724
+Neuaubing West	de:09162:1726
+Benedikterstraße	de:09162:1727
+Plankenfelser Straße	de:09162:1728
+Neuaubing	de:09162:1730
+Bodensee-/Limesstraße	de:09162:1731
+Limesstraße	de:09162:1732
+Germeringer Weg	de:09162:1733
+Bergsonstraße	de:09162:1734
+Elisabeth-Jost-Straße	de:09162:1735
+Gilchinger Straße	de:09162:1736
+Überlinger Weg	de:09162:1737
+Allinger Straße	de:09162:1738
+Joseph-Suder-Bogen	de:09162:1739
+Freiham	de:09162:1740
+Ilse-Fehling-Straße	de:09162:1741
+Asmarstraße	de:09162:1742
+Staufener Straße	de:09162:1743
+Sumpfmeisenweg	de:09162:1744
+Englburgstraße	de:09162:1745
+Ziegeleistraße	de:09162:1746
+Hellensteinstraße	de:09162:1747
+Federseestraße	de:09162:1748
+Tettnanger Straße	de:09162:1749
+Erlbachstraße	de:09162:1750
+Pirolstraße	de:09162:1752
+Krähenweg	de:09162:1754
+Eichelhäherstraße	de:09162:1756
+Clarita-Bernhard-Straße	de:09162:1758
+Ehrenbürgstraße	de:09162:1759
+Hans-Steinkohl-Straße	de:09162:1762
+Freiham Möbel Höffner	de:09162:1765
+Karwinskistraße West	de:09162:1766
+Benderstraße	de:09162:1767
+Im Wismat	de:09162:1768
+Thuillestraße	de:09162:1769
+Bauseweinallee	de:09162:1770
+Stücklenstraße	de:09162:1771
+Heerstraße West	de:09162:1772
+Karwinskistraße Ost	de:09162:1773
+Langwieder See	de:09162:1793
+Campingplatz Langwieder See	de:09162:1794
+Pasing Bf Nord	de:09162:1796
+Pasing Bf.	de:09162:1796
+Orthstraße	de:09162:1797
+Marsopstraße	de:09162:1798
+Menterstraße	de:09162:1799
+Langwied	de:09162:1800
+Marschnerstraße	de:09162:1801
+Rubensstraße	de:09162:1802
+Polkostraße	de:09162:1803
+Alte Allee	de:09162:1804
+Friedhof Obermenzing	de:09162:1805
+Bertha-von-Suttner-Weg	de:09162:1806
+Blutenburg	de:09162:1807
+Wöhlerstraße	de:09162:1808
+Dorfstraße	de:09162:1809
+Lochhausen	de:09162:1810
+Sarasatestraße	de:09162:1811
+Schloss Blutenburg	de:09162:1812
+Rüttenauerplatz	de:09162:1813
+Von-Kahr-Straße	de:09162:1814
+Campingplatz Obermenzing	de:09162:1815
+Lochhausener Straße	de:09162:1816
+Steirerstraße	de:09162:1817
+Friedhof Untermenzing	de:09162:1818
+Pfarrer-Grimm-Straße	de:09162:1819
+Willi-Wien-Straße	de:09162:1820
+Esmarchstraße	de:09162:1821
+Vesaliusstraße	de:09162:1822
+St.-Johann-Straße	de:09162:1823
+Höcherstraße	de:09162:1824
+Franz-Nißl-Straße	de:09162:1825
+Kleselstraße	de:09162:1826
+Otto-Warburg-Straße	de:09162:1828
+Servetstraße	de:09162:1829
+Gerlachweg	de:09162:1830
+Hauseggerstraße	de:09162:1831
+Riederstraße	de:09162:1832
+Brückestraße	de:09162:1833
+Pasinger Heuweg	de:09162:1834
+Augustenfelder Straße	de:09162:1835
+Karl-Hänel-Straße	de:09162:1836
+Pregerstraße	de:09162:1837
+Auenbruggerstraße	de:09162:1838
+Eversbuschstraße	de:09162:1839
+Georg-Reismüller-Straße	de:09162:1840
+Nusselstraße	de:09162:1841
+Sibeliusstraße	de:09162:1842
+Schmaedelstraße	de:09162:1844
+Berduxstraße	de:09162:1845
+Peter-Anders-Straße	de:09162:1846
+Paul-Gerhardt-Allee	de:09162:1847
+Am Durchblick	de:09162:1848
+Josef-Lang-Straße	de:09162:1849
+Waldkolonie Allach	de:09162:1850
+Goteboldstraße	de:09162:1851
+Paulaner Brauerei	de:09162:1852
+Langwied Ortsmitte	de:09162:1853
+Osterangerstraße	de:09162:1854
+Eschenrieder Straße	de:09162:1855
+Krauss-Maffei-Straße Ost	de:09162:1856
+Krauss-Maffei-Straße	de:09162:1857
+Obermenzing	de:09162:1900
+Frauendorferstraße	de:09162:1901
+Freseniusstraße	de:09162:1902
+Fasanenstraße	de:09162:1904
+Reginbaldstraße	de:09162:1906
+Heerstraße	de:09162:1908
+Allach	de:09162:1910
+Allach Bahnhof Ost	de:09162:1911
+Kunstmannstraße	de:09162:1912
+Finsterwalderstraße	de:09162:1914
+Karl-von-Roth-Straße	de:09162:1916
+Krautheimstraße	de:09162:1918
+Karlsfeld	de:09174:1920
+Von-Reuter-Straße	de:09162:1921
+Penzoltstraße	de:09162:1922
+Korbinian-Beer-Straße	de:09162:1924
+Gruithuisenstraße	de:09162:1926
+Manzostraße	de:09162:1928
+Untermenzing	de:09162:1930
+Zaunerstraße	de:09162:1931
+Waldhornstraße	de:09162:1932
+Untermenzinger Straße	de:09162:1934
+Lauinger Straße	de:09162:1936
+Dillinger Straße	de:09162:1938
+Ohlauer Straße	de:09162:1942
+Donauwörther Straße	de:09162:1943
+Hortigstraße	de:09162:1944
+Rueßstraße	de:09162:1945
+Angerlohstraße	de:09162:1946
+Tubeufstraße	de:09162:1948
+Vogelloh	de:09162:1956
+Allacher Forstweg	de:09162:1958
+Eininger Straße	de:09162:1962
+Max-Born-Straße	de:09162:1963
+Ferchenbachstraße	de:09162:1964
+Rangierbahnhof	de:09162:1965
+Haylerstraße	de:09162:1967
+Kristallstraße	de:09162:1968
+Siedlung Ludwigsfeld	de:09162:1969
+Achatstraße	de:09162:1971
+Feldmochinger See	de:09162:1973
+Opalstraße	de:09162:1974
+MAN, Siedlung	de:09162:1975
+Karlsfelder Straße	de:09162:1976
+Kaiserhölzlstraße	de:09162:1978
+Schwarzhölzlstraße	de:09162:1979
+Grashofstraße	de:09162:1981
+Faganastraße	de:09162:1982
+Bergwachtstraße	de:09162:1983
+Josef-Frankl-Straße	de:09162:1984
+Paul-Preuß-Straße	de:09162:1985
+Lerchenstraße	de:09162:1986
+Oberschleißheim	de:09184:2000
+Jahnstraße	de:09184:2001
+Helmholtz-Zentrum	de:09184:2002
+Olympia Schießanlage	de:09184:2004
+Heidenheimer Straße	de:09184:2005
+Hochbrücker Alm	de:09184:2006
+Kreuzhof	de:09184:2007
+Hohe-Brücken-Straße	de:09184:2008
+Carl-von-Linde-Straße	de:09184:2009
+Unterschleißheim	de:09184:2010
+Wiesenweg	de:09184:2011
+Voithstraße	de:09184:2012
+Maria-Merian-Straße	de:09184:2013
+Gewerbegebiet	de:09184:2014
+Breslauer Straße	de:09184:2015
+Daimlerstraße	de:09184:2016
+Prof.-Angermair-Ring	de:09184:2017
+Keltenweg	de:09184:2018
+Mühlgasse	de:09184:2019
+Lohhof	de:09184:2020
+Sonnenstraße	de:09184:2021
+Maier-Leibnitz-Straße	de:09184:2022
+Lilienthalstraße Süd	de:09184:2023
+Brunnenweg	de:09184:2025
+Lehrer-Stieglitz-Straße	de:09184:2026
+Landshuter Straße	de:09184:2027
+Römerhofweg	de:09184:2028
+Watzmannring	de:09184:2029
+Unterföhring	de:09184:2030
+Keplerstraße	de:09184:2031
+Münchner Ring	de:09184:2032
+Rathaus	de:09184:2033
+Lilienstraße	de:09184:2034
+Raiffeisenstraße	de:09184:2036
+Heimgartenstraße	de:09184:2038
+Hürderstraße	de:09184:2039
+Ismaning	de:09184:2040
+Robert-Bosch-Straße	de:09184:2041
+Johann-Schmid-Straße	de:09184:2042
+Ballhausforum	de:09184:2043
+Nelkenstraße	de:09184:2044
+Siemensstraße	de:09184:2045
+Feldstraße	de:09184:2046
+C.-v.-Linde-Straße	de:09184:2047
+Sportpark	de:09184:2048
+Ohmstraße	de:09184:2049
+Haimhauser Straße	de:09184:2050
+Regattaanlage	de:09184:2051
+Mallertshofener Straße	de:09184:2052
+Kranzberger Allee	de:09184:2054
+Rathaus	
+Hauptstraße 25	de:09184:2056
+Zeppelinstraße	de:09184:2057
+Schleißheimer Kanal	de:09184:2058
+Lilienthalstraße	de:09184:2059
+Wasserturmstraße	de:09184:2060
+Auweg	de:09184:2062
+Lustheim	de:09184:2063
+Am Stutenanger	de:09184:2065
+Schloss	de:09184:2066
+Kindergarten	de:09184:2066
+St.-Margar.-Straße	de:09184:2067
+Mittenheimer Straße	de:09184:2068
+Veterinärstraße	de:09184:2069
+Technische Universität	de:09184:2070
+Ludwig-Prandtl-Straße	de:09184:2071
+Schäftlarnstraße	
+Boltzmannstraße	de:09184:2073
+Gutenbergstraße	de:09184:2075
+Medienpark	de:09184:2077
+Erich-Zeitler-Straße	de:09184:2078
+Am Lenzenfleck	de:09184:2080
+Hauptstraße	de:09184:2081
+Fischerhäuser	de:09184:2082
+Dorfstraße	de:09184:2083
+Peterhof	de:09184:2084
+Max-von-Eyth-Straße	de:09184:2085
+Freieneck	de:09177:2086
+Brennermühle	de:09177:2086
+Hirtgrasstraße	de:09184:2087
+Fischerfleck	de:09184:2087
+Waldorfschule	de:09184:2089
+Siedlerstraße	de:09184:2090
+Föhringer Allee	de:09184:2091
+Alte Münchner Straße	de:09184:2092
+Hofäckerallee	de:09184:2093
+Schulzentrum	de:09184:2095
+Bergstraße	de:09184:2096
+Ahornstraße Ost	de:09184:2097
+Ahornstraße	de:09184:2098
+Erdinger Straße	de:09184:2099
+Erdinger-/Flurstraße	de:09184:2099
+Fichtenstraße	de:09184:2100
+Feringastraße Ost	de:09184:2101
+Feringastraße	de:09184:2102
+Einsteinring Nord	de:09184:2103
+Kanal	de:09184:2104
+Gartenstraße	de:09184:2105
+Agrob	de:09184:2106
+Gutenbergstraße	de:09184:2107
+Wasserturmstraße	de:09184:2108
+Oskar-Messter-Straße	de:09184:2109
+Feldkirchen	de:09184:2110
+Osterfeldstraße	de:09184:2111
+Moarstraße	de:09184:2112
+Geroldstraße	de:09184:2113
+Parkstraße	de:09184:2114
+Hennigweg	de:09184:2115
+Eisweiher	de:09184:2115
+Leuchtenbergstraße	de:09184:2116
+Saturnstraße	de:09184:2117
+Erdinger Landstraße	de:09184:2118
+Karl-Hammerschmidt-Straße	de:09184:2119
+Heimstetten	de:09184:2120
+Feldkirchener Straße	de:09184:2121
+Bürgerhaus	de:09184:2122
+Am Werbering	de:09184:2123
+Siedlung Tassilostraße	de:09184:2124
+Mitte	de:09184:2125
+Erdinger Straße	de:09184:2126
+Weidachstraße	de:09184:2127
+XXXLutz	de:09184:2129
+Gronsdorf	de:09184:2130
+Sportplatz	de:09184:2131
+Sportpark	de:09184:2131
+Am Sportpark	de:09184:2131
+Am Sportpark	de:09184:2131
+Räterstraße	de:09184:2132
+Blumenweg	de:09184:2133
+Lindenviertel	de:09184:2134
+Gymnasium	de:09184:2135
+Hausen	de:09184:2136
+Am Brunnen	de:09184:2137
+Rathaus	de:09184:2138
+Herzogen Wege	de:09184:2139
+Haar	de:09184:2140
+Ammerthalstraße	de:09184:2141
+Dieselstraße	de:09184:2142
+Sofienstraße	de:09184:2143
+Sophienstr.	de:09184:2143
+Zeppelinstraße	de:09184:2144
+Kirche	de:09184:2145
+Jahnstraße	de:09184:2146
+Kirche	de:09184:2147
+Adalbert-Stifter-Straße	de:09184:2148
+Kirche	de:09184:2149
+IAK-Klinikum München-Ost	de:09184:2150
+IAK-Klinikum München-Ost	de:09184:2150
+A.-Kasperbauer-Str	de:09184:2151
+IAK-Klinikum München-Ost II	de:09184:2152
+Annelies-Kupper-Allee	de:09184:2152
+Sankt-Konrad-Straße	de:09184:2153
+Münchner Straße	de:09184:2154
+Kapellenstraße	de:09184:2155
+Hohenlindner Straße	de:09184:2156
+Emeranstraße	de:09184:2157
+Humboldtstraße	de:09184:2159
+Leibstraße	de:09184:2160
+Ohmstraße	de:09184:2161
+Joh.-Seb.-Bach-Straße	de:09184:2162
+F.-Kobell-Str./Waldfriedhof	de:09184:2164
+Freibadstraße	de:09184:2165
+Am See	de:09184:2166
+Wasserburger Straße	de:09184:2167
+Ludwig-Moser-Straße	de:09184:2168
+Hans-Stießb.-Str. (Schleife)	de:09184:2169
+Hans-Stießberger-Straße	de:09184:2170
+Keferloh	de:09184:2171
+Michael-Haslbeck-Straße	de:09184:2172
+Dornacher Straße	de:09184:2173
+Wernher-von-Braun-Straße	de:09184:2174
+Kirchenzentrum	de:09184:2176
+Einsteinring West	de:09184:2177
+Eichenstraße	de:09184:2178
+Einsteinring Süd	de:09184:2179
+Birkenweg	de:09184:2180
+Bahnhofstraße	de:09184:2181
+Waldstraße	de:09184:2182
+Margaretha-Ley-Ring	de:09184:2183
+Lenbachallee	de:09184:2184
+Pfr.-Caspar-Mayr-Platz	de:09184:2185
+Am Brunneck	de:09184:2186
+Am Brunneck/Uhlandstraße	de:09184:2187
+Karl-Stieler-Straße	de:09184:2188
+Alte Landstraße	de:09184:2189
+Hans-Kandler-Weg	de:09184:2190
+Mozartstraße	de:09184:2191
+Ottostraße	de:09184:2192
+Gewerbegebiet Süd	de:09184:2193
+Olympiastraße	de:09184:2195
+Finkenstraße	de:09184:2196
+Otto-Hahn-Straße	de:09184:2197
+Elbeweg	de:09184:2198
+Friedrich-Schüle-Straße	de:09184:2199
+Neubiberg	de:09184:2200
+Sportpark	de:09184:2201
+Phönix-Bad	de:09184:2201
+Isarweg	de:09184:2202
+Robert-Koch-Straße	de:09184:2203
+Parkfriedhof	de:09184:2204
+Ludwig-Bölkow-Allee	de:09184:2205
+Siemensstraße	de:09184:2206
+Hugo-Junkers-Straße	de:09184:2207
+Vockestraße	de:09184:2208
+Ottobrunn	de:09184:2210
+Hauptschule	de:09184:2211
+Waldstraße	de:09184:2212
+Siedlung	de:09184:2213
+Heimstetten (S) Nord	de:09184:2214
+Heimstetten (S) Süd	de:09184:2215
+Von-Braunmühl-Straße	de:09184:2216
+Räterzentrum	de:09184:2217
+Rechnerstraße	de:09184:2218
+Zugspitzstraße	de:09184:2219
+Hohenbrunn	de:09184:2220
+Lehnerstraße	de:09184:2221
+Gymnasium	de:09184:2222
+Am Weichselgarten	de:09184:2223
+Luisenweg	de:09184:2224
+Grasbrunner Weg	de:09184:2224
+Bretonischer Ring	de:09184:2225
+Rathaus	de:09184:2226
+Waldstraße	de:09184:2227
+Grünlandstraße	de:09184:2228
+Leonhard-Stadler-Straße	de:09184:2229
+Wächterhof	de:09184:2230
+Am Sportpark	de:09184:2231
+Fritz-Bonnet-Straße	de:09184:2232
+Bahnhofstraße	de:09184:2233
+Ostring	de:09184:2234
+Jahnstraße	de:09184:2235
+Bahnhofstraße	de:09184:2236
+Untere Straßäcker	de:09184:2237
+Untere Strassäcker	de:09184:2237
+Ortsmitte	de:09184:2238
+Lindenstraße	de:09184:2239
+Höhenkirchen-Siegertsbrunn	de:09184:2240
+Appeltwiese	de:09184:2241
+Hubertusstraße	de:09184:2242
+Otto-Hahn-Straße	de:09184:2243
+Rudolf-Diesel-Straße	de:09184:2244
+Einsteinstraße	de:09184:2245
+Kaiserstraße	de:09184:2246
+Röntgenstraße	de:09184:2247
+Schulzstraße	de:09184:2248
+Hauptstraße	de:09184:2249
+Dürrnhaar	de:09184:2250
+Waldstraße	de:09184:2251
+Anzengruberstraße	de:09184:2251
+Wotanstraße	de:09184:2252
+Barbarossastraße	de:09184:2253
+Lena-Christ-Straße	de:09184:2254
+Andreas-Wagner-Straße	de:09184:2255
+Neubiberger Straße	de:09184:2256
+Am Hochstand	de:09184:2257
+Förderzentrum	
+Ort	de:09184:2259
+Oedenstockach	de:09184:2259
+Aying	de:09184:2260
+Hedwigstraße	de:09184:2261
+Gewerbegebiet Ost	
+Gewerbegebiet West	
+Seemannsiedlung	de:09184:2265
+Grasbrunn	de:09184:2266
+Solalindenstr.	
+Möschenfeld Abzw.	de:09184:2268
+Möschenfeld	de:09184:2269
+Peiß	de:09184:2270
+Erlenstraße	
+Kriegerdenkmal	de:09184:2272
+Feuerwehrgerätehaus	de:09184:2273
+Forstwirt	de:09184:2274
+Walkürenstraße	de:09184:2275
+Schlag	de:09175:2276
+Am Hachinger Bach	de:09184:2277
+Gymnasium	de:09184:2278
+Cramer-Klett-Straße	de:09184:2278
+Realschule	de:09184:2279
+Großhelfendorf	de:09184:2280
+Friedrich-Ebert-Platz	de:09184:2281
+Kleiststraße	de:09184:2282
+Marie-Curie-Str.	de:09184:2283
+Tulpenweg	de:09184:2284
+Waldpark	de:09184:2285
+Theodor-Heuss-Straße	de:09184:2286
+Brennerei	de:09184:2287
+Waldkolonie	de:09184:2288
+Hohenbrunner Straße	de:09184:2289
+Brunhildenstraße	de:09184:2290
+Isarweg	de:09184:2291
+Unterbiberg	de:09184:2292
+Tannenstraße	de:09184:2293
+Universitätsstraße	de:09184:2294
+Grasbrunner Straße	de:09184:2295
+Lilienthalstraße	de:09184:2296
+Campeon West	de:09184:2297
+Universität Bw-Ost	de:09184:2298
+Campeon	de:09184:2299
+Fasanenpark	de:09184:2300
+Rathaus	de:09184:2301
+Werner-Heisenberg-Weg	de:09184:2302
+Abzw.Waldbrunn	de:09184:2304
+Gudrunsiedlung	de:09184:2305
+Abzw.Gudrunsiedlung	de:09184:2306
+Bergstraße	de:09184:2307
+Waldstraße	de:09184:2308
+Sportpark	de:09184:2309
+Unterhaching	de:09184:2310
+St.-Georg-Str.	de:09184:2311
+Haidstraße	de:09184:2313
+Taufkirchner Straße	de:09184:2314
+Zusestraße	de:09184:2315
+Lindenstraße	de:09184:2316
+Eugen-Sänger-Ring	de:09184:2317
+Schmiedstraße	de:09184:2318
+Taufkirchen	de:09184:2320
+Brunnthaler Straße	de:09184:2321
+Kirche	de:09184:2322
+Kirchplatz	de:09184:2323
+Ort	de:09184:2324
+Bergstraße	de:09184:2325
+Hofolding	de:09184:2326
+Wettersteinstraße	de:09184:2327
+Raiffeisenbank	de:09184:2328
+Wallbergstraße	de:09184:2329
+Furth	de:09184:2330
+Waldsiedlung	de:09184:2332
+Weidenstraße	de:09184:2334
+Bürgerhaus	de:09184:2335
+Bürgerplatz	de:09184:2336
+Parkring West	de:09184:2338
+Graf-Zeppelin-Platz	de:09184:2339
+Deisenhofen	de:09184:2340
+Eichenstraße	de:09184:2341
+Im Mitterfeld	de:09184:2342
+Hochstraße	de:09184:2343
+Friedhof	de:09184:2344
+Oberweg	de:09184:2345
+Peißer Straße 8	de:09184:2346
+Kirschenstraße	de:09184:2347
+Gasthaus zur Post	de:09184:2348
+Parkring Süd	de:09184:2349
+Sauerlach	de:09184:2350
+Abzw. Laus	de:09184:2352
+Kirchgasse	de:09184:2353
+Staatsstraße	de:09184:2355
+Bussardstraße	de:09184:2356
+Neukeferloher Weg	
+Carl-Duisberg-Straße	de:09184:2358
+Jagdfeldzentrum	de:09184:2359
+Sommerstraße	de:09184:2360
+Otterloher Straße	de:09184:2361
+St.-Alto-Straße	de:09184:2362
+Abt-Petto-Straße	
+Pittinger Platz	de:09184:2364
+Kirchlandweg	de:09184:2365
+Jahnstraße	de:09184:2366
+Schloßstraße	de:09184:2367
+Ottobrunner Straße	de:09184:2368
+Bahnhofstraße	de:09184:2369
+Finsinger Weg	de:09184:2370
+Biberger Straße	de:09184:2371
+Truderinger Straße	de:09184:2372
+Am Sportpark	de:09184:2373
+Goerdelerstraße	de:09184:2374
+Mühlweg	de:09184:2375
+Sportplatz	de:09184:2376
+Oberweg	de:09184:2377
+Friedhof	de:09184:2378
+Dorfstraße	de:09184:2379
+Daimlerstraße	de:09184:2380
+Rathausstraße	de:09184:2382
+Hubertusstraße	de:09184:2383
+Mozartstraße	de:09184:2384
+Theodor-Körner-Straße	de:09184:2386
+Veilchenweg	de:09184:2387
+Altenheim	de:09184:2388
+Lilienthalstraße	de:09184:2389
+Eschenstraße	de:09184:2390
+Riegerweg	de:09184:2391
+Akazienstraße	de:09184:2392
+Lärchenweg/Volkshochschule	de:09184:2394
+Lindenring	de:09184:2394
+Keltenring	de:09184:2395
+Realschule	de:09184:2396
+Hinterm Hofanger	de:09184:2397
+Rathaus	de:09184:2398
+Kriegerdenkmal	de:09184:2400
+Edelweißstraße	de:09184:2401
+Rosenstraße	de:09184:2402
+Schule	de:09184:2404
+Zacherlweg	de:09184:2405
+Otterloh	de:09184:2406
+Aurikelstr.	de:09184:2407
+Münchener Str.	de:09184:2408
+Riegerweg/Altersheim	de:09184:2409
+Waldsiedlung	de:09184:2410
+Martinstraße	de:09184:2411
+Grafing (b.Sauerlach)	de:09184:2412
+Haarer Str.	de:09184:2413
+Michelistraße	de:09184:2414
+Finkenweg	de:09184:2415
+Oberhamer Straße	de:09184:2416
+Hainbuchenstraße	de:09184:2417
+Holzkirchner Straße	de:09184:2418
+Kleefeldstraße	de:09184:2419
+Lochhofen, Abzw.	de:09184:2420
+Bavariastraße	de:09184:2421
+Keltenstraße	de:09184:2423
+Kirche	de:09184:2424
+Neubauerweg	de:09184:2425
+Neubauerweg	de:09184:2425
+Kreuzpullach, Abzw.	de:09184:2426
+Kleineichenhausen	de:09184:2427
+Oberbiberg	de:09184:2428
+Großeichenhausen	de:09184:2429
+Gerblinghausen	de:09184:2430
+Gumpertshausen	de:09184:2432
+Eichenhausener Str	de:09184:2433
+Altkirchen	de:09184:2434
+Schule	de:09184:2435
+Bgm.-Prenn-Straße	de:09184:2435
+Postweg	de:09184:2436
+Willy-Messerschmitt-Str.	de:09184:2437
+Bahnhofstraße	de:09184:2438
+Tegernseer Landstraße	de:09184:2439
+Tölzer Straße	de:09184:2440
+Karwendelstraße	de:09184:2441
+Am Gries	de:09184:2442
+Lanzenhaarer Straße	de:09184:2443
+Kybergstraße	de:09184:2444
+Ikea	de:09184:2445
+Tisinstraße	de:09184:2446
+Platanenstr.	de:09184:2447
+Hubertusplatz	de:09184:2448
+St.-Rita-Weg	de:09184:2449
+Josef-Sammer-Straße	de:09184:2452
+Laufzorner Straße	de:09184:2454
+Gymnasium	de:09184:2454
+Rathaus	de:09184:2455
+Derbolfinger Platz	de:09184:2456
+Isarbrücke	de:09184:2457
+Bavariafilmplatz	de:09184:2458
+Forsthausstraße	de:09184:2459
+Robert-Koch-Straße	de:09184:2460
+Parkplatz	de:09184:2462
+Dr.-Hans-Staub-Str.	de:09184:2463
+Ludwig-Thoma-Straße	de:09184:2464
+Römerstraße	de:09184:2467
+Wörnbrunner Straße	de:09184:2469
+Hirtenweg	de:09184:2470
+Deininger Weiher	de:09184:2471
+Friedhof	de:09184:2472
+Gewerbestraße	de:09184:2473
+Frundsbergstraße	de:09184:2474
+Hügelstraße	de:09184:2475
+Gh.Wildpark	de:09184:2476
+Apianstraße	de:09184:2477
+Hailafing	de:09184:2478
+Großdingharting	de:09184:2480
+Mitterfeldallee	de:09184:2481
+Kleindingharting	de:09184:2482
+Tulpenstraße	de:09184:2483
+Beigarten, Abzw.	de:09184:2484
+Rivastraße	de:09184:2485
+Saarlandstraße	de:09184:2486
+Blumenstraße	de:09184:2487
+Stettiner Weg	de:09184:2488
+Rathaus	de:09184:2490
+Etzweg	de:09184:2491
+Dieselstraße	de:09184:2492
+Medienallee	de:09184:2493
+ZDF-Straße	de:09184:2494
+Sportzentrum	de:09184:2495
+Feldstraße	de:09184:2496
+Nelkenstraße	de:09184:2497
+Beta-Straße	de:09184:2498
+Straßäckerallee	de:09184:2499
+Großhesselohe	de:09184:2500
+Großhesselohe,  Isartalbahnhof	de:09184:2500
+Fichtenstraße	de:09184:2501
+Falkenweg	de:09184:2502
+Hainbuchenring	de:09184:2503
+Dr.-Rehm-Str.	de:09184:2504
+HKW Nord	de:09184:2506
+Jakobusplatz	de:09184:2508
+Heinrich-Hildebrand-Weg	de:09184:2510
+Gymnasium	de:09184:2511
+Wettersteinstraße	de:09184:2512
+Staatsbahnhof	de:09184:2513
+Am Grundelberg	de:09184:2514
+Marienstraße	de:09184:2515
+Hans-Keis-Straße	de:09184:2516
+Freizeitbad	de:09184:2517
+Metzstraße	de:09184:2518
+Forst Kasten	
+Pullach	de:09184:2520
+Gartenstr./Rathaus	de:09184:2521
+P.-Rupert-Mayer-Straße	de:09184:2522
+Franz-Höllriegel-Str.	de:09184:2523
+Gistlstraße	de:09184:2524
+Jaiserstraße	de:09184:2525
+Römerstraße	de:09184:2526
+Mozartstraße	de:09184:2527
+Tannenstraße	de:09184:2528
+Mangfallstraße	de:09184:2529
+Höllriegelskreuth	de:09184:2530
+Fliederstraße	de:09184:2531
+Ammerseestraße	de:09184:2532
+Waldhauserstraße	de:09184:2533
+Rathaus	de:09184:2534
+Kraillinger Weg	de:09184:2535
+Starnberger Weg	de:09184:2536
+Starnberger Straße	de:09184:2536
+Eichenstraße	de:09184:2537
+Neuer Friedhof	de:09184:2538
+Buchenhain	de:09184:2540
+Am Haderner Winkel	de:09184:2541
+Am Klopferspitz	de:09184:2542
+Ortsmitte	de:09184:2544
+Lochhamer Straße	de:09184:2544
+Fraunhoferstraße	de:09184:2545
+Keplerweg	de:09184:2546
+Kopernikusweg	de:09184:2547
+Friedhof	de:09184:2548
+Laubenweg	de:09184:2549
+Baierbrunn	de:09184:2550
+Behringstraße	de:09184:2551
+Schulangerweg	de:09184:2552
+Steinkirchen	de:09184:2553
+Tandlerschlucht	de:09184:2554
+IZB	de:09184:2555
+Bräuhausstraße	de:09184:2556
+Großhaderner Straße	de:09184:2557
+LMU Martinsried	de:09184:2557
+Max-Planck-Institute	de:09184:2558
+Würmtalstraße	de:09184:2559
+Hohenschäftlarn	de:09184:2560
+Rathaus	de:09184:2561
+Nord	de:09184:2562
+Schäftlarn, Kloster	de:09184:2563
+Neuer Friedhof	de:09184:2564
+Würmtalstraße	de:09184:2565
+Lohenstraße	de:09184:2566
+Am Haag	de:09184:2567
+Weinbuchweg	de:09184:2568
+Seeholzenstraße	de:09184:2569
+Ebenhausen-Schäftlarn	de:09184:2570
+Alois-Johannes-Lippl-Str.	de:09184:2571
+Pasinger Straße	de:09184:2572
+Jugendmusikschule	de:09184:2573
+Eichendorffplatz	de:09184:2574
+Sudetenstraße	de:09184:2575
+Rottenbucher Straße	de:09184:2576
+Reichartstraße	de:09184:2577
+Zweigstraße	de:09184:2578
+Richard-Wagner-Straße	de:09184:2579
+Lochham	de:09184:2580
+Ruffiniallee	de:09184:2581
+Klinik	de:09184:2581
+Hutfeldstraße	de:09184:2582
+Thürheimstraße	de:09184:2583
+Germeringer Straße	de:09184:2584
+Bahnhofstraße	de:09184:2585
+Kettelerstraße	de:09184:2586
+Waldstraße	de:09184:2587
+Klinik	de:09184:2587
+Kardinal-Faulhaber-Straße	de:09184:2588
+Freihamer Straße	de:09184:2589
+Maria-Eich-Straße	de:09184:2589
+Gräfelfing	de:09184:2590
+Rudolfstraße	de:09184:2591
+Im Birket	de:09184:2592
+Jahnplatz	de:09184:2593
+Eichenstraße	de:09184:2594
+Heitmeiersiedlung	de:09184:2595
+Radlbäckstraße	de:09184:2596
+Adalbert-Stifter-Straße	de:09184:2597
+Würmstraße	de:09184:2598
+Starnberger Straße	de:09184:2599
+Planegg	de:09184:2600
+Planegg (S) West	de:09184:2601
+Am Kirchenhölzl	de:09184:2602
+Pfarrer-Pflüger-Straße	de:09178:2603
+Am Bach/Hauptstraße	de:09178:2603
+Finkenstraße	de:09184:2604
+Fußweg Rathaus	de:09178:2605
+Waldheimstraße	de:09184:2606
+Weißdornweg	de:09178:2607
+Lindenweg	de:09178:2607
+Leiblstraße	de:09184:2608
+Erlenweg	de:09178:2609
+Liebigstraße	de:09184:2610
+Carl-Orff-Straße	de:09178:2611
+Neufahrn (Lkr.München)	de:09184:2612
+Uhlandstraße	
+Sportpark	de:09178:2616
+Weihenstephaner Berg	
+Erdinger Straße 100	de:09178:2618
+Ludwigsforum	de:09178:2619
+Isar-Büro-Park Nord	de:09178:2620
+Isar-Büro-Park Süd	de:09178:2621
+Zeppelinstraße Süd	de:09178:2622
+Maximilianstraße	de:09178:2623
+Otl-Aicher-Weg	
+Kiebitzweg	
+Mittermeierweg	de:09178:2626
+Mittermeierweg	de:09178:2626
+Messerschmittstraße	de:09178:2627
+Rotkreuzstraße	de:09178:2628
+Neuwirt	de:09178:2629
+Ulmenstraße	de:09178:2629
+St.-Emmeram-Realschule	de:09184:2630
+Gewerbegebiet Erdinger Straße	de:09178:2631
+Keltenschanze	de:09184:2632
+Johann-Kotschwara-Straße	de:09184:2633
+Oskar-Maria-Graf-Str.	de:09184:2634
+Röntgenstraße	de:09184:2634
+Schroßlacher Straße	de:09178:2635
+Wilhelmstraße	
+Jagdfeldbad	de:09184:2637
+Mühlenstraße	de:09178:2638
+Ulrichskapelle	de:09184:2639
+Neuhausen (FS)	de:09178:2640
+Kirche	
+St. Korbinian	
+Bürgerhaus	de:09184:2644
+Am Söldnermoos	de:09178:2646
+Mathildenstraße	de:09184:2647
+Flughafen, Tech. Gebäudemanag.	de:09162:2649
+Flughafen, AirSite 43	de:09162:2649
+Eching	de:09178:2650
+Flughafen, Parkpl. P41/Novotel	de:09162:2651
+An der Lahn	de:09178:2653
+Schloßstraße	de:09178:2655
+Erdinger Straße	de:09178:2656
+Dorfacker	de:09178:2657
+Siedlerstraße	de:09178:2658
+Eberspoint	de:09178:2659
+Neufahrn	de:09178:2660
+Tünzhausen, Abzw.	de:09178:2661
+Garchinger Weg	de:09178:2662
+Maibaum	de:09178:2663
+Glonnterrassen	de:09178:2663
+Freisinger Straße	de:09178:2664
+Zeppelinstraße Nord	de:09178:2665
+Rathaus	de:09178:2666
+Staatsstraße	de:09178:2667
+Bürgermeister-Gruber-Straße	de:09178:2668
+Lilienthalstraße	de:09178:2669
+Pulling	de:09178:2670
+Schlipps	de:09178:2671
+Birkenecker Straße	de:09178:2672
+Deutldorf	de:09178:2673
+Herschenhofen	de:09178:2674
+Unterwohlbach	de:09178:2675
+Richard-Strauss-Straße	de:09178:2676
+Münchner Straße	de:09178:2677
+Korbinianbrücke	de:09178:2678
+Brandau	de:09178:2679
+Freising	de:09178:2680
+Kammergasse	de:09178:2681
+Klebelstraße	de:09178:2682
+Oberwohlbach	de:09178:2683
+Klinikum Süd	de:09178:2684
+Untermarbach	de:09178:2685
+Echinger Straße	de:09178:2687
+Kreuzbachstraße	de:09178:2688
+Raiffeisenstraße	de:09178:2689
+Sportplatz	de:09178:2690
+AOK	de:09178:2691
+Kreuzung	de:09178:2692
+Schönbichl	de:09178:2693
+Unterbruck	de:09178:2694
+Freisinger Straße	de:09178:2695
+Sonnenstraße	de:09178:2696
+Tünzhausen	de:09178:2697
+Viehbach	de:09178:2698
+Kreuth	de:09178:2699
+Bachenhausen	de:09178:2700
+Dorfstraße	de:09178:2701
+Unteranger	de:09178:2702
+Kirche	de:09178:2703
+Post	de:09178:2704
+Großeisenbach	de:09178:2705
+Herschenhofen, Süd	de:09178:2707
+Bahnhofstraße	de:09178:2708
+Hörenzhausen	de:09178:2709
+Weng	de:09178:2711
+Theresienstraße	de:09178:2712
+Heidestraße	de:09178:2713
+Waagstraße	de:09178:2714
+Echinger See	de:09178:2715
+Rudolf-Gütlein-Str.	de:09184:2716
+Realschule 2	
+Realschule Gute Änger	
+Flughafen, Terminalbereich A/B	de:09162:2719
+Otto-Pippel-Straße	de:09184:2720
+Rudolfstraße	de:09184:2721
+Liebigstraße	de:09178:2722
+Fraunhoferstraße	de:09178:2724
+Schule	de:09178:2725
+Flughafen, Terminal 2	de:09162:2726
+Flughafen, Terminalbereich D/E	de:09162:2727
+Ohmstraße	de:09178:2729
+Oskar-von-Miller-Straße	de:09178:2730
+IKEA	de:09178:2731
+Zeppelinstraße	de:09178:2732
+Christl-Cranz-Straße	de:09178:2734
+Polizei	de:09178:2735
+Amselweg	
+Rathaus	de:09184:2737
+Dietersheimer Straße	de:09178:2738
+Lise-Meitner-Straße	de:09178:2739
+Bahnhofstraße	de:09178:2740
+Rathaus	de:09178:2742
+Blütenstraße	de:09178:2743
+Laimbach, Abzw.	de:09178:2744
+Eching (S) Ost	de:09178:2747
+Gewerbegebiet	de:09178:2748
+Leipziger Straße	de:09178:2749
+Eching (S) Nord	de:09178:2750
+Eching (S) Süd	de:09178:2751
+Hotel Olymp	de:09178:2752
+Wippenhausen	de:09178:2753
+Deutenhausen	de:09178:2754
+Burghausen	de:09178:2755
+Ottenburg	de:09178:2756
+Untergartelshausen	de:09178:2757
+Weinbergstraße	de:09178:2758
+Gesseltshausen, Abzw.	de:09178:2759
+Bergstraße	de:09178:2760
+Giesenbach, Abzw.	
+Ringstraße	de:09178:2762
+Schlesierstraße	de:09178:2763
+Gesseltshausen	de:09178:2764
+Grandlmiltach	de:09178:2765
+Lena-Christ-Straße	de:09178:2766
+Zinklmiltach	de:09178:2767
+Quarzitwerk	de:09178:2768
+Höchenberg Abzw.	de:09178:2769
+Maibaum	de:09178:2770
+Kleineisenbach	de:09178:2771
+Kriegerdenkmal	de:09178:2772
+Ziegelei	de:09178:2773
+Hetzenhausen	de:09178:2774
+Luitpoldbrücke	de:09178:2775
+Maibaum	de:09178:2776
+Schlagerberg	de:09184:2777
+Maibaum	de:09178:2778
+Schulzentrum	de:09178:2779
+Hauptstraße	de:09178:2780
+Giesenbach	de:09178:2781
+Raiffeisenkasse	de:09178:2782
+Untere Dorfstraße	de:09178:2783
+Kranzberger See	de:09178:2784
+Obere Dorfstraße	de:09178:2785
+Isarweg	de:09178:2786
+Hagenau	de:09178:2787
+Dorfstraße	de:09178:2788
+Ort	de:09178:2789
+Hallenbad	de:09178:2790
+Mitte	de:09178:2791
+Eggenberg	de:09178:2792
+Hohenbercha	de:09178:2793
+Berg	de:09178:2795
+Süd	de:09178:2796
+Realschule	de:09178:2797
+Kirche	de:09178:2798
+Appercha	de:09178:2799
+Jarzt	de:09178:2800
+Kirchbergstraße	de:09178:2801
+Aiterbach	de:09178:2802
+Zeislstraße	de:09178:2803
+Nörting	de:09178:2804
+Aufham	de:09186:8432
+Kirche	de:09178:2806
+Dietersdorf	de:09186:8430
+Kirche	de:09186:8431
+Thurnsberg, Abzw.	de:09178:2809
+Rathaus	de:09178:2810
+Turmstraße 27	de:09178:2811
+Rathaus	de:09186:8427
+B13	de:09178:2813
+Am Sportgelände	
+Gewerbeg. Kühne und Nagel	de:09178:2817
+Gewerbeg. Optimal	de:09178:2819
+Marzling	de:09178:2820
+Siedlung	de:09178:2821
+Niederthann	
+Nordstraße	de:09178:2823
+Rathaus	de:09178:2824
+Hauptstraße	de:09178:2825
+Schernbuch	de:09178:2826
+Letten	de:09178:2827
+Göttschlag	de:09178:2828
+Hauptplatz	de:09186:8749
+Langenbach	de:09178:2830
+Freising (S) P+R-Platz	de:09178:2831
+Corbin-Hotel	
+Savoyer Au	de:09178:2833
+Am Kneippgarten	de:09178:2835
+Kirche St. Lantpert	de:09178:2836
+Schwimmbad	de:09178:2837
+Ottostr./Heiliggeistgasse	
+Erdinger Straße 31	de:09178:2839
+Moosburg	de:09178:2840
+Epiphanias-Zentrum	de:09178:2841
+Moosstraße	de:09178:2842
+Tuchinger Weg	de:09178:2843
+Finkenstraße	de:09178:2844
+Haggertystraße	de:09178:2845
+Kepserstraße	de:09178:2846
+Rudlfinger Straße	de:09178:2847
+Falkenstraße	de:09178:2848
+Schwabenau	de:09178:2849
+Hallbergmoos	de:09178:2850
+Marienplatz	de:09178:2851
+Isarstraße	de:09178:2852
+Untere Hauptstraße	de:09178:2853
+Obere Hauptstraße	de:09178:2854
+Kriegerdenkmal	de:09178:2854
+Amtsgerichtsgasse	de:09178:2855
+Camerloherstraße	de:09178:2856
+Berufsschule	de:09178:2857
+Obervellacher Straße	de:09178:2858
+Schlüterstraße	de:09178:2859
+Flughafen, Besucherpark	de:09162:2860
+Flughafen, Briefzentrum	de:09162:2861
+Wallbergstraße	de:09178:2862
+Waldsiedlung	de:09178:2864
+Erdinger Straße 84	de:09178:2865
+Katharina-Mair-Straße	de:09178:2865
+Stadtwerke	de:09178:2866
+Plantagenweg Süd	de:09178:2867
+Plantagenweg	de:09178:2868
+Dürneck	
+Eggertshofen	
+Acheringer Hauptstraße	
+Kleine Wies	de:09178:2872
+Aiterbach, Abzw.	de:09178:2873
+Karwendelring	de:09178:2874
+Waldfriedhof	de:09178:2876
+Veit-Adam-Straße	de:09178:2878
+Bahnhofstraße	de:09178:2879
+Dr.-Max-Straße	de:09184:2880
+Milanweg	
+Seniorenzentrum	de:09178:2882
+Stadtfriedhof	de:09178:2883
+Vimystraße	de:09178:2884
+Klinikum Ost	de:09178:2885
+General-von-Stein-Straße	de:09178:2886
+Schule Neustift	de:09178:2887
+Asamstraße	de:09178:2888
+Gewerbepark Römerweg	de:09178:2889
+Düwellstraße	de:09178:2890
+Stadtplatz	de:09178:2891
+Angermaierstraße	de:09178:2892
+Weningstraße	de:09178:2893
+Moltkestraße	de:09178:2894
+Wiesenthalstraße	de:09178:2896
+Landratsamt	de:09178:2898
+Gewerbegebiet FS13	de:09178:2899
+Birkenallee	de:09184:2900
+Montessorischule	
+Landshuter Straße	de:09178:2902
+Fraunhofer-Institut	de:09178:2903
+Moosgasse	de:09178:2904
+Studentenheim	de:09178:2906
+Alois-Steinecker-Straße	de:09178:2907
+Bachstraße	de:09178:2908
+Angererweg	de:09178:2909
+Hofmiller-/Vimystr.1	de:09178:2910
+Weihenstephan	de:09178:2911
+Hohenbachernstraße	de:09178:2912
+Egilbertstraße	de:09178:2913
+Schule Vötting	de:09178:2914
+Thalhauser Straße	de:09178:2915
+Am Staudengarten	de:09178:2917
+Weihenstephaner Straße	de:09178:2918
+Am Vogelherd	de:09178:2919
+Lange Point	de:09178:2920
+Steinbreite	de:09178:2921
+Hofmiller-Gymnasium	de:09178:2922
+Hittostraße	de:09178:2924
+Sonnenstraße	de:09178:2925
+Am Mitterfeld	de:09178:2926
+Heiliggeistgasse	de:09178:2927
+Domberg	de:09178:2927
+Gartenstraße	de:09178:2928
+Sixthaselbach	de:09178:2929
+Giggenhauser Straße	de:09178:2931
+Frühlingstraße	de:09178:2932
+Schweinersdorf	de:09178:2933
+Malvenstraße	de:09178:2934
+Gutenbergstraße	de:09178:2936
+Angerstraße Durchgang	de:09178:2937
+Angerstraße	de:09178:2938
+Gute Änger	de:09178:2939
+Angerbrunnenstraße	de:09178:2940
+Richard-Strauss-Straße	de:09184:2941
+Prinz-Ludwig-Straße	de:09178:2942
+Steinpark	de:09178:2944
+Kaserne	de:09178:2944
+Josefstraße	de:09184:2945
+Jägerstraße	de:09184:2946
+Kugler Alm	de:09184:2947
+Kölblstraße	de:09178:2948
+Am Sportplatz	de:09184:2949
+Ampertshausen, Abzw.	de:09178:2951
+Maxhofweg	de:09184:2952
+Zugspitzstraße	de:09184:2953
+Maibaum	de:09178:2954
+Haidgraben	de:09184:2955
+Volksschule	de:09178:2956
+Schatz, Abzw.	de:09178:2957
+Marktstraße	de:09178:2958
+Hagsdorf	de:09178:2959
+Gallersberg	de:09178:2961
+Baywa	de:09178:2962
+Sportplatz	de:09178:2963
+Mainburger Str.45	de:09178:2964
+Betriebshst. Ladestation	de:09184:2965
+Großgründling	de:09178:2966
+Bergstraße	de:09184:2967
+Leitersdorf	de:09178:2968
+Emmy-Noether-Ring	de:09184:2969
+Tölzer Straße	de:09184:2970
+Haslach, Abzw.	de:09178:2972
+Freisinger Straße	de:09178:2974
+Moosburger Straße	de:09178:2976
+Rathaus	de:09178:2978
+Hofen (Au)	de:09178:2979
+Hopfenhalle	de:09178:2982
+Enzelhausen	de:09178:2984
+Schulbushaltestelle	
+Abzw.Siedlung	de:09178:2986
+Lindenstraße	de:09178:2987
+Pfarrhof	de:09178:2988
+Finsinger Feld Ost	de:09184:2989
+Ebrantshauser Straße	de:09273:3153
+Am Sportgelände	de:09273:843
+Mayerhof	de:09273:843
+Berufsschule	de:09273:837
+Ziegelei	de:09273:842
+Anwesen Thoma	de:09273:842
+Aufhausen	
+Gewerbegebiet	de:09273:81816
+Sandelzhausen, Abzw.	de:09273:81816
+Schulzentrum	de:09273:427
+Gymnasium	de:09273:427
+Gewerbegebiet Straßäcker	de:09273:81817
+Wasserwerk	de:09273:81817
+Josef-Brückl-Straße	de:09178:2999
+Busbahnhof	de:09273:3151
+Wies	de:09178:3001
+Griesplatz	de:09273:3150
+Tüntenhausen	de:09178:3003
+Amperleite	de:09178:3005
+Ort	de:09178:3006
+Erlau	de:09178:3007
+Weihrinnen	de:09178:3008
+Freisinger Straße	de:09178:3009
+Freisinger Straße	de:09178:3010
+Flitzing, Abzw.	de:09178:3011
+Dorfplatz	de:09178:3012
+Kratzerimbach	de:09178:3013
+Untermarchenbach, Abzw.	de:09178:3014
+Thonhausen, Abzw.	de:09178:3015
+Untermarchenbach	de:09178:3016
+Haarland	de:09178:3017
+Mittermarchenbach	de:09178:3018
+Götzendorf, Abzw.	de:09178:3019
+Golkofen	de:09173:3020
+Waldeck	de:09178:3021
+Obermarchenbach	de:09178:3022
+Kirche	de:09178:3023
+Hausmehring (b.Haag/Amper)	de:09178:3024
+Nord	de:09178:3025
+Gerlhausen	de:09178:3026
+Weihersdorf	de:09178:3027
+Oberappersdorf	de:09178:3028
+Aiglsdorf, Abzw.	de:09178:3029
+Thalham	de:09178:3030
+Hettenkirchen, Abzw.	de:09178:3031
+Unterholzhäuseln, Abzw.	de:09178:3032
+Reichertshausen	de:09178:3033
+Baumgarten	de:09178:3034
+Kürzling	de:09178:3035
+Moosburger Straße	de:09178:3036
+Figlsdorf, Abzw.	de:09178:3037
+Zulehen	de:09178:3038
+Gründl	de:09178:3039
+Hausmehringer Str.	de:09178:3041
+Hausmehring (b.Nandlstadt)	de:09178:3042
+Süd	de:09178:3043
+Pfettrach	de:09178:3045
+Grafendorf	de:09178:3047
+Angerstraße	de:09178:3048
+Aiglsdorf	de:09178:3049
+Lindenstraße	de:09178:3051
+Moosburger Straße	de:09178:3051
+Hennerbachbrücke	de:09178:3052
+Ort	de:09178:3053
+Bergmühle	de:09178:3054
+Anglberg, Abzw.	de:09178:3055
+Hemersdorf	de:09178:3056
+Süd	de:09178:3057
+Ort	de:09178:3058
+Hagmühle	de:09178:3059
+Schwaiba	de:09178:3060
+Freundsbach, Abzw.	de:09178:3061
+Gremertshausen	de:09178:3062
+Pellhausen, Ort	
+Lageltshausen, Ort	
+Lageltshausen, Abzw.	de:09178:3066
+Adlerstraße	de:09178:3067
+Maibaum	de:09178:3068
+Niernsdorf	de:09178:3069
+Dürnast	de:09178:3071
+Hohenbachern	de:09178:3072
+Christopher-Paudiß-Platz	
+Siedlung	de:09178:3074
+Holzen	de:09178:3075
+Gasthof	de:09178:3076
+Anwesen zum Fürst	de:09178:3077
+Jägersdorfer Straße	de:09178:3078
+Am Hölzl	
+Jägersdorf	de:09178:3080
+Bahnhofstraße	de:09175:3081
+Badendorf	
+Wolfersdorf, Abzw.	de:09178:3084
+Berghaselbach, Nr. 23	de:09178:3086
+Ziegelei	de:09178:3088
+Sörzen	de:09178:3090
+Alsdorf	de:09178:3092
+Wolframstraße	de:09178:3094
+Ruhpalzing	de:09178:3096
+Unterhaindlfing	de:09178:3098
+Hirtenweg	
+Oberhaindlfing	de:09178:3102
+Heigenhausen	de:09178:3104
+Hemhausen	de:09178:3106
+Dellnhausen	de:09178:3108
+Abens	de:09178:3110
+Herbersdorf	de:09178:3112
+Hirnkirchen	de:09178:3114
+Sünzhausen	de:09186:8436
+Siechendorf	de:09178:3118
+Willertshausen	de:09178:3120
+Kölling	de:09177:3121
+Pischlsdorf, Abzw.	de:09178:3122
+Papferding	de:09177:3123
+Gütlsdorf	de:09178:3124
+Breitasch	de:09177:3125
+Staudhausen, Abzw.	de:09178:3126
+Englpolding	de:09177:3127
+Neukirchen	de:09177:3129
+Roggendorf	de:09178:3130
+Piedendorf, Abzw.	de:09178:3132
+Sillertshausen	de:09178:3134
+Neuhub	de:09178:3136
+Seysdorf	de:09178:3138
+Halsberg	de:09178:3140
+Günzenhausen	de:09178:3142
+Osseltshausen	de:09178:3146
+Rudertshausen	de:09178:3148
+Haarbach	de:09178:3150
+Osterwaal	de:09178:3152
+Berg	de:09178:3154
+Oberhinzing	de:09178:3156
+Itzling (FS), Abzw.	de:09178:3160
+Itzling (FS) Ort	
+Haindlfing	de:09178:3162
+Feldhof	
+Mühlbachstraße	de:09178:3164
+Pettenbrunn	
+Ampertalstraße	de:09178:3166
+Garten	
+Ost	de:09178:3168
+Lagerhaus	de:09178:3170
+Lerchenweg	de:09178:3172
+Landshuter/Tuchinger Straße	de:09178:3176
+Maibaum	de:09178:3178
+Kindergarten	de:09178:3179
+Schule	de:09178:3179
+Schulbushaltestelle	de:09178:3180
+Tuchinger Straße 72	de:09178:3181
+Ast	de:09178:3182
+Lauberg	
+Sickenhausen, Abzw.	de:09178:3186
+Freisinger Straße	de:09178:3187
+West	de:09178:3188
+Haxthausen	
+Haxthausen, Abzw.	de:09178:3190
+Haxthauser Weg	
+Ost	de:09178:3192
+Pellhausen, Abzw.	de:09178:3194
+Sickenhausen	de:09178:3195
+Gartelshausen, Abzw.	de:09178:3196
+Gartelshausen, Ort	
+Kleinbachern, Abzw.	de:09178:3198
+Kleinbachern, Ort	
+Niederhinzing	de:09178:3200
+Thann	de:09178:3204
+Amperbrücke	de:09178:3206
+Linde	de:09178:3208
+Kirchamper	de:09178:3210
+Tölzkirchen, Abzw.	de:09178:3211
+Niederambach	de:09178:3212
+Kirchasch, Abzw.	de:09177:3213
+Oberambach	de:09178:3214
+Murr, Abzw.	de:09178:3216
+Neuer Friedhof	de:09177:3217
+Bergen	de:09178:3218
+Münchener Straße	de:09177:3219
+Seeberg, Abzw.	de:09178:3220
+Altfalterbach	de:09178:3221
+Holzdobl	de:09178:3222
+Schwaig	de:09178:3223
+Unterappersdorf	de:09178:3224
+Wimpasing (FS)	de:09178:3226
+Abzw.Grünberg	de:09178:3227
+Wollersdorf	de:09178:3228
+Kohlmühle	de:09178:3229
+Gütersberg, Abzw.	de:09178:3232
+Fuchswinkl, Abzw.	de:09178:3233
+Königsgütler	de:09178:3234
+Haslach	de:09178:3235
+Kainrad	de:09178:3236
+Airischwand, Abzw.	de:09178:3237
+St. Alban	de:09178:3238
+Flughafen, MAC/Terminal 1	de:09162:3239
+Flughafen München	de:09162:3240
+Singlding (Fraunberg)	de:09177:3241
+Singlding (ED)	de:09177:3242
+Steinsee	de:09175:3247
+Ottenhofen	de:09177:3250
+Bachingerstraße	de:09177:3251
+Santnerstraße	de:09177:3252
+Feuerwehrhaus	de:09177:3253
+Lodererplatz	de:09177:3256
+Freisinger Straße 6	de:09177:3257
+Robert-Bosch-Straße	de:09177:3258
+Irlanger	de:09177:3259
+St. Koloman	de:09177:3260
+Rennweg	de:09177:3261
+Freisinger Straße 21	de:09177:3262
+Herzogstandstraße	de:09177:3265
+Aufhausen	de:09177:3270
+Justus-von-Liebig-Straße	de:09177:3271
+Setzbergweg	de:09177:3272
+Gewerbegebiet Süd	de:09177:3273
+Riedersheim, Abzw.	
+Amadeus	de:09177:3275
+Keltereistraße	de:09177:3276
+Altenerding	de:09177:3280
+Herzog-Tassilo-Realschule	de:09177:3281
+Therme Erding	de:09177:3282
+Korb.-Aigner-Gymnasium	de:09177:3283
+Sigwolfstraße	de:09177:3284
+Am Stadion	de:09177:3285
+Brauerei	de:09177:3286
+Stadtanger	de:09177:3287
+Erding	de:09177:3290
+Gestütring Ärztezentrum	de:09177:3291
+Dall'Armi-Straße	de:09177:3294
+Gerberstraße	de:09177:3295
+Schäfflerstraße	de:09177:3297
+Fliegerhorst Haupttor	de:09177:3298
+Williamsville	de:09177:3299
+Am Anger	de:09177:3300
+Freilichtmuseum	de:09177:3301
+Brunningerstraße	de:09177:3302
+Brauerstraße	de:09177:3303
+Kirchplatz	de:09177:3304
+Landratsamt	de:09177:3305
+Lange Zeile	de:09177:3306
+Grüner Markt	de:09177:3307
+Ludwig-Simmet-Anger	de:09177:3308
+Haager Straße	de:09177:3309
+Kreiskrankenhaus Nord	de:09177:3310
+Klinikum Nord	de:09177:3310
+Kreiskrankenhaus Süd	de:09177:3311
+Klinikum Süd	de:09177:3311
+Siglfinger Straße	de:09177:3312
+Görresstraße	de:09177:3315
+Pauline-Nöthig-Straße	de:09177:3316
+Edelweißstraße	de:09177:3317
+Ratiborer Straße	de:09177:3318
+Hofmarkplatz	de:09177:3319
+Uhlandstraße	de:09177:3320
+Am Altwasser	de:09177:3321
+Birkenstraße	de:09177:3322
+Berufsschule	de:09177:3323
+Am Stadion (P&R-Platz)	de:09177:3324
+Anton-Bruckner-Straße	de:09177:3325
+Ganghoferstraße	de:09177:3326
+Glockengießerstraße	de:09177:3327
+Trindlstraße	de:09177:3328
+Rotwandstraße	de:09177:3329
+Franz-Brombach-Straße	de:09177:3330
+Zugspitzstraße	de:09177:3331
+Schollbach	de:09177:3332
+Dachauer Straße	de:09177:3334
+Otto-Hahn-Straße	de:09177:3335
+Max-Planck-Straße	de:09177:3337
+Kirchötting	de:09177:3339
+Teufstetten, Abzw.	de:09177:3341
+Hörlkofen	de:09177:3342
+Adolf-Kolping-Straße	de:09177:3343
+Oberau	de:09177:3344
+Bergfeld	de:09177:3345
+Fendsbach	de:09177:3346
+Moosstetten, Abzw.	de:09177:3347
+Harthofen	de:09177:3348
+Niederwörth	de:09177:3349
+Reithofen	de:09177:3350
+Stadthalle	de:09177:3351
+Hauptstraße	de:09177:3352
+Karlsdorf	de:09177:3354
+Nord	de:09177:3354
+Karlsdorfer Weg	de:09177:3355
+Wendelsteinstraße	de:09177:3356
+Hl. Blut	de:09177:3357
+Gartner Anwesen	de:09177:3358
+Gewerbegebiet	de:09177:3359
+Altmühlhausen/Preisendorf	de:09175:3360
+Trindl-Keller	de:09177:3361
+Mittbach	de:09177:3362
+Pemmering	de:09177:3364
+Austraße	de:09177:3365
+Burgrain, Ortsmitte	de:09177:3366
+Pretzener Straße	de:09177:3367
+Urtl-Mühle	de:09177:3368
+Vinzenzstraße	de:09177:3369
+Hochstraße	de:09177:3370
+Institut	de:09177:3371
+Rathaus	de:09177:3372
+Sollacher Forst	de:09177:3373
+RWG-Lagerhaus	de:09177:3374
+Ort	de:09177:3375
+Ort	de:09177:3377
+Tittenkofen	de:09177:3378
+St.-Georg-Straße	de:09177:3379
+Reichenkirchen	de:09177:3380
+Nußbaumstraße	de:09177:3381
+Strognstraße	de:09177:3382
+Sportplatz Rotwandstr.	de:09177:3383
+Furthmühle	de:09177:3384
+Melkstattstraße	de:09177:3385
+Agentur für Arbeit	de:09177:3385
+Riding	de:09177:3386
+Gewerbegebiet West	de:09177:3387
+Zaglmühle	de:09177:3388
+Petersbergstraße	de:09177:3389
+Süd	de:09177:3390
+Lange Feldstraße	de:09177:3391
+Sonnenhof	de:09177:3392
+Preisendorf, Ort	de:09177:3393
+Feuerwehrhaus	de:09177:3394
+Am Mühlgraben	de:09177:3395
+Nord	de:09177:3396
+Rathaus-Stadtmitte	de:09177:3399
+Schule	de:09177:3400
+Nord	de:09177:3402
+Ost	de:09177:3403
+Schachtmühle, Abzw.	de:09177:3404
+Abzw. Hof	de:09177:3405
+Pottenau	de:09177:3406
+Sattlerweg	de:09177:3407
+Mooslern	de:09177:3408
+Dorfener Str.	de:09177:3409
+Glaslern	de:09177:3410
+Tittenkofener Str	de:09177:3411
+Lebzelterstraße	de:09177:3413
+Kirche	de:09177:3414
+Mitterlern	de:09177:3416
+Valentin-Kirmeyer-Straße	de:09177:3417
+Niederlern	de:09177:3418
+Zustorf, Abzw.	de:09177:3420
+Josef-Schwankl-Straße	de:09177:3421
+Anton-Huber-Straße	de:09177:3422
+Johann-Auer-Straße	de:09177:3423
+Rotkreuzstraße West	de:09177:3424
+Am Wasserturm	de:09177:3424
+Rotkreuzstraße Süd	de:09177:3425
+Zustorf	de:09177:3426
+Rotkreuzstraße Nord	de:09177:3427
+West	de:09177:3428
+Am Wasserwerk	de:09177:3429
+Herdweg	de:09177:3430
+Forellenweg	de:09177:3431
+Auerhäuseln	de:09177:3432
+Mitte	de:09177:3433
+Zeilern, Abzw.	de:09177:3434
+Flurstraße	de:09177:3435
+Karlsdorfer Straße	de:09177:3436
+Rathaus	de:09177:3437
+Hartbrunn	de:09177:3438
+Loiperding, Abzw.	de:09177:3440
+Haidberg, Abzw.	de:09177:3441
+Buch am Buchrain	de:09177:3442
+Zeilern	de:09177:3443
+Buch-Vorstadt	de:09177:3444
+Burgrain, Burgstraße	de:09177:3447
+Steingassen	de:09177:3454
+Nord	de:09177:3456
+Öd / Stocka, Abzw.	de:09177:3460
+Berging	de:09177:3462
+Etschloh	
+Willmating, Abzw.	de:09177:3464
+Steinlandstraße	de:09177:3465
+Pyramoos	de:09177:3466
+Kaltenbach	de:09177:3468
+Ganzenöd	de:09177:3470
+Harlachen	de:09177:3471
+Holzhausen, Abzw.	de:09177:3472
+Holzhausen	de:09177:3473
+Oberneuching	de:09177:3474
+Kirchenstraße	de:09177:3477
+Wolfsleben	de:09177:3478
+Münchner Straße	de:09177:3479
+Lüß	de:09177:3480
+Oberneuchingermoos	de:09177:3481
+Eicherloh	de:09177:3482
+Brennermühlstraße	de:09177:3483
+Hinteres Finsingermoos	de:09177:3484
+Hintere Moosstraße	de:09177:3484
+Ismaninger Straße	de:09177:3485
+An der Dorfen	de:09177:3486
+Rathaus	de:09177:3487
+Seestraße	de:09177:3488
+Sparkasse	de:09177:3489
+Rathaus	de:09177:3490
+Schule	de:09177:3491
+Maibaum	de:09177:3492
+Niederding, Ost	de:09177:3493
+Dorfplatz	de:09177:3494
+St.-Martin-Straße	de:09177:3495
+Tassilostraße	de:09177:3496
+Eichenstraße	de:09177:3497
+Hochstraße	de:09177:3498
+Mitte	de:09177:3499
+Schule	de:09177:3500
+Nord	de:09177:3501
+Am Sportplatz	de:09177:3502
+Freisinger Straße 19	de:09177:3503
+Schwaigerloh	de:09177:3504
+Freisinger Straße 18	de:09177:3505
+Schwaigermoos	de:09177:3506
+Am Mühlbach	de:09177:3507
+Markt	de:09177:3509
+Eching	de:09177:3510
+Kempfing	de:09177:3511
+Kapelle	de:09177:3512
+Stammham	de:09177:3513
+Dorfstraße 2	de:09177:3514
+Erdinger Straße 6	de:09177:3516
+Fehlbachstraße	de:09177:3518
+Sonnenstraße	de:09177:3519
+Greißlsiedlung	de:09177:3520
+Kempfing, Abzw.	de:09177:3521
+Gfällachbrücke	de:09177:3522
+Gh. Stangl	de:09177:3524
+Am Vierergraben	de:09177:3526
+Gh. Pschorrschwaige	de:09177:3528
+Waldstraße	de:09177:3530
+Zengermoos	de:09177:3532
+Bachham	de:09177:3536
+Kleinthalheim	de:09177:3538
+Sandfalterstraße	de:09177:3539
+Ort	de:09177:3540
+Froschbach	de:09177:3541
+Abzw. Steinkirchen	de:09177:3543
+Oberbierbach	de:09177:3545
+Ort	de:09177:3546
+Schröding	de:09177:3548
+Unterbierbach	de:09177:3549
+Hain, Abzw.	de:09177:3551
+Emling	de:09177:3554
+Bockhorn, Abzw.	de:09177:3555
+Oberstrogn	de:09177:3556
+Am Holz	de:09177:3557
+Unterstrogn	de:09177:3558
+Schelchenvils	de:09177:3559
+Hecken	de:09177:3560
+Oberstrogn, Abzw.	de:09177:3561
+Grünbach	de:09177:3562
+Kreuthäusl	de:09177:3564
+Abzw. Hofstarring	de:09177:3565
+Rappoltskirchen, Abzw.	de:09177:3566
+Ottering	de:09177:3568
+Hienraching	de:09177:3570
+Läng.-/Bergstraße	de:09177:3572
+Hauptstraße	de:09177:3574
+Heldering	de:09177:3576
+Reimering, Abzw.	de:09177:3578
+Olaf-Gulbransson-Straße	de:09177:3579
+Fichtenstraße	de:09177:3580
+Erdinger Straße	de:09177:3582
+Busbahnhof	de:09177:3584
+Wieshofstraße	de:09177:3585
+Bräuhausstraße	de:09177:3586
+Isar-Amper-Klinikum	de:09177:3586
+Sulding	de:09177:3587
+Gewerbegebiet	de:09177:3588
+Emling	de:09177:3589
+Kleinstockach	de:09177:3590
+Himolla	de:09177:3591
+Großstockach	de:09177:3592
+Pfauhub	de:09177:3593
+Hohenpolding	de:09177:3594
+Loiting	de:09177:3596
+Harting, Ort	de:09177:3597
+Starzell, Abzw.	de:09177:3598
+Harting, Abzw.	de:09177:3599
+Sulding, Abzw.	de:09177:3600
+Starzell, Ort	de:09177:3601
+Dickarting	de:09177:3602
+Reinting	de:09177:3603
+Ort	de:09177:3604
+Ramperting	de:09177:3605
+Abzw. Krottenthal	de:09177:3606
+Abzw.Ramperting	de:09177:3607
+Adlberg	de:09177:3608
+Geislbach	de:09177:3609
+Salmannskirchen	de:09177:3610
+Irlach	de:09177:3611
+Mauggen	de:09177:3612
+Kinzlbach	de:09177:3613
+Bockhorn	de:09177:3614
+Burgharting	de:09177:3615
+Haus Nr. 1	de:09177:3616
+Grucking	de:09177:3617
+Ammersdorf	de:09177:3618
+Haus Nr.3	de:09177:3619
+Neukirchen (ED), Abzw.	de:09177:3620
+Grafing	de:09177:3621
+Mitte	de:09177:3622
+Helling	de:09177:3623
+Papferding, Abzw.	de:09177:3624
+Wambach	de:09177:3625
+Mauggen, Abzw.	de:09177:3626
+Bergarn	de:09177:3627
+Jagdhaus, Abzw.	de:09177:3628
+Haselbach	de:09177:3629
+Kirchasch	de:09177:3630
+Maierklopfen	de:09177:3631
+Polzing	de:09177:3632
+Hörgersdorf	de:09177:3633
+Untermailling	de:09177:3634
+Oberhofkirchen	de:09177:3635
+Matzbach, Abzw.	de:09177:3636
+Unterhofkirchen	de:09177:3637
+Schaftlding	de:09177:3638
+Matzbach	de:09177:3639
+Landersdorf	de:09177:3640
+Niedergeislbach	de:09177:3641
+Zeilhofen	de:09177:3642
+Liedling	de:09177:3643
+Unterseebach	de:09177:3644
+Angerskirchen	de:09177:3645
+Kindergarten	de:09177:3646
+Krankenhaus Ost	de:09177:3647
+Krankenhaus Ost	de:09177:3647
+Siedlung	de:09177:3648
+Krankenhaus Süd	de:09177:3649
+Krankenhaus Nord	de:09177:3650
+Van-Beethoven-Weg	de:09177:3651
+Van-Beethoven-Weg	de:09177:3651
+Marienplatz	de:09177:3652
+Am Oberfeld	de:09177:3653
+Am Oberfeld	de:09177:3653
+Waxeneck	
+Krankenhaus West	de:09177:3655
+Bahnhof	de:09177:3656
+Schulzentrum	de:09177:3657
+Schulzentrum	de:09177:3657
+Gewerbegebiet Süd	de:09177:3658
+Ludwig-Mertl-Straße	de:09177:3659
+Armstorf	de:09177:3660
+Sinzing	de:09177:3661
+Kleinschwindau	de:09177:3662
+Penning	de:09177:3663
+Abzw.Sägmühle	de:09177:3664
+Oed	
+Großschwindau	de:09177:3666
+Waltersberg	de:09177:3667
+St. Wolfgang	de:09177:3668
+Schwarzenberg	de:09177:149
+Halle	de:09177:3670
+Kleinaign	de:09177:3671
+Hampersdorf	de:09177:3672
+Graben (Kr ED)	de:09177:3673
+Großkatzbach	de:09177:3674
+Kraham, Abzw.	de:09177:3675
+Urtlfing, Abzw.	de:09177:3676
+Tappberger Feld	de:09177:3677
+Kirche	de:09177:3678
+Buchbach	de:09183:6601
+Hirschauer Weg	de:09177:3680
+Dorfstraße	de:09177:3681
+Kirche	de:09177:3682
+Steeg	de:09183:6600
+Oberhausmehring	de:09177:3684
+Kagen	de:09183:3685
+Indorfer Straßhäuseln	de:09177:3690
+Indorf	de:09177:3692
+Wattendorf	de:09177:3694
+Ringelsdorf	de:09177:3696
+Raiffeisenkasse	de:09177:3698
+Ort	de:09177:3700
+Neufahrn (ED)	de:09177:3702
+Kolbing / Kuglern, Abzw.	de:09177:3704
+Hönning, Abzw.	de:09177:3706
+Ort	de:09177:3707
+Furtarn, Abzw.	de:09177:3708
+Obergeislbach	de:09177:3709
+Ort	de:09177:3710
+Bruck, Abzw.	de:09177:3711
+Höhenberg	de:09177:3712
+Kopfsburg	de:09177:3714
+Tiefenbach	de:09177:3716
+Watzling	de:09177:3718
+Pfaffing (b.Taufkirchen/Vils)	de:09177:3719
+Pfaffing (b.Dorfen)	de:09177:3720
+Haidvocking, Abzw.	de:09177:3721
+Lappach	de:09177:3722
+Permering	de:09177:3723
+Ort	de:09177:3724
+Lindum, Abzw.	de:09177:3725
+Süd	de:09177:3726
+Wimpasing (ED)	de:09177:3728
+Göttenbach, Abzw.	de:09177:3730
+Aschberg	de:09177:3732
+Unterthalham	de:09177:3734
+Lappach	de:09177:3738
+Gasthaus Gruber	de:09177:3739
+Holzen, Abzw.	de:09177:3740
+Postschwaige	de:09177:3741
+Gewerbegebiet	de:09177:3742
+Eching, Abzw.	de:09177:3744
+Gartenstraße Nord	de:09177:3746
+Schule	de:09177:3747
+Römerstraße	de:09177:3749
+Eichenring	de:09177:3750
+Ort	de:09177:3752
+Rewe	de:09177:3753
+Reisen	de:09177:3754
+Ost	de:09177:3755
+Friedhof	de:09177:3756
+West	de:09177:3757
+Feuerwehrhaus	de:09177:3759
+Scheideck, Abzw.	de:09177:3760
+Kalternbach, Abzw.	de:09177:3761
+Jaibing	de:09177:3762
+Ost	de:09177:3763
+Eglafing, Abzw.	de:09177:3764
+Ratzing, Abzw.	de:09177:3765
+Geiting	de:09178:3767
+Babing	de:09177:3768
+Neustadtstraße	de:09178:3769
+Kienraching	de:09177:3770
+Reichersdorf, Abzw.	de:09178:3771
+Frauenvils	de:09177:3772
+Ort	de:09178:3773
+Solching	de:09177:3774
+Wittibsmühle, Abzw.	de:09178:3775
+Bahnhofstraße	de:09177:3776
+Enghausen	de:09178:3777
+Dürnseiboldsdorf	de:09178:3779
+Aham	de:09177:3780
+Rehbach	de:09178:3781
+Granting	de:09177:3782
+Straß (Taufkirchen/Vils)	de:09177:3783
+Hubenstein	de:09177:3784
+Viehmarktplatz	de:09178:3785
+Moosen	de:09177:3786
+Priel (FS)	de:09178:3787
+Ort	de:09177:3788
+Haus Nr. 23	de:09177:3789
+Friedhof	de:09177:3795
+Manhartsdorf	de:09177:3796
+Thenn, Abzw.	de:09177:3798
+Pesenlern	de:09177:3799
+Weiherfeld	de:09177:3801
+Klinik	de:09177:3802
+Abzw. Ziegelberg (Lkr.ED)	de:09177:3803
+Schachtelberg	de:09177:3804
+Bergham	de:09177:3805
+Itzling (ED)	de:09177:3806
+Ziegelberg (Lkr.ED)	de:09177:3807
+Baustarring	de:09177:3808
+Bergham, Abzw.	de:09177:3809
+Kirchberg	de:09177:3810
+Arndorf	de:09177:3812
+Steinkirchen (Lkr.ED)	de:09177:3816
+Postamt	de:09183:80622
+Abzw. Steinkirchen	de:09177:3818
+Abzw. Rosenberg	de:09183:11723
+Erdmannsdorf	de:09177:3820
+Pfarrhof	de:09183:80908
+Sillading	de:09177:3822
+Rain	de:09183:80642
+Großwimpasing	de:09177:3824
+Gabersee ISK	de:09187:42049
+Kleinwimpasing, Abzw.	de:09177:3826
+Schimmelberg	de:09183:80649
+Maitenbeth, Abzw. B12	de:09183:80654
+Gasthaus Straßmaier	de:09183:80655
+Sinkenbach	de:09183:80656
+Gh. Riedel	de:09183:80603
+Wasserburg Stadt Busbahnhof	de:09187:42044
+Realschule	de:09178:3849
+Turnhalle	de:09178:3850
+Feuerwehrhaus	de:09178:3853
+Gammelsdorf	de:09178:3855
+Margarethenried	de:09178:3856
+Mitterfeld	de:09178:3857
+Moosburger Straße	de:09178:3859
+Aufhamerstraße	de:09177:3862
+Reißen	de:09178:3868
+Angermeier	de:09183:80604
+Doidorf	de:09178:3870
+Wies, Abzw.	de:09178:3872
+Bräuhausplatz	de:09183:7750
+Rathaus	de:09178:3874
+Zieglberg (Lkr. FS)	de:09178:3875
+Niederndorf	de:09178:3876
+Hauptbahnhof	de:09261:64
+Abzw. Wang	de:09178:3878
+Bahnhof	de:09274:80661
+Winkl (Taufkirchen/Vils)	de:09177:3880
+Wies (Taufkirchen/Vils), Abzw.	de:09177:3881
+Dorfstraße Nr. 12	de:09183:80648
+Rathaus	de:09178:3884
+Hartshausen	de:09178:3886
+Gewerbegebiet	de:09175:3890
+Oberbabing	de:09274:80684
+Kreuz	de:09274:3710
+Kleinvelden	de:09274:3711
+Abzw.Landshut	de:09274:80686
+Bruckberg	de:09274:80491
+Vilsbrücke	de:09274:3716
+Brauerstraße	de:09274:2443
+Möbelhaus Schuster	de:09274:3720
+BayWa	de:09274:3717
+Wasserburg (Inn) Bahnhof	de:09187:90025
+Edling	de:09187:90024
+Max-Emanuel-Kapelle	de:09187:42033
+Wasserburg Bf (Reitmehring)	de:09187:42031
+Gündlkofen	de:09274:40454
+Schmerbeckstraße	de:09187:42036
+Gymnasium	de:09187:42028
+Fachoberschule	de:09187:42032
+Rosenheimer Str./Sparkasse	de:09187:42029
+AOK	de:09187:42041
+Heinrich-Schütz-Straße	de:09175:3927
+Purfinger Straße	de:09175:3928
+Wallbergstraße	de:09175:3929
+Kirche St. Konrad	de:09187:42037
+Watzmannstraße	de:09187:42045
+Priener Straße	de:09187:42035
+Mondstraße	de:09175:3933
+Sportzentrum	de:09175:3934
+Vaterstettener Straße	de:09175:3935
+Neumarkt-St.Veit	de:09183:6050
+Grub (S) Nord	de:09175:3938
+Grub (S) Süd	de:09175:3939
+Friedhof	de:09175:3940
+Moos	de:09175:3942
+Speicherseestraße	de:09175:3943
+Badria	de:09187:42038
+Gewerbestraße	de:09175:3945
+Professor-Dürrwächter-Platz	de:09175:3946
+Stadtplatz	
+Prof.-Zorn-Straße	de:09175:3948
+Neufarner Straße	de:09175:3949
+Grub	de:09175:3950
+Poing (S) Süd	de:09175:3951
+Abzw. Grub	de:09175:3952
+Schulbushaltestelle	de:09175:3953
+Gh.Königer	de:09175:3954
+Erdinger Str.	de:09175:3955
+Ludwigstraße	de:09175:3956
+Herdweg	de:09175:3958
+Burgerfeld	de:09175:3959
+Poing	de:09175:3960
+Neufarner Straße	de:09175:3961
+Kirche	de:09175:3962
+Hallenbad	de:09175:3963
+Ulrich-Pucher-Straße	de:09175:3964
+Geltingerau	de:09175:3966
+Geltinger Straße	de:09175:3967
+Parsdorfer Straße	de:09175:3968
+Anwesen Hechtl	de:09175:3969
+Markt Schwaben	de:09175:3970
+Rathaus	de:09175:3971
+Dorfplatz	de:09175:3972
+Schule	de:09175:3973
+Kreisklinik RoMed	de:09187:42039
+Purfing	de:09175:3975
+Froschkern	de:09175:3976
+Bergstraße	de:09175:3977
+Tankst. Münchner Straße	de:09175:3978
+Gruber Straße	de:09175:3979
+Niederried	de:09175:3980
+Unterasbach	de:09175:3981
+Fichtenstraße	de:09175:3982
+Lindenstraße	de:09175:3983
+Waldstraße	de:09175:3984
+Heilig Kreuz	de:09175:3985
+Rathaus	de:09175:3986
+Gewerbegebiet	de:09175:3987
+Keltenstraße	de:09175:3988
+Posthalterring	de:09175:3989
+Anwesen Ostermaier	de:09175:3990
+Wegmacherhaus	de:09175:3992
+Flurstraße	de:09175:3993
+Gewerbegebiet, Abzw.	de:09175:3993
+Gasthaus	de:09175:3994
+Nord	de:09175:3996
+Anwesen Obkirchner	de:09175:3996
+Neumühlhausen	de:09175:3998
+Vaterstetten	de:09175:4000
+Gasthaus zur Post (Wende)	de:09175:4001
+Gasthaus zur Post	de:09175:4002
+Nettelkofen	de:09175:4003
+Brückenweg	de:09175:4004
+Polizei	de:09175:4005
+Haus-Nr. 3	de:09175:4006
+Asternweg	de:09175:4007
+Gars, Bahnhof	de:09183:6542
+Baldham	de:09175:4010
+Margeritenstraße	de:09175:4011
+Jahnstraße	de:09175:4012
+Soyen	de:09187:90047
+Schwaigerstraße	de:09175:4014
+Frotzhofen	de:09175:4015
+Gutenbergstraße	de:09175:4016
+Böhmerwaldstraße	de:09175:4017
+Hirnerstraße	de:09175:4018
+Mauerstetten	de:09175:4019
+Zorneding	de:09175:4020
+Salamanderstraße	de:09175:4021
+Stahlgrubersiedlung	de:09175:4022
+Schule	de:09175:4023
+Rathaus	de:09175:4024
+Poing (S) Nord	de:09175:4025
+Ottersberg	de:09175:4026
+Buch	de:09175:4027
+Raiffeisenstraße	de:09175:4028
+Gewerbegebiet, Abzw.	de:09175:4029
+Eglharting	de:09175:4030
+Bahnhofstraße	de:09175:4031
+Moos (b.Forstinning)	de:09175:4032
+Wolfmühle	de:09175:4034
+Siemensallee	de:09175:4035
+Rosenstraße	de:09175:4036
+Wittelsbacher Weg	de:09175:4037
+Graf-Sieghart-Weg	de:09175:4038
+Blumenstraße	de:09175:4039
+Kirchseeon	de:09175:4040
+Lerchenweg	de:09175:4041
+Dorfstraße	de:09175:4042
+Friedhof	de:09175:4043
+St. Hubertus Abzw.	de:09175:4044
+Beethovenstraße	de:09175:4045
+Sauschütt Abzw.	de:09175:4046
+Bücherei	de:09175:4047
+Gewerbepark Abzw.	de:09175:4048
+Ärztehaus	de:09175:4049
+Grafing Bahnhof	de:09175:4050
+F.-Kamerseder-Straße	de:09175:4051
+F.-Kamerseder-Straße	de:09175:4051
+Anzinger Siedlung	de:09175:4052
+Schlehdornweg	de:09175:4053
+Klostersee	de:09175:4054
+Heideweg	de:09175:4055
+Sebastianssäule	de:09175:4056
+Gmaind	de:09175:4057
+Sauschütt Ost	de:09175:4058
+Grafing Stadt	de:09175:4060
+Karwendelplatz	de:09175:4061
+Neustockach	de:09175:4062
+Mittergars	de:09183:80507
+Lagerhausstraße	de:09175:4064
+Realschule	de:09175:4065
+Jettenbach	de:09183:6060
+Luitpoldring	de:09175:4067
+Ödenhub	de:09175:4068
+Waldkraiburg	de:09183:80508
+Ebersberg	de:09175:4070
+Realschule	de:09175:4071
+Roche	
+Goldberg	de:09175:4073
+Hochwaldstraße	de:09175:4074
+Garkofen	de:09175:4075
+Bucher Straße	de:09175:4076
+Bucherstraße	de:09175:4076
+Am Rain	de:09175:4077
+Bucher Straße	de:09175:4078
+Bucherstraße	de:09175:4078
+Seewinkel	de:09175:4079
+Waldbahn	de:09175:4080
+Ahornstraße	de:09175:4081
+Dorf (Ost)	de:09175:4082
+Hergolding	de:09175:4083
+Egglburg	de:09175:4084
+Schule	de:09175:4085
+Eichenallee	de:09175:4086
+Rathaus	de:09175:4087
+Gymnasium	de:09183:6056
+Marienplatz	de:09175:4090
+Kriegersiedlung	de:09175:4092
+Gsprait	de:09175:4093
+Wiesham	de:09175:4094
+Goethering	de:09175:4096
+Jahnstraße	de:09175:4098
+Rotter Straße	de:09175:4099
+Griesstraße	de:09175:4100
+Gymnasium	de:09175:4101
+Bergstraße	de:09175:4102
+Haidlinger Weg	de:09175:4103
+Dichau, Abzw.	de:09175:4104
+Baldhamer Str.	de:09175:4105
+Blumenstraße	de:09175:4106
+Filzhof	de:09175:4107
+Katzenreuth	de:09175:4108
+Haus-Nr. 36	de:09175:4109
+Neudichau	de:09175:4110
+Abzw.	de:09175:4112
+Leonhardikirche	de:09175:4113
+Haging	de:09175:4114
+Hungerberg, Abzw.	de:09175:4115
+Frauenneuharting	de:09175:4116
+Haus (Frauenneuharting)	de:09175:4118
+Hauptstraße	de:09175:4120
+Rott am Inn	de:09187:41915:1
+Ramerberg	de:09187:90201
+Schechen	de:09187:90032
+Tegernau	de:09175:4124
+Rosenheim Hochschule	de:09163:99001
+Gersdorf	de:09175:4126
+Baldham (S) Süd (Bahnhofspl.)	de:09175:4127
+Steinkirchen (b.Aßling)	de:09175:4128
+Pörsdorf, Abzw.	de:09175:4129
+Steinkirchner Straße	de:09175:4130
+Rathaus	de:09175:4132
+Martermühle	de:09175:4133
+Abzw. Sixtenreit	de:09175:4134
+Moos, Abzw.	de:09175:4136
+Allauchplatz	de:09175:4137
+Westerberg	de:09175:4138
+Emmering	de:09175:4140
+Hirschbichl	de:09175:4142
+Salzburg	de:09175:4143
+Mühlbichl	de:09175:4144
+Humboldt-Gymnasium	de:09175:4145
+Bruckhof	de:09175:4146
+Aichat	de:09175:4147
+Kapelle	de:09175:4148
+Sparkassenplatz	de:09175:4149
+Taglaching	de:09175:4150
+Baumhau, Abzw.	de:09175:4152
+Rosenheimer Straße	de:09175:4153
+Gutterstätt	de:09175:4154
+Falkenberg	de:09175:4155
+Sägewerk	de:09175:4156
+Eberhardstraße (Feuerwehr)	de:09175:4157
+Doblbachstraße	de:09175:4158
+Westring	de:09175:4159
+Bauhof, Abzw.	de:09175:4160
+Pienzenau	de:09175:4162
+Pullenhofen	de:09175:4163
+Alxing	de:09175:4164
+Bruck	de:09175:4166
+Einharding, Abzw.	de:09175:4168
+Westerndorf	de:09175:4170
+Zinneberg, Abzw.	de:09175:4171
+Fuggerstraße	de:09175:4172
+Kreisklinik West	de:09175:4173
+Kreisklinik Ost	de:09175:4174
+Bahnhofsplatz	de:09175:4176
+Baldham Dorf	de:09175:4177
+Kirche	de:09175:4178
+Feuerwehrhaus	de:09175:4179
+Neuhausen, Abzw.	de:09175:4180
+Ruhensdorf, Abzw.	de:09175:4181
+Gh. Post	de:09175:4182
+Abzw. Seeweg	de:09175:4183
+Tulling	de:09175:4184
+Forsting	de:09187:90023
+Dobelklause	de:09175:4186
+Post	de:09187:41796
+Bachhäusl	de:09175:4188
+Nederndorf	de:09187:41809
+Oberelkofen	de:09175:4190
+Rathaus	de:09187:41432
+Eisendorf	de:09175:4192
+Sanftlring	de:09175:4193
+Pfadendorf	de:09175:4194
+Brauerei	de:09187:41805
+Ort	de:09175:4196
+Gasthaus	de:09175:4197
+Dorfen (b. Aßling)	de:09175:4198
+Waldsiedlung	de:09175:4200
+Rotter Straße	de:09175:4201
+Aßling	de:09175:4202
+Aich	de:09175:4203
+Sped. Hauser	de:09187:90026
+Wolfersberg	de:09175:4205
+Tal (Oberpframmern)	de:09175:4206
+Wasserwerk	de:09175:4207
+Orthofen	de:09175:4208
+Bahnhofstraße Abzw.	de:09175:4209
+Jägerweg	de:09175:4210
+Schule	de:09175:4211
+Schule	de:09175:4212
+Gh. Neuwirt	de:09175:4213
+Ort	de:09175:4214
+Esterndorf	de:09175:4215
+Bad	de:09175:4216
+Kirche	de:09175:4217
+Kreuz, Abzw.	de:09175:4218
+Maibaum	de:09175:4219
+Balkham	de:09175:4220
+Steinsee Nord	de:09175:4221
+Neuorthofen	de:09175:4222
+Buchenweg	de:09175:4223
+Ehamostraße	de:09175:4224
+Schule	de:09175:4225
+Schlacht	de:09175:4226
+Wetterling	de:09175:4228
+Rose-Breitenbach-Platz	de:09175:4229
+Berganger	de:09175:4230
+Braunautal	de:09175:4230
+Weiterskirchen	de:09175:4232
+Haslach	de:09175:4233
+Kulbing	de:09175:4234
+Rotter Straße	de:09175:4235
+Netterndorf	de:09175:4236
+Georgenberg	de:09175:4237
+Antholing	de:09175:4238
+Hermannsdorf, Abzw.	de:09175:4239
+Gewerbegebiet Schammach	de:09175:4240
+Pienzenauer Straße	de:09175:4241
+Evangelische Kirche	de:09175:4243
+Schammach, Abzw.	de:09175:4250
+Schammach	de:09175:4250
+Hauptstraße	de:09175:4253
+Anzinger Straße	de:09175:4254
+Gailling	de:09175:4255
+Kleinrohrsdorf,Abzw.	de:09175:4256
+Schule	de:09175:4257
+West	de:09175:4258
+Großrohrsdorf	de:09175:4259
+Heinrich-Marschner-Str.	de:09175:4260
+Kreithann	de:09175:4261
+Reiterhof	de:09175:4262
+Philipp-Maas-Weg	de:09175:4263
+Mitterfeldring	de:09175:4265
+West	de:09175:4266
+Siedlung	de:09175:4267
+Ort	de:09175:4268
+Wolfesing	de:09175:4269
+Thal	de:09187:4270
+Mitte	de:09187:4271
+Nord	de:09187:4272
+Parkplatz EBE14	de:09175:4273
+Pausmühle	de:09175:4275
+Baldham (S) Nord	de:09175:4276
+Ingelsberger Weg	de:09175:4277
+Geranienweg	de:09175:4278
+Bergstraße	de:09175:4279
+Gebrüder-Grimm-Straße	de:09175:4281
+Wollwies, Abzw.	de:09175:4282
+Finsinger Au	de:09175:4283
+Bergfeldsee	de:09175:4284
+Altstockach	de:09175:4285
+Kreith	de:09175:4286
+Doblbach 1	
+Schulzentrum	
+Westring	
+Sensau	de:09175:4290
+Ingelsberg	de:09175:139
+Rinding	de:09175:4292
+Traxl	de:09175:4293
+Englmeng	de:09175:4294
+Ruhensdorf	de:09175:4295
+Baumberg	de:09175:149
+Lauterbach	de:09175:4297
+Lohen	de:09175:4298
+Abzw. Dichtlmühle	de:09175:4299
+Rotter Straße	de:09175:4300
+Endorf	de:09175:4301
+Holzhäusln	de:09175:4302
+Oberseifsieden	de:09175:4303
+Unterseifsieden	de:09175:4304
+Sankt Christoph	de:09175:4305
+Sprinzenöd (Kr EBE)	de:09175:4306
+Abersdorf (Kr EBE)	de:09175:4308
+Etzenberg	de:09175:4309
+Am Lerchenfeld	de:09175:4310
+Parostraße	de:09175:4311
+Meiletskirchen	de:09175:4312
+Langwied (EBE)	de:09175:4313
+Berg	de:09175:4314
+Niederaltmannsberg	de:09175:4315
+Rupertsdorf (Kr EBE)	de:09175:4316
+Berger Straße	de:09175:4317
+Rathaus	de:09175:4318
+Graben	de:09175:4319
+Schützen	de:09175:4320
+Dohlenweg	de:09175:4321
+Föhrenweg	de:09175:4322
+Hochstraß	de:09177:4323
+Gewerbestraße	
+Ottendichler Straße	de:09175:4325
+Weidachweg 56	de:09175:4326
+Zaißing	de:09175:4327
+Dietmering	de:09175:4328
+Kraiß	de:09175:4329
+Thailing	de:09175:4330
+Lieging	de:09175:4331
+Winkl	de:09175:4332
+Rott am Inn Bahnhof	de:09187:41915:30
+Am Priel	de:09187:90300
+Lengdorf	de:09187:41916
+ALPMA	de:09187:41913
+Bräustüberl	de:09187:41914
+Rosenheimer Straße	de:09187:4338
+Marktplatz	de:09187:90302
+Pf.-Freiberger-Str.	de:09187:90303
+Parsdorfer Weg	de:09175:4341
+Rathaus	de:09175:4342
+Pf.-Aigner-Allee	de:09175:4343
+Birkenweg	de:09175:4343
+Süd	de:09175:4344
+Mühlenstraße	de:09175:4345
+Straßer	de:09177:4346
+Gewerbepark Nord	de:09175:4347
+Eulenweg	de:09175:4348
+Kreuzstraße	de:09182:43677
+Westerham	de:09187:90020
+Bruckmühl, Bahnhof	de:09187:41227
+Heufeldmühle	de:09187:90002
+Heufeld	de:09187:90021
+Abzw. Brückenstr.	de:09187:41774
+Fa. Böhnisch	
+Gasthaus Post	de:09187:41695
+Hotel Mareis	de:09187:41688
+Otterfing	de:09182:43342
+Schäffler	
+Süd	de:09187:41692
+Autoh. Hamberger	
+Gh. Brückenwirt	de:09187:41225
+Hinrichssegen	de:09187:90049
+Bruckmühler Straße	de:09187:41251
+Kurpark	de:09187:90019
+Holzkirchen	de:09182:43227
+Rosenheim, Stadtmitte	de:09163:12
+Raiffeisenbank	
+Hauptstraße Willing	de:09187:40925
+Darching	de:09182:42812
+Feilnbach Bahnhof	
+Westendstraße	de:09187:47046
+Schulzentrum	de:09187:40852
+Abzw. Mietraching	de:09187:40910
+Heufeld	de:09187:41253
+Abzw. Nelkenstr	de:09187:41256
+Bahnhof	de:09182:43310
+Feldolling	de:09187:90183
+Abzw. Högling	
+Abzw. Noder-/Sonnenwiechs	
+Abzw. Bruckmühl	de:09187:41855
+Autohaus Huber	de:09187:41269
+Grundschule	de:09187:41696
+Nord	de:09187:41693
+Ast bei Feldolling	de:09187:42718
+Raiffeisenbank	de:09187:41689
+Agatharied	de:09182:90189
+Abzw Unterreit	
+Haus Hoheneck	de:09187:41690
+Staatsstraße	de:09187:41691
+Rauchenberg	de:09184:4404
+Gh Alter Wirt	
+Kirche	
+Gottschalling	
+Berghalde	
+Gh Kammerloher	
+Hausham	de:09182:43217
+Haslach	
+Mitterham	
+Westerham b Willing	
+Am Bach	
+Ried (b Götting)	
+Waith / Linden	
+Thalham b Bruckmühl	
+Samerstraße	de:09187:41270
+Abzw. Bahnhof	de:09187:41697
+Schliersee	de:09182:43374
+Ort	de:09187:41698
+Fa. Spinner	de:09187:46995
+Blindham	de:09184:4427
+Bergtierpark	de:09184:4428
+Fischhausen	de:09182:43389
+Fischbachau	de:09182:43170
+Geitau	de:09182:90251
+Osterhofen	de:09182:90188
+Bayrischzell	de:09182:43151
+Warngau	de:09182:90187
+Schaftlach	de:09182:43425
+Reichersbeuern	de:09173:4500
+Bad Tölz (BOB)	de:09173:4505
+Gaißach	de:09173:4510
+Obergries	de:09173:4520
+Lenggries	de:09173:4530
+Moosrain	de:09182:90250
+Gmund(Tegernsee)-Finsterwald	de:09182:90239
+Bundesstraße	
+Bundesstraße	
+Gmund	de:09182:43193
+Kapleralm	
+Breitenbach	
+Kuramt	
+Postamt	
+Söllbach	
+Brücke	
+Post	
+Schwaighofen	
+Leeberg	
+Tegernsee	de:09182:43401
+Bahnhof	de:09163:9
+Aicherpark	de:09163:201
+Mühldorf am Inn	de:09183:6530
+Großkarolinenfeld	de:09187:79026
+Ostermünchen	de:09187:42002
+Ampfing	de:09183:80492
+Pfarrstraße	de:09175:4651
+Schulstraße	de:09175:4652
+Obere Bahnhofstraße	de:09175:4653
+Ringstraße	de:09175:4654
+F.-Krinninger-Weg	de:09175:4655
+Herzog-Tassilo-Ring	de:09175:4656
+Herzog-Welf-Straße	de:09175:4657
+L.-Stadler-Straße	de:09175:4658
+Wasserb. Landstraße	de:09175:4659
+Moosacher Weg	de:09175:4660
+Kirche	de:09175:4661
+Harthauser Straße	de:09175:4662
+Georg-Wimmer-Ring	de:09175:4663
+Haus Bartholomäus	de:09175:4664
+Rotwandstraße	de:09175:4665
+Burgstraße	de:09175:4666
+Am Burggraben	de:09175:4667
+Kinderhaus St. Georg	de:09175:4668
+Tannenstraße	de:09175:4669
+Ahornstraße	de:09175:4670
+Ulmenweg	de:09175:4671
+Eglhartinger Straße	de:09175:4672
+Kirche	de:09175:4673
+Süd	de:09175:4674
+Schule	de:09175:4675
+An der Flur	de:09175:4676
+Grünlandstraße	de:09175:4677
+Bahnhofstraße Nord	de:09175:4678
+Eulenweg	
+Birkenweg	
+Kreuzung	de:09175:4681
+Wimpersing	de:09175:4682
+Penzberg (DB)	de:09190:41436:1
+Bahnhof	de:09190:41534:30
+Bad Lido	de:09190:90131
+Schule	de:09190:41542
+Sportplatz	
+Bichl	de:09173:4720
+Bahnhofstraße	de:09173:4721
+Sperlingstraße	de:09173:4723
+Dompfaffenweg	de:09173:4724
+Rotkehlchenweg	de:09173:4725
+Banater Straße	de:09173:4726
+Chamalieres Platz	de:09173:4727
+Kochelseeweg	de:09173:4728
+Steiner Ring Süd	de:09173:4729
+St.-Hubertus-Str.	de:09173:4730
+Gustav-Adolf-Str	de:09173:4731
+Nelkenweg	de:09173:4732
+Maiglöckchenweg	de:09173:4733
+Rosenweg	de:09173:4734
+Graslitzer Straße	de:09173:4735
+Rathaus	de:09173:4736
+Erikaweg	de:09173:4737
+Geltinger Weg	de:09173:4739
+Alpenstraße	de:09173:4741
+Zugspitzweg	de:09173:4742
+Isarau-Stadion	de:09173:4743
+Neuer Platz	de:09173:4744
+Karl-Lederer-Schule	de:09173:4746
+Verdiweg	de:09173:4747
+Achenseeweg	de:09173:4748
+Sauerlacher Straße	de:09173:4749
+Icking	de:09173:4750
+Föhrenwaldstraße	de:09173:4751
+Am Wasen	de:09173:4752
+Volksschule	de:09173:4753
+Farchet B11	de:09173:4754
+Korbinianstraße	de:09173:4755
+Waldram	de:09173:4756
+Breitenbachstraße	de:09173:4757
+Alleebüchelweg	de:09173:4758
+Ringstraße	de:09173:4759
+Wolfratshausen	de:09173:4760
+Weldenstraße	de:09173:4761
+Buchberg	de:09173:4762
+Sudetenstraße	de:09173:4763
+Blumenstraße	de:09173:4764
+Rathaus B11	de:09173:4765
+Lilienstraße	de:09173:4766
+Johannisplatz	de:09173:4768
+Rübezahlstraße	de:09173:4770
+Birkenweg	de:09173:4771
+Elbestraße	de:09173:4772
+Kirchplatz	de:09173:4774
+Schießstättstraße	de:09173:4775
+Fasanenweg	de:09173:4776
+Feuerwehrschule	de:09173:4777
+Schulzentrum	de:09173:4778
+St. Nikolaus	de:09173:4779
+Waldfriedhof	de:09173:4780
+Förderschule	de:09173:4781
+Sudetenstraße	de:09173:4782
+Keplerweg	de:09173:4783
+Am Stern	de:09173:4784
+Feuerwehr	de:09173:4785
+Schubertweg	de:09173:4786
+Stein B11	de:09173:4787
+Stein	de:09173:4788
+Pfaffenrieder Straße	de:09173:4789
+Wettersteinstraße	de:09173:4790
+Städtischer Bauhof	de:09173:4791
+Unterherrnhausen, Abzw.	de:09173:4793
+Degerndorf Abzw.	de:09173:4794
+Degerndorf	de:09173:4795
+Achmühle	de:09173:4796
+Baierlach	de:09173:4797
+Eurasburg	de:09173:4798
+Oberherrnhausen	de:09173:4799
+Lengenwies	de:09173:4800
+Bierbichl	de:09173:4801
+Bruggen	de:09173:4802
+Hofstätt/Sterz	de:09173:4803
+Bahnhofstraße	de:09173:4804
+Quarzbichl	de:09173:4805
+Marienplatz	de:09173:4806
+Badstraße	de:09173:4807
+Bergkramerhof	de:09173:4808
+Gh. Neuwirt	de:09173:4810
+Anglberg	de:09173:4811
+Am Kirchberg	de:09173:4812
+Gewerbegebiet	de:09173:4813
+Abzw. Ammerland	de:09173:4814
+Kreisklinik	
+Wimpasing (b. Münsing)	de:09173:4816
+Bürgemeister-Schwaiger-Str.	
+Johannisgasse	
+Ammerland	de:09173:4818
+Brunnenstraße 20	de:09173:4819
+Holzhausen	de:09173:4820
+Attenkam	de:09173:4821
+Grubigsteinstraße	de:09173:4822
+Badeplatz	de:09173:4823
+Zugspitzstraße	de:09173:4824
+Sankt Heinrich	de:09173:4825
+Ambach	de:09173:4826
+Süd	de:09173:4827
+Seeheim, Abzw.	de:09173:4828
+Badeplatz	de:09173:4829
+Dorfen (b.Wolfratshausen)	de:09173:4830
+Gebhardtstraße	de:09173:4831
+Weidach	de:09173:4832
+Holunderstraße	de:09173:4833
+Meßnergassl	de:09173:4834
+Meßnergassl	de:09173:4834
+Edelweißstraße	de:09173:4835
+Waldeckstraße	de:09173:4836
+Enzianstraße	de:09173:4837
+Puppling	de:09173:4838
+Margeritenstraße	de:09173:4839
+Riedhof	de:09173:4840
+Neufahrn (b.Wolfratsh.)	de:09173:4841
+Ergertshausen/Neufahrn, Abzw.	de:09173:4842
+Dettenhausen, Abzw.	de:09173:4843
+Mitte	de:09173:4844
+Münchner Straße	de:09173:4845
+Rathausstraße	de:09173:4845
+Sägewerk	de:09173:4846
+Abzw.Thanning	de:09173:4848
+Attenham	de:09173:4850
+Endlhausen	de:09173:4852
+Weipertshausen	de:09173:4854
+Schwaig, Abzw.	de:09173:4855
+Gh.zur Post	de:09173:4856
+Bergstraße	de:09173:4858
+Hornstein	de:09173:4860
+Sachsenhausen	de:09173:4862
+Ergertshausen	de:09173:4864
+Aufhofen	de:09173:4866
+Dettenhausen	de:09173:4867
+Gewerbegebiet	de:09173:4868
+Staltach	
+Stobäusstraße	de:09173:4871
+Bahnhofstraße	de:09173:4872
+Königsdorfer Str.	de:09173:4873
+Faulhaberstraße	de:09173:4874
+Schlesierstraße	de:09173:4875
+Auenstraße	de:09173:4876
+Benediktbeuern	de:09173:4880
+Thanning	de:09173:4884
+Gasthof	de:09173:4885
+Abzw. Moosham	de:09173:4886
+Eglinger Straße	de:09173:4887
+Schallkofen	de:09173:4888
+Schalkofen	de:09173:4888
+Feldkirchener Straße	de:09173:4889
+Siegertshofen	de:09173:4890
+Reichertshausen	de:09173:4891
+Kirche	de:09173:4892
+Wolfratshauser Straße	de:09173:4893
+Weihermühle	de:09173:4894
+Föggenbeuern	de:09173:4895
+Emmerkofen	de:09173:4896
+Abzw.Peretshofen	de:09173:4897
+Humbach	de:09173:4898
+Thankirchen, Abzw.	de:09173:4900
+Manhartshofen, Abzw.	de:09173:4901
+Schönegg	de:09173:4902
+Peretshofen	de:09173:4903
+Raiffeisenstraße	de:09173:4904
+Schule	de:09173:4905
+Kloster	de:09173:4906
+Berg	de:09173:4907
+Fraßhausen	de:09173:4908
+Baiernrain	de:09173:4909
+Linden	de:09173:4911
+Bibisee	de:09173:4912
+Ort	de:09173:4914
+Feuerwehrhaus	de:09173:4915
+Ortsmitte	de:09173:4916
+Sportplatz	de:09173:4917
+Aug	de:09173:4918
+Rothmühle	de:09173:4919
+Huppenberg, Abzw.	de:09173:4920
+Lochen, Abzw.	de:09173:4922
+Fiecht, Abzw.	de:09173:4924
+Fischbach, Abzw.	de:09173:4926
+Valtl, Abzw. Haunleiten	de:09173:4927
+Hoheneck	de:09173:4928
+Graben	de:09173:4929
+Höfen	de:09173:4930
+Wolfsgrube	de:09173:4931
+Schwaighofen	de:09173:4932
+Feuerwehrhaus	de:09173:4933
+Unterbuchen	de:09173:4934
+Reindlschmiede	de:09173:4935
+Spiegel	de:09173:4936
+Abzw.Brandl	de:09173:4937
+Glaswinkl	de:09173:4938
+Hofgut Letten	de:09173:4939
+Schwaig (b.Bad Tölz)	de:09173:4940
+Schulzentrum	de:09173:4941
+Einbach	de:09173:4942
+Zentr. Omnibusbhf. (ZOB)	de:09173:4943
+ZOB Isarkai	de:09173:4943
+Max-Höfler-Platz	de:09173:4944
+Amortplatz	de:09173:4946
+Hauptpost	de:09173:4948
+Kirche	de:09173:4949
+Bahnhof	de:09173:4950
+Birkenallee	de:09173:4951
+Lochen (b.Dietramszell)	de:09173:4952
+Steingau	de:09173:4954
+Altenheim	de:09173:4955
+Oberegling	de:09173:4956
+Langau	de:09173:4957
+Strobl, Anwesen	de:09173:4958
+Stadtwerke / Lenggrieser Str.	de:09173:4959
+Tattenkofen	de:09173:4960
+Kochel	de:09173:4961
+Einöd	de:09173:4962
+Bairawies, Abzw.	de:09173:4964
+An der Osterleite	de:09173:4965
+Landhaus Klein	de:09173:4966
+Ort	de:09173:4968
+Lindenhof	de:09173:4969
+Hechenberg, Abzw.	de:09173:4970
+Staubachhof	de:09173:4972
+Roßwies	de:09173:4974
+Gasthaus Walgerfranz	de:09173:4976
+Friedhof	de:09173:4978
+Gh. Bayrischer Löwe	de:09173:4979
+Café am Wald	de:09173:4980
+Jahnstraße/Turnhalle	de:09173:4982
+Behördenzentrum	de:09173:4984
+Nantesbuch	de:09190:90126
+Maxkron	de:09190:41455
+Reindl	de:09190:41469
+Wölfl	
+Steigenberger	
+Friedhof	
+Zentrum	de:09190:40511
+Post/Bahnhof	de:09180:42873
+Kurfürst-Max-Siedlung	de:09190:41475
+Auf der Elz	
+Bahnhof	de:09190:41436
+Hauptbahnhof Süd	de:09162:5000
+Lärchenstraße	de:09175:5002
+Kampenwandstraße	de:09175:5006
+Rathaus Süd	de:09175:5007
+Parksiedlung	de:09175:5008
+Stahlgruber	de:09175:5009
+An der Schafweide	de:09175:5010
+Birkenallee	de:09175:5011
+Wallbergstraße	de:09175:5012
+Münchener Straße	de:09175:5013
+Schwabener Straße	de:09175:5014
+Tulpenweg	de:09175:5015
+Kirche	de:09175:5016
+Gewerbegebiet Nord	de:09175:5018
+Erdinger Straße	de:09175:5019
+Claudiusstraße	de:09175:5026
+Viscardistraße	de:09179:5299
+Breitbrunn	de:09188:5337
+Buch	de:09188:5338
+Friedenskirche	de:09188:5339
+Weidenlohstraße	de:09179:5341
+Waldschmidtstraße	de:09188:5342
+Biberkorstraße	de:09188:5343
+Frauental	de:09188:5344
+Lärchenweg	de:09188:5345
+J.-u.-R.-Werner-Platz	de:09188:5346
+Lohacker	de:09188:5347
+Ehem. Post	de:09188:5348
+Schloss	de:09188:5349
+Geisenbrunn	de:09188:5350
+Landratsamt / Wasserpark	de:09188:5351
+Landratsamt / Seebad	de:09188:5351
+Leutstettener Straße	de:09188:5352
+Würmstraße	de:09188:5353
+Berger Straße	de:09188:5354
+Buchhofstraße	de:09188:5355
+Milchberg	de:09188:5356
+Pähler Weg	de:09188:5357
+Seestraße	de:09188:5358
+Waaghäusl	de:09188:5359
+Gilching-Argelsried	de:09188:5360
+Grafstraße	de:09188:5362
+Weßlinger Straße	de:09188:5363
+Aufkirchen	de:09188:5364
+Welfenstraße	de:09188:5365
+Auf der Lüften	de:09188:5366
+Carl-Benz-Straße	de:09188:5367
+Kirche	de:09188:5368
+Gewerbegebiet Süd	de:09188:5369
+Neugilching	de:09188:5370
+Flurgrenzstraße	de:09188:5371
+Bachhausen	de:09188:5372
+Mühlenweg	de:09188:5373
+Aufhausen	de:09188:5374
+Zeppelinstraße	de:09188:5375
+Oberbiberkor	de:09188:5376
+Wadlhausen	
+Höhenrain	de:09188:5378
+Weßling	de:09188:5380
+Rittergütl	de:09173:5381
+Frühlingsgarten	de:09188:5382
+Günter-Stöhr-Gymnasium	de:09173:5383
+Staatssiedlung	de:09188:5384
+Auing	de:09188:5385
+Post	de:09188:5386
+Mitte	de:09188:5386
+Georg-Bader-Weg	de:09188:5387
+Bründlwiese	de:09188:5388
+Am Weiher	de:09188:5389
+Steinebach	de:09188:5390
+Jägersbrunnerstraße	de:09188:5391
+Ort	de:09188:5392
+Etterschlag Süd	de:09188:5393
+Landstetten	de:09188:5394
+Eichenweg	de:09188:5395
+Seewiesen	de:09188:5396
+Burgstraße	de:09188:5397
+Rothenfeld	de:09188:5398
+Kirchplatz	de:09188:5399
+Seefeld-Hechendorf	de:09188:5400
+Oberfeld	de:09188:5401
+Starnberger Straße	de:09188:5402
+Starnberger Straße	de:09188:5402
+Realschule	de:09188:5403
+Kloster	de:09188:5404
+Alte Schmiede	de:09188:5405
+Alte Schmiede	de:09188:5405
+Andechser Straße	de:09188:5406
+Andechser Straße	de:09188:5406
+Herrschinger Straße	de:09188:5407
+Herrschinger Straße	de:09188:5407
+Erlinger Höhe	de:09188:5408
+Panoramastraße	de:09188:5409
+Herrsching	de:09188:5410
+Strittholzstraße	de:09188:5411
+Martinsweg	de:09188:5412
+Goethestraße	de:09188:5413
+Dampfersteg	de:09188:5414
+Mitterweg	de:09188:5415
+Hechendorfer Straße	de:09188:5416
+Krankenhaus	de:09188:5417
+Lochschwab	de:09188:5418
+Hauptstraße	de:09188:5419
+Stockdorf	de:09188:5420
+Weylerstraße	de:09188:5421
+Schloß Ried	de:09188:5422
+Etterschlag, Am Anger	de:09188:5423
+Neue Siedlung	de:09188:5424
+Gymnasium	de:09188:5425
+Obstgarten	de:09188:5426
+Fischergassl	de:09188:5427
+Bucher Weg	de:09188:5428
+Mühlfeldstraße	de:09188:5429
+Gauting	de:09188:5430
+Gauting (S) (nur Ausstieg)	de:09188:5431
+Abzw. Seeleiten	de:09188:5432
+Watzmannstraße	de:09188:5433
+Gemeindehaus	de:09188:5434
+Waldstraße	de:09188:5436
+Aschering	de:09188:5437
+Obermühle	de:09188:5438
+Seestraße	de:09188:5439
+Schloß	de:09188:5440
+Landsberger Straße	de:09188:5441
+Marktplatz	de:09188:5442
+Stegen	de:09188:5443
+Schorn	de:09188:5444
+Rauscher Straße	de:09188:5445
+Fercha	de:09188:5446
+Argelsrieder Straße	de:09188:5447
+Ort	de:09188:5448
+Olympiastraße	de:09188:5449
+Starnberg	de:09188:5450
+Emslanderstraße	de:09188:5451
+Buchhof	de:09188:5452
+Lohfeldstraße	de:09188:5453
+Bucentaurweg	de:09188:5454
+Oberdorfer Straße	de:09179:5455
+RUAG	de:09188:5456
+Friedrichshafener Straße	de:09188:5457
+Abzw.Leoni	de:09188:5458
+Gut Hüll	de:09188:5459
+Possenhofen	de:09188:5460
+Gymnasium	de:09173:5461
+Kreuzweg	de:09188:5462
+Waldsanatorium	de:09188:5463
+Assenhausen	de:09188:5464
+KIM, Konrad-Zuse-Bogen	de:09188:5465
+Sibichhausen	de:09188:5466
+Robert-Stirling-Ring	de:09188:5467
+Allmannshausen	de:09188:5468
+Pionierstraße	de:09188:5469
+Feldafing	de:09188:5470
+Frühlingstraße	de:09188:5471
+Muggenthalerstraße	de:09188:5472
+Heimstraße	de:09188:5473
+Pentenrieder Straße	de:09188:5474
+Rathaus	de:09188:5475
+Margaretenstraße	de:09188:5476
+Sperberweg	de:09188:5477
+Mitterweg	de:09188:5478
+Erlenweg	de:09188:5479
+Tutzing	de:09188:5480
+Münchener Straße	de:09184:5481
+Bibliothek	de:09188:5482
+Claude-Dornier-Straße	de:09188:5484
+Landsberger Straße	de:09188:5485
+DLR	de:09188:5486
+Osterholzweg	de:09188:5489
+Starnberg Nord	de:09188:5490
+Argelsrieder Feld	de:09188:5491
+Karolingerstraße	de:09188:5492
+Ort	
+Am Wörthsee	de:09188:5495
+Bachern	de:09188:5496
+Wallerstraße	de:09188:5497
+Walchstadt	de:09188:5498
+Schlagenhofen-Weich	de:09188:5499
+Lerchenstraße	de:09188:5500
+Seestraße	de:09188:5501
+Maistraße	de:09188:5502
+Delling	de:09188:5503
+Dellinger Weg	de:09188:5504
+St.-Martin-Kirche	de:09188:5505
+Birkenstraße	de:09188:5506
+Techno Park	de:09188:5507
+Staatsstraße	
+Köderbichl	de:09188:5509
+Machtlfing, IWL	de:09188:5510
+Drößling	de:09188:5511
+Drößling, Gärtnerei	de:09188:5511
+Frieding	de:09188:5512
+Saganger	de:09188:5513
+Mühlbachstraße	de:09188:5514
+Espe-Platz/3M	de:09188:5515
+Marienplatz	de:09188:5516
+Lindenallee	de:09188:5517
+Neuer Friedhof	de:09188:5517
+Krankenhaus	de:09188:5518
+Elisenstraße	de:09188:5519
+Hubertusstraße	de:09188:5520
+Poststraße	de:09188:5521
+Kreisverkehr St 2068	de:09188:5522
+Dorfstraße	de:09188:5523
+Am Laichholz	de:09188:5525
+Hadorf	de:09188:5526
+Heinestraße	de:09188:5527
+Stadtmarkt	de:09188:5528
+Kirchplatz	de:09188:5529
+Agentur für Arbeit	de:09188:5530
+Arbeitsamt	de:09188:5530
+Klinikum Starnberg	de:09188:5531
+Klinikum-MediCenter	de:09188:5532
+Mühltal	de:09188:5533
+Egerer Straße	de:09188:5534
+Abzw. Aschering	de:09188:5535
+Hanfeld	de:09188:5536
+St.-Michael-Straße	de:09188:5536
+Gewerbegebiet	de:09188:5537
+Tutzinger-Hof-Platz	de:09188:5538
+Ascheringer Weg	de:09188:5539
+Jahnstraße	de:09188:5540
+Waldspielplatz	de:09188:5541
+Neusöcking	de:09188:5542
+Ernst-Heimeran-Weg	de:09188:5543
+Jungholz	de:09188:5544
+Paradies	de:09188:5545
+Brunnangerhalle	de:09188:5546
+Hofbuchetstraße	de:09188:5547
+Riedener Weg	de:09188:5548
+Wittelsbacherstraße	de:09188:5549
+Rosenstraße	de:09188:5550
+Bacherner Weg	de:09188:5551
+Rummelsberger Stift	de:09188:5553
+Schießstättstraße	de:09188:5554
+GP Inning/Wörthsee	de:09188:5555
+GWP Inning/Wörthsee	de:09188:5555
+Cappius	de:09188:5556
+St-Stephan-Straße	de:09188:5557
+Esterbergstraße	de:09188:5558
+Bozener Straße	de:09188:5559
+Riedesel-/Wankstraße	de:09188:5560
+Gemeindegrenze	de:09188:5561
+Kriegsblinden-Kursanatorium	de:09188:5562
+Rummelsberger Stift Söcking	de:09188:5562
+Altenheim Maria Eich	de:09188:5563
+Kreissparkasse	de:09188:5564
+Sportplatz	de:09188:5565
+Maising	de:09188:5566
+Schluchtweg	de:09188:5567
+Maxhof	de:09188:5568
+Prinz-Karl-Straße	de:09188:5569
+Neuhochstadter Straße	de:09188:5572
+Ina-Seidl-Weg	de:09188:5573
+Am Schloßhölzl	de:09188:5574
+Franziskusweg	de:09188:5575
+Gymnasium	de:09188:5577
+Wilhelmshöhenstraße	de:09188:5578
+Pilotystraße	de:09188:5580
+Einbettl West	de:09188:5581
+Leutstetten	de:09188:5582
+Petersbrunn	de:09188:5583
+Niederpöcking	de:09188:5584
+Schloßberg	de:09188:5585
+Wildmoos	de:09188:5586
+GWG Argelsried	de:09188:5587
+Am Bründl	de:09188:5588
+Hochstadter Straße	de:09188:5589
+Oberpfaffenhofen	de:09188:5590
+Dorfstraße	de:09188:5591
+Schule	de:09188:5592
+Piusweg	de:09188:5593
+Oberbrunn	de:09188:5594
+Parkstraße	de:09188:5595
+Taubenhüll	de:09188:5596
+Enzianweg	de:09188:5597
+Altes Rathaus	de:09188:5598
+Abzw.Lindenberg Siedlg.	de:09188:5599
+Lindenberg Siedlung	de:09188:5600
+Kohlschwarzweg	de:09188:5601
+Wieling	de:09188:5602
+Weilheimer Straße	de:09188:5603
+Maibaum	de:09188:5604
+Schule	de:09188:5605
+Machtlfing	de:09188:5606
+Schulzentrum	de:09188:5607
+Gymnasium	de:09188:5607
+Rathaus	de:09188:5608
+Hirtenweg	de:09188:5609
+Würmbrücke	de:09188:5610
+J.-Dosch-Schule	de:09188:5611
+Buchendorfer Straße	de:09188:5612
+Planegger Straße	de:09188:5613
+Feldstraße	de:09188:5614
+Herbststraße	de:09188:5615
+Sonnwendstraße	de:09188:5616
+Kirche	de:09188:5617
+Buchendorfer Berg	de:09188:5618
+Forst-Kasten-Straße	de:09188:5619
+Buchendorf	de:09188:5620
+Obertaxetweg	de:09188:5621
+Unterbrunner Straße	de:09188:5622
+Ammerseestraße	de:09188:5623
+A.-Fachkliniken	de:09188:5624
+Neurieder Straße	de:09188:5625
+Pentenried	de:09188:5626
+Untertaxetweg	de:09188:5627
+Gut	de:09188:5628
+Frohnloh	de:09188:5630
+Hauptstraße	de:09188:5631
+Feuerwehr	de:09188:5632
+Inninger Straße	de:09188:5633
+Heimgartenstraße	de:09188:5634
+Auersberg	de:09188:5635
+Hausen	de:09188:5636
+Maisinger Straße	de:09188:5637
+Königswiesen	de:09188:5638
+Abzw. Bachern	de:09188:5639
+Magdalenenstraße	de:09188:5640
+Pippinplatz	de:09188:5641
+Grundschule	de:09188:5642
+Forst-Kasten-Str.	de:09188:5643
+Heimstraße	de:09188:5644
+Ganghofer Str.	de:09188:5645
+Max-Dingler-Straße	de:09188:5646
+Gautinger Straße	de:09188:5647
+Baierplatz	de:09188:5648
+Harmsplatz	de:09188:5649
+Germeringer Straße	
+Wallbergweg	
+Meginhardstraße	de:09188:5653
+Mörlbach	de:09188:5654
+Wieling West	de:09188:5655
+Gymnasium	de:09188:5656
+Waldsiedlung	de:09188:5657
+Am Kirchplatz	de:09188:5658
+Traubinger Straße	de:09188:5659
+Artemed	
+Koempelstraße	de:09188:5661
+Klenzestraße	de:09188:5662
+Kreissparkasse	de:09188:5663
+Rathaus	
+Benediktenweg	de:09188:5665
+Bergwiesenstraße	de:09188:5666
+Luswiese	de:09188:5667
+Kreuzeckstraße	de:09188:5668
+Heimgartenstraße	de:09188:5669
+Bahnhofstraße	de:09188:5671
+Kirchenstraße	de:09188:5672
+Eugen-Friedl-Straße	de:09188:5673
+Seewiesstraße	de:09188:5674
+Edelweißstraße	de:09188:5675
+Birkenallee	de:09188:5676
+Günteringer Straße	de:09188:5677
+Wörthseestraße	de:09188:5678
+Seeleite	de:09188:5679
+Taubenweg	de:09188:5680
+Birkenweg	de:09188:5681
+Max-Doerner-Weg	
+Meilinger Weg	de:09188:5683
+Im Ried	de:09188:5684
+Königingstraße	de:09188:5685
+Bräuhausstraße	de:09188:5686
+Riedwinkel	de:09188:5687
+Kellerwiese	de:09188:5688
+Dreisbuschstraße	de:09188:5689
+	
+KV Manfred-Fuchs-Str.	de:09188:5691
+Angerweg	de:09188:5692
+Uneringer Straße	de:09188:5693
+Grundschule	de:09188:5694
+Gewerbegebiet Schorn	
+Moosstraße	de:09188:5696
+Watzmannstraße	de:09188:5697
+Max-Josefs-Höhe	de:09188:5698
+Museum Starnberger See	de:09188:5699
+Maibaum	de:09188:5701
+Gilching-Argelsried (nördl. S8)	de:09188:5702
+Seefeld-Hechendorf	de:09188:5703
+Bachern	de:09188:5704
+Inning	de:09188:5705
+Am Griesberg	de:09188:5717
+Ferdinand-Maria-Grundschule	de:09188:5737
+Waldstraße	de:09188:5738
+Hakenholzweg	de:09188:5739
+Gewerbegebiet	
+Friedhof	de:09188:5741
+Seeblick	de:09188:5742
+Gutenbergstraße	de:09188:5743
+Görbelmoosweg	de:09188:5744
+Steinlacher Weg	de:09188:5745
+Jugendhaus	de:09188:5746
+Talhofstraße	de:09188:5747
+Am Lacherfeld	de:09188:5748
+Feichtholzweg	de:09188:5749
+Sonnenstraße	de:09188:5750
+Römerstraße	de:09188:5751
+Landkreisgrenze 846	de:09179:5752
+LKR-Grenze 804 B 471	de:09179:5753
+LKR-Grenze 804 FFB 6	de:09179:5754
+Fercha, Landkreisgrenze 904	de:09188:5756
+Stadtgrenze 936	de:09184:5757
+Seestraße	de:09188:5762
+Königinstraße	de:09188:5764
+Schluchtweg	de:09188:5765
+Watzmannstraße	de:09188:5769
+BOS/FOS	de:09188:5771
+Gut	de:09179:5772
+Wiesenweg	de:09179:5773
+Forstweg	de:09179:5774
+Akeleistraße	de:09179:5775
+Heidestraße	de:09179:5776
+Irisstraße	de:09179:5777
+Wachtelweg	de:09179:5778
+Eibenweg	de:09179:5779
+Gröbenzell (S) / Schubertstr.	de:09179:5780
+Rotwandstraße	de:09179:5781
+Zugspitzstraße	de:09179:5782
+J.-G.-Gutenbergstraße Ost	de:09179:5783
+Eschenrieder Straße	de:09179:5784
+Münchner Straße	de:09188:5785
+Westendstraße	de:09179:5786
+Unterbrunn Ort	de:09188:5787
+Heuweg	de:09188:5788
+Kinderhaus	de:09188:5789
+Kinderhaus	de:09188:5789
+An der Feichten	de:09188:5791
+In der Au	de:09188:5792
+Gröbenzeller Straße	de:09179:5793
+Birkenstraße	de:09179:5794
+Dietschweg	de:09179:5795
+Beislerstraße	de:09179:5796
+Kirchenstraße	de:09179:5797
+Exterstraße	de:09179:5798
+Orlando-di-Lasso-Str.	de:09179:5801
+Kastanienweg	de:09179:5802
+Kiefernstraße	de:09179:5803
+Viehmarktstraße	de:09179:5804
+Volksfestplatz	de:09179:5851
+Bahnhof (Unterführung)	de:09179:5852
+Neufeldstraße	de:09179:5853
+Ordenslandstr.	de:09179:5854
+Möslstraße	de:09179:5855
+Rebhuhnstraße	de:09179:5856
+Brandweg	de:09179:5901
+Rassosiedlung	de:09179:5902
+Finkenweg	de:09179:5903
+Bahnhofstraße	de:09179:5904
+Graf-Rasso-Straße	de:09179:5905
+Unteralting	de:09179:5906
+Villenstraße Süd	de:09179:5907
+Schule	de:09179:5908
+Amperbrücke	de:09179:5909
+Mauern (FFB)	de:09179:5910
+Aussiedlerhof	de:09179:5911
+Siedlung	de:09179:5912
+Johannishöhe	de:09179:5913
+Mauern, Römerstraße	de:09179:5914
+Abzw. Reichertsried	de:09179:5915
+Kriegerdenkmal	de:09179:5916
+Georg-Holzmüller-Straße	de:09179:5917
+Villenstraße Süd 44	de:09179:5918
+Marthashofen	de:09179:5919
+Pleitmannswang	de:09179:5920
+Daxanger	de:09179:5921
+Gewerbegebiet	de:09179:5922
+Zankenhausen	de:09179:5924
+Schule	de:09179:5928
+Keltenstraße	de:09179:5929
+Duringstraße	de:09179:5932
+Walleshausen	de:09181:508
+Geltendorf	de:09181:502
+Pemmeringer Straße	de:09177:5951
+Gasthof	de:09177:5952
+Mitterbuch	de:09177:5953
+Neuharting (Forstern)	de:09177:5954
+Oberbuch	de:09177:5955
+Stadl (Kr ED)	de:09177:5956
+Großaign	de:09177:5957
+St. Ottilien	de:09181:504
+Bahnhof	de:09177:5961
+Traich bei Mainburg	de:09178:5963
+Nord Ausfahrt A 92	de:09178:5964
+Postmeister	de:09178:5965
+Raiffeisenbank	de:09178:5966
+Gymnasium	de:09178:5967
+Schlesierstraße	de:09178:5968
+Abzw. Pfrombach	de:09178:5969
+Moos	de:09178:5971
+Münchner Straße	de:09178:5972
+Alter Wirt	de:09181:2204
+Ortsmitte	de:09181:2205
+Schulstraße	de:09181:2206
+Heuweg	de:09181:5984
+Freizeitpark	de:09179:5985
+Mering	de:09771:1100
+Abzw.Unterbergen	de:09771:1107
+Wendelsteinstraße	de:09771:1112
+Bahnhof	de:09771:1200
+Mandichostraße	de:09771:6005
+Kirchstraße	de:09771:1204
+Steinach	de:09771:1210
+Kissing	de:09771:1000
+Hochzoll	de:09761:200
+Haunstetterstraße	de:09761:111
+St. Afra	de:09771:1120
+Augsburg Hbf	de:09761:100
+Dasing Bahnhof	de:09771:2100
+Adelzhausen	
+Abt-Anselm-Straße	
+Gröbenzell	de:09179:6100
+Puchheim (S) Nord	de:09179:6101
+Birkenstraße	de:09179:6102
+Puchheim (S) Süd	de:09179:6103
+Bäumlstraße	de:09179:6104
+Streiflacher Straße	de:09179:6105
+Nordendstraße	de:09179:6106
+Gewerbegebiet Nord	de:09179:6107
+Lagerstraße	de:09179:6108
+Pentenrieder Straße	de:09188:6109
+Olching	de:09179:6110
+Münchener Straße	de:09179:6111
+Friedenstraße	de:09179:6112
+Mittenwalder Straße	de:09179:6113
+Bernh.-Rößner-Straße	de:09179:6114
+Karwendelstraße	de:09179:6115
+Puchheimer Straße	de:09179:6116
+Gröbenhüterstraße	de:09179:6118
+Am Weidegrund	de:09179:6119
+Esting	de:09179:6120
+Wachtweg	de:09179:6121
+Am Zillerhof	de:09179:6122
+Hauptstraße	de:09179:6123
+Am Sandberg	de:09179:6124
+Dieselstraße	de:09179:6125
+Kloster Spielberg	de:09179:6127
+Uhlandstraße	de:09179:6128
+Spange	de:09179:6129
+Gernlinden	de:09179:6130
+Ganghoferstraße	de:09179:6131
+Rudolf-Diesel-Straße	de:09179:6132
+Dachauer-/Sinzingerstr.	de:09179:6133
+Ringstraße	de:09179:6134
+Gewerbepark Süd	de:09179:6135
+Josef-Poxleitner-Allee	de:09179:6136
+Maisach (S) Süd	de:09179:6137
+Meisenweg	de:09179:6138
+Überackerstraße	de:09179:6139
+Maisach	de:09179:6140
+Grundschule	de:09179:6141
+Mittelschule	de:09179:6142
+Hauptschule	de:09179:6142
+Realschule	de:09179:6143
+Karlstraße	de:09179:6144
+Bauhof	de:09179:6145
+Frauenberger Straße	de:09179:6146
+Germerswang	de:09179:6148
+Am Haldenberg	de:09179:6149
+Malching	de:09179:6150
+Ort	de:09179:6151
+Obermalching	de:09179:6152
+Galgen, Ort	de:09179:6153
+Holzmühl, Abzw.	de:09179:6154
+Münchner Straße	de:09179:6155
+Bahnhofstraße	de:09179:6156
+Lessingstraße	de:09179:6157
+Pfarrkirche	de:09179:6158
+Malchinger Straße	de:09179:6159
+Mammendorf	de:09179:6160
+Michael-Aumüller-Straße	de:09179:6161
+Espenstraße	de:09179:6162
+Furtmühlweg	de:09179:6163
+Hauptstraße	de:09179:6164
+Schule	de:09179:6165
+Enzianstraße	de:09179:6166
+Ahornstraße	de:09179:6167
+Überacker	de:09179:6168
+Abzw.Palsweis	de:09179:6169
+Puchheim	de:09179:6170
+Abzw.Rottbach	de:09179:6171
+Weiherhaus	de:09179:6172
+Abzw. Deisenhofen	de:09179:6173
+Rottbach	de:09179:6174
+Oberlappach	de:09179:6175
+Deisenhofen	de:09179:6176
+Aicher Straße	de:09179:6177
+Kuchenried	de:09179:6178
+Eichenau (S) Süd	de:09179:6179
+Eichenau	de:09179:6180
+Eichenau (S) Nord	de:09179:6181
+Dürabuch	de:09179:6182
+Gewerbepark	de:09179:6183
+Wenigmünchen	de:09179:6184
+Am Strasserwinkel	de:09179:6185
+Waltenhofen	de:09179:6186
+Schilfstraße	de:09179:6187
+Spechtstraße	de:09179:6188
+Hugo-Junkers-Straße	de:09179:6189
+Fürstenfeldbruck	de:09179:6190
+Gewerbegebiet	de:09179:6191
+Meisenstraße	de:09179:6192
+Messerschmittstraße	de:09179:6193
+Roggensteiner Allee	de:09179:6194
+Am Eichbüchl	de:09179:6195
+Weidenstraße	de:09179:6196
+Herbststraße	de:09179:6197
+Hauptstraße	de:09179:6198
+Schulstraße	de:09179:6199
+Buchenau	de:09179:6200
+Industriestraße	de:09179:6201
+Friedenskirche	de:09179:6202
+Am Hardtanger	de:09179:6203
+Zenettistraße	de:09179:6204
+Eichendorffstraße	de:09179:6205
+Wiesenstraße	de:09179:6206
+J.-Haydn-Straße	de:09179:6207
+Bahnhofstraße	de:09179:6208
+Schillerstraße	de:09179:6209
+Schöngeising	de:09179:6210
+Wettersteinstraße	de:09179:6211
+Frühlingstraße	de:09179:6212
+Ludwigstraße	de:09179:6213
+Ludwigstraße	de:09179:6213
+Herzogstandstraße	de:09179:6214
+J.-G.-Gutenbergstraße Mitte	de:09179:6215
+Oststraße	de:09179:6216
+Grundschule	de:09179:6217
+Weilerweg	de:09179:6218
+Rathaus	de:09179:6219
+Grafrath	de:09179:6220
+Pfarrstraße	de:09179:6222
+Alter Friedhof	de:09179:6223
+Olchinger See	de:09179:6224
+Olchinger See	de:09179:6224
+Rudolf-Bögel-Weg	de:09179:6225
+Max-Reger-Straße	de:09179:6226
+Adlerweg	de:09179:6227
+Cronenbergstraße	de:09179:6228
+Sportplatz	de:09179:6229
+Türkenfeld	de:09179:6230
+Wittelsbacher Allee	de:09179:6231
+Wittelsbacher Allee	de:09179:6231
+Auf der Insel	de:09179:6232
+Roßhaupter Platz	de:09179:6233
+Emmeringer Straße	de:09179:6234
+Industriestraße	de:09179:6235
+Industriestraße 17	de:09179:6235
+Schloß	de:09179:6236
+Schule	de:09179:6237
+Kreuzstraße	de:09179:6238
+Sonnenstraße	de:09179:6239
+Harthaus	de:09179:6240
+Dorfstraße	de:09179:6241
+Weinstraße	de:09179:6242
+Amperbad	de:09179:6244
+Jeisstraße	de:09179:6244
+Allacher Straße	de:09179:6245
+H.-Böcker-Straße	de:09179:6246
+Pfeiffergassl	de:09179:6247
+Kapellenweg	de:09179:6248
+Rammertshofen	de:09179:6249
+Germering-Unterpfaffenhofen	de:09179:6250
+Geisenhofen	de:09179:6251
+Sägmühlstraße	de:09179:6252
+Sägmühlstraße	de:09179:6252
+Dirlesried	de:09179:6253
+Schule	de:09179:6254
+Daxerstraße	de:09179:6255
+Georgenstraße	de:09179:6256
+Gymnasium	de:09179:6256
+Georgenstraße	de:09179:6256
+Furthmühle	
+Landratsamt	de:09179:6258
+Pestalozzischule	de:09179:6259
+Hauptplatz	de:09179:6260
+Bismarckstraße	de:09179:6261
+Kapellenstraße	de:09179:6262
+Hochfeldweg	de:09179:6263
+Neulindach	de:09179:6264
+Rudolf-Diesel-Ring	de:09179:6265
+Lindach, Abzw.	de:09179:6266
+Abzw. Germerswang	de:09179:6268
+Pucher Meer	de:09179:6269
+Stefansberg	de:09179:6270
+Pischertshofen	de:09179:6271
+Abzw. Geisenhofen	de:09179:6272
+Schulstraße	de:09179:6273
+Aufkirchen	de:09179:6274
+Waltershofen	de:09179:6275
+Kriegerdenkmal	de:09179:6276
+Baarerstraße	de:09179:6277
+Oberweikertshofen	de:09179:6278
+Eurastetten	de:09179:6279
+Rottenfuß	de:09179:6280
+Englertshofen	de:09179:6281
+Poigern	de:09179:6282
+Herrnzell	de:09179:6283
+Egenhofen	de:09179:6284
+Schule	de:09179:6285
+Weyhern (FFB)	de:09179:6286
+Fürstenfelder Weg	de:09179:6287
+Viscardi-Gymnasium	de:09179:6288
+Schule	de:09179:6289
+Kaisersäule	de:09179:6290
+Kapuzinerstr.	de:09179:6291
+Schule	de:09179:6292
+Am Maibaum	de:09179:6293
+Weiherstraße	de:09179:6294
+Flurstraße	de:09179:6295
+Hauptplatz	de:09179:6296
+Hauptstraße	de:09179:6297
+Ort	de:09179:6298
+Feuerhausstraße	de:09179:6299
+Vogach	de:09179:6300
+Muthilostraße	de:09179:6301
+Fichtenweg	de:09179:6302
+Schulstraße	de:09179:6303
+Ziegeleistraße	de:09179:6304
+Kreisstraße	de:09179:6305
+Oberdorf (FFB)	de:09179:6306
+Feuerwehrhaus	de:09771:1180
+Tegernbach	de:09179:6308
+Glon	de:09771:1181
+Ort	de:09179:6310
+Abzw. Wiesmichl	de:09179:6311
+Schule	de:09179:6312
+Tegernbacher Straße	de:09179:6313
+Valesistraße	de:09179:6314
+West	de:09179:6315
+Loitershofen	de:09179:6316
+Schlossbergstraße	de:09179:6317
+Theodor-Heuss-Straße	de:09179:6318
+Hörbacher Straße	de:09179:6319
+Oberdorfer Straße	de:09179:6320
+Schule	de:09179:6321
+Kohlstattweg	de:09179:6322
+Kirche	de:09179:6323
+Hörbach	de:09179:6324
+St. Bernhard	de:09179:6325
+Hans-Sachs-Straße	de:09179:6326
+Fürstenfeld	de:09179:6327
+Schöngeisinger Str.	de:09179:6328
+Realschule	de:09179:6329
+Auf der Lände	de:09179:6330
+Puchermühlstraße	
+Holzstraße	de:09179:6332
+Deichensteg	de:09179:6333
+Parsevalstraße	de:09179:6334
+Hubertusstraße	de:09179:6335
+Konrad-Adenauer-Straße	de:09179:6336
+O.-Kubel-Str./Isar-Amper-Klinikum	de:09179:6337
+Waldfriedhofstraße	de:09179:6339
+Dianastraße	de:09179:6340
+Klosterstraße	de:09179:6341
+Schule West	de:09179:6342
+Gnadenkirche	de:09179:6343
+Buchenauer Straße	de:09179:6344
+Cerveteristraße	de:09179:6345
+Cerveteristr./Stadtwerke FFB	de:09179:6345
+Josef-Spital-Str./Klinikum	de:09179:6346
+Josef-Spital-Str./Kreisklinik	de:09179:6346
+Amtsgericht/Klinikum	de:09179:6347
+Amtsgericht/Kreisklinik	de:09179:6347
+Sinzingerstr./Isar-Amper-Klinikum	de:09179:6348
+Dachauer Straße	de:09179:6349
+Fliegerstraße	de:09179:6350
+Nordendstraße	de:09179:6351
+Anzengruberstraße	de:09179:6352
+Dachauer Straße	de:09179:6353
+Kriegerdenkmal	de:09179:6354
+Estinger Straße	de:09179:6355
+Lantfridstraße	de:09179:6356
+Eisenhoferstraße	de:09179:6357
+Maisacher Weg	de:09179:6358
+Kirchenschule	de:09179:6359
+Schule	de:09179:6360
+Gegenpointstraße	de:09179:6361
+Kirchplatz	de:09179:6362
+Schwabenbergstraße	de:09179:6363
+Dr.-Rank-Straße	de:09179:6364
+Moosfeldstraße	de:09179:6365
+Beethovenstraße	de:09179:6366
+Aumühle	de:09179:6367
+Rathaus Germering	de:09179:6368
+Dorfstraße	de:09179:6370
+Brucker Straße	de:09179:6371
+Kriegerdenkmal	de:09179:6372
+Mitterlängstraße	de:09179:6373
+Lohfeldstraße	de:09179:6374
+Schusterhäusl	de:09179:6375
+Brückenstraße	de:09179:6377
+Hoflach	de:09179:6378
+Hoflacher Straße	de:09179:6380
+Holzkirchen	de:09179:6381
+Sportplatz	de:09179:6382
+Naßlhof	de:09179:6383
+Griesstraße	de:09179:6384
+Parsbergstraße	de:09179:6385
+Germannsberg	de:09179:6386
+Holzhausen	de:09179:6387
+Biburg	de:09179:6388
+Gewerbegebiet	de:09179:6389
+Pfaffing (FFB)	de:09179:6390
+Liebigstraße	de:09179:6391
+Maisacher Straße	de:09179:6392
+Ganghoferstraße	de:09179:6393
+Feldstraße	de:09179:6394
+Wiesenstraße	de:09179:6395
+Kronprinz-Rupprecht-Straße	de:09179:6396
+Neuried	de:09179:6397
+Fliegerhorst	de:09179:6398
+Germering (S) West	de:09179:6401
+Abzw.Puch	de:09179:6402
+Pucher Weg	de:09179:6403
+Dorfstraße	de:09179:6404
+Eitelsried	de:09179:6406
+Peretshofen	de:09179:6407
+Egg, Abzw.	de:09179:6408
+Ort	de:09179:6409
+Pfaffenhofen (FFB)	de:09179:6410
+Adelshofen	de:09179:6412
+Nassenhausen	de:09179:6414
+Feuerwehr	de:09179:6415
+Luttenwang	de:09179:6416
+Ahornstraße	de:09179:6417
+Ort	de:09179:6418
+Grunertshofen West	de:09179:6419
+Steinbach	de:09179:6420
+Jexhof	de:09179:6421
+Purk	de:09179:6422
+Römertshofen	de:09179:6423
+Langwied (FFB), Kreisstraße	de:09179:6424
+Langwied (FFB), Ort	de:09179:6425
+Ort	de:09179:6426
+Schule	de:09179:6427
+Post	de:09179:6428
+Kreisstraße	de:09179:6429
+Eismerszell	de:09179:6430
+Bajuwarenstraße	de:09179:6431
+Purkfeld	de:09179:6432
+Schäfflerweg	de:09179:6432
+Zell (Lkr. FFB)	de:09179:6433
+Kirche	de:09179:6434
+Rothschwaiger Straße	de:09179:6435
+Abzw.Aich	de:09179:6436
+Römerstraße	de:09179:6437
+Hauptstraße	de:09179:6437
+	de:09179:6437
+Landsberied	de:09179:6438
+Babenrieder Straße	de:09179:6438
+E-Werk	de:09179:6439
+Babenried	de:09179:6440
+Bahnhofstraße	de:09179:6441
+Altersheim	de:09179:6442
+Schule	de:09179:6443
+Abzw. Mammendorf	de:09179:6444
+St. Martin (alt)	de:09179:6445
+Landsberger Straße	de:09179:6446
+Quirin-Wörl-Straße	de:09179:6447
+Kerschensteiner Schule	de:09179:6448
+Obere Bahnhofstraße	de:09179:6449
+Theodor-Heuss-Straße	de:09179:6450
+Kurt-Schumacher-Straße	de:09179:6452
+Ringstraße	de:09179:6454
+Königsberger Straße	de:09179:6455
+Montessoristraße	de:09179:6456
+Industriestraße	de:09179:6457
+Oskar-von-Miller-Straße	de:09179:6457
+An der Markung	de:09179:6458
+Wifostraße	de:09179:6460
+Nebel	de:09179:6461
+Masurenweg	de:09179:6462
+Glückstr./ZENJA-Haus	de:09179:6463
+Fichtenstraße	de:09179:6464
+Waldfriedhof	de:09179:6465
+Leipziger Straße	de:09179:6467
+Salzstraße	de:09179:6468
+Friedenstraße	de:09179:6469
+Schillerstraße	de:09179:6470
+Kerschensteiner Schule Ost	de:09179:6471
+Krippfeldstraße	de:09179:6472
+St. Jakob	de:09179:6473
+Holzkirchner Straße	de:09179:6474
+Am Forst	de:09179:6477
+Neue Gautinger Straße	de:09179:6478
+Riegerstraße	de:09179:6479
+Harthaus (S) Nord	de:09179:6480
+Hart-/Flurstraße	de:09179:6485
+Lerchenstraße	de:09179:6486
+Alfons-Baumann-Straße	de:09179:6487
+Don-Bosco-Straße	de:09179:6488
+Kleiner Stachus	de:09179:6489
+Otto-Wagner-Straße	de:09179:6490
+Wittelsbacher Schule	de:09179:6491
+Wittelsbacherstraße	de:09179:6492
+Max-Born-Gymnasium	de:09179:6493
+Maximilianstraße	de:09179:6494
+Odinstraße	de:09179:6496
+Wotanstraße	de:09179:6497
+Kriemhildenstraße	de:09179:6498
+Stadthalle	de:09179:6499
+Heuss-Straße	de:09179:6501
+Vogelsangstraße	de:09179:6502
+Alpenstraße	de:09179:6503
+Friedhof Schopflach	de:09179:6504
+Veilchenstraße	de:09179:6505
+Zweigstraße	de:09179:6506
+Bürgermeister-Ertl-Straße	de:09179:6507
+Edelweißstraße / PUC	de:09179:6508
+Maibaum	de:09179:6509
+Kirche	de:09179:6510
+Siemensstraße	de:09179:6511
+Laurenzerweg	de:09179:6512
+Lilienthalstraße	de:09179:6513
+Benzstraße	de:09179:6514
+Dornierstraße	de:09179:6515
+Eichenauer Straße	de:09179:6516
+Schwarzäckerstraße	de:09179:6517
+Am Gewerbering	de:09179:6518
+Wendeschleife	de:09179:6519
+Haspelmoor	de:09179:6520
+Am Mühlstetter Graben	de:09179:6521
+Haspelmoor Bf Süd	de:09179:6522
+Weiherstraße	de:09179:6523
+Haspelmoor Bf Nord	de:09179:6524
+Hasenheide Nord	de:09179:6525
+Niblerstraße	de:09179:6526
+Steinbüchlweg	de:09179:6527
+Hoflacher Straße	de:09179:6528
+Pfarrer-Huber-Straße	de:09179:6529
+Althegnenberg	de:09179:6530
+Carl-Orff-Straße	de:09179:6531
+Otto-Hahn-Straße	de:09179:6532
+Westendstraße	de:09179:6533
+Mammendorf (S) Ost	de:09179:6534
+Kugelbichl	de:09179:6535
+Hochrainweg	de:09179:6536
+Untere Au	de:09179:6537
+Emmy-Noether-Straße	de:09179:6538
+Boschstraße	de:09179:6539
+Harthaus (S) Süd	de:09179:6540
+Im Schwaigfeld	de:09179:6541
+Im Schwaigfeld	de:09179:6541
+Volksfestplatz	de:09179:6542
+Jakob-Groß-Straße	de:09179:6543
+Kapuzinerstraße	de:09179:6544
+Ludwigstraße	de:09179:6545
+Stockmeierweg	de:09179:6546
+Fürstenfelder Straße	de:09179:6547
+Marthabräustraße	de:09179:6548
+Adolf-Kolping-Straße	de:09179:6549
+Adalbert-Stifter-Str.	
+Waldstraße	de:09179:6552
+Innenstadt Süd	de:09179:6553
+Innenstadt Nord	de:09179:6554
+Südwest	de:09179:6555
+West	
+Emmering	de:09179:6557
+Hasenheide	de:09179:6558
+Puch	de:09179:6559
+Aich	de:09179:6560
+Jesenwang	de:09179:6561
+Moorenweis	de:09179:6562
+südlich S3	de:09179:6563
+Puchheim Ort	de:09179:6564
+südlich S4	de:09179:6565
+nördlich S4	de:09179:6566
+Neu-Esting	de:09179:6567
+Feuerwehr Geiselbullach	de:09179:6568
+Feuerwehr Geiselbullach	de:09179:6568
+Graßlfing	de:09179:6569
+nördlich S3	de:09179:6571
+Gröbenzell	de:09179:6572
+Alling	de:09179:6573
+nördlich S8	de:09179:6574
+südlich S8	de:09179:6575
+Gernlinden Ort	de:09179:6576
+Eichenau	de:09179:6577
+Schöngeising	
+Grafrath	
+Türkenfeld	
+Haspelmoor	
+Althegnenberg	de:09179:6583
+Mittelstetten	de:09179:6584
+Mammendorf	de:09179:6585
+Maisach	de:09179:6586
+Esting	de:09179:6587
+Kottgeisering	de:09179:6588
+Exterstraße	de:09179:6589
+Ascherbachstraße	de:09179:6591
+Weiherweg	de:09179:6592
+Gärtnerstraße	de:09179:6593
+Maistraße	de:09179:6594
+Sportzentrum	de:09179:6595
+Industriestraße	de:09179:6596
+Freyastraße	de:09179:6597
+Krautgartenweg	de:09188:6598
+Sportzentrum	de:09179:6599
+Gewerbepark	de:09174:6601
+Alling	de:09179:6602
+Gagers	de:09179:6603
+Unterschweinbach	de:09179:6604
+Ludwigstraße	de:09179:6605
+GEP	de:09179:6606
+Danziger Straße	de:09179:6607
+Germering, Ost (Tarifring 5)	de:09179:6608
+Germering, West (Tarifring 6)	de:09179:6609
+Germeringer See	de:09179:6610
+Freibad / Polariom	de:09179:6611
+Hallenbad	de:09179:6612
+Neufeld Nord	de:09179:6613
+Fliegerhorst Ost	de:09179:6614
+Maisacher Straße	de:09179:6615
+Landsberied	de:09179:6616
+Grafrather Straße	de:09179:6617
+Abt-Führer-Str.	de:09179:6618
+Römerstraße	de:09179:6619
+Esting (südl. S3)	de:09179:6621
+Olching (südl. S3)	
+Neu-Esting	
+Geiselbullach	
+Schwaigfeld	de:09179:6625
+Graßlfing	de:09179:6626
+Puchheim Bahnhof (südl. S4)	de:09179:6627
+Puchheim Bahnhof (nördl. S4)	de:09179:6628
+Gröbenzell (nördl. S3)	de:09179:6629
+Gröbenzell (südl. S3)	de:09179:6631
+Bergstraße	de:09179:6632
+Schule Nord	de:09179:6633
+Rathaus	de:09179:6634
+Hans-Wegmann-Str.	de:09179:6635
+Bürgerzentrum	de:09179:6636
+Herbststraße	de:09179:6637
+Max-Rappenglitz-Ring	de:09179:6638
+Flugplatz	de:09179:6639
+Buchenau (S) Süd	de:09179:6641
+Pfarrer-Betzl-Straße	de:09179:6645
+Mühlfeldstraße	de:09179:6646
+Graf-Toerring-Straße	de:09179:6647
+Hanshofen	de:09179:6648
+Am Römerstein	de:09188:6649
+Werner-Heisenberg-Straße	
+Gewerbepark Nord	de:09179:6786
+Gewerbepark Ost	de:09179:6787
+Am Pfanderling	de:09174:6788
+Weidenstraße	de:09179:6789
+Bruder-Konrad-Str.	de:09179:6791
+Obere Lagerstraße	de:09179:6792
+Hauptstraße	de:09179:6793
+Baindlkirchner Straße	de:09179:6794
+Ferdinandstraße	de:09179:6795
+Ferdinandstraße	de:09179:6795
+Lußstraße	de:09179:6796
+Am Mühlberg	de:09174:6797
+Steindlbachstraße	de:09174:6798
+Gewerbegebiet P+R-Platz	de:09174:6799
+Dachau Bahnhof	de:09174:6800
+Dachau	de:09174:6800
+Ludwig-Thoma-Straße	de:09174:6802
+Ohmstraße	de:09174:6803
+Augsburger Straße	de:09174:6804
+Brucker Straße	de:09174:6806
+Erasmus-Reismüller-Str.	de:09174:6807
+Mitterndorf	de:09174:6808
+St.-Vitus-Straße	de:09174:6809
+Hebertshausen	de:09174:6810
+Kanalstraße	de:09174:6811
+Staatsstraße	de:09174:6812
+Maibaum	de:09174:6813
+Hirtenweg	de:09174:6814
+Waldstraße	de:09174:6815
+Mitterweg	de:09174:6816
+Kreuzackerstr./GADA	de:09174:6817
+Mühlstraße	de:09174:6818
+Münchner Straße	de:09174:6819
+Röhrmoos	de:09174:6820
+Römerstraße	de:09174:6821
+Römerstraße	de:09174:6822
+Maibaum	de:09174:6823
+Kriegerdenkmal	de:09174:6824
+Kriegerdenkmal	de:09174:6825
+Eisolzried	de:09174:6826
+Palsweis	de:09174:6827
+Priel	de:09174:6828
+Kreisstraße	de:09174:6828
+Kreuzholzhausen	de:09174:6829
+Am Kirchberg	de:09174:6829
+Vierkirchen-Esterhofen	de:09174:6830
+Schule	de:09174:6831
+Lauterbach	de:09174:6832
+Oberwinden, Abzw.	de:09174:6833
+Rodelzried/Hopfenau	de:09174:6834
+Hilpertsried	de:09174:6835
+Kreisstraße	de:09174:6836
+Sparkasse	de:09174:6837
+Ortsmitte	de:09174:6837
+Am Wendelstein	de:09174:6839
+Petershausen	de:09174:6840
+Machtenstein	de:09174:6841
+Hauptstraße	de:09174:6842
+Göppertshausen	de:09174:6843
+Lukkaer-Straße	de:09174:6844
+Mittermarbach	de:09174:6845
+Rohrbachbrücke	de:09174:6846
+Hochstraße	de:09174:6847
+Orthofen	de:09174:6848
+Sollern	de:09174:6849
+Dachau Stadt	de:09174:6850
+Westring	de:09174:6851
+Essenbach	de:09174:6852
+Schule	de:09174:6853
+Glonnbercha	de:09174:6854
+Mühldorf (Petershausen)	de:09174:6855
+Taxa	de:09174:6856
+Weißling	de:09174:6857
+Feldbergstraße	de:09174:6858
+Arnbacher Straße	de:09174:6859
+Breitenau	de:09174:6860
+Schloßstraße	de:09174:6861
+Hauptstraße	de:09174:6862
+Puchschlagen	de:09174:6863
+Maisteig	de:09174:6864
+Kramerkreuz	de:09174:6865
+Schloß	de:09174:6866
+Schule	de:09174:6867
+Hauptstraße 24	de:09174:6868
+Kirche	de:09174:6869
+Bachern	de:09174:6870
+Scheitelbreite	de:09174:6871
+Oberbachern	de:09174:6872
+Schulhaus	de:09174:6873
+Frühlingstraße	de:09174:6874
+Schule	de:09174:6875
+Ried	de:09174:6876
+Sägstraße	de:09174:6877
+Leitenweg	de:09174:6878
+Pelka	de:09178:6879
+Schwabhausen	de:09174:6880
+Kirchgasse	de:09174:6881
+Webling	de:09174:6882
+Ort	de:09174:6883
+Lohfeld	de:09174:6884
+Schulbergstraße	de:09174:6885
+Pullhausen, Abzw.	de:09174:6886
+Brunnenstraße	de:09174:6887
+Dachauer Straße	de:09174:6888
+Feldstraße	de:09174:6889
+Niederroth	de:09174:6890
+Rumeltshausen	de:09174:6891
+Münchner Straße	de:09174:6892
+Am Brand	de:09174:6893
+Augsburger Straße	de:09174:6894
+Zeitlbachbrücke	de:09174:6895
+Armetshofen	de:09174:6896
+Thorerstraße	de:09174:6897
+Oberroth	de:09174:6898
+Oberfeldring	de:09174:6899
+Markt Indersdorf	de:09174:6900
+Schule	de:09174:6901
+Dorfstraße	de:09174:6902
+Römerstraße	de:09174:6903
+Siedlung	de:09174:6904
+Schule	de:09174:6905
+Walkertshofen	de:09174:6906
+Krankenhaus	de:09174:6907
+Eisenhofen, Abzw.	de:09174:6908
+Eisfeld	de:09174:6909
+Arnbach	de:09174:6910
+Wöhr	de:09174:6911
+Handenzhofener Straße	de:09174:6912
+Albersbach, Abzw.	de:09174:6913
+Schloß	de:09174:6914
+Ost	de:09174:6915
+West	de:09174:6916
+Sittenbacher Straße	de:09174:6917
+Petersberg	de:09174:6918
+Burgstraße	de:09174:6919
+Erdweg	de:09174:6920
+Hörgenbach, Abzw.	de:09174:6921
+Eckhofen	de:09174:6922
+Hof (Erdweg)	de:09174:6923
+Kirche	de:09174:6924
+Schluttenberg, Abzw.	de:09174:6925
+Haimhausen, B.I.S.	
+Münchener Straße	de:09174:6927
+J.-F.-Kennedy-Platz	de:09174:6928
+Blumenstraße	de:09174:6929
+Kleinberghofen	de:09174:6930
+Deutenhofen	de:09174:6931
+Röckersberg, Abzw.	de:09174:6932
+Edenholzhausen	de:09174:6933
+Pullhausen	de:09174:6934
+Schule	de:09174:6935
+Assenhausen	de:09174:6936
+Jedenhofen, Süd	
+Heißhof, Abzw.	
+Stumpfenbach	de:09174:6940
+Schule	de:09174:6942
+Am Bahnhof	de:09174:6943
+Ried, Nord	de:09174:6944
+Weyhern (DAH)	de:09174:6945
+Karpfhofen	de:09174:6946
+Sporthalle	de:09174:6947
+Sonnenstraße	de:09174:6948
+Ottmarshart	de:09174:6949
+Altomünster	de:09174:6950
+Schule	de:09174:6951
+Sportplatz	de:09174:6952
+Humersberg, Abzw.	de:09174:6953
+Ried, Süd	de:09174:6954
+Maibaum	de:09174:6955
+Krenmoosstraße	de:09174:6956
+Schulmeisterberg	de:09174:6957
+Wehrstaudenstraße	de:09174:6958
+Lorenz-Braren-Straße	de:09174:6959
+Parkstraße	de:09174:6960
+Ludwig-Pichler-Weg	de:09174:6961
+Altenheim	de:09174:6962
+Rienshofener Straße	de:09174:6963
+Bajuwarenstraße	de:09174:6964
+Lärchenweg	de:09174:6965
+Evang. Kirche	de:09174:6966
+Pfarrheim	de:09174:6967
+St.-Anna-Kirche	de:09174:6968
+Post	de:09174:6968
+Falkenstraße	de:09174:6969
+Schwarzgrabenweg	de:09174:6970
+Schule	de:09174:6971
+Dieselstraße	de:09174:6972
+Akazienstraße	de:09174:6973
+Wiesenweg	de:09174:6975
+Röntgenstraße	de:09174:6976
+Fasanenstraße	de:09174:6977
+Lindenstraße	de:09174:6979
+Kiem-Pauli-Weg	de:09174:6980
+Schwarzhölzlstraße	de:09174:6981
+Gartenstraße	de:09174:6982
+Rosenstraße	de:09174:6983
+Rathaus	de:09174:6984
+Ludwig-Ganghofer-Straße	de:09174:6985
+Hallenbad	de:09174:6986
+Kirche	de:09174:6987
+Ostenstraße	de:09174:6988
+Kriegerdenkmal	de:09174:6989
+Karlsfeld (S) West	de:09174:6990
+Feuerwehrhaus	de:09174:6991
+Bachweg	de:09174:6992
+Einsteinstraße	de:09174:6993
+Jägerstraße	de:09174:6994
+Weil	
+Leinorstraße	de:09174:6996
+Aichacher Straße	de:09174:6997
+Ahornstraße	de:09174:6998
+Breitenau Abzw.	de:09174:6999
+Hauptbahnhof Nord	de:09162:7000
+Langwieder Straße	de:09174:7001
+Münchner Straße	de:09174:7002
+Eschenried	de:09174:7003
+Watzmannstraße	de:09174:7004
+Neuhimmelreich	de:09174:7005
+Lessingstraße	de:09174:7006
+Puchheimer Straße	de:09174:7007
+Bahnhofstraße	de:09174:7008
+Wilhelm-Dürr-Straße	de:09174:7009
+Unterer Markt	de:09174:7010
+Eschenrieder Straße	de:09174:7011
+Uhdestraße	de:09174:7012
+Ludwig-Dill-Straße	de:09174:7013
+Kath. Altenheim	de:09174:7014
+Wallbergstraße	de:09174:7015
+Hallenbad	de:09174:7016
+Gaußstraße	de:09174:7017
+Familienbad	de:09174:7018
+Saubachsiedlung	de:09174:7019
+Landratsamt	de:09174:7020
+Abzw.Günding	de:09174:7021
+Mittermayerstraße	de:09174:7022
+Lindenstraße	de:09174:7023
+Kreuzholzhausen, Abzw.	de:09174:7023
+Rathaus	de:09174:7024
+Eichenweg	de:09174:7025
+Gottesackerstraße	de:09174:7026
+Weblinger Weg	de:09174:7028
+Feldiglstraße	de:09174:7029
+Am Rennplatz	
+Liegsalzstraße	de:09174:7031
+Veltenstraße	de:09174:7032
+ASV/Kunsteisbahn	
+J.-Effner-Gymnasium	de:09174:7034
+Dr.-Engert-Straße	
+Ludwig-Ernst-Straße	de:09174:7036
+Julius-Kohn-Weg	de:09174:7037
+Egerer Straße	de:09174:7038
+Pater-Roth-Straße	de:09174:7039
+Ratiborer Straße	de:09174:7040
+Obergrashof	de:09174:7041
+Fünfkirchner Straße	de:09174:7042
+August-Pfaltz-Straße	
+Ernst-Reuter-Platz	de:09174:7044
+Buchenlandstraße	de:09174:7045
+Breslauer Platz	de:09174:7046
+Augustenfeld	de:09174:7047
+Liegnitzer Straße	de:09174:7048
+Palsweiser Straße	de:09174:7049
+Pollnstraße	de:09174:7050
+Klinikum	de:09174:7051
+I.-Taschner-Gymnasium	de:09174:7052
+Ludwig-Ganghofer-Straße	de:09174:7053
+Waldstraße	de:09174:7054
+Auwaldstraße	de:09174:7055
+Reschenbachstraße	de:09174:7056
+Festwiese	de:09174:7057
+Martin-Huber-Straße	de:09174:7058
+Steinkirchener Straße	de:09174:7059
+Rathausstraße	de:09174:7060
+Münchner Str./Würmkanal	de:09174:7061
+Einkaufsmärkte	de:09174:7062
+Stadtweiher	
+Stresemannstraße	de:09174:7064
+Vierkirchen-Esterhofen (S) Ost	de:09174:7065
+St.-Peter-Straße	de:09174:7066
+GADA West	de:09174:7067
+Theodor-Heuss-Straße	de:09174:7068
+Würmstraße	de:09174:7070
+Von-Eichendorff-Straße	de:09174:7072
+Max-Planck-Straße	de:09174:7073
+Alte Römerstraße	de:09174:7074
+Kopernikusstraße	de:09174:7075
+Robert-Bosch-Straße	de:09174:7076
+KZ-Gedenkstätte	de:09174:7077
+Kloster Karmel	de:09174:7078
+Newtonstraße	de:09174:7079
+Kräutergarten	de:09174:7080
+Karl-Benz-Straße	de:09174:7081
+Ludwig-Thoma-Schule	de:09174:7082
+Graf-Konrad-Straße	
+Zwingereck	de:09174:7084
+Schulzentrum	de:09174:7085
+Johann-Pflügler-Straße	de:09174:7086
+Rudolf-Diesel-Straße	de:09174:7087
+Pfarrer-Kölbl-Straße	de:09174:7088
+Realschule	de:09174:7089
+Eduard-Ziegler-Straße	de:09174:7090
+Cyclostraße	de:09174:7091
+Klagenfurter Platz	de:09174:7092
+Am Rehsteig	de:09174:7094
+Waldfriedhof	de:09174:7095
+Moosstraße	de:09174:7096
+Breitenauer Weg	de:09174:7097
+Enzianweg	de:09174:7098
+Polizei	de:09174:7099
+Steinstraße	de:09174:7100
+Ort	de:09174:7101
+Ebertshausen	de:09174:7102
+Miegersbach	de:09174:7103
+Lukka	de:09174:7104
+Hadersried	de:09174:7105
+Am Schloßberg	de:09174:7106
+Schule	de:09174:7107
+Miegersbach, Abzw.	de:09174:7108
+Pfaffenhofen/Alto.,Ort	de:09174:7109
+Roßbach	de:09174:7110
+Ruppertskirchen, Abzw.	de:09174:7111
+Sixtnitgern	de:09174:7112
+Oberndorf (b.Altomünster)	de:09174:7113
+Maibaum	de:09174:7114
+Lichtenberg, Abzw.	de:09174:7115
+Gaggers	de:09174:7116
+Unterzeitlbach	de:09174:7118
+Ort	de:09174:7120
+Röckersberg	de:09174:7121
+Maibaum	de:09174:7122
+Schulweg	de:09174:7123
+Ruppertszeller Str.	
+Weilachstraße	de:09174:7125
+Xyger	de:09174:7126
+Plixenried	de:09174:7127
+Parkstraße	de:09174:7128
+Langengern	de:09174:7129
+Thalhausen (DAH)	de:09174:7130
+Irchenbrunn	de:09174:7131
+Nelkenweg	de:09174:7132
+Abzw. Irchenbrunn	de:09174:7133
+Rothbachbrücke	de:09174:7134
+Engelbrechtsmühle	de:09174:7135
+Marktplatz	de:09174:7136
+Wohnpark "Zwei Löwen"	de:09174:7137
+Unterer Markt	de:09174:7138
+Maisbrunn	de:09174:7139
+Kindergarten	de:09174:7140
+Kriegerdenkmal	de:09174:7141
+Stangenried	de:09174:7142
+Abzw. Tandern	de:09174:7143
+Kleinschwabhausen, Abzw.	de:09174:7144
+Neßlholz	de:09174:7146
+Kiemertshofen	de:09174:7147
+Münchener Straße	de:09174:7148
+Radenzhofen	de:09174:7149
+Post	de:09174:7150
+Niederdorfer Straße	de:09174:7151
+Ed	de:09174:7152
+Neurieder Straße	de:09174:7153
+Hauptstraße	de:09174:7154
+Neuried	de:09174:7155
+Niederdorf	de:09174:7156
+Kleinschwabhausen	de:09174:7157
+Abzw. Niederdorf	de:09174:7158
+Anw. Stepper	de:09174:7160
+Junkenhofen	de:09186:8453
+Haus-Nr.12	de:09174:7162
+Maibaum	de:09771:2510
+Gütersberg	
+Marbacher Straße	de:09174:7166
+Petershausen (S) P+R-Platz	de:09174:7167
+Obermarbach	de:09174:7168
+Feuerwehrhaus	
+Oberhausen	de:09174:7170
+Schielach	de:09174:7171
+Steinkirchen (Lkr. PAF)	de:09186:8968
+Schule	
+Lampertshausen	de:09186:8152
+Platte	
+Jetzendorfer Straße	de:09174:7176
+Omnibusbahnhof	de:09185:8469
+Hauptstraße	de:09186:8476
+Singenbach	
+Post	de:09186:8154
+Lagerhaus	de:09186:8970
+Aichacher Straße	de:09186:8969
+Volkersdorf	
+Thalmannsdorf (Lkr. DAH)	de:09174:7184
+Einsassen, Abzw.	
+Gumpmühle, Abzw.	de:09174:7186
+Gumpmühle	de:09174:7187
+Gumpersdorf	de:09174:7188
+Hirschhausen	
+Maibaum	de:09174:7190
+Ruppertszell	de:09771:2509
+Jahnstraße	de:09174:7192
+Wundersdorf	de:09771:2508
+Adlerstraße	de:09174:7194
+Metzenried	
+Gerolsbach	
+Randelsried	de:09174:7198
+Alberzell	
+Asbach (Altomünster)	de:09174:7200
+Schule	de:09174:7201
+Schmarnzell	de:09174:7202
+Schule	de:09174:7203
+Reichertshausen (Lkr. DAH)	de:09174:7204
+Ottelsburger Straße	de:09174:7205
+Pipinsried	de:09174:7206
+Weitenwinterried	de:09174:7207
+Aussiedlerhof	de:09174:7208
+Emmeranstraße	de:09174:7210
+Schulstraße	de:09174:7212
+Pfaffenhofen/Alto.,Süd	de:09174:7213
+Ludwig-Thoma-Straße	de:09174:7214
+Schule	de:09174:7215
+Maibaum	de:09174:7216
+Ziegelberg/Petershsn	de:09174:7217
+Jedenhofen, Ort	de:09174:7218
+Arnberg	de:09174:7219
+Pasenbach	de:09174:7220
+Haag	de:09174:7221
+Indersdorfer Straße	de:09174:7222
+Lauterbach, Abzw.	de:09174:7223
+Sparkasse	de:09174:7224
+Freisinger Straße	de:09174:7226
+Milbertshofen, Ort	de:09174:7227
+Rettenbach	de:09174:7228
+Seniorenwohnpark	de:09174:7229
+Giebing	de:09174:7230
+Maibaum	
+Breitenwiesen, Abzw.	de:09174:7232
+Gachenbach	
+Kriegerdenkmal	de:09174:7234
+Kirche	
+Aufhausen	de:09174:7236
+Ringstraße	de:09174:7237
+Edenpfaffenhofen	de:09174:7238
+Fränking	de:09174:7239
+Eglersried	de:09174:7240
+Rettenbacher Feld	
+Stachusried, Abzw.	de:09174:7242
+Dorfstraße	
+Hartwigshausen	de:09174:7244
+Lanzenried	de:09174:7246
+Albertshof, Abzw.	de:09174:7247
+Fränking, Abzw.	de:09174:7249
+Ainhofen	de:09174:7250
+Gundackersdorf	de:09174:7251
+Abzw.Unterumbach	de:09174:7252
+Edenholzhausen	de:09174:7253
+Wagenhofen	de:09174:7254
+Nord	de:09174:7255
+Pfaffenhofen	de:09174:7256
+Erlbach	de:09174:7257
+Egenburg	de:09174:7258
+Ainhofer Straße	de:09174:7259
+Kreisstraße	de:09174:7261
+Kaltenbach, Abzw.	de:09174:7262
+Bayerzell	de:09174:7263
+Miesberg	de:09174:7264
+Wagenhofen, Abzw.	de:09174:7265
+Stockach	de:09174:7266
+Höfa	de:09174:7267
+Oberumbach	de:09174:7268
+Jedenhofener Straße	de:09174:7269
+Unterumbach	de:09174:7270
+Weitenried	de:09174:7271
+Prittlbach, Abzw.	de:09174:7272
+Nord	de:09174:7273
+Schule	de:09174:7274
+Am Eichenberg	de:09174:7275
+Maibaum	de:09174:7276
+Robert-Bosch-Straße	de:09174:7277
+Dorfstraße	de:09174:7278
+Goppertshofen	de:09174:7280
+Hollerschlag	de:09174:7281
+Abzw. Oberweilbach	de:09174:7282
+Dorfstraße	de:09174:7283
+Oberweilbach	de:09174:7284
+Erlbachbrücke	de:09174:7285
+Arzbach, Abzw.	de:09174:7286
+Unterweilbach	de:09174:7288
+Ort	de:09174:7289
+Reipertshofen	de:09174:7290
+Süd	de:09174:7291
+Purtlhof	de:09174:7292
+Schönberg	de:09174:7293
+Purtlhofer Straße	de:09174:7294
+Asbacher Straße	de:09174:7295
+Lotzbach	de:09174:7296
+Ost	de:09174:7297
+Sulzrain	de:09174:7298
+West	de:09174:7299
+Amperpettenbach, Ort	de:09174:7300
+Aussiedlerhöfe	de:09174:7301
+Maibaum	de:09174:7302
+Culmweg	de:09174:7303
+Mühlenstraße	de:09174:7304
+Leitenweg	de:09174:7305
+Inhausen	de:09174:7306
+Birkenweg	de:09174:7309
+Abzw.	de:09174:7311
+Georg-Queri-Straße	de:09174:7312
+Alte Dorfstraße	de:09174:7314
+Kanalweg	de:09174:7315
+Von-Mandl-Straße	de:09174:7316
+Ost	de:09174:7317
+Deutenhofen	de:09174:7318
+Zillhofen Abzw.	de:09174:7319
+Maibaum	de:09174:7320
+Wiesenweg	de:09174:7321
+Kaltmühle	de:09174:7322
+Aussiedlerhof	de:09174:7323
+Realschule	de:09174:7324
+Piflitz	de:09174:7325
+Zieglberg (Lkr. DAH)	de:09174:7326
+Dietenhausen	de:09174:7327
+Schönbrunn	de:09174:7328
+Mitterwiedenhof	de:09174:7329
+Brücke	de:09174:7330
+Ortsstraße	de:09174:7331
+Pfaffenhofen/Alto.,Pfaffenberg	de:09174:7332
+Kreuzholzhausen, Abzw. Deutenh.	de:09174:7333
+Oberndorf	de:09174:7334
+Steffelberg/Grubhof	de:09174:7335
+Westerndorf	de:09174:7336
+Westerholzhausen	de:09174:7338
+Eichhofen	de:09174:7340
+Berghofer Straße	de:09174:7341
+Tiefenlachen	de:09174:7342
+Ilmstraße	de:09174:7343
+Arnzell	de:09174:7344
+Aberl	de:09174:7345
+Kattalaich	de:09174:7346
+Harreszell, Abzw.	de:09174:7347
+Wagenried	de:09174:7348
+Sigmertshausen	de:09174:7350
+Inzemooser Straße	de:09174:7351
+Kindergarten	de:09174:7352
+Rienshofen	de:09174:7353
+Maibaum	de:09174:7354
+Weiherstraße	de:09174:7355
+Finkenweg	de:09174:7356
+Lindach, Abzw. Kappelhof	de:09174:7357
+Fa. Lachner	de:09174:7358
+Westergasse	de:09174:7359
+Riedenzhofen	de:09174:7360
+Schule	de:09174:7361
+Arzbach	de:09174:7362
+Gewerbegebiet	de:09174:7363
+Maibaum	de:09174:7364
+Gadastraße	de:09174:7365
+Gemeinde	
+Hofbergstraße	
+Rudelzhofen	de:09174:7370
+Durchsamsried, Abzw.	de:09174:7372
+Gänsstall	de:09174:7373
+Schulstraße	de:09174:7374
+Maibaum	de:09174:7376
+Asbach (b.Petershausen)	de:09174:7378
+Wasenhof, Abzw.	de:09174:7379
+Rettenbacher Straße	de:09174:7380
+Westenstraße	de:09174:7381
+Schmiedstraße	de:09174:7382
+Freisinger Straße	de:09174:7383
+Bachfeldstraße	de:09174:7384
+Am Klosterweiher	de:09174:7386
+Gärtnerei	de:09174:7388
+Ackerstraße	de:09174:7391
+Einkaufsmärkte West	de:09174:7393
+Bahnhof	de:09771:2300
+Stadtpfarrkirche	
+Sonderschule	
+Schulzentrum	
+Landratsamt	
+Fa.Zorn	
+Klingen	
+Untermauerbach	
+Obermauerbach	
+Unterschleißheim (S) Ost	de:09184:7500
+Unterschleißheim (S) West	de:09184:7501
+Zwerchwiesenweg	de:09184:7502
+Am Klöstermoos	de:09184:7503
+Buchenstraße	
+Hildegardstraße	
+Lohhof (S) Süd	de:09184:7505
+Waldfriedhof	de:09184:7506
+Margaretenanger	de:09184:7507
+Südliche Ingolstädter Straße	de:09184:7508
+Kiebitzstraße	de:09184:7509
+Finkenweg	de:09184:7510
+Morsestraße	de:09184:7512
+Gutenbergstraße	de:09184:7513
+Dieselstraße	de:09184:7513
+Lohhof (S) Nord	de:09184:7516
+Hbf	de:09161:9000
+Reichertshofen	
+Baar-Ebenhausen	de:09186:9024
+Rohrbach	de:09186:8181
+Pfaffenhofen (Ilm) (DB)	de:09186:8134
+Evangelische Kirche	de:09186:8967
+Reisgang	
+Hittostraße	
+Kirche	de:09186:8137
+Starzenbachstraße	de:09186:8138
+Feuerwehrhaus	de:09186:8140
+Ilmmünster, B 13	
+Busbahnhof	de:09186:8134:2
+Pfarrhof	de:09186:8139
+Reichertshausen	de:09186:8141
+Paindorf	de:09186:9019
+Schloßberg (Altomünster)	de:09174:7951
+Rametsried	de:09174:7952
+Oberdorf (DAH) Ort	de:09174:7999
+Altdorf B15	de:09183:80605
+Gars, Bosostraße	de:09183:6544
+Abzw.	de:09183:6948
+Reichgreißl	de:09183:6545
+Dörfl/Straß	de:09183:3108
+Ramsau B12	de:09183:7751
+Dornier-Werkgelände	de:09188:8812
+Bahnhof	de:09187:40851
+Philippstraße	de:09190:41467
+Gästeinfo/Fachklinik	de:09173:8832
+Karlstraße	de:09190:41461
+Kreisel/Grube	de:09190:41462
+Berghalde	de:09190:41453
+Kindergarten	de:09190:41443
+Auf der Etz	de:09190:41444
+Krankenhaus	de:09190:41450
+Steinhöring	de:09175:8857
+Olympiapark Parkharfe	de:09162:8888
+Toni-Merkens-Weg	de:09162:8888
+Stadtgrenze München	de:09162:8999
+Bahnhof	de:09190:41571
+Schwalbenstraße	de:09175:9001
+Dreitorspitzstraße	de:09175:9004
+Johann-Strauß-Straße	de:09175:9005
+Bahnhof	de:09181:501:2
+Pfarrkirche	de:09181:1603
+Bernried (a Starnberger See)	de:09190:90040
+Seeshaupt (DB)	de:09190:41534
+Dießen	de:09181:500
+Riederau	de:09181:505
+Bahnhof	de:09181:507
+Bahnhof	de:09181:506
+St. Alban	de:09181:1423
+Spiridon-Louis-Ring	de:09162:9015
+Innbrücke	de:09183:5997
+Rathaus	
+Straßwirt	
+Zulehen(b.Gars)	
+Abzw.	de:09183:6723
+Ramsau	
+Furth	
+Ortsmitte	de:09183:80606
+Oberndorf, Abzw. B12	de:09183:80909
+Straß	de:09183:80652
+Abzw. Winden	de:09183:80607
+Schmiechen	de:09771:1300
+Egling (BRB)	de:09181:501
+Tollwood	de:09162:9029
+Olympiaberg	de:09162:9029
+Raisting	de:09190:45004
+Bahnhof	de:09181:503
+Bahnhof	de:09772:7580
+Schule	de:09181:510
+Bahnhof	de:09181:511
+Bichl b. Kirchdorf	
+Niesberg	
+Rosenheimer Str./Gimplberg	de:09187:42034
+Innhöhe	de:09187:42030
+Wohnheim ISK	de:09187:42050
+Landschaftsweg	de:09187:42040
+Staudham B 304	de:09187:42056
+Firma Meggle	de:09187:42053
+Abzw. Ahornstraße	de:09187:42052
+Gewerbegebiet	de:09187:42054
+Ramsau Felling	de:09187:41566
+Brandstätt, Abzw.	de:09187:41369
+Breitmoos	de:09187:43689
+Staudhamer Straße	de:09187:41429
+Römer-/Pfaffingerstraße	de:09187:41431
+Hochhaus	de:09187:41430
+Abzw. Eichenweg	de:09187:41798
+Oed/Ried (Pfaffing)	de:09187:41813
+Campus	
+Schule	de:09187:42135
+Gymnasium	de:09187:41224
+Vagener Str./Sonnenstr.	de:09187:47071
+Abzw.	de:09187:41694
+Kirchdorferstraße	
+Ort	de:09187:79015
+Abzw.	de:09187:41264
+Abzw. Noderwiechs	
+Abzw. Sonnenwiechs	de:09187:41228
+Sonnenstraße	de:09187:47072
+Fabriksiedlung	de:09187:46996
+Römervilla	
+Fasanenstraße	de:09187:46998
+Großer Stern	de:09187:47001
+Abzw. Noder- und Sonnenwiechs	de:09187:41291
+J.-Völkl/Heimatweg	
+Marktfeld	de:09187:47006
+Süd Chemie	de:09187:47007
+Esbaum bei Haag	de:09183:80609
+Lengmoos	de:09183:7585
+Pennstätt	de:09183:6293
+Aicha	de:09183:80611
+Wasserburger Hof	de:09183:80617
+Realschule	de:09183:8591
+Gasthaus Waldschlößl	de:09187:46999
+LVA Buchheimmuseum	
+Abzw. Bahnhof	
+Buchheimmuseum	
+Buchenstraße	
+Rathaus	de:09184:9201
+Tankstelle	
+Münchner Str.	
+J.-F.-Kennedy-Platz	de:09174:9211
+J.-F.-Kennedy-Platz	de:09174:9212
+Robert-Bosch-Straße	de:09184:9213
+J.-F.-Kennedy-Platz	
+Bruckmannring	de:09184:9216
+Mittenheim	de:09184:9217
+FC Bayern Campus	de:09184:9220
+Lena-Christ-Straße	
+Martinsried	de:09184:9250
+Auf der Wies	de:09184:9251
+Hahilingastraße	de:09184:9252
+Vogelanger	de:09184:9256
+Äußerer Stockweg	de:09184:9257
+Linienstraße	de:09184:9258
+Kirchplatz	de:09184:9260
+Hohenwaldstraße	de:09184:9261
+Hubertusstraße	
+Hofmarkstraße	de:09184:9265
+Ludwig-Thoma-Straße	de:09184:9268
+Schmidweg	de:09184:9269
+Carl-Zeiss-Ring	de:09184:9292
+Robert-Bürkle-Straße	de:09184:9293
+Rudolf-Diesel-Ring	de:09184:9301
+Robert-Bosch-Straße	de:09184:9302
+Ludwig-Bölkow-Straße	de:09184:9303
+Mühlweg	de:09184:9304
+Im Farchet	de:09173:9311
+Im Farchet (RVO)	de:09173:9312
+Jahnschule	de:09173:9313
+Jahnstraße/AOK	de:09173:9314
+Eisenbergerstraße	de:09173:9315
+Grünerbrauerei	de:09173:9316
+Maierbräugasteig	de:09173:9317
+Maxlweiher	de:09173:9318
+Eisstadion	de:09173:9319
+Alb.-Schäffenacker-Str.	de:09173:9320
+General-Patton-Str./Schule	de:09173:9321
+General-Patton-Str./B13	de:09173:9322
+Am Lettenholz	de:09173:9323
+Kaufland	de:09173:9324
+Moraltpark	de:09173:9325
+Karwendelsiedlung / TÜV	de:09173:9326
+Kardinal-Wendl-Platz	de:09173:9327
+Oberes Griesfeld	de:09173:9328
+Enzianstraße	de:09173:9329
+Sonnleitenstraße	de:09173:9330
+Kyreinstraße	de:09173:9331
+Chr.-Pabst-Weg	de:09173:9332
+Ludwigstr. / Tankstelle	de:09173:9333
+Kurhaus	de:09173:9334
+Buchener Straße	de:09173:9335
+Kurviertel/Alpamare	de:09173:9336
+Arzbacher Str./Parkplatz	de:09173:9337
+Kolpingstraße	de:09173:9338
+Gaißacher Str. / Am Winacker	de:09173:9339
+Lenggrieser Straße	de:09173:9340
+Manfredhof	de:09173:9341
+Arzbacher Str./Morlok	de:09173:9342
+Forsthaus	de:09173:9343
+Ev. Kirche	de:09173:9344
+Ruh am Bach	de:09173:9349
+Bachstraße	de:09173:9350
+Kindergarten	de:09173:9351
+Blombergbahn	de:09173:9355
+Cafe Nirwana	de:09173:9356
+Gh. Wiesweber	de:09173:9357
+Hinterstallau	de:09173:9358
+Ostfeld	de:09173:9359
+Untersteinbach	de:09173:9360
+Ellbach Siedlung	de:09173:9361
+Ellbach	de:09173:9362
+Birkenstraße	de:09173:9363
+Rain (Bad Tölz)	de:09173:9364
+Abrain / Hintersberg	de:09173:9365
+Jägerwirt	de:09173:9366
+Schnaitt	de:09173:9367
+Au (Dietramszell)	de:09173:9368
+Helfertsried	de:09173:9369
+Obermühltal	de:09173:9370
+Maureranger	de:09173:9371
+Erlach	de:09173:9372
+Habichau	de:09173:9373
+Burgern	de:09173:9374
+Neuwirt	de:09173:9375
+Altwirt	de:09173:9376
+Schule	de:09173:9377
+MAN	de:09173:9378
+Brücke	de:09173:9379
+Gewerbegebiet	de:09173:9380
+Haus Wolf	de:09173:9381
+Haus Busch	de:09173:9382
+Bibermühle	de:09173:9383
+Knapphof	de:09173:9384
+Bocksleiten	de:09173:9385
+Kramerwirt	de:09173:9386
+Kirche	de:09173:9387
+Höckhstraße	de:09173:9388
+Kindergarten	de:09173:9389
+Gh. Bauerngirgl	de:09188:9390
+Unterzeismering Gröschlstraße	de:09188:9391
+Fischerbuchet	de:09188:9392
+Kampberg Abzw	de:09188:9393
+Kampberg	de:09188:9394
+Diemendorf Abzw.	de:09188:9395
+Wartaweil Schullandheim	de:09188:9396
+Wartaweil Ökostation	de:09188:9397
+Garmisch-Partenkir.	de:09180:42837
+Prechtlstraße	de:09178:9401
+Jagdstraße	de:09178:9402
+Blumenstraße	de:09178:9403
+Murstraße	de:09178:9404
+Rabenweg	de:09178:9405
+Inkofener Str. 12	de:09178:9406
+Weinmoos/Gewerbegebiet	de:09178:9407
+Biernerstraße	de:09178:9408
+Klais	de:09180:42871
+Wettersteinring	de:09178:9411
+Haindlfinger Straße	de:09178:9412
+Forstzentrum	de:09178:9413
+Liesel-Beckmann-Straße	de:09178:9414
+Vitztumstraße	
+Schlesierstraße	
+Banatstraße	
+Albinstraße	
+Isarbrücke	
+Oberau (b Garm.-P.)	de:09180:42936
+Malerei Kieninger	
+Kanalbrücke	
+Abzw. Isarstraße	
+Abzw. Oberausstraße	
+Abzw. Uppenbornstraße	
+Schützenheim	
+Mühlbach	
+Abzw. Thulbach	
+Eichenstraße	
+Eschenlohe	de:09180:42824
+Kirchfeld	
+Stöber	
+Alte Schule	
+Gasthaus	
+Schloßbreiten	
+Schützenstraße	
+Landl	
+Ziegelei Kohn	
+Kreisstraße	
+Ohlstadt	de:09180:10007
+Inzkofen	
+Ort	
+Ort	
+Thal	
+Hagsdorf 2	
+Kreuzung	
+Pillhofen	
+Feldkirchen (Kr FS)	
+Schlag (Wang)	
+Murnau	de:09180:42899
+Gasthaus Gandorfer	
+Fichtenstraße	
+Uffing	de:09180:90017
+Driescherstraße	
+Birkenstraße	
+Sudetenlandstraße	
+Josef-Seliger-Platz	
+Königsbergerstraße	
+Stadtwaldstraße	
+Altvaterstraße	
+Thalbacherstraße 59	
+Fronängerstraße	
+Huglfing	de:09190:41333
+Westerbergstraße	
+Münchenerstraße 17	
+Jägerstraße 8	
+Jägerstraße 36	
+Gärtnerstraße 40	
+Forellenstraße	
+Mühlbachbrücke	
+Karpfenstraße	
+Meisenstraße	
+Farchant	de:09180:90198
+Mühlbachbogen 73	
+Mühlbachbogen 46	
+Bonaustraße 25	
+Bonaustraße 9	
+Weningstraße	
+Münchenerstraße 25	
+Degernpoint	
+Holzlandstraße	
+Seniorenzentrum	
+Nova	
+Lohweg	
+Thomastraße	
+Friedhof	
+Grünecker Straße	de:09178:9499
+Buchloe	de:09777:1000
+Oswaldhütte	de:09173:9501
+Vorderriß Grenze	de:09173:9502
+Vorderriß Gh. Post	de:09173:9503
+Fall Abzw. (B 307)	de:09173:9504
+Sylvensteinsee (Kraftwerk)	de:09173:9505
+Hohenwiesen	de:09173:9506
+Winkl (Kr TÖL)	de:09173:9507
+Hellerschwang	de:09173:9508
+Fleck Gh. Papyrer	de:09173:9509
+Hohenburg Schule	de:09173:9510
+Hirschbachbrücke	de:09173:9511
+Lenggries Rathaus	de:09173:9512
+Lenggries Schule	de:09173:9513
+Lenggries Kirchplatz	de:09173:9514
+Lenggries Cafe Strehler	de:09173:9515
+Lenggrieser Hof	de:09173:9516
+Lenggries Tölzer Straße	de:09173:9517
+Lenggries Trattenbach	de:09173:9518
+Lenggries Vdk-Siedlung	de:09173:9519
+Leng. Alpenrose/Wegsch. Str.	de:09173:9520
+Leng. Alpenrose/Wackersb. Str.	de:09173:9521
+Lenggries Gebirgsjägerstr.	de:09173:9522
+Lenggries Brauneckbahn	de:09173:9523
+Niedernach	de:09173:9524
+Jachenau Mühle	de:09173:9525
+Jachenau Post	de:09173:9526
+Laich	de:09173:9527
+Wieden	de:09173:9528
+Bäcker (Gde. Jachenau)	de:09173:9529
+Höfen (Gde. Jachenau)	de:09173:9530
+Hinterbichl (Gde. Jachenau)	de:09173:9531
+Petern	de:09173:9532
+Orth (Gde. Jachenau)	de:09173:9533
+Tannern	de:09173:9534
+Letten	de:09173:9535
+Leger	de:09173:9536
+Langeneck	de:09173:9537
+Wegscheid Bretonenbrücke	de:09173:9538
+Wegscheid Pfaffensteffl	de:09173:9539
+Wegscheid Mitte	de:09173:9540
+Wegscheid Abzw. Kotalm	de:09173:9541
+Gasthaus Isarburg	de:09173:9542
+Schlegldorf Kapelle	de:09173:9543
+Schlegldorf Feuerwehrhaus	de:09173:9544
+Schlegldorf Sägewerk	de:09173:9545
+Steinbach Schulbus-Haltestelle	de:09173:9546
+Untersteinbach Feldkreuz	de:09173:9547
+Obergries Abzw.	de:09173:9548
+Obergries Gh. Pulverwirt	de:09173:9549
+Betriebsfahrt Ende (für ISE)	de:09162:9564
+Betriebsfahrt Ende (für ISE)	de:09162:9565
+Auenstraße	
+Rosenstraße	
+Tannenweg	
+Dorfacker, Ort	
+Kühnhausen, Mitte	
+Kühnhausen, Am Berg	
+Abzw. Kühnhausen	
+Realschule Gute Änger	
+Herrnstraße	de:09177:9621
+Herrnstraße	de:09177:9622
+Puchen (Gde. Gaißach)	de:09173:9623
+Untergries Gh. Zachschuster	de:09173:9624
+Gaißach Abzw. Kranzer	de:09173:9625
+Greiling Siedlung	de:09173:9626
+Greiling Kirche	de:09173:9627
+Reichersbeuern Schloß	de:09173:9628
+Reichersbeuern Schule	de:09173:9629
+Reichersbeuern Siedlung	de:09173:9630
+Reichersbeuern Allgau	de:09173:9631
+Sachsenkam HAWE	de:09173:9632
+Sachsenkam Gemeindewaage	de:09173:9633
+Sachsenkam Mönchstraße	de:09173:9634
+Kloster Reutberg	de:09173:9635
+Benediktbeuern Volksschule	de:09173:9637
+Benediktbeuern Nord	de:09173:9638
+Benediktbeuern Post	de:09173:9639
+Benediktbeuern Pechlern	de:09173:9640
+Ried Gh. Rabenkopf	de:09173:9641
+Pessenbach Gewerbegebiet	de:09173:9642
+Pessenbach Seemüller	de:09173:9643
+Pessenbach Ötzschlößl	de:09173:9644
+Kochel Gh. Schmied von Kochel	de:09173:9645
+Kochel Loisachbrücke (Trimini)	de:09173:9646
+Schlehdorf Post	de:09173:9647
+Kochel Gasthaus Post	de:09173:9648
+Kochel Volksschule	de:09173:9649
+Kochel Franz-Marc-Museum	de:09173:9650
+Kochel Fa. Dorst	de:09173:9651
+Altjoch	de:09173:9652
+Helmerhütte	de:09173:9653
+Kesselberg Paßhöhe	de:09173:9654
+Kochel-Ort	de:09173:9655
+Urfeld	de:09173:9656
+Urfeld Jugendherberge	de:09173:9657
+Walchensee Herzogstandbahn	de:09173:9658
+Walchensee Ortsmitte	de:09173:9659
+Walchensee Seestüberl	de:09173:9660
+Walchensee Gasth. Edeltraud	de:09173:9661
+Lobisau	de:09173:9662
+Einsiedl	de:09173:9663
+Einsiedl Abzw. Mautstraße	de:09173:9664
+Obernach	de:09180:42979
+Obernach Versuchsanstalt	de:09180:42980
+Kristall Therme	de:09173:9667
+Heimatbühne	de:09173:9668
+Am Kranzer	de:09173:9669
+Möbel Mahler	de:09173:9670
+Grünbach	de:09177:9671
+Wasentegernbach	de:09177:9672
+Abzw. Loh	de:09177:9673
+Schwindkirchen	de:09177:9674
+Abzw. Oberkorb	de:09177:9675
+Loiperstätt	de:09177:9676
+Oberstollnkirchen	de:09177:9677
+Mitterschiltern	de:09177:9678
+Seemühle	de:09177:9679
+Weiher (Isen)	de:09177:9680
+Strich	de:09177:9681
+Buchschachen	de:09177:9682
+Lichtenweg	de:09177:9683
+Schranken	de:09183:80643
+Straßberg	de:09177:9685
+Klaus	de:09177:9686
+Hilgen	de:09177:9687
+Schönbrunn (Kr ED)	de:09177:9688
+Grüner Baum	de:09177:9689
+Zell (Frauenneuharting)	de:09175:9690
+Aich (Kr ED)	de:09177:9691
+Abzw. Anzing (Dorfen)	de:09177:9692
+Straß (bei Dorfen)	de:09177:9693
+Abzw. Eppenhöning	de:09177:9694
+Kloster Moosen	de:09177:9695
+Galgenwiese	de:09177:9696
+B15 Alte Feuerwehr	de:09177:9697
+Fahrnbach	de:09177:9698
+Fleck	de:09177:9699
+Bauernstraße	
+Abzw. Gewerb.	
+Alter Wirt	de:09185:8509
+Hafnerstraße	
+Klenau	de:09186:8452
+Heinrich-Lanz-Str.	
+Waldkindergarten	
+Boos Bus	
+Altenhauser Straße	
+Altenhausen	
+Zurnhausen	
+Edenhofen	
+Piesing	
+Zellhausen	
+Sommerstraße	
+Am Schulweg	
+Bahnhof Bahnstraße	
+Abzw. Singer	de:09177:9721
+Realschule	de:09177:9722
+Wernhardsberg	de:09177:9741
+Dostlerstraße	de:09162:9751
+Riesenfeldstraße / Tor 5	de:09162:9752
+IT-Zentrum	de:09162:9753
+Anton-Ditt-Bogen	de:09162:9755
+Heidemannstr. 164	de:09162:9756
+Freimann (Auslieferung)	de:09162:9758
+Moosacher Str. 51	de:09162:9760
+Lauchstädter Straße	de:09162:9761
+Parkring 19	de:09184:9762
+BMW M GmbH (Daimlerstr. 19)	de:09184:9763
+Konrad-Zuse-Str. 4	de:09184:9764
+Landshuter Straße 26	de:09184:9765
+Taunusstraße	de:09162:9766
+Starnberg Schiff	de:09188:9920
+Berg Schiff	de:09188:9921
+Leoni Schiff	de:09188:9922
+Possenhofen Schiff	de:09188:9923
+Ammerland Schiff	de:09173:9924
+Bernried Schiff	de:09190:90007
+Ambach Schiff	de:09173:9926
+Seeshaupt Schiff	de:09190:9927
+Stegen Schiff	de:09188:9928
+Buch (Ammersee) Schiff	de:09188:9929
+Tutzing Schiff	de:09188:9930
+Schondorf Schiff	
+Breitbrunn Schiff	de:09188:9932
+Utting Schiff	de:09181:604
+Holzhausen Schiff	de:09181:605
+Riederau Schiff	de:09181:606
+Dießen Schiff	de:09181:607
+Herrsching Schiff	de:09188:9940
+Walpertskirchen (DB)	de:09177:9950
+Thann-Matzbach (DB)	de:09177:9951
+Siglstraße Nord	de:09162:9952
+Hörlkofen (DB)	de:09177:9954
+Dorfen (DB)	de:09177:9955
+Schwindegg	de:09183:6603
+Weidenbach	de:09183:6608
+Kolbermoor	de:09187:41772
+Iffeldorf	de:09190:90041
+Neufahrn-S	

@@ -1,8 +1,11 @@
 ﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.  
 
+using MVGAPI;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Media.Imaging;
 
 namespace MVGTimeTable
@@ -13,21 +16,46 @@ namespace MVGTimeTable
         /// Get main destination string from full destination or null
         /// </summary>
         /// <param name="destination">>Full destination string</param>
-        /// <param name="remove_U_S">Remove letters U and S if true</param>
+        /// <param name="removeUS">Remove letters U and S if true</param>
         /// <returns>New string with main destination</returns>
-        static public string GetMainDestination(string destination, bool remove_U_S = false)
+        static public string GetMainDestination(string destination, bool removeUS = false, bool removeSplitMarkers = false, bool removeBf = false, bool removeBrackets = false)
         {
-            if (string.IsNullOrEmpty(destination)) return null;
+            if (string.IsNullOrEmpty(destination))
+            {
+                return null;
+            }
 
             StringBuilder outputstring = new StringBuilder();
 
-            if (remove_U_S) destination = Remove_U_S(destination);
+            if (removeUS)
+            {
+                destination = RemoveUS(destination);
+            }
+
+            if (removeBf)
+            {
+                destination = RemoveBf(destination);
+            }
+
+            if (removeBrackets)
+            {
+                destination = RemoveBrackets(destination);
+            }
+
+            if (removeSplitMarkers)
+            {
+                destination = RemoveSplitMarkers(destination);
+            }
 
             string[] splittedDestination = destination.Split(' ');
 
             foreach (string str in splittedDestination)
             {
-                if (str.ToUpperInvariant() == Common.AdditionalDestinationMarker) break;
+                if (Array.IndexOf(Common.AdditionalDestinationMarkers, str.ToUpperInvariant()) >= 0)
+                {
+                    break;
+                }
+
                 outputstring.Append(str + " ");
             }
             if (outputstring.Length > 2)
@@ -50,7 +78,7 @@ namespace MVGTimeTable
         {
             if (string.IsNullOrEmpty(destination)) return null;
 
-            if (remove_U_S) destination = Remove_U_S(destination);
+            if (remove_U_S) destination = RemoveUS(destination);
 
             string[] splittedDestination = destination.Split(' ');
 
@@ -58,7 +86,7 @@ namespace MVGTimeTable
             bool startBuilding = false;
             foreach (string str in splittedDestination)
             {
-                if (str.ToUpperInvariant() == Common.AdditionalDestinationMarker || startBuilding)
+                if (Array.IndexOf(Common.AdditionalDestinationMarkers, str.ToUpperInvariant()) >= 0 || startBuilding)
                 {
                     startBuilding = true;
                     outputstring.Append(str + " ");
@@ -100,7 +128,7 @@ namespace MVGTimeTable
 
             foreach (string str in splittedDestination)
             {
-                if (str.ToUpperInvariant() == Common.AdditionalDestinationMarker || startBuildingAdditionalstring)
+                if (Array.IndexOf(Common.AdditionalDestinationMarkers, str.ToUpperInvariant()) >= 0 || startBuildingAdditionalstring)
                 {
                     startBuildingAdditionalstring = true;
                     outputAdditionalstring.Append(str + " ");
@@ -108,7 +136,11 @@ namespace MVGTimeTable
 
                 if (!endBuildingMainstring)
                 {
-                    if (str.ToUpperInvariant() == Common.AdditionalDestinationMarker) endBuildingMainstring = true;
+                    if (Array.IndexOf(Common.AdditionalDestinationMarkers, str.ToUpperInvariant()) >= 0)
+                    {
+                        endBuildingMainstring = true;
+                    }
+
                     outputMainstring.Append(str + " ");
                 }
             }
@@ -116,13 +148,19 @@ namespace MVGTimeTable
             if (outputAdditionalstring.Length > 2)
             {
                 additionalDestination = (outputAdditionalstring.ToString(0, outputAdditionalstring.Length - 1)).TrimEnd(' ');
-                if (remove_U_S_additional) additionalDestination = Remove_U_S(additionalDestination);
+                if (remove_U_S_additional)
+                {
+                    additionalDestination = RemoveUS(additionalDestination);
+                }
             }
 
             if (outputMainstring.Length > 2)
             {
                 mainDestination = (outputMainstring.ToString(0, outputMainstring.Length - 1)).TrimEnd(' ');
-                if (remove_U_S_main) mainDestination = Remove_U_S(mainDestination);
+                if (remove_U_S_main)
+                {
+                    mainDestination = RemoveUS(mainDestination);
+                }
             }
 
 
@@ -133,17 +171,14 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="destination">Destination string</param>
         /// <returns></returns>
-        static public bool IsStringContains_U_S(string destination)
+        static public bool IsStringContainsUS(string destination)
         {
             bool result = false;
 
             if (!string.IsNullOrEmpty(destination))
             {
                 destination += " ";
-                result =    (destination.IndexOf(" S ") > 0) |
-                            (destination.IndexOf(" U ") > 0) |
-                            (destination.IndexOf(" US ") > 0) |
-                            (destination.IndexOf(" SU ") > 0);
+                result = IsMarkerPresent(destination, Common.USSpacedMarkers, exactly: true);
             }
 
             return result;
@@ -151,13 +186,16 @@ namespace MVGTimeTable
 
 
         /// <summary>
-        /// Get image with "U", "S", "U S", Ball, Zoo, Messe and Olymplic signs for destination
+        /// Get image with "U", "S", "U S", First Cars, Last Cars, Ball, Zoo, Messe and Olymplic signs for destination
         /// </summary>
         /// <param name="destination">Destination string</param>
         /// <returns></returns>
-        static public BitmapImage GetDestinationImage(string destination, string label = "", string currentStation = "", bool mainLabel = true)
+        public static BitmapImage GetDestinationImage(string destination, string label = "", string currentStation = "", bool mainLabel = true)
         {
-            if (string.IsNullOrEmpty(destination)) return null;
+            if (string.IsNullOrEmpty(destination))
+            {
+                return null;
+            }
 
             string iconKey = null;
 
@@ -181,51 +219,68 @@ namespace MVGTimeTable
                 }
             }
 
+
             if (string.IsNullOrEmpty(iconKey))
             {
+                bool trainFirstPresent = false;
+                bool trainSecondPresent = false;
                 bool UbahnPresent = false;
                 bool SbahnPresent = false;
-
-                int products = 0;
-
                 string[] splittedDestination = destination.Split(' ');
 
                 foreach (string str in splittedDestination)
                 {
-                    if (str.ToUpperInvariant() == "U")
+                    string strU = str.ToUpperInvariant();
+                    if (strU == Common.TrainFirstHalf.ToUpperInvariant())
+                    {
+                        trainFirstPresent = true;
+                    }
+
+                    if (strU == Common.TrainSecondHalf.ToUpperInvariant())
+                    {
+                        trainSecondPresent = true;
+                    }
+
+                    if (IsMarkerPresent(strU, Common.ULineMarkers, exactly: true))
                     {
                         UbahnPresent = true;
                     }
-
-                    if (str.ToUpperInvariant() == "S")
+                    if(IsMarkerPresent(strU, Common.SLineMarkers, exactly: true))
                     {
                         SbahnPresent = true;
                     }
 
-                    if (str.ToUpperInvariant() == "SU" || str.ToUpperInvariant() == "US")
+                    if (IsMarkerPresent(strU, Common.USLineMarkers, exactly: true))
                     {
                         SbahnPresent = true;
                         UbahnPresent = true;
                     }
                 }
-
-                products = (UbahnPresent ? 1 : 0) + (SbahnPresent ? 2 : 0);
-
-                switch (products)
+                if (trainFirstPresent || trainSecondPresent)
                 {
-                    case 1: iconKey = mainLabel ? Common.UBahnMonoFullIconKey : Common.UBahnMonoHalfIconKey; break;
-                    case 2: iconKey = mainLabel ? Common.SBahnMonoFullIconKey : Common.SBahnMonoHalfIconKey; break;
-                    case 3: iconKey = mainLabel ? Common.USBahnsMonoFullIconKey : Common.USBahnsMonoHalfIconKey; break;
-                    default: break;
+                    iconKey = trainFirstPresent ? Common.TrainFirstHalfIconKey : Common.TrainSecondHalfIconKey;
+                }
+                else
+                {
+                    int products = (UbahnPresent ? 1 : 0) + (SbahnPresent ? 2 : 0);
+                    switch (products)
+                    {
+                        case 1: iconKey = mainLabel ? Common.UBahnMonoFullIconKey : Common.UBahnMonoHalfIconKey; break;
+                        case 2: iconKey = mainLabel ? Common.SBahnMonoFullIconKey : Common.SBahnMonoHalfIconKey; break;
+                        case 3: iconKey = mainLabel ? Common.USBahnsMonoFullIconKey : Common.USBahnsMonoHalfIconKey; break;
+                        default: break;
+                    }
                 }
             }
 
-            if (!string.IsNullOrEmpty(iconKey) && Common.icons.ContainsKey(iconKey = iconKey.ToLowerInvariant()))
+            if (!string.IsNullOrEmpty(iconKey) && Common.icons.ContainsKey(iconKey = iconKey.ToUpperInvariant()))
             {
                 return Common.icons[iconKey];
             }
             else
+            {
                 return null;
+            }
         }
 
 
@@ -234,19 +289,76 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="destination">Destination string</param>
         /// <returns>New string without U and S</returns>
-        static private string Remove_U_S(string destination)
+        static private string RemoveUS(string destination)
         {
-            if (string.IsNullOrEmpty(destination)) return null;
+            if (string.IsNullOrEmpty(destination))
+            {
+                return null;
+            }
 
             destination += " ";
-            destination = destination.Replace(" US ", " ");
-            destination = destination.Replace(" SU ", " ");
-            destination = destination.Replace(" U S ", " ");
-            destination = destination.Replace(" S U ", " ");
-            destination = destination.Replace(" U ", " ");
-            destination = destination.Replace(" S ", " ");
+            foreach (string s in Common.USSpacedMarkers)
+            {
+                destination = destination.Replace(s, " ");
+            }
+
             destination = destination.TrimEnd(' ');
 
+            return destination;
+        }
+
+        /// <summary>
+        /// Remove split markers from destination. This markers added during parsing and will be replaced with icons in the table
+        /// </summary>
+        /// <param name="destination">Destination string</param>
+        /// <returns>Destination string without split markers</returns>
+        static private string RemoveSplitMarkers(string destination)
+        {
+            if (string.IsNullOrEmpty(destination))
+            {
+                return null;
+            }
+            destination += " ";
+            destination = destination.Replace(Common.TrainFirstHalf, " ");
+            destination = destination.Replace(Common.TrainSecondHalf, " ");
+            destination = destination.TrimEnd(' ');
+
+            return destination;
+
+        }
+
+        /// <summary>
+        /// Remove letters Bf or Bf. from destination string
+        /// </summary>
+        /// <param name="destination">Destination string</param>
+        /// <returns>New string without Bf or Bf.</returns>
+        static private string RemoveBf(string destination)
+        {
+            if (string.IsNullOrEmpty(destination))
+            {
+                return null;
+            }
+
+            destination += " ";
+            destination = destination.Replace(" Bf ", " ");
+            destination = destination.Replace(" Bf. ", " ");
+            destination = destination.TrimEnd(' ');
+
+            return destination;
+        }
+
+        /// <summary>
+        /// Remove text in brackets from destination string
+        /// </summary>
+        /// <param name="destination">Destination string</param>
+        /// <returns>Destination string without text in brackets</returns>
+        static private string RemoveBrackets(string destination)
+        {
+            if (string.IsNullOrEmpty(destination))
+            {
+                return null;
+            }
+            Regex.Replace(destination, @"\([^()]*\)", string.Empty);
             return destination;
         }
 
@@ -258,7 +370,10 @@ namespace MVGTimeTable
         /// <returns>True if line is going to the Alliance Arena</returns>
         static private bool IsFussballDestination(string currentStation, string destination, string label)
         {
-            return IsTargetDestination(currentStation, destination, label, Common.FussballDestinations);
+            return IsTargetDestinationId(currentStation: currentStation,
+                                        destination: destination,
+                                        label: label,
+                                        targetDictionary: Common.FussballDestinationsId);
         }
 
         /// <summary>
@@ -269,11 +384,14 @@ namespace MVGTimeTable
         /// <returns>True if line is going to the Tierpark Hellabrunn</returns>
         static private bool IsZooDestination(string currentStation, string destination, string label)
         {
-            return IsTargetDestination(currentStation, destination, label, Common.ZooDestinations);
+            return IsTargetDestinationId(currentStation: currentStation,
+                                        destination: destination,
+                                        label: label,
+                                        targetDictionary: Common.ZooDestinationsId);
         }
 
         /// <summary>
-        /// 
+        /// Check Messe destination
         /// </summary>
         /// <param name="currentStation"></param>
         /// <param name="destination"></param>
@@ -281,11 +399,14 @@ namespace MVGTimeTable
         /// <returns></returns>
         static private bool IsMesseDestination(string currentStation, string destination, string label)
         {
-            return IsTargetDestination(currentStation, destination, label, Common.MesseDestinations);
+            return IsTargetDestinationId(currentStation: currentStation,
+                                        destination: destination,
+                                        label: label,
+                                        targetDictionary: Common.MesseDestinationsId);
         }
 
         /// <summary>
-        /// 
+        /// Check Olympia destination
         /// </summary>
         /// <param name="currentStation"></param>
         /// <param name="destination"></param>
@@ -293,7 +414,10 @@ namespace MVGTimeTable
         /// <returns></returns>
         static private bool IsOlympiaDestination(string currentStation, string destination, string label)
         {
-            return IsTargetDestination(currentStation, destination, label, Common.OlympiaDestinations);
+            return IsTargetDestinationId(currentStation: currentStation,
+                                        destination: destination,
+                                        label: label,
+                                        targetDictionary: Common.OlympiaDestinationsId);
         }
 
 
@@ -310,14 +434,119 @@ namespace MVGTimeTable
             bool targetPassed = false;
             foreach (string key in targetDictionary.Keys)
             {
-                if (string.Compare(key.ToUpperInvariant(), label.ToUpperInvariant()) != 0) continue;
+                if (string.Compare(key.ToUpperInvariant(), label.ToUpperInvariant()) != 0)
+                {
+                    continue;
+                }
+
                 foreach (string targetDestination in targetDictionary[key])
                 {
-                    if (string.Compare(currentStation.ToUpperInvariant(), targetDestination.ToUpperInvariant()) == 0) targetPassed = true;
-                    if (string.Compare(targetDestination.ToUpperInvariant(), destination.ToUpperInvariant()) == 0) destinationDetected = true;
+                    if (string.Compare(currentStation.ToUpperInvariant(), targetDestination.ToUpperInvariant()) == 0)
+                    {
+                        targetPassed = true;
+                    }
+
+                    if (string.Compare(targetDestination.ToUpperInvariant(), destination.ToUpperInvariant()) == 0)
+                    {
+                        destinationDetected = true;
+                    }
                 }
             }
             return !targetPassed & destinationDetected;
+        }
+
+        static private bool IsTargetDestinationId(string currentStation, string destination, string label, Dictionary<string, string[]> targetDictionary)
+        {
+            return IsTargetDestination(currentStation: MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(currentStation, removeSplitMarkers: true, removeUS: true)),
+                                        destination: MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(destination, removeSplitMarkers: true, removeUS: true)),
+                                        label: label,
+                                        targetDictionary: targetDictionary);
+        }
+
+
+        /// <summary>
+        /// Check, does the marker from special array exist in the input string
+        /// </summary>
+        /// <param name="checkedString">Input string, find markers here</param>
+        /// <param name="markersArray">Special array with markers</param>
+        /// <param name="exactly">If true the whole string has to match with marker</param>
+        /// <returns>True if a marker has found in the input string</returns>
+        static public bool IsMarkerPresent(string checkedString, string[] markersArray, bool exactly = false)
+        {
+            bool result = false;
+            foreach (string marker in markersArray)
+            {
+                if (exactly)
+                {
+                    if (string.Compare(marker, checkedString) == 0)
+                    {
+                        result = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    if (checkedString.Contains(marker))
+                    {
+                        result = true;
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
+
+
+        /// <summary>
+        /// Adding special markers in the destination string if the train is splitted in the future
+        /// This markers will be replaced with icons by destination converters
+        /// Works only with array sorted with MVGAPI. If array is not sorted, use sortDepartures flag
+        /// </summary>
+        /// <param name="departureResponse">DeserializedDepartures array</param>
+        /// <param name="sortDepartures">Sort input array by MVGAPI if true</param>
+        static public void ProcessSplittedLines(ref DeserializedDepartures[] departureResponse, bool sortDepartures = false)
+        {
+            if (departureResponse == null || departureResponse.Length < 2)
+            {
+                return;
+            }
+
+            if (sortDepartures)
+            {
+                MVGAPI.MVGAPI.Sort(ref departureResponse);
+            }
+
+            for (int i = 0; i < departureResponse.Length - 1; ++i)
+            {
+                foreach (string label in Common.SplittedDestinationsId.Keys)
+                {
+                    if (label == departureResponse[i].label &&
+                        label == departureResponse[i + 1].label &&
+                        departureResponse[i].departureTime == departureResponse[i + 1].departureTime)
+                    {
+                        string splittedId0 = Common.SplittedDestinationsId[label][0];
+                        string splittedId1 = Common.SplittedDestinationsId[label][1];
+                        string destinationId0 = MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(departureResponse[i].destination, removeSplitMarkers: true, removeUS: true, removeBf: true));
+                        string destinationId1 = MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(departureResponse[i + 1].destination, removeSplitMarkers: true, removeUS: true, removeBf: true));
+                        if (splittedId0 == destinationId0 && splittedId1 == destinationId1)
+                        {
+                            departureResponse[i].destination += " " + Common.TrainFirstHalf;
+                            departureResponse[i + 1].destination += " " + Common.TrainSecondHalf;
+                            continue;
+                        }
+                        if (splittedId0 == destinationId1 && splittedId1 == destinationId0)
+                        {
+                            departureResponse[i].destination += " " + Common.TrainSecondHalf;
+                            departureResponse[i + 1].destination += " " + Common.TrainFirstHalf;
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
         }
     }
 }

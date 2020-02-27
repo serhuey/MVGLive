@@ -12,7 +12,7 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values == null || values.Length < 1) return null;
+            if (values == null || values.Length == 0 || values[0] == null) return null;
             string minutes = values[0].ToString();
             string addition = "  ";
             if (minutes.Contains(Common.HoursSign))

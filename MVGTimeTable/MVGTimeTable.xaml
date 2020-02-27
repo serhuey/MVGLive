@@ -17,9 +17,10 @@
         <local:MarginMvc x:Key="MarginMvc" />
         <local:AdditionalLabelsMvc x:Key="AdditionalLabelsMvc" />
         <local:MainLabelsMvc x:Key="MainLabelsMvc" />
-        <local:SBahnGleisMvc x:Key="SBahnGleisMvc" />
         <local:FontSizeMvc x:Key="FontSizeMvc" />
         <local:MainDestinationForegroundMvc x:Key="MainDestinationForegroundMvc" />
+
+        <local:GleisMvc x:Key="GleisMvc"/>
 
         <Style x:Key="alternatingStyle" TargetType="{x:Type ListViewItem}">
             <Style.Triggers>
@@ -53,9 +54,9 @@
 
 
     <DockPanel>
-        <ListView x:Name="listViewTimeTable" Foreground="#FFE8E8E8" DockPanel.Dock="Bottom" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+        <ListView x:Name="listViewTimeTable" DockPanel.Dock="Bottom" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                   ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0" Background="#FF00056C"
-                  AlternationCount="2">
+                  AlternationCount="2" SnapsToDevicePixels="True">
             <ListView.Resources>
                 <SolidColorBrush x:Key="ItemBackgroundHover" Color="Transparent" />
                 <Style TargetType="GridViewColumnHeader">
@@ -70,17 +71,17 @@
 
             <ListView.View>
 
-                <GridView AllowsColumnReorder="False">
+                <GridView AllowsColumnReorder="False" >
                     <GridViewColumn Header="Linie" x:Name="Line">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel x:Name="stackPanelProductLabel" Orientation ="Horizontal" HorizontalAlignment="Left">
+                                <StackPanel x:Name="stackPanelProductLabel" Orientation ="Horizontal" HorizontalAlignment="Left" >
                                     <StackPanel.Margin>
                                         <MultiBinding Converter="{StaticResource MarginMvc}" ConverterParameter="stackPanelProductLabel">
                                             <Binding Path="FontSize" />
                                         </MultiBinding>
                                     </StackPanel.Margin>
-                                    <Image HorizontalAlignment="Right" Stretch="None">
+                                    <Image HorizontalAlignment="Right" Stretch="None" SnapsToDevicePixels="True">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource ProductLabelMvc}">
                                                 <Binding Path="Product" />
@@ -95,6 +96,7 @@
                                             <Binding Path="Product" />
                                             <Binding Path="Label" />
                                         </MultiBinding>
+
                                     </Label>
                                 </StackPanel>
                             </DataTemplate>
@@ -103,13 +105,13 @@
                     <GridViewColumn Header="Ziel" x:Name="Destination">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel x:Name="stackPanelMainDestination" Orientation ="Horizontal" HorizontalAlignment="Left">
+                                <StackPanel x:Name="stackPanelMainDestination" Orientation ="Horizontal" HorizontalAlignment="Left" >
                                     <StackPanel.Margin>
                                         <MultiBinding Converter="{StaticResource MarginMvc}" ConverterParameter="stackPanelMainDestination">
                                             <Binding Path="FontSize" />
                                         </MultiBinding>
                                     </StackPanel.Margin>
-                                    <Label>
+                                    <Label  x:Name="labelMainDestination">
                                         <MultiBinding Converter="{StaticResource MainDestinationMvc}">
                                             <Binding Path="Destination" />
                                         </MultiBinding>
@@ -118,8 +120,13 @@
                                                 <Binding Path="Product" />
                                             </MultiBinding>
                                         </Label.Foreground>
+                                        <Label.Margin>
+                                            <MultiBinding Converter="{StaticResource MarginMvc}" ConverterParameter="labelMainDestination">
+                                                <Binding Path="FontSize" />
+                                            </MultiBinding>
+                                        </Label.Margin>
                                     </Label>
-                                    <Image HorizontalAlignment="Right" Stretch="None">
+                                    <Image HorizontalAlignment="Right" Stretch="None" SnapsToDevicePixels="True">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource MainLabelsMvc}">
                                                 <Binding Path="Destination" />
@@ -128,12 +135,17 @@
                                             </MultiBinding>
                                         </Image.Source>
                                     </Image>
-                                    <Label Foreground="#55F1F1F1" >
+                                    <Label x:Name="labelAdditionalDestination" Foreground="#55F1F1F1" >
                                         <MultiBinding Converter="{StaticResource AdditionalDestinationMvc}">
                                             <Binding Path="Destination" />
                                         </MultiBinding>
+                                        <Label.Margin>
+                                            <MultiBinding Converter="{StaticResource MarginMvc}" ConverterParameter="labelAdditionalDestination">
+                                                <Binding Path="FontSize" />
+                                            </MultiBinding>
+                                        </Label.Margin>
                                     </Label>
-                                    <Image HorizontalAlignment="Right" Stretch="None">
+                                    <Image HorizontalAlignment="Right" Stretch="None" SnapsToDevicePixels="True">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource AdditionalLabelsMvc}">
                                                 <Binding Path="Destination" />
@@ -147,20 +159,24 @@
                     <GridViewColumn Header="Gleis" x:Name="Platform">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Label x:Name="labelSBahnGleis" Foreground="#FFE8E8E8" HorizontalAlignment="Right" Width="Auto" OpacityMask="#99000000" >
-                                    <MultiBinding Converter="{StaticResource SBahnGleisMvc}">
-                                        <Binding Path="Product" />
-                                        <Binding Path="Platform" />
-                                        <Binding Path="Station" />
-                                    </MultiBinding>
-                                </Label>
+                                <StackPanel x:Name="stackPanelPlatform" Orientation ="Horizontal" HorizontalAlignment="Left" >
+                                    <Image HorizontalAlignment="Right" Stretch="None" SnapsToDevicePixels="True">
+                                        <Image.Source>
+                                            <MultiBinding Converter="{StaticResource GleisMvc}">
+                                                <Binding Path="Product" />
+                                                <Binding Path="Platform" />
+                                                <Binding Path="Station" />
+                                            </MultiBinding>
+                                        </Image.Source>
+                                    </Image>
+                                </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Abfahrt" x:Name="TimeToDeparture">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel x:Name="stackPanelTimeToDeparture" Orientation ="Horizontal" HorizontalAlignment="Right" FlowDirection="LeftToRight" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                <StackPanel x:Name="stackPanelTimeToDeparture" Orientation ="Horizontal" HorizontalAlignment="Right" FlowDirection="LeftToRight" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
                                     <StackPanel.Margin>
                                         <MultiBinding Converter="{StaticResource MarginMvc}" ConverterParameter="stackPanelMinutes">
                                             <Binding Path="FontSize" />
@@ -172,7 +188,7 @@
                                             <Binding Path="MinutesToDeparture" />
                                         </MultiBinding>
                                     </Label>
-                                    <Image x:Name="Now" HorizontalAlignment="Left" Stretch="None">
+                                    <Image x:Name="Now" HorizontalAlignment="Left" Stretch="None" SnapsToDevicePixels="True">
                                         <Image.Source>
                                             <MultiBinding Converter="{StaticResource ImageMinutesValueMvc}">
                                                 <Binding Path="MinutesToDeparture" />
@@ -182,7 +198,7 @@
                                             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                                                 <BeginStoryboard>
                                                     <Storyboard>
-                                                        <DoubleAnimation Storyboard.TargetName="Now" Storyboard.TargetProperty="Opacity" From="1.0" To="0.3" Duration="0:0:1.5"
+                                                        <DoubleAnimation Storyboard.TargetName="Now" Storyboard.TargetProperty="Opacity" From="1.0" To="0.3" Duration="0:0:0.5"
                                                             AutoReverse="True" RepeatBehavior="Forever"/>
                                                     </Storyboard>
                                                 </BeginStoryboard>
@@ -194,9 +210,9 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Abfahrtszeit" x:Name="DepartureTime">
-                        <GridViewColumn.CellTemplate>
+                        <GridViewColumn.CellTemplate >
                             <DataTemplate>
-                                <StackPanel x:Name ="stackPanelDepartureTime" Orientation="Horizontal">
+                                <StackPanel x:Name ="stackPanelDepartureTime" Orientation="Horizontal" >
                                     <Label Foreground="#55F1F1F1" Background="#00000000" HorizontalContentAlignment="Right" HorizontalAlignment="Right" >
                                         <Binding Path="DepartureTime" />
                                     </Label>

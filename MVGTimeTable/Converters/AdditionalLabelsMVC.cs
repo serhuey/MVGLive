@@ -7,12 +7,11 @@ using System.Windows.Data;
 
 namespace MVGTimeTable
 {
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Mvc")]
     public class AdditionalLabelsMvc : IMultiValueConverter
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values == null || values.Length == 0) return null;
+            if (values == null || values.Length == 0 || values[0] == null) return null;
 
             return ParseDestination.GetDestinationImage(ParseDestination.GetAdditionalDestination(values[0].ToString()), "", "", false);
         }

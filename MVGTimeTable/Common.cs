@@ -1,13 +1,19 @@
 ﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.  
 
+using Svg;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Windows;
 using System.Windows.Media.Imaging;
+using System.Xml;
 
 namespace MVGTimeTable
 {
@@ -27,48 +33,43 @@ namespace MVGTimeTable
     }
     static class Common
     {
-        public const int UtmostColumn = 1;     //index of column that can be truncated
-        public const string ImagePath = "pack://application:,,,/MVGTimeTable;component/Icons/";
-        public const string SVGPath = "pack://application:,,,/MVGTimeTable;component/SVGIcons/";
-        public static readonly List<string> MultiplatformSbahnStations = new List<string>(new string[] { "OSTBAHNHOF", "PASING", "LAIM", "HAUPTBAHNHOF" });
+        public const int UtmostColumn = 1;     //index of truncated column
+        public const string SvgPath = "pack://application:,,,/MVGTimeTable;component/SVGIcons/";
+        public static readonly List<string> MultiplatformSbahnStations = new List<string>(new string[] { "OSTBAHNHOF", "PASING", "LAIM" });
         public static readonly List<string> MultiplatformTramStations = new List<string>(new string[] { "KARLSPLATZ" });
 
-        public static readonly string[] PlatformSign = { "0", "❶", "❷", "❸", "❹", "❺", "❻", "❼", "❽", "❾", "❿", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" };
-        public static readonly Dictionary<string, string[]> FussballDestinations =
-            new Dictionary<string, string[]> { { "U6", new string[] {   "Fröttmaning",
-                                                                        "Garching-Forschungszentrum",
-                                                                        "Garching, Forschungszentrum",
-                                                                        "Garching",
-                                                                        "Garching, Hochbrück",
-                                                                        "Garching-Hochbrück" } } };
-        public static readonly Dictionary<string, string[]> ZooDestinations =
-            new Dictionary<string, string[]> { { "U3", new string[] {   "Fürstenried West",
-                                                                        "Basler Straße",
-                                                                        "Forstenrieder Allee",
-                                                                        "Machtlfinger Straße",
-                                                                        "Aidenbach-straße",
-                                                                        "Obersendling",
-                                                                        "Thalkirchen" } },
-                                                { "135", new string[] { "Thalkirchen (Tierpark)", "Thalkirchen", "Thalkirchen(Tierpark)", "Thalkirchen (Tierpark) U" } },
-                                                {  "52", new string[] { "Tierpark (Alemannenstraße)", "Tierpark (Alemannenstr.)", "Tierpark" } },
-                                                { "X98", new string[] { "Tierpark (Alemannenstraße)", "Tierpark (Alemannenstr.)", "Tierpark" } } };
 
-        public static readonly Dictionary<string, string[]> MesseDestinations =
-            new Dictionary<string, string[]> { { "U2", new string[] {   "Messestadt Ost",
-                                                                        "Messestadt-Ost"} } };
+        public static readonly Dictionary<string, string[]> FussballDestinationsId =
+            new Dictionary<string, string[]> { { "U6", new string[] {   "de:09162:470",         // Fröttmaning
+                                                                        "de:09184:460",         // Garching, Forschungszentrum
+                                                                        "de:09184:480",         // Garching-Hochbrück
+                                                                        "de:09184:490" } } };   // Garching
+        public static readonly Dictionary<string, string[]> ZooDestinationsId =
+            new Dictionary<string, string[]> { { "U3", new string[] {   "de:09162:1500",        // Fürstenried West
+                                                                        "de:09162:1490",        // Basler Straße
+                                                                        "de:09162:1480",        // Forstenrieder Allee
+                                                                        "de:09162:1470",        // Machtlfinger Straße
+                                                                        "de:09162:1460",        // Aidenbachstraße
+                                                                        "de:09162:1450",        // Obersendling
+                                                                        "de:09162:1440" } },    // Thalkirchen
+                                                { "135", new string[] { "de:09162:1440" } },    // Thalkirchen
+                                                {  "52", new string[] { "de:09162:1165" } },    // Tierpark (Alemannenstr.)
+                                                { "X98", new string[] { "de:09162:1165" } } };  // Tierpark (Alemannenstr.)
 
-        public static readonly Dictionary<string, string[]> OlympiaDestinations =
-            new Dictionary<string, string[]> {  { "U8", new string[] {  "Olympiazentrum",
-                                                                        "Olympia-zentrum" } },
-                                                { "U3", new string[] {  "Olympiazentrum",
-                                                                        "Olympia-zentrum",
-                                                                        "Oberwiesen-feld",
-                                                                        "Oberwiesenfeld",
-                                                                        "Olympia-Einkaufszentrum",
-                                                                        "Olympiaeinkaufszentrum",
-                                                                        "Moosacher St.-Martins-Platz",
-                                                                        "Moosacher St.-Martins-Pl.",
-                                                                        "Moosach" } } };
+        public static readonly Dictionary<string, string[]> MesseDestinationsId =
+            new Dictionary<string, string[]> { { "U2", new string[] { "de:09162:1260" } } };  // Messestadt Ost
+
+        public static readonly Dictionary<string, string[]> OlympiaDestinationsId =
+            new Dictionary<string, string[]> {  { "U8", new string[] {  "de:09162:350" } },     // Olympiazentrum
+                                                { "U3", new string[] {  "de:09162:350",         // Olympiazentrum
+                                                                        "de:09162:380",         // Oberwiesenfeld
+                                                                        "de:09162:360",         // Olympia-Einkaufszentrum
+                                                                        "de:09162:370",         // Moosacher St.-Martins-Platz
+                                                                        "de:09162:300" } } };   // Moosach
+
+        public static readonly Dictionary<string, string[]> SplittedDestinationsId =
+            new Dictionary<string, string[]> { { "S1", new string[] {   "de:09178:2680",         // 0 - first cars (Freising)
+                                                                        "de:09162:3240" } } };   // 1 - last cars (Flughafen München)
 
         public static readonly Dictionary<Column, string> ColumnName =
             new Dictionary<Column, string> {   { Column.Line, "Linie" },
@@ -89,6 +90,13 @@ namespace MVGTimeTable
         public static readonly string[] SBahnIconKey = { "S", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S",
                                                          "S",  "S",  "S",  "S",  "S",  "S",  "S",  "S",  "S",  "S",
                                                          "S20" };
+        public static readonly string[] TramIconKey = { "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM",
+                                                        "TRAM", "TRAM", "TRAM12", "TRAM", "TRAM", "TRAM15", "TRAM16", "TRAM17", "TRAM18", "TRAM19",
+                                                         "TRAM20", "TRAM21", "TRAM", "TRAM23", "TRAM", "TRAM25", "TRAM", "TRAM27", "TRAM28", "TRAM29"};
+        public static readonly string[] GleisIconKey = { "Haltestelle", "Gleis1", "Gleis2", "Gleis3", "Gleis4", "Gleis5", "Gleis6", "Gleis7", "Gleis8", "Gleis9",
+                                                         "Gleis10", "Gleis11", "Gleis12", "Gleis13", "Gleis14", "Gleis15", "Gleis16" };
+        public static readonly string[] SGleisIconKey = { "Haltestelle", "SGleis1", "SGleis2", "SGleis3", "SGleis4", "SGleis5", "SGleis6", "SGleis7", "SGleis8", "SGleis9",
+                                                         "SGleis10", "SGleis11", "SGleis12", "SGleis13", "SGleis14", "SGleis15", "SGleis16" };
 
         public const string DefaultUBahnIconKey = "UBahn";
         public const string DefaultSBahnIconKey = "SBahn";
@@ -97,7 +105,7 @@ namespace MVGTimeTable
         public const string NBusIconKey = "NBus";
         public const string ExpressBusIconKey = "ExpressBus";
         public const string BusIconKey = "Bus";
-        public const string TramIconKey = "Tram";
+        public const string DefaultTramIconKey = "Tram";
         public const string NTramIconKey = "NTram";
         public const string WarningIconKey = "Warning";
         public const string NoConnectionIconKey = "NoConnection";
@@ -112,19 +120,32 @@ namespace MVGTimeTable
         public const string SBahnMonoHalfIconKey = "SBahn_50";
         public const string USBahnsMonoFullIconKey = "USBahns_100";
         public const string USBahnsMonoHalfIconKey = "USBahns_50";
+        public const string TrainFirstHalfIconKey = "FirstS1";
+        public const string TrainSecondHalfIconKey = "LastS1";
 
         public static readonly Dictionary<string, string> AirportIconKeys = new Dictionary<string, string> { { "S1", "S1FH" }, { "S8", "S8FH" } };
 
-        public const string AirportMarker = "FLUGHAFEN";
-        public const string BusMarker = "BUS";
-        public const string TramMarker = "TRAM";
-        public const string UBahnMarker = "UBAHN";
-        public const string SBahnMarker = "SBAHN";
-        public const string AdditionalDestinationMarker = "VIA";
-        public const string NightLineMarker = "N";
-        public const string ExpressLineMarker = "X";
+        public static readonly string[] AirportMarkers = { "FLUGHAFEN" };
+        public static readonly string[] BusMarkers = { "BUS" };
+        public static readonly string[] TramMarkers = { "TRAM" };
+        public static readonly string[] UBahnMarkers = { "UBAHN" };
+        public static readonly string[] SBahnMarkers = { "SBAHN" };
+        public static readonly string[] AdditionalDestinationMarkers = { "VIA", "Ü.", "WAITER" };
+        public static readonly string[] NightLineMarkers = { "N" };
+        public static readonly string[] ExpressLineMarkers = { "X" };
 
-        public const string DefaultForegroundColor = "#FFE8E8E8";
+        public static readonly string[] ULineMarkers = { "U", "(U)" };
+        public static readonly string[] SLineMarkers = { "S", "(S)" };
+        public static readonly string[] USLineMarkers = { "SU", "US", "(U)(S)", "(S)(U)", "(U) (S)", "(S) (U)" };
+
+        public static readonly string[] USSpacedMarkers = BuildSpacedUSMarkersArray();
+
+        // These colors are not using now due to memory overusing during the binding, now they are hardcoded in xaml
+        public const string PrimaryForegroundColor = "#FFE8E8E8";
+        public const string SecondaryForegroundColor = "#55F1F1F1";
+        public const string PrimaryBackgroundColor = "#FF262A74";
+        public const string SecondaryBackgroundColor = "#FF00056C";
+
         public const string NoConnectionForegroundColor = "#FFFF4E48";
         public const string WarningForegroundColor = "#FFFFEB85";
 
@@ -134,67 +155,44 @@ namespace MVGTimeTable
         public const string TimeSignSeparator = "  ";
         public const string MinutesSign = "Min.";
         public const string HoursSign = "Std.";
-        public const string UndefinedTimeSign = "  ???";
+        public const string UndefinedTimeSign = "  ????";
+
+        public const string TrainFirstHalf = "{-}{V}";
+        public const string TrainSecondHalf = "{V}{-}";
 
         public static Dictionary<string, BitmapImage> icons;
 
         /// <summary>
         /// Create Dictionary with Bitmaps of the same height from SVG sources
         /// </summary>
-        /// <param name="_icons">Dictionary with icons</param>
+        /// <param name="icons">Dictionary with icons</param>
         /// <param name="fontSize">Height of icons</param>
         /// <returns></returns>
-        public static bool CreateIconsDictionaryFromSVG(out Dictionary<string, BitmapImage> _icons, double fontSize)
+        public static bool CreateIconsDictionaryFromSVG(out Dictionary<string, BitmapImage> icons, double fontSize)
         {
             bool result = true;
 
-            _icons = new Dictionary<string, BitmapImage>();
+            icons = new Dictionary<string, BitmapImage>();
 
-            string[] svgNames = Common.GetResourcesNamesFromFolder("SVGIcons");
+            string[] svgNames = GetResourcesNamesFromFolder("SVGIcons");
 
             foreach (string svgName in svgNames)
             {
                 try
                 {
-                    BitmapImage bi = Common.GetBitmapFromSVG(new Uri(Common.SVGPath + svgName), fontSize);
-                    string key = System.IO.Path.GetFileNameWithoutExtension(svgName);
-                    _icons.Add(key, bi);
+                    BitmapImage bi = GetBitmapFromSVG(new Uri(SvgPath + svgName), fontSize);
+                    string key = Path.GetFileNameWithoutExtension(svgName).ToUpperInvariant();
+                    icons.Add(key, bi);
                 }
-                catch (Exception ex)
+                catch (ArgumentException ex)
                 {
                     Console.WriteLine(ex.Message);
                     result = false;
                     break;
                 }
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// Create Dictionary with Bitmaps of the same height from PNG sources
-        /// </summary>
-        /// <param name="_icons">Dictionary with icons</param>
-        /// <param name="fontSize">Height of icons</param>
-        /// <returns></returns>
-        public static bool CreateIconsDictionaryFromPNG(out Dictionary<string, BitmapImage> _icons, double fontSize)
-        {
-            bool result = true;
-
-            _icons = new Dictionary<string, BitmapImage>();
-
-            string[] pngNames = Common.GetResourcesNamesFromFolder("Icons");
-
-            foreach (string pngName in pngNames)
-            {
-                try
+                catch (UriFormatException ex2)
                 {
-                    BitmapImage bi = Common.GetBitmapFromPNG(new Uri(Common.ImagePath + pngName), fontSize);
-                    string key = System.IO.Path.GetFileNameWithoutExtension(pngName);
-                    _icons.Add(key, bi);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex2.Message);
                     result = false;
                     break;
                 }
@@ -207,8 +205,7 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="folder">Folder name</param>
         /// <returns>Araay of the strings with file names</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
-        public static string[] GetResourcesNamesFromFolder(string folder)
+        private static string[] GetResourcesNamesFromFolder(string folder)
         {
             folder = folder.ToLowerInvariant() + "/";
 
@@ -229,30 +226,72 @@ namespace MVGTimeTable
         /// <summary>
         /// Get Bitmap with defined height from SVG-file with defined uri
         /// </summary>
-        /// <param name="uri"></param>
-        /// <param name="height"></param>
+        /// <param name="uri">Uri of the SVG-file</param>
+        /// <param name="height">Desired height of the BitmapImage</param>
         /// <returns></returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "GetBitmapFromSVG")]
-        public static BitmapImage GetBitmapFromSVG(Uri uri, double height)
+        private static BitmapImage GetBitmapFromSVG(Uri uri, double height)
         {
-            throw new NotImplementedException("GetBitmapFromSVG is not implemented now");
+            SvgDocument svgDocument;
+            XmlDocument xmlDocument = new XmlDocument();
+
+            using (Stream inputStream = Application.GetResourceStream(uri).Stream)
+            {
+                xmlDocument.Load(inputStream);
+            }
+
+            svgDocument = SvgDocument.Open(xmlDocument);
+            Bitmap bitmap = svgDocument.Draw(0, (int)height);
+            BitmapImage bitmapImage = ConvertImageToBitmapImage(bitmap);
+
+            return bitmapImage;
         }
+
 
         /// <summary>
-        /// Get Bitmap with defined height from PNG-file with defined uri
+        /// Convert legacy Image to BitmapImage
         /// </summary>
-        /// <param name="uri"></param>
-        /// <param name="height"></param>
+        /// <param name="image">Image object</param>
         /// <returns></returns>
-        public static BitmapImage GetBitmapFromPNG(Uri uri, double height)
+        private static BitmapImage ConvertImageToBitmapImage(Image image)
         {
-            BitmapImage bi = new BitmapImage();
-            bi.BeginInit();
-            bi.UriSource = uri;
-            bi.DecodePixelHeight = (int)height;
-            bi.EndInit();
+            using (var memory = new MemoryStream())
+            {
+                image.Save(memory, ImageFormat.Png);
+                memory.Position = 0;
 
-            return bi;
+                var bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = memory;
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.EndInit();
+
+                return bitmapImage;
+            }
         }
+
+
+        private static string[] BuildSpacedUSMarkersArray()
+        {
+            List<string> outputList = new List<string>();
+
+            foreach(string s in USLineMarkers)
+            {
+                outputList.Add(" " + s + " ");
+            }
+
+            foreach (string s in ULineMarkers)
+            {
+                outputList.Add(" " + s + " ");
+            }
+
+            foreach (string s in SLineMarkers)
+            {
+                outputList.Add(" " + s + " ");
+            }
+
+            return outputList.ToArray();
+
+        }
+
     }
 }

@@ -105,7 +105,7 @@ namespace MVGLive
             }
             else
             {
-                SafeNativeMethods.PostMessage(SafeNativeMethods.GetForegroundWindow(), SafeNativeMethods.WM_CLOSE,
+                _ = SafeNativeMethods.PostMessage(SafeNativeMethods.GetForegroundWindow(), SafeNativeMethods.WM_CLOSE,
                    (IntPtr)0, (IntPtr)0);
             }
         }
@@ -114,7 +114,7 @@ namespace MVGLive
            IntPtr lParam)
         {
             if (SafeNativeMethods.IsWindowVisible(hWnd))
-                SafeNativeMethods.PostMessage(hWnd, SafeNativeMethods.WM_CLOSE, (IntPtr)0, (IntPtr)0);
+                _ = SafeNativeMethods.PostMessage(hWnd, SafeNativeMethods.WM_CLOSE, (IntPtr)0, (IntPtr)0);
             return true;
         }
     }

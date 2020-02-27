@@ -15,13 +15,13 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values == null || values.Length < 1) return null;
+            if (values == null || values.Length == 0 || values[0] == null) return null;
             string minutes = values[0].ToString();
 
             Match m = Regex.Match(minutes, @"^-?\d*");
             if (m.Success && int.TryParse(m.Value, out int iMinutes) && iMinutes <= 0 && iMinutes > Common.UndefinedSignThreshold)
             {
-                return Common.icons[Common.NowIconKey];
+                return Common.icons[Common.NowIconKey.ToUpperInvariant()];
             }
             else return null;
         }

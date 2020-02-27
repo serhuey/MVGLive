@@ -28,12 +28,12 @@ namespace MVGTimeTable
             string destination = values[2].ToString().ToUpperInvariant();
             bool sev = (bool)values[3];
 
-            bool bus = product.Contains(Common.BusMarker);
-            bool night = label.Length > 0 && label[0].ToString() == Common.NightLineMarker;
-            bool tram = product.Contains(Common.TramMarker);
-            bool ubahn = product.Contains(Common.UBahnMarker);
-            bool sbahn = product.Contains(Common.SBahnMarker);
-            bool xbus = label.Contains(Common.ExpressLineMarker) && label[0].ToString() == Common.ExpressLineMarker;
+            bool bus = ParseDestination.IsMarkerPresent(product, Common.BusMarkers);
+            bool night = label.Length > 0 && ParseDestination.IsMarkerPresent(label[0].ToString(), Common.NightLineMarkers);
+            bool tram = ParseDestination.IsMarkerPresent(product, Common.TramMarkers);
+            bool ubahn = ParseDestination.IsMarkerPresent(product, Common.UBahnMarkers);
+            bool sbahn = ParseDestination.IsMarkerPresent(product, Common.SBahnMarkers);
+            bool xbus = ParseDestination.IsMarkerPresent(label, Common.ExpressLineMarkers) && ParseDestination.IsMarkerPresent(label[0].ToString(), Common.ExpressLineMarkers);
             bool noConnection = product.Contains(Common.WarnMessageType[MessageType.NoConnection]);
             bool warning = product.Contains(Common.WarnMessageType[MessageType.Warning]);
 
@@ -44,16 +44,20 @@ namespace MVGTimeTable
 
             if (tram)
             {
-                iconKey = night ? Common.NTramIconKey : Common.TramIconKey;
+                iconKey = Array.Find(Common.TramIconKey, str => str.Contains(Common.DefaultTramIconKey.ToUpperInvariant() + label)) ?? (night ? Common.NTramIconKey : Common.DefaultTramIconKey);
             }
 
             if (ubahn)
-                iconKey = Array.Find<string>(Common.UBahnIconKey, str => str.Contains(label)) ?? Common.DefaultUBahnIconKey;
+            {
+                iconKey = Array.Find(Common.UBahnIconKey, str => str.Contains(label)) ?? Common.DefaultUBahnIconKey;
+            }
 
             if (sbahn)
-                iconKey = Array.Find<string>(Common.SBahnIconKey, str => str.Contains(label)) ?? Common.DefaultSBahnIconKey;
+            {
+                iconKey = Array.Find(Common.SBahnIconKey, str => str.Contains(label)) ?? Common.DefaultSBahnIconKey;
+            }
 
-            if (destination.Contains(Common.AirportMarker))
+            if (ParseDestination.IsMarkerPresent(destination, Common.AirportMarkers))
             {
                 if (Common.AirportIconKeys.ContainsKey(label))
                 {
@@ -61,11 +65,17 @@ namespace MVGTimeTable
                 }
             }
 
-            if (warning) iconKey = Common.WarningIconKey;
+            if (warning)
+            {
+                iconKey = Common.WarningIconKey;
+            }
 
-            if (noConnection) iconKey = Common.NoConnectionIconKey;
+            if (noConnection)
+            {
+                iconKey = Common.NoConnectionIconKey;
+            }
 
-            if (!string.IsNullOrEmpty(iconKey) && Common.icons.ContainsKey(iconKey = iconKey.ToLowerInvariant()))
+            if (!string.IsNullOrEmpty(iconKey) && Common.icons.ContainsKey(iconKey = iconKey.ToUpperInvariant()))
             {
                 return Common.icons[iconKey];
             }

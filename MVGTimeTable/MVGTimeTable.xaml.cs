@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -18,10 +19,30 @@ namespace MVGTimeTable
 
     public partial class MVGTimeTable : UserControl, IDisposable
     {
-        #region Properties
-        public PreparedDeparture[] Departures { get; set; }
-        public bool NoConnection => (noConnectionTimeoutCounter == 0) ? false : true; 
-        #endregion
+        public PreparedDeparture[] Departures;
+
+        public bool NoConnection => (noConnectionTimeoutCounter == 0) ? false : true;
+
+        public string PrimaryForegroundColor
+        {
+            get;
+            set;
+        }
+        public string SecondaryForegroundColor
+        {
+            get;
+            set;
+        }
+        public string PrimaryBackgroundColor
+        {
+            get;
+            set;
+        }
+        public string SecondaryBackgroundColor
+        {
+            get;
+            set;
+        }
 
         public ObservableCollection<PreparedDeparture> departureDataSource;
 
@@ -42,7 +63,12 @@ namespace MVGTimeTable
         private string savedStationName;
         private string savedStationID;
 
-        private Dictionary<string, double> savedWidths = new Dictionary<string, double>
+        private int bindCounter = 0;
+        private readonly int secondsToFirstUpdate = 4;
+
+        private int? oldResponseHashCode = 0;
+
+        private readonly Dictionary<string, double> savedWidths = new Dictionary<string, double>
         {
             { Common.ColumnName[Column.Line], 0 },
             { Common.ColumnName[Column.Destination], 0 },
@@ -52,12 +78,10 @@ namespace MVGTimeTable
         };
 
         private int fontSize;
-        private string fontFamily;
 
         private int noConnectionTimeoutCounter = 0;
         private const int noConnectionTimeoutThreshold1 = 3;
         private const int noConnectionTimeoutThreshold2 = 10;
-
 
         public MVGTimeTable()
         {
@@ -65,6 +89,8 @@ namespace MVGTimeTable
             SetColumnSizeEventsHandlers();
         }
 
+
+        /// ************************************************************************************************
         /// <summary>
         /// Set MVGTimeTable Control properties. It must be performed before start the control.
         /// </summary>
@@ -73,12 +99,13 @@ namespace MVGTimeTable
         /// <param name="_timerRefreshStartInterval">Pause before first request</param>
         /// <param name="_fontSize">Font size in pixels</param>
         /// <param name="_fontFamily">Font family</param>
+        /// ************************************************************************************************
         public void SetProperties(
+                                    FontFamily _fontFamily,
                                     string _stationName = "Hauptbahnhof",
                                     int _timerRefreshInterval = 15,
                                     int _timerRefreshStartInterval = 1,
-                                    int _fontSize = 20,
-                                    string _fontFamily = "Segoe UI"
+                                    int _fontSize = 20
                                   )
         {
             stationName = _stationName;
@@ -87,23 +114,28 @@ namespace MVGTimeTable
             timerRefreshStartInterval = _timerRefreshStartInterval;
 
             fontSize = _fontSize;
-            fontFamily = _fontFamily;
-
-            listViewTimeTable.FontFamily = new FontFamily(fontFamily);
+            listViewTimeTable.FontFamily = _fontFamily;
             listViewTimeTable.FontSize = fontSize;
 
             SetStackPanelMargin("stackPanelProductLabel", new Thickness(fontSize / 3.0, 0, fontSize / 2.0, 0));
             SetStackPanelMargin("stackPanelMainDestination", new Thickness(fontSize / 2.0, 0, fontSize / 2.0, 0));
             SetStackPanelMargin("stackPanelMinutes", new Thickness(fontSize / 3.0, 0, fontSize / 3.0, 0));
 
-            Common.CreateIconsDictionaryFromPNG(out Common.icons, fontSize); //Create from SVG will be added in the future
+            PrimaryForegroundColor = Common.PrimaryForegroundColor;
+            SecondaryForegroundColor = Common.SecondaryForegroundColor;
+            PrimaryBackgroundColor = Common.PrimaryBackgroundColor;
+            SecondaryBackgroundColor = Common.SecondaryBackgroundColor;
+
+            Common.CreateIconsDictionaryFromSVG(out Common.icons, fontSize);
 
             propertiesDefined = true;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Start control's work. This function can be called after the calling SetProperties function only.
         /// </summary>
+        /// ************************************************************************************************
         public void Start()
         {
             if (!propertiesDefined)
@@ -126,9 +158,12 @@ namespace MVGTimeTable
             backgroundWorker1.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BackgroundWorker1_RunWorkerCompleted);
         }
 
+
+        /// ************************************************************************************************
         /// <summary>
         /// Add handlers to the Column Property Changed events for all columns except Destination
         /// </summary>
+        /// ************************************************************************************************
         private void SetColumnSizeEventsHandlers()
         {
             GridView gridView = listViewTimeTable.View as GridView;
@@ -141,11 +176,13 @@ namespace MVGTimeTable
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Get string with the unique station ID
         /// </summary>
         /// <param name="_stationName">Simple station name in German, e.g. "Böhmerwaldplatz"</param>
         /// <returns>Station ID</returns>
+        /// ************************************************************************************************
         private string GetStationID(string _stationName)
         {
             if (!string.IsNullOrEmpty(_stationName))
@@ -153,7 +190,10 @@ namespace MVGTimeTable
                 if (_stationName != savedStationName)
                 {
                     savedStationID = MVGAPI.MVGAPI.GetIdForStation(_stationName);
-                    if (MVGAPI.MVGAPI.IsConnected) savedStationName = _stationName;
+                    if (MVGAPI.MVGAPI.IsConnected)
+                    {
+                        savedStationName = _stationName;
+                    }
                     return savedStationID;
                 }
                 else
@@ -164,20 +204,39 @@ namespace MVGTimeTable
             return null;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Refresh Timer Event Handler
         /// </summary>
-        void TimerRefresh_Tick(object sender, EventArgs e)
+        /// ************************************************************************************************ 
+        private void TimerRefresh_Tick(object sender, EventArgs e)
         {
-            if (!backgroundWorker1.IsBusy)
+            if (bindCounter != 1 && !backgroundWorker1.IsBusy)
+            {
                 backgroundWorker1.RunWorkerAsync();
-            timerRefresh.Interval = TimeSpan.FromSeconds(timerRefreshInterval);
+            }
+            else
+            {
+                // Measurement of the table is not very fast, so Autosize for first time is called in secondsToFirstUpdate
+                // measure table to get the true ActualSize of columns
+                listViewTimeTable.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+                listViewTimeTable.Arrange(new Rect(0, 0, listViewTimeTable.DesiredSize.Width, listViewTimeTable.DesiredSize.Height));
+                SetUtmostColumnWidth();
+            }
+            timerRefresh.Interval = TimeSpan.FromSeconds((bindCounter == 0) ? secondsToFirstUpdate : timerRefreshInterval);
+
+            if (bindCounter < 2)
+            {
+                bindCounter++;
+            }
+
         }
 
-
+        /// ************************************************************************************************
         /// <summary>
         /// Start new asynchronous data receiving 
         /// </summary>
+        /// ************************************************************************************************
         private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             stationID = GetStationID(stationName);
@@ -191,11 +250,17 @@ namespace MVGTimeTable
             }
         }
 
+
+        /// ************************************************************************************************
         /// <summary>
         /// Format received data
         /// </summary>
+        /// ************************************************************************************************
         private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            int? responseHashCode;
+            DateTime now = DateTime.Now;
+
             //Check connection status 
             if (MVGAPI.MVGAPI.IsConnected)
             {
@@ -214,19 +279,27 @@ namespace MVGTimeTable
                 }
             }
 
+            //Build departureDataSource if connection is OK or disconnect is less than noConnectionTimeoutThreshold
             if (noConnectionTimeoutCounter <= noConnectionTimeoutThreshold2 && departureResponse != null)
             {
-                //Build departureDataSource if connection is OK or disconnect is less than noConnectionTimeoutThreshold
-                MVGAPI.MVGAPI.FormatNewAPItoOld(ref departureResponse);
-                MVGAPI.MVGAPI.DeleteDuplicates(ref departureResponse);
-                MVGAPI.MVGAPI.Sort(ref departureResponse);
-                BuildDepartureDataSource(departureResponse, ref departureDataSource);
-
-                //Use previous data if connection is lost for short time, but add warnings on the very top of the table
-                if (noConnectionTimeoutCounter > noConnectionTimeoutThreshold1)
+                responseHashCode = GetResponseHashCode(departureResponse, now);
+                if (responseHashCode != oldResponseHashCode)
                 {
-                    departureDataSource.Insert(0, SetServiceMessage(Common.WarnMessageType[MessageType.Warning], Common.Messages[MessageType.Warning]));
-                    departureDataSource.Insert(0, SetServiceMessage(Common.WarnMessageType[MessageType.NoConnection], Common.Messages[MessageType.NoConnection]));
+                    oldResponseHashCode = responseHashCode;
+
+                    MVGAPI.MVGAPI.FormatNewAPItoOld(ref departureResponse);
+                    MVGAPI.MVGAPI.DeleteDuplicates(ref departureResponse);
+                    MVGAPI.MVGAPI.Sort(ref departureResponse);
+                    ParseDestination.ProcessSplittedLines(ref departureResponse);
+
+                    BuildDepartureDataSource(now, departureResponse, ref departureDataSource);
+
+                    //Use previous data if connection is lost for short time, but add warnings on the very top of the table
+                    if (noConnectionTimeoutCounter > noConnectionTimeoutThreshold1)
+                    {
+                        departureDataSource.Insert(0, SetServiceMessage(Common.WarnMessageType[MessageType.Warning], Common.Messages[MessageType.Warning]));
+                        departureDataSource.Insert(0, SetServiceMessage(Common.WarnMessageType[MessageType.NoConnection], Common.Messages[MessageType.NoConnection]));
+                    }
                 }
             }
             else
@@ -240,54 +313,130 @@ namespace MVGTimeTable
             SetUtmostColumnWidth();
         }
 
+
+        /// ************************************************************************************************
         /// <summary>
-        /// Build departureDataSourse from departureResponse
+        /// Build departureDataSourse from departureResponse for now
         /// </summary>
-        private void BuildDepartureDataSource(DeserializedDepartures[] deserializedDepartures, ref ObservableCollection<PreparedDeparture> preparedDepartureCollection)
+        /// <param name="deserializedDepartures"></param>
+        /// <param name="preparedDepartureCollection"></param>
+        /// <returns>Hash code for departure response</returns>
+        /// ************************************************************************************************
+        private void BuildDepartureDataSource(DateTime now, DeserializedDepartures[] deserializedDepartures, ref ObservableCollection<PreparedDeparture> preparedDepartureCollection)
         {
-            DateTime now = DateTime.Now;
             preparedDepartureCollection?.Clear();
 
             foreach (DeserializedDepartures dp in deserializedDepartures)
             {
-                DateTime localDateTimeOffset = DateTimeOffset.FromUnixTimeMilliseconds(dp.departureTime).DateTime.ToLocalTime();
-                DateTime scheduledTime = DateTimeOffset.FromUnixTimeMilliseconds(dp.departureTime - dp.delay * 1000 * 60).DateTime.ToLocalTime();
-                TimeSpan difference = localDateTimeOffset.Subtract(now);
-
-                PreparedDeparture fd = new PreparedDeparture
+                // Don't include cancelled lines into data source for visualization
+                if (!dp.cancelled)
                 {
-                    Product = dp.product,
-                    Label = dp.label,
-                    Destination = dp.destination,
-                    Platform = dp.platform,
-                    Station = stationName
-                };
+                    GetTimes(now, dp.departureTime, dp.delay, out DateTime actualTime, out _, out TimeSpan difference);
 
-                if ((int)difference.TotalMinutes < 60)
-                {
-                    fd.MinutesToDeparture = ((int)difference.TotalMinutes).ToString(CultureInfo.InvariantCulture) + Common.TimeSignSeparator + Common.MinutesSign;
+                    PreparedDeparture fd = new PreparedDeparture
+                    {
+                        Product = dp.product,
+                        Label = dp.label,
+                        Destination = dp.destination,
+                        Platform = dp.platform,
+                        Station = stationName,
+                        LineBackgroundColor = dp.lineBackgroundColor,
+                        MinutesToDeparture = BuildMinutesToDeparture(difference),
+                        DepartureTime = string.Format(CultureInfo.InvariantCulture, "{0:D2}:{1:D2}", actualTime.Hour, actualTime.Minute),
+                        FontSize = fontSize.ToString(CultureInfo.InvariantCulture),
+                        Sev = dp.sev,
+                        Delay = ""
+                    };
+
+                    preparedDepartureCollection.Add(fd);
                 }
-                else
-                {
-                    int hours = (int)difference.TotalMinutes / 60;
-                    int minutes = (int)difference.TotalMinutes % 60;
-                    fd.MinutesToDeparture = string.Format(CultureInfo.InvariantCulture, "{0:D1}:{1:D2}", hours, minutes) + Common.TimeSignSeparator + Common.HoursSign;
-                }
-
-                fd.DepartureTime = string.Format(CultureInfo.InvariantCulture, "{0:D2}:{1:D2}", localDateTimeOffset.Hour, localDateTimeOffset.Minute);
-                fd.FontSize = fontSize.ToString(CultureInfo.InvariantCulture);
-                fd.Sev = dp.sev;
-                fd.Delay = "";
-                preparedDepartureCollection.Add(fd);
             }
         }
 
+        /// ************************************************************************************************
+        /// <summary>
+        /// Builds minutes to departure string. If minutes >= 60 format of string changes to Hours:Minutes
+        /// </summary>
+        /// <param name="difference">Difference between now and time of departure</param>
+        /// <returns>Minutes or Hours to departure string</returns>
+        /// ************************************************************************************************
+        private string BuildMinutesToDeparture(TimeSpan difference)
+        {
+            StringBuilder minutesToDeparture = new StringBuilder();
+
+            if ((int)difference.TotalMinutes < 60)
+            {
+                minutesToDeparture.Append(((int)difference.TotalMinutes).ToString(CultureInfo.InvariantCulture));
+                minutesToDeparture.Append(Common.TimeSignSeparator);
+                minutesToDeparture.Append(Common.MinutesSign);
+            }
+            else
+            {
+                int hours = (int)difference.TotalMinutes / 60;
+                int minutes = (int)difference.TotalMinutes % 60;
+                minutesToDeparture.Append(string.Format(CultureInfo.InvariantCulture, "{0:D1}:{1:D2}", hours, minutes));
+                minutesToDeparture.Append(Common.TimeSignSeparator);
+                minutesToDeparture.Append(Common.HoursSign);
+            }
+            return minutesToDeparture.ToString();
+        }
+
+
+        /// ************************************************************************************************
+        /// <summary>
+        /// Calculate actual and scheduled times of departure in DateTime format and difference between now and actual departure time
+        /// </summary>
+        /// <param name="dpTime">Time from DeserializedDeparture in Unix timespan format</param>
+        /// <param name="dpDelay">Delay in minutes from DeserializedDeparture</param>
+        /// <param name="actualTime">Actual time of departure</param>
+        /// <param name="scheduledTime">Scheduled time of departure</param>
+        /// <param name="difference">Difference between Actual time and now</param>
+        /// ************************************************************************************************
+        private static void GetTimes(DateTime now, long dpTime, long dpDelay, out DateTime actualTime, out DateTime scheduledTime, out TimeSpan difference)
+        {
+            actualTime = DateTimeOffset.FromUnixTimeMilliseconds(dpTime).DateTime.ToLocalTime();
+            scheduledTime = DateTimeOffset.FromUnixTimeMilliseconds(dpTime - dpDelay * 1000 * 60).DateTime.ToLocalTime();
+            difference = actualTime.Subtract(now);
+        }
+
+        /// ************************************************************************************************
+        /// <summary>
+        /// Calculate Hash Code for the DeserializedDeparture array with actual time 
+        /// </summary>
+        /// <param name="deserializedDepartures">DeserializedDeparture array</param>
+        /// <param name="now">Actual time</param>
+        /// <returns>Hash code or null</returns>
+        /// ************************************************************************************************
+        private int? GetResponseHashCode(DeserializedDepartures[] deserializedDepartures, DateTime now)
+        {
+            StringBuilder allValuesString = new StringBuilder();
+
+            foreach (DeserializedDepartures deserializedDeparture in deserializedDepartures)
+            {
+                GetTimes(now, deserializedDeparture.departureTime, deserializedDeparture.delay, out _, out _, out TimeSpan difference);
+
+                allValuesString.Append(difference.Minutes.ToString());
+                allValuesString.Append(deserializedDeparture.delay.ToString());
+                allValuesString.Append(deserializedDeparture.departureId);
+                allValuesString.Append(deserializedDeparture.departureTime.ToString());
+                allValuesString.Append(deserializedDeparture.destination);
+                allValuesString.Append(deserializedDeparture.label);
+                allValuesString.Append(deserializedDeparture.platform);
+                allValuesString.Append(deserializedDeparture.product);
+                allValuesString.Append(deserializedDeparture.cancelled);
+                allValuesString.Append(deserializedDeparture.sev.ToString());
+            }
+            return allValuesString.ToString().GetHashCode();
+        }
+
+        /// ************************************************************************************************
         /// <summary>
         /// Set Service Message as PreparedDeparture
         /// </summary>
         /// <param name="type">Type of the Service Message</param>
         /// <param name="message">Service message</param>
-        /// <returns></returns>
+        /// <returns>Prepared departure with Service Message</returns>
+        /// ************************************************************************************************
         private PreparedDeparture SetServiceMessage(string type, string message)
         {
             PreparedDeparture fd = new PreparedDeparture
@@ -302,9 +451,11 @@ namespace MVGTimeTable
             return fd;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Column Width Changed Event Handler
         /// </summary>
+        /// ************************************************************************************************
         private void ColumnWidthChanged(object sender, PropertyChangedEventArgs e)
         {
             if (sender is GridViewColumn && e.PropertyName == "ActualWidth")
@@ -317,9 +468,11 @@ namespace MVGTimeTable
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Autosize Columns of ListView. It's needed after update of the binded data.
         /// </summary>
+        /// ************************************************************************************************
         private void AutoSizeColumns()
         {
             if (listViewTimeTable.View is GridView gridView)
@@ -336,14 +489,13 @@ namespace MVGTimeTable
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Calculate width of the utmost column after an autosizing
         /// </summary>
+        /// ************************************************************************************************
         private void SetUtmostColumnWidth()
         {
-            // measure table to get the true ActualSize of columns
-            listViewTimeTable.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-            listViewTimeTable.Arrange(new Rect(0, 0, listViewTimeTable.DesiredSize.Width, listViewTimeTable.DesiredSize.Height));
 
             GridView gridView = listViewTimeTable.View as GridView;
 
@@ -360,15 +512,22 @@ namespace MVGTimeTable
                 }
                 fullColumnsWidth += savedWidths[key];
             }
-            gridView.Columns[Common.UtmostColumn].Width = this.ActualWidth - fullColumnsWidth;
+            double utmostWidth = this.ActualWidth - fullColumnsWidth;
+            if (utmostWidth > 0)
+            {
+                gridView.Columns[Common.UtmostColumn].Width = utmostWidth;
+            }
+
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Set margins of the Stack Panel
         /// </summary>
         /// <param name="stackPanelName">Name of the Stack Panel</param>
         /// <param name="margin">Margin of the Stack Panel</param>
         /// <returns>True if operation is successfull</returns>
+        /// ************************************************************************************************
         private bool SetStackPanelMargin(string stackPanelName, Thickness margin)
         {
             bool success = false;

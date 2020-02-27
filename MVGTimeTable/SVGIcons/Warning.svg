@@ -1,13 +1,18 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.3.0.31-->
-<svg fill="none" fill-rule="evenodd" stroke="black" stroke-width="0.501" stroke-linejoin="bevel" stroke-miterlimit="10" font-family="Times New Roman" font-size="16" style="font-variant-ligatures:none" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="281.204pt" height="249.008pt" viewBox="639.385 -299.493 281.204 249.008">
+<svg fill="none" fill-rule="evenodd" stroke="black" stroke-width="0.501" stroke-linejoin="bevel" stroke-miterlimit="10" font-family="Times New Roman" font-size="16" style="font-variant-ligatures:none" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="477.027pt" height="249.009pt" viewBox="639.384 -299.5 477.027 249.009">
  <defs>
-	</defs>
+  <radialGradient id="RadialGradient" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="282.3" gradientTransform="translate(842.871 209.192) rotate(28.3523) scale(1 0.425824)">
+   <stop offset="0" stop-color="#e7c053"/>
+   <stop offset="1" stop-color="#fcb900"/>
+  </radialGradient>
+ </defs>
  <g id="Layer 1" transform="scale(1 -1)">
-  <g id="Group" stroke-linecap="round" stroke="none">
-   <path d="M 643.592,81.325 L 762.182,286.726 C 772.01,303.749 787.963,303.749 797.791,286.727 L 916.382,81.325 C 926.21,64.303 918.232,50.487 898.577,50.487 L 661.397,50.485 C 641.742,50.485 633.764,64.302 643.592,81.325 Z" fill="#fcb900" stroke-width="0.485" stroke-linejoin="miter" marker-start="none" marker-end="none"/>
-   <path d="M 792.027,130.899 L 768.338,130.899 L 763.386,225.757 L 796.98,225.757 L 792.027,130.899 Z M 762.997,97.692 C 762.997,103.13 764.452,107.24 767.365,110.024 C 770.28,112.807 774.522,114.199 780.087,114.199 C 785.461,114.199 789.617,112.775 792.561,109.927 C 795.505,107.076 796.98,103 796.98,97.692 C 796.98,92.58 795.491,88.551 792.514,85.604 C 789.537,82.661 785.395,81.188 780.087,81.188 C 774.65,81.188 770.44,82.627 767.463,85.506 C 764.486,88.387 762.997,92.45 762.997,97.692 Z" fill-rule="nonzero" stroke-linejoin="round" stroke-width="0.25" fill="#000000" marker-start="none" marker-end="none"/>
+  <g id="Group" stroke="none">
+   <path d="M 741.501,81.331 L 860.092,286.732 C 869.92,303.755 885.873,303.755 895.701,286.734 L 1014.29,81.331 C 1024.12,64.309 1016.14,50.492 996.487,50.492 L 759.307,50.491 C 739.652,50.491 731.674,64.308 741.501,81.331 Z" stroke-linecap="round" stroke-width="0.485" stroke-linejoin="miter" marker-start="none" marker-end="none" fill="url(#RadialGradient)"/>
+   <path d="M 889.938,130.906 L 866.249,130.906 L 861.297,225.764 L 894.891,225.764 L 889.938,130.906 Z M 860.908,97.699 C 860.908,103.137 862.363,107.247 865.276,110.031 C 868.191,112.814 872.433,114.206 877.998,114.206 C 883.372,114.206 887.528,112.782 890.472,109.934 C 893.416,107.083 894.891,103.007 894.891,97.699 C 894.891,92.587 893.402,88.558 890.425,85.611 C 887.448,82.668 883.306,81.195 877.998,81.195 C 872.561,81.195 868.351,82.634 865.374,85.513 C 862.397,88.394 860.908,92.457 860.908,97.699 Z" stroke-linecap="round" fill-rule="nonzero" stroke-linejoin="round" stroke-width="0.25" fill="#000000" marker-start="none" marker-end="none"/>
+   <path d="M 639.384,299.499 L 639.384,50.492 L 1116.41,50.492 L 1116.41,299.499 L 639.384,299.499 Z" stroke-width="0.597" stroke-linejoin="miter" marker-start="none" marker-end="none"/>
   </g>
  </g>
 </svg>

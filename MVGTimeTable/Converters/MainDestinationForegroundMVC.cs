@@ -12,7 +12,7 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values == null || values.Length == 0) return null;
+            if (values == null || values.Length == 0 || values[0] == null) return null;
 
             SolidColorBrush brush;
             string foregroundColor;
@@ -28,7 +28,7 @@ namespace MVGTimeTable
             }
             else
             {
-                foregroundColor = Common.DefaultForegroundColor;
+                foregroundColor = Common.PrimaryForegroundColor;
             }
 
             brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(foregroundColor));
