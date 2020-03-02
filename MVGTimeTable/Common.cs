@@ -67,7 +67,7 @@ namespace MVGTimeTable
                                                                         "de:09162:370",         // Moosacher St.-Martins-Platz
                                                                         "de:09162:300" } } };   // Moosach
 
-        public static readonly Dictionary<string, string[]> SplittedDestinationsId =
+        public static readonly Dictionary<string, string[]> ForkedDestinationsId =
             new Dictionary<string, string[]> { { "S1", new string[] {   "de:09178:2680",         // 0 - first cars (Freising)
                                                                         "de:09162:3240" } } };   // 1 - last cars (Flughafen München)
 
@@ -130,7 +130,7 @@ namespace MVGTimeTable
         public static readonly string[] TramMarkers = { "TRAM" };
         public static readonly string[] UBahnMarkers = { "UBAHN" };
         public static readonly string[] SBahnMarkers = { "SBAHN" };
-        public static readonly string[] AdditionalDestinationMarkers = { "VIA", "Ü.", "WAITER" };
+        public static readonly string[] AdditionalDestinationMarkers = { "VIA", "Ü.", "WEITER" };
         public static readonly string[] NightLineMarkers = { "N" };
         public static readonly string[] ExpressLineMarkers = { "X" };
 

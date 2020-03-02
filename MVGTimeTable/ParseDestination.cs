@@ -25,7 +25,7 @@ namespace MVGTimeTable
                 return null;
             }
 
-            StringBuilder outputstring = new StringBuilder();
+            StringBuilder outputStringBuilder = new StringBuilder();
 
             if (removeUS)
             {
@@ -55,12 +55,12 @@ namespace MVGTimeTable
                 {
                     break;
                 }
-
-                outputstring.Append(str + " ");
+                outputStringBuilder.Append(str);
+                outputStringBuilder.Append(" ");
             }
-            if (outputstring.Length > 2)
+            if (outputStringBuilder.Length > 2)
             {
-                return (outputstring.ToString(0, outputstring.Length - 1)).TrimEnd(' ');
+                return (outputStringBuilder.ToString(0, outputStringBuilder.Length - 1)).TrimEnd(new char[] { ' ', '-' });
             }
             else
             {
@@ -82,19 +82,21 @@ namespace MVGTimeTable
 
             string[] splittedDestination = destination.Split(' ');
 
-            StringBuilder outputstring = new StringBuilder();
+            StringBuilder outputStringBuilder = new StringBuilder();
             bool startBuilding = false;
             foreach (string str in splittedDestination)
             {
                 if (Array.IndexOf(Common.AdditionalDestinationMarkers, str.ToUpperInvariant()) >= 0 || startBuilding)
                 {
                     startBuilding = true;
-                    outputstring.Append(str + " ");
+                    outputStringBuilder.Append(str);
+                    outputStringBuilder.Append(" ");
                 }
             }
-            if (outputstring.Length > 2)
+
+            if (outputStringBuilder.Length > 2)
             {
-                return (outputstring.ToString(0, outputstring.Length - 1)).TrimEnd(' ');
+                return (outputStringBuilder.ToString(0, outputStringBuilder.Length - 1)).TrimEnd(' ').TrimStart('-');
             }
             else
             {
@@ -120,8 +122,8 @@ namespace MVGTimeTable
 
             string[] splittedDestination = destination.Split(' ');
 
-            StringBuilder outputMainstring = new StringBuilder();
-            StringBuilder outputAdditionalstring = new StringBuilder();
+            StringBuilder outputMainStringBuilder = new StringBuilder();
+            StringBuilder outputAdditionalStringBuilder = new StringBuilder();
 
             bool startBuildingAdditionalstring = false;
             bool endBuildingMainstring = false;
@@ -131,7 +133,8 @@ namespace MVGTimeTable
                 if (Array.IndexOf(Common.AdditionalDestinationMarkers, str.ToUpperInvariant()) >= 0 || startBuildingAdditionalstring)
                 {
                     startBuildingAdditionalstring = true;
-                    outputAdditionalstring.Append(str + " ");
+                    outputAdditionalStringBuilder.Append(str);
+                    outputAdditionalStringBuilder.Append(" ");
                 }
 
                 if (!endBuildingMainstring)
@@ -141,22 +144,23 @@ namespace MVGTimeTable
                         endBuildingMainstring = true;
                     }
 
-                    outputMainstring.Append(str + " ");
+                    outputMainStringBuilder.Append(str);
+                    outputMainStringBuilder.Append(" ");
                 }
             }
 
-            if (outputAdditionalstring.Length > 2)
+            if (outputAdditionalStringBuilder.Length > 2)
             {
-                additionalDestination = (outputAdditionalstring.ToString(0, outputAdditionalstring.Length - 1)).TrimEnd(' ');
+                additionalDestination = (outputAdditionalStringBuilder.ToString(0, outputAdditionalStringBuilder.Length - 1)).TrimEnd(' ').TrimStart('-');
                 if (remove_U_S_additional)
                 {
                     additionalDestination = RemoveUS(additionalDestination);
                 }
             }
 
-            if (outputMainstring.Length > 2)
+            if (outputMainStringBuilder.Length > 2)
             {
-                mainDestination = (outputMainstring.ToString(0, outputMainstring.Length - 1)).TrimEnd(' ');
+                mainDestination = (outputMainStringBuilder.ToString(0, outputMainStringBuilder.Length - 1)).TrimEnd(new char[] { ' ', '-' });
                 if (remove_U_S_main)
                 {
                     mainDestination = RemoveUS(mainDestination);
@@ -245,7 +249,7 @@ namespace MVGTimeTable
                     {
                         UbahnPresent = true;
                     }
-                    if(IsMarkerPresent(strU, Common.SLineMarkers, exactly: true))
+                    if (IsMarkerPresent(strU, Common.SLineMarkers, exactly: true))
                     {
                         SbahnPresent = true;
                     }
@@ -504,7 +508,7 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="departureResponse">DeserializedDepartures array</param>
         /// <param name="sortDepartures">Sort input array by MVGAPI if true</param>
-        static public void ProcessSplittedLines(ref DeserializedDepartures[] departureResponse, bool sortDepartures = false)
+        static public void ProcessForkLines(ref DeserializedDepartures[] departureResponse, bool sortDepartures = false)
         {
             if (departureResponse == null || departureResponse.Length < 2)
             {
@@ -518,14 +522,14 @@ namespace MVGTimeTable
 
             for (int i = 0; i < departureResponse.Length - 1; ++i)
             {
-                foreach (string label in Common.SplittedDestinationsId.Keys)
+                foreach (string label in Common.ForkedDestinationsId.Keys)
                 {
                     if (label == departureResponse[i].label &&
                         label == departureResponse[i + 1].label &&
                         departureResponse[i].departureTime == departureResponse[i + 1].departureTime)
                     {
-                        string splittedId0 = Common.SplittedDestinationsId[label][0];
-                        string splittedId1 = Common.SplittedDestinationsId[label][1];
+                        string splittedId0 = Common.ForkedDestinationsId[label][0];
+                        string splittedId1 = Common.ForkedDestinationsId[label][1];
                         string destinationId0 = MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(departureResponse[i].destination, removeSplitMarkers: true, removeUS: true, removeBf: true));
                         string destinationId1 = MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(departureResponse[i + 1].destination, removeSplitMarkers: true, removeUS: true, removeBf: true));
                         if (splittedId0 == destinationId0 && splittedId1 == destinationId1)

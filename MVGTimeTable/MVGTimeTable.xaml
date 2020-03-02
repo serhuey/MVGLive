@@ -19,7 +19,6 @@
         <local:MainLabelsMvc x:Key="MainLabelsMvc" />
         <local:FontSizeMvc x:Key="FontSizeMvc" />
         <local:MainDestinationForegroundMvc x:Key="MainDestinationForegroundMvc" />
-
         <local:GleisMvc x:Key="GleisMvc"/>
 
         <Style x:Key="alternatingStyle" TargetType="{x:Type ListViewItem}">
@@ -105,7 +104,7 @@
                     <GridViewColumn Header="Ziel" x:Name="Destination">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel x:Name="stackPanelMainDestination" Orientation ="Horizontal" HorizontalAlignment="Left" >
+                                <StackPanel x:Name="stackPanelMainDestination" Orientation ="Horizontal" HorizontalAlignment="Left" SnapsToDevicePixels="True" >
                                     <StackPanel.Margin>
                                         <MultiBinding Converter="{StaticResource MarginMvc}" ConverterParameter="stackPanelMainDestination">
                                             <Binding Path="FontSize" />

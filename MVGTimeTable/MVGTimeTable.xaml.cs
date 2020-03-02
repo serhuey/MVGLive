@@ -21,7 +21,7 @@ namespace MVGTimeTable
     {
         public PreparedDeparture[] Departures;
 
-        public bool NoConnection => (noConnectionTimeoutCounter == 0) ? false : true;
+        public bool NoConnection => !savedConnectionStatus;
 
         public string PrimaryForegroundColor
         {
@@ -79,9 +79,11 @@ namespace MVGTimeTable
 
         private int fontSize;
 
-        private int noConnectionTimeoutCounter = 0;
-        private const int noConnectionTimeoutThreshold1 = 3;
-        private const int noConnectionTimeoutThreshold2 = 10;
+        //private int noConnectionTimeoutCounter = 0;
+        private DateTime timeConnectionLost;
+        private bool savedConnectionStatus;
+        private const int noConnectionTimeoutThreshold1 = 50;       // in seconds
+        private const int noConnectionTimeoutThreshold2 = 240;      // in seconds
 
         public MVGTimeTable()
         {
@@ -116,10 +118,6 @@ namespace MVGTimeTable
             fontSize = _fontSize;
             listViewTimeTable.FontFamily = _fontFamily;
             listViewTimeTable.FontSize = fontSize;
-
-            SetStackPanelMargin("stackPanelProductLabel", new Thickness(fontSize / 3.0, 0, fontSize / 2.0, 0));
-            SetStackPanelMargin("stackPanelMainDestination", new Thickness(fontSize / 2.0, 0, fontSize / 2.0, 0));
-            SetStackPanelMargin("stackPanelMinutes", new Thickness(fontSize / 3.0, 0, fontSize / 3.0, 0));
 
             PrimaryForegroundColor = Common.PrimaryForegroundColor;
             SecondaryForegroundColor = Common.SecondaryForegroundColor;
@@ -219,8 +217,6 @@ namespace MVGTimeTable
             {
                 // Measurement of the table is not very fast, so Autosize for first time is called in secondsToFirstUpdate
                 // measure table to get the true ActualSize of columns
-                listViewTimeTable.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-                listViewTimeTable.Arrange(new Rect(0, 0, listViewTimeTable.DesiredSize.Width, listViewTimeTable.DesiredSize.Height));
                 SetUtmostColumnWidth();
             }
             timerRefresh.Interval = TimeSpan.FromSeconds((bindCounter == 0) ? secondsToFirstUpdate : timerRefreshInterval);
@@ -264,23 +260,25 @@ namespace MVGTimeTable
             //Check connection status 
             if (MVGAPI.MVGAPI.IsConnected)
             {
-                if (noConnectionTimeoutCounter != 0)
+                if (!savedConnectionStatus)
                 {
-                    noConnectionTimeoutCounter = 0;
+                    savedConnectionStatus = true;
                     ConnectionStatusChangedEvent?.Invoke(this, new EventArgs());
                 }
             }
             else
             {
-                noConnectionTimeoutCounter++;
-                if (noConnectionTimeoutCounter == 1)
+                if (savedConnectionStatus)
                 {
+                    savedConnectionStatus = false;
+                    timeConnectionLost = DateTime.Now;
                     ConnectionStatusChangedEvent?.Invoke(this, new EventArgs());
                 }
             }
+            double noConnectionSeconds = savedConnectionStatus ? 0.0 : (DateTime.Now - timeConnectionLost).TotalSeconds;
 
             //Build departureDataSource if connection is OK or disconnect is less than noConnectionTimeoutThreshold
-            if (noConnectionTimeoutCounter <= noConnectionTimeoutThreshold2 && departureResponse != null)
+            if (noConnectionSeconds <= noConnectionTimeoutThreshold2 && departureResponse != null)
             {
                 responseHashCode = GetResponseHashCode(departureResponse, now);
                 if (responseHashCode != oldResponseHashCode)
@@ -290,15 +288,16 @@ namespace MVGTimeTable
                     MVGAPI.MVGAPI.FormatNewAPItoOld(ref departureResponse);
                     MVGAPI.MVGAPI.DeleteDuplicates(ref departureResponse);
                     MVGAPI.MVGAPI.Sort(ref departureResponse);
-                    ParseDestination.ProcessSplittedLines(ref departureResponse);
+                    ParseDestination.ProcessForkLines(ref departureResponse);
 
                     BuildDepartureDataSource(now, departureResponse, ref departureDataSource);
 
                     //Use previous data if connection is lost for short time, but add warnings on the very top of the table
-                    if (noConnectionTimeoutCounter > noConnectionTimeoutThreshold1)
+                    if (noConnectionSeconds > noConnectionTimeoutThreshold1)
                     {
                         departureDataSource.Insert(0, SetServiceMessage(Common.WarnMessageType[MessageType.Warning], Common.Messages[MessageType.Warning]));
                         departureDataSource.Insert(0, SetServiceMessage(Common.WarnMessageType[MessageType.NoConnection], Common.Messages[MessageType.NoConnection]));
+                        bindCounter = 0;
                     }
                 }
             }
@@ -307,6 +306,7 @@ namespace MVGTimeTable
                 //Show only warning string if disconnection is longer than noConnectionTimeoutThreshold or no response was received
                 departureDataSource.Clear();
                 departureDataSource.Add(SetServiceMessage(Common.WarnMessageType[MessageType.NoConnection], Common.Messages[MessageType.NoConnection]));
+                bindCounter = 0;
             }
 
             AutoSizeColumns();
@@ -496,6 +496,8 @@ namespace MVGTimeTable
         /// ************************************************************************************************
         private void SetUtmostColumnWidth()
         {
+            listViewTimeTable.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+            listViewTimeTable.Arrange(new Rect(0, 0, listViewTimeTable.DesiredSize.Width, listViewTimeTable.DesiredSize.Height));
 
             GridView gridView = listViewTimeTable.View as GridView;
 
@@ -518,26 +520,6 @@ namespace MVGTimeTable
                 gridView.Columns[Common.UtmostColumn].Width = utmostWidth;
             }
 
-        }
-
-        /// ************************************************************************************************
-        /// <summary>
-        /// Set margins of the Stack Panel
-        /// </summary>
-        /// <param name="stackPanelName">Name of the Stack Panel</param>
-        /// <param name="margin">Margin of the Stack Panel</param>
-        /// <returns>True if operation is successfull</returns>
-        /// ************************************************************************************************
-        private bool SetStackPanelMargin(string stackPanelName, Thickness margin)
-        {
-            bool success = false;
-            object ob = this.FindName(stackPanelName);
-            if (ob is StackPanel)
-            {
-                ((StackPanel)ob).Margin = margin;
-                success = true;
-            }
-            return success;
         }
 
 

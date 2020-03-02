@@ -15,32 +15,18 @@ namespace MVGLive
         public static string DefaultDirection4 { get; set; } = "Hauptbahnhof";
         public static List<string> Arguments { get; } = new List<string>();
 
+        private static bool IsScreenSaverEnabled { get; } = ScreenSaver.GetScreenSaverActive();
+
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             Arguments.AddRange(GetCommandLineArguments());
             FontFamily = LoadEmbeddedFont("PT Sans");
-            UserFontSize = 35;
+            UserFontSize = 38;
 
+            DisableScreenSaver(IsScreenSaverEnabled);
 
-            // if screen saver is enabled, disable it and store this, then disable it.
-            bool isScreenSaverEnabled = ScreenSaver.GetScreenSaverActive();
-
-            if (isScreenSaverEnabled)
-            {
-                ScreenSaver.SetScreenSaverActive(false);
-            }
-            ScreenSaver.DisableSleep();
-
-            Window mainWindow = new MainWindow2();
+            Window mainWindow = new MainWindow4();
             mainWindow.Show();
-
-            // if screen saver was enabled before app was started turn it on back
-            if (isScreenSaverEnabled)
-            {
-                ScreenSaver.SetScreenSaverActive(true);
-            }
-            ScreenSaver.EnableSleep();
-
         }
 
         /// ************************************************************************************************
@@ -81,6 +67,43 @@ namespace MVGLive
             return outputList;
         }
 
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            EnableScreenSaver(IsScreenSaverEnabled);
+        }
+
+        /// ************************************************************************************************
+        /// <summary>
+        /// Disable screensaver and sleep
+        /// </summary>
+        /// <param name="isScreenSaverEnabled">System screensaver status</param>
+        /// ************************************************************************************************
+
+        private void DisableScreenSaver(bool isScreenSaverEnabled)
+        {
+            if (isScreenSaverEnabled)
+            {
+                ScreenSaver.SetScreenSaverActive(false);
+            }
+            ScreenSaver.DisableSleep();
+        }
+
+        /// ************************************************************************************************
+        /// <summary>
+        /// Enable screensaver and sleep
+        /// </summary>
+        /// <param name="isScreenSaverEnabled">System screensaver status</param>
+        /// ************************************************************************************************
+
+        private void EnableScreenSaver(bool isScreenSaverEnabled)
+        {
+            // if screen saver was enabled before app was started turn it on back
+            if (isScreenSaverEnabled)
+            {
+                ScreenSaver.SetScreenSaverActive(true);
+            }
+            ScreenSaver.EnableSleep();
+        }
     }
 
 }
