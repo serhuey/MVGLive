@@ -1,9 +1,11 @@
-﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.  
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
 using Newtonsoft.Json;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -14,15 +16,19 @@ namespace MVGAPI
 {
     public static class MVGAPI
     {
-        static public bool IsConnected { get; set; }
+        static public bool IsConnected { get; set; } = false;
         private const string StationType = "station";
         private const string RootUrlName = "https://www.mvg.de/api/fahrinfo";
         private const string QueryUrlName = RootUrlName + "/location/queryWeb?q=";
         private const string DepartureUrl = RootUrlName + "/departure/";
         private const string DepartureUrlPostfix = "?footway=0";
-
         private const string IdMvvStations = "MVVStations.txt";
-        private static Dictionary<string, string> localIdCash;
+        private const int DefaultRequestTimeOut = 15000;
+        private static ConcurrentDictionary<string, string> localIdСache;
+        private readonly static ConcurrentQueue<string> stationIdRequestQueue = new ConcurrentQueue<string>();
+        private static readonly BackgroundWorker stationIdRequestBackgroundWorker = new BackgroundWorker();
+
+
 
         /// <summary>
         /// Static constructor
@@ -30,7 +36,10 @@ namespace MVGAPI
         static MVGAPI()
         {
             BuildLocalStationIdCash();
+            stationIdRequestBackgroundWorker.DoWork += new DoWorkEventHandler(StationIdRequestBackgroundWorker_DoWork);
+            stationIdRequestBackgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(StationIdRequestBackgroundWorker_RunWorkerCompleted);
         }
+
 
         /// <summary>
         /// Get deserialized departures for the station with ID
@@ -50,20 +59,27 @@ namespace MVGAPI
             {
                 string jsonResponse = GetJsonDepartures(stationID);
 
-                if (string.IsNullOrEmpty(jsonResponse)) return null;
+                if (string.IsNullOrEmpty(jsonResponse))
+                {
+                    IsConnected = false;
+                    return null;
+                }
 
                 dD = JsonConvert.DeserializeObject<Departures>(jsonResponse);
                 if (dD != null && dD.departures.Length > 0)
                 {
+                    IsConnected = true;
                     return dD.departures;
                 }
                 else
                 {
+                    IsConnected = false;
                     return null;
                 }
             }
             catch (Exception ex)
             {
+                IsConnected = false;
                 throw new Exception("Exception in GetDeserializedDepartures", ex);
             }
         }
@@ -73,7 +89,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
-        static string GetLocations(string query)
+        private static string GetLocations(string query, int requestTimeOut)
         {
             string jsonstring;
             string url;
@@ -86,7 +102,7 @@ namespace MVGAPI
             {
                 url = QueryUrlName + query;
             }
-            jsonstring = PerformApiRequest(url);
+            jsonstring = PerformApiRequest(url, requestTimeOut);
             return jsonstring;
         }
 
@@ -95,11 +111,11 @@ namespace MVGAPI
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
         /// <returns></returns>
-        static Location GetStations(string stationName)
+        private static Location GetStations(string stationName, int requestTimeOut = DefaultRequestTimeOut)
         {
             try
             {
-                string locations = GetLocations(stationName);
+                string locations = GetLocations(stationName, requestTimeOut);
                 if (string.IsNullOrEmpty(locations)) return null;
 
                 Locations locs = JsonConvert.DeserializeObject<Locations>(locations);
@@ -117,29 +133,70 @@ namespace MVGAPI
 
         /// <summary>
         /// Get ID for the station name in German
+        /// If there is no ID in local cache, put the station name in the request ID queue to avoid program freezing.
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
         /// <returns>Station ID, if station name exists, "" otherwise</returns>
         static public string GetIdForStation(string stationName)
         {
-            if (localIdCash.ContainsKey(stationName))
+            if (string.IsNullOrEmpty(stationName)) return "";
+
+            if (localIdСache.ContainsKey(stationName))
             {
-                return localIdCash[stationName];
+                return localIdСache[stationName];
             }
             else
+            {
+                if (!stationIdRequestQueue.Contains(stationName))
+                {
+                    stationIdRequestQueue.Enqueue(stationName);
+
+                    Console.WriteLine("Elements in Queue:" + stationIdRequestQueue.Count.ToString());
+                    if (!stationIdRequestBackgroundWorker.IsBusy)
+                    {
+                        stationIdRequestBackgroundWorker.RunWorkerAsync();
+                    }
+                }
+                return "";
+            }
+        }
+
+        /// <summary>
+        /// Background worker RunWorkerCompleted event handler
+        /// Start new background worker cycle if the ID request queue is not empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void StationIdRequestBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (!stationIdRequestQueue.IsEmpty && !stationIdRequestBackgroundWorker.IsBusy)
+            {
+                stationIdRequestBackgroundWorker.RunWorkerAsync();
+            }
+        }
+
+        /// <summary>
+        /// Asynchronically get station ID
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void StationIdRequestBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (stationIdRequestQueue.TryDequeue(out string stationName))
             {
                 Location locs;
 
                 locs = GetStations(stationName);
-                if (locs != null && !string.IsNullOrEmpty(locs.id))
+                if (!localIdСache.Keys.Contains(stationName))
                 {
-                    localIdCash.Add(stationName, locs.id);
-                    return locs.id;
-                }
-                else
-                {
-                    localIdCash.Add(stationName, "");
-                    return "";
+                    if (locs != null && !string.IsNullOrEmpty(locs.id))
+                    {
+                        localIdСache.TryAdd(stationName, locs.id);
+                    }
+                    else
+                    {
+                        localIdСache.TryAdd(stationName, "");
+                    }
                 }
             }
         }
@@ -153,6 +210,7 @@ namespace MVGAPI
         {
             string url = DepartureUrl + stationID + DepartureUrlPostfix;
             string result = PerformApiRequest(url);
+
             return result;
         }
 
@@ -161,18 +219,19 @@ namespace MVGAPI
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        static public string PerformApiRequest(string url)
+        static public string PerformApiRequest(string url, int requestTimeOut = DefaultRequestTimeOut)
         {
             HttpWebRequest requests = (HttpWebRequest)WebRequest.Create(url);
             requests.ContentType = "application/json; charset=utf-8";
             requests.Method = "GET";
+            requests.Timeout = requestTimeOut;
 
-            IsConnected = true;
             string result = null;
 
             try
             {
                 HttpWebResponse response = requests.GetResponse() as HttpWebResponse;
+
                 using (Stream responseStream = response.GetResponseStream())
                 {
                     StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
@@ -181,14 +240,14 @@ namespace MVGAPI
             }
             catch (Exception ex) when (ex is WebException || ex is System.Net.Sockets.SocketException || ex is ObjectDisposedException)
             {
-                IsConnected = false;
+                result = null;
             }
 
             return result;
         }
 
         /// <summary>
-        /// Format new API deserialized departure to an old one. 
+        /// Format new API deserialized departure to an old one.
         /// </summary>
         /// <param name="deserializedDepartures">Array with deserialized departures in new format on the beginning and in an old format on the exit</param>
         static public void FormatNewAPItoOld(ref DeserializedDepartures[] deserializedDepartures)
@@ -253,11 +312,10 @@ namespace MVGAPI
             string[] splitContent;
             string line;
 
-            localIdCash = new Dictionary<string, string>();
+            localIdСache = new ConcurrentDictionary<string, string>();
 
             using (StringReader reader = new StringReader(fileContent))
             {
-
                 while ((line = reader.ReadLine()) != null)
                 {
                     splitContent = line.Split(separator.ToCharArray());
@@ -266,12 +324,12 @@ namespace MVGAPI
                         splitContent.Length < 2 ||
                         string.IsNullOrEmpty(splitContent[0]) ||
                         string.IsNullOrEmpty(splitContent[1]) ||
-                        localIdCash.ContainsKey(splitContent[0]))
+                        localIdСache.ContainsKey(splitContent[0]))
                     {
                         continue;
                     }
 
-                    localIdCash.Add(splitContent[0], splitContent[1]);
+                    localIdСache.TryAdd(splitContent[0], splitContent[1]);
                 }
             }
         }
@@ -306,10 +364,9 @@ namespace MVGAPI
             }
             finally
             {
-                    stream?.Dispose();
+                stream?.Dispose();
             }
             return returnedString;
         }
-
     }
 }

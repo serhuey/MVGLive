@@ -1,5 +1,5 @@
-﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.  
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
 using System;
 using System.Runtime.InteropServices;
@@ -62,6 +62,7 @@ namespace MVGLive
 
         // Constants
         internal const int SPI_GETSCREENSAVERACTIVE = 16;
+
         internal const int SPI_SETSCREENSAVERACTIVE = 17;
         internal const int SPI_GETSCREENSAVERTIMEOUT = 14;
         internal const int SPI_SETSCREENSAVERTIMEOUT = 15;

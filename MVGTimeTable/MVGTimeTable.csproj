@@ -63,25 +63,31 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MVGTimeTable.xaml">
+    <Compile Include="View\Converters\DelayImageMvc.cs" />
+    <Compile Include="Model\ConnectionState.cs" />
+    <Compile Include="ViewModel\DeparturesViewModel.cs" />
+    <Page Include="View\MVGTimeTable.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Common.cs" />
-    <Compile Include="Converters\AdditionalDestinationMvc.cs" />
-    <Compile Include="Converters\AdditionalLabelsMvc.cs" />
-    <Compile Include="Converters\FontSizeMvc.cs" />
-    <Compile Include="Converters\ImageMinutesValueMvc.cs" />
-    <Compile Include="Converters\LabelMvc.cs" />
-    <Compile Include="Converters\MainDestinationForegroundMvc.cs" />
-    <Compile Include="Converters\MainDestinationMvc.cs" />
-    <Compile Include="Converters\MainLabelsMvc.cs" />
-    <Compile Include="Converters\MarginMvc.cs" />
-    <Compile Include="Converters\GleisMvc.cs" />
-    <Compile Include="ParseDestination.cs" />
-    <Compile Include="Converters\ProductLabelMvc.cs" />
-    <Compile Include="Converters\TextMinutesValueMvc.cs" />
-    <Compile Include="MVGTimeTable.xaml.cs">
+    <Compile Include="View\Converters\AdditionalDestinationMvc.cs" />
+    <Compile Include="View\Converters\AdditionalLabelsMvc.cs" />
+    <Compile Include="View\Converters\FontSizeMvc.cs" />
+    <Compile Include="View\Converters\ForegroundColorMvc.cs" />
+    <Compile Include="View\Converters\GleisTextMvc.cs" />
+    <Compile Include="View\Converters\HorizontalAlignmentMvc.cs" />
+    <Compile Include="View\Converters\ImageMinutesValueMvc.cs" />
+    <Compile Include="View\Converters\LabelMvc.cs" />
+    <Compile Include="View\Converters\MainDestinationMvc.cs" />
+    <Compile Include="View\Converters\MainLabelsMvc.cs" />
+    <Compile Include="View\Converters\MarginMvc.cs" />
+    <Compile Include="View\Converters\GleisMvc.cs" />
+    <Compile Include="Model\DeparturesModel.cs" />
+    <Compile Include="View\ParseDestination.cs" />
+    <Compile Include="View\Converters\ProductLabelMvc.cs" />
+    <Compile Include="View\Converters\TextMinutesValueMvc.cs" />
+    <Compile Include="View\MVGTimeTable.xaml.cs">
       <DependentUpon>MVGTimeTable.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -223,6 +229,20 @@
   <ItemGroup>
     <Resource Include="SVGIcons\FirstS1.svg" />
     <Resource Include="SVGIcons\LastS1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\Delay1.svg" />
+    <Resource Include="SVGIcons\Delay2.svg" />
+    <Resource Include="SVGIcons\Delay3.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\Wait.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\SevTram.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\Delay0.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

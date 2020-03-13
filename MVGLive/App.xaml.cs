@@ -7,12 +7,49 @@ namespace MVGLive
 {
     public partial class App : Application
     {
-        public static int UserFontSize { get; set; }
-        public static FontFamily FontFamily { get; set; }
+        /// <summary>
+        ///
+        /// </summary>
+        public static int TableFontSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static int HeaderFontSize { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static FontFamily TableFontFamily { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static FontFamily HeaderFontFamily { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         public static string DefaultDirection1 { get; set; } = "Hirschgarten";
+
+        /// <summary>
+        ///
+        /// </summary>
         public static string DefaultDirection2 { get; set; } = "Briefzentrum";
+
+        /// <summary>
+        ///
+        /// </summary>
         public static string DefaultDirection3 { get; set; } = "Steubenplatz";
+
+        /// <summary>
+        ///
+        /// </summary>
         public static string DefaultDirection4 { get; set; } = "Hauptbahnhof";
+
+        /// <summary>
+        ///
+        /// </summary>
         public static List<string> Arguments { get; } = new List<string>();
 
         private static bool IsScreenSaverEnabled { get; } = ScreenSaver.GetScreenSaverActive();
@@ -20,8 +57,10 @@ namespace MVGLive
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             Arguments.AddRange(GetCommandLineArguments());
-            FontFamily = LoadEmbeddedFont("PT Sans");
-            UserFontSize = 38;
+            TableFontFamily = LoadEmbeddedFont("PT Sans");
+            HeaderFontFamily = LoadEmbeddedFont("PT Sans");
+            TableFontSize = 38;
+            HeaderFontSize = (int)(TableFontSize * 0.8f);
 
             DisableScreenSaver(IsScreenSaverEnabled);
 
@@ -44,7 +83,6 @@ namespace MVGLive
                 fontFamilies.Add(family.FamilyNames[System.Windows.Markup.XmlLanguage.GetLanguage("en-US")], family);
             }
             return fontFamilies.ContainsKey(fontFamilyName) ? fontFamilies[fontFamilyName] : new FontFamily("Segoe UI");
-
         }
 
         /// ************************************************************************************************
@@ -105,5 +143,4 @@ namespace MVGLive
             ScreenSaver.EnableSleep();
         }
     }
-
 }

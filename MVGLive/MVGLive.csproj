@@ -56,6 +56,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
     <CodeAnalysisRuleSet>MVGLive.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\MVGLive.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -113,29 +114,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MainWindow1.xaml.cs">
+    <Compile Include="MainWindows\MainWindow1.xaml.cs">
       <DependentUpon>MainWindow1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow2.xaml.cs">
+    <Compile Include="MainWindows\MainWindow2.xaml.cs">
       <DependentUpon>MainWindow2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow2a.xaml.cs">
+    <Compile Include="MainWindows\MainWindow2a.xaml.cs">
       <DependentUpon>MainWindow2a.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow4.xaml.cs">
+    <Compile Include="MainWindows\MainWindow4.xaml.cs">
       <DependentUpon>MainWindow4.xaml</DependentUpon>
     </Compile>
     <Compile Include="SafeNativeMethods.cs" />
     <Compile Include="ScreenSaver.cs" />
-    <Page Include="MainWindow1.xaml">
+    <Page Include="MainWindows\MainWindow1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow2a.xaml">
+    <Page Include="MainWindows\MainWindow2a.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow3.xaml">
+    <Page Include="MainWindows\MainWindow3.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -143,15 +144,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow3.xaml.cs">
+    <Compile Include="MainWindows\MainWindow3.xaml.cs">
       <DependentUpon>MainWindow3.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MainWindow2.xaml">
+    <Page Include="MainWindows\MainWindow2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow4.xaml">
+    <Page Include="MainWindows\MainWindow4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

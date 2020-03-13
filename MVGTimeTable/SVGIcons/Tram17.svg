@@ -6,7 +6,7 @@
 	</defs>
  <g id="Layer 1" transform="scale(1 -1)">
   <g id="Group" stroke="none">
-   <rect x="-112.359" y="-230.137" width="224.719" height="460.274" transform="translate(1284.7 3107.26) rotate(90)" fill="#8b573e" stroke-linejoin="miter"/>
+   <rect x="-112.359" y="-230.137" width="224.719" height="460.274" transform="translate(1284.7 3107.26) rotate(90)" fill="#784b36" stroke-linejoin="miter"/>
    <path d="M 1169.13,3026.21 L 1169.13,3052.87 L 1203.47,3052.87 L 1203.47,3153.49 L 1166.49,3132.84 L 1164.33,3161.9 L 1204.43,3183.75 L 1241.42,3183.75 L 1241.42,3052.87 L 1272.88,3052.87 L 1272.88,3026.21 L 1169.13,3026.21 Z" fill-rule="nonzero" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.243" fill="#ffffff" marker-start="none" marker-end="none"/>
    <path d="M 1403.99,3167.67 C 1399.18,3156.46 1394.3,3144.37 1389.34,3131.4 C 1384.38,3118.44 1379.41,3105.35 1374.45,3092.14 C 1369.49,3078.93 1364.6,3065.97 1359.8,3053.24 C 1355,3040.51 1350.51,3028.87 1346.35,3018.3 L 1310.57,3032.22 C 1314.57,3042.15 1318.89,3052.67 1323.54,3063.8 C 1328.18,3074.92 1332.9,3086.01 1337.71,3097.05 C 1342.51,3108.1 1347.23,3118.78 1351.87,3129.11 C 1356.52,3139.43 1360.76,3148.76 1364.6,3157.08 L 1297.6,3157.08 L 1297.6,3183.75 L 1403.99,3183.75 L 1403.99,3167.67 Z" fill-rule="nonzero" stroke-linejoin="round" stroke-linecap="round" stroke-width="0.243" fill="#ffffff" marker-start="none" marker-end="none"/>
    <path d="M 805.559,3231.76 L 805.559,2982.76 L 1054.57,2982.76 L 1054.57,3231.76 L 805.559,3231.76 Z" stroke-linejoin="miter" stroke-width="0.485" stroke-linecap="round" fill="#ffffff" marker-start="none" marker-end="none"/>

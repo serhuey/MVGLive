@@ -1,31 +1,40 @@
-﻿// Copyright (c) Sergei Grigorev. All rights reserved.  
-// Licensed under the MIT License. See LICENSE file in the project root for full license information.  
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
 using System;
 
 namespace MVGLive
 {
+    /// <summary>
+    ///
+    /// </summary>
     public static class ScreenSaver
     {
+        /// <summary>
+        ///
+        /// </summary>
         public static void DisableSleep()
         {
             if (SafeNativeMethods.SetThreadExecutionState(SafeNativeMethods.EXECUTION_STATE.ES_CONTINUOUS |
                                             SafeNativeMethods.EXECUTION_STATE.ES_DISPLAY_REQUIRED |
                                             SafeNativeMethods.EXECUTION_STATE.ES_SYSTEM_REQUIRED |
                                             SafeNativeMethods.EXECUTION_STATE.ES_AWAYMODE_REQUIRED
-                                        ) == 0)                                         //Away mode for Windows >= Vista 
+                                        ) == 0)                                         //Away mode for Windows >= Vista
                 SafeNativeMethods.SetThreadExecutionState(SafeNativeMethods.EXECUTION_STATE.ES_CONTINUOUS |
                                         SafeNativeMethods.EXECUTION_STATE.ES_DISPLAY_REQUIRED |
-                                        SafeNativeMethods.EXECUTION_STATE.ES_SYSTEM_REQUIRED);         //Windows < Vista, forget away mode 
+                                        SafeNativeMethods.EXECUTION_STATE.ES_SYSTEM_REQUIRED);         //Windows < Vista, forget away mode
         }
 
+        /// <summary>
+        ///
+        /// </summary>
         public static void EnableSleep()
         {
             SafeNativeMethods.SetThreadExecutionState(SafeNativeMethods.EXECUTION_STATE.ES_CONTINUOUS);
         }
 
         /// <summary>
-        /// Returns true if the screen saver is active  
+        /// Returns true if the screen saver is active
         /// </summary>
         /// <returns></returns>
         public static bool GetScreenSaverActive()
@@ -87,11 +96,12 @@ namespace MVGLive
             return isRunning;
         }
 
-        // From Microsoft's Knowledge Base article #140723: 
-        // http://support.microsoft.com/kb/140723
-        // "How to force a screen saver to close once started 
-        // in Windows NT, Windows 2000, and Windows Server 2003"
-
+        /// <summary>
+        ///From Microsoft's Knowledge Base article #140723:
+        /// http://support.microsoft.com/kb/140723
+        /// "How to force a screen saver to close once started
+        /// in Windows NT, Windows 2000, and Windows Server 2003"
+        /// </summary>
         public static void KillScreenSaver()
         {
             IntPtr hDesktop = SafeNativeMethods.OpenDesktop("Screen-saver", 0,
@@ -110,6 +120,12 @@ namespace MVGLive
             }
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="hWnd"></param>
+        /// <param name="lParam"></param>
+        /// <returns></returns>
         private static bool KillScreenSaverFunc(IntPtr hWnd,
            IntPtr lParam)
         {
@@ -119,6 +135,3 @@ namespace MVGLive
         }
     }
 }
-
-
-
