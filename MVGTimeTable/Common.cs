@@ -100,42 +100,47 @@ namespace MVGTimeTable
                                                         "TRAM", "TRAM", "TRAM12", "TRAM", "TRAM", "TRAM15", "TRAM16", "TRAM17", "TRAM18", "TRAM19",
                                                          "TRAM20", "TRAM21", "TRAM", "TRAM23", "TRAM", "TRAM25", "TRAM", "TRAM27", "TRAM28", "TRAM29"};
 
-        public static readonly string[] GleisIconKey = { "Haltestelle", "Gleis1", "Gleis2", "Gleis3", "Gleis4", "Gleis5", "Gleis6", "Gleis7", "Gleis8", "Gleis9",
-                                                         "Gleis10", "Gleis11", "Gleis12", "Gleis13", "Gleis14", "Gleis15", "Gleis16" };
+        public static readonly string[] GleisIconKey = { "HALTESTELLE", "GLEIS1", "GLEIS2", "GLEIS3", "GLEIS4", "GLEIS5", "GLEIS6", "GLEIS7", "GLEIS8", "GLEIS9",
+                                                         "GLEIS10", "GLEIS11", "GLEIS12", "GLEIS13", "GLEIS14", "GLEIS15", "GLEIS16" };
 
-        public static readonly string[] SGleisIconKey = { "Haltestelle", "SGleis1", "SGleis2", "SGleis3", "SGleis4", "SGleis5", "SGleis6", "SGleis7", "SGleis8", "SGleis9",
-                                                         "SGleis10", "SGleis11", "SGleis12", "SGleis13", "SGleis14", "SGleis15", "SGleis16" };
+        public static readonly string[] SGleisIconKey = { "HALTESTELLE", "SGLEIS1", "SGLEIS2", "SGLEIS3", "SGLEIS4", "SGLEIS5", "SGLEIS6", "SGLEIS7", "SGLEIS8", "SGLEIS9",
+                                                         "SGLEIS10", "SGLEIS11", "SGLEIS12", "SGLEIS13", "SGLEIS14", "SGLEIS15", "SGLEIS16" };
+        public static readonly string[] FollowForegroundIconKey1 = {    UBahnMonoFullIconKey, SBahnMonoFullIconKey, USBahnsMonoFullIconKey,
+                                                                        TrainFirstHalfIconKey, TrainSecondHalfIconKey, FussballIconKey,
+                                                                        ZooIconKey, MesseIconKey, OlympiaIconKey, WaitingIconKey };
+        public static readonly string[] FollowForegroundIconKey2 = {    UBahnMonoHalfIconKey, SBahnMonoHalfIconKey, USBahnsMonoHalfIconKey,
+                                                                        Delay1IconKey, Delay2IconKey, Delay3IconKey };
 
-        public const string DefaultUBahnIconKey = "UBahn";
-        public const string DefaultSBahnIconKey = "SBahn";
-        public const string NSevBusIconKey = "NSevBus";
-        public const string SevBusIconKey = "SevBus";
-        public const string SevTramIconKey = "SevTram";
-        public const string NBusIconKey = "NBus";
-        public const string ExpressBusIconKey = "ExpressBus";
-        public const string BusIconKey = "Bus";
-        public const string DefaultTramIconKey = "Tram";
-        public const string NTramIconKey = "NTram";
-        public const string WarningIconKey = "Warning";
-        public const string NoConnectionIconKey = "NoConnection";
-        public const string NowIconKey = "jetzt";
-        public const string FussballIconKey = "Fussball";
-        public const string ZooIconKey = "Zoo";
-        public const string MesseIconKey = "Messe";
-        public const string OlympiaIconKey = "Olympia";
-        public const string UBahnMonoFullIconKey = "UBahn_100";
-        public const string UBahnMonoHalfIconKey = "UBahn_50";
-        public const string SBahnMonoFullIconKey = "SBahn_100";
-        public const string SBahnMonoHalfIconKey = "SBahn_50";
-        public const string USBahnsMonoFullIconKey = "USBahns_100";
-        public const string USBahnsMonoHalfIconKey = "USBahns_50";
-        public const string TrainFirstHalfIconKey = "FirstS1";
-        public const string TrainSecondHalfIconKey = "LastS1";
-        public const string Delay0IconKey = "Delay0";
-        public const string Delay1IconKey = "Delay1";
-        public const string Delay2IconKey = "Delay2";
-        public const string Delay3IconKey = "Delay3";
-        public const string WaitingIconKey = "Wait";
+        public const string DefaultUBahnIconKey = "UBAHN";
+        public const string DefaultSBahnIconKey = "SBAHN";
+        public const string NSevBusIconKey = "NSEVBUS";
+        public const string SevBusIconKey = "SEVBUS";
+        public const string SevTramIconKey = "SEVTRAM";
+        public const string NBusIconKey = "NBUS";
+        public const string ExpressBusIconKey = "EXPRESSBUS";
+        public const string BusIconKey = "BUS";
+        public const string DefaultTramIconKey = "TRAM";
+        public const string NTramIconKey = "NTRAM";
+        public const string WarningIconKey = "WARNING";
+        public const string NoConnectionIconKey = "NOCONNECTION";
+        public const string NowIconKey = "JETZT";
+        public const string FussballIconKey = "FUSSBALL";
+        public const string ZooIconKey = "ZOO";
+        public const string MesseIconKey = "MESSE";
+        public const string OlympiaIconKey = "OLYMPIA";
+        public const string UBahnMonoFullIconKey = "UBAHN_100";
+        public const string UBahnMonoHalfIconKey = "UBAHN_50";
+        public const string SBahnMonoFullIconKey = "SBAHN_100";
+        public const string SBahnMonoHalfIconKey = "SBAHN_50";
+        public const string USBahnsMonoFullIconKey = "USBAHNS_100";
+        public const string USBahnsMonoHalfIconKey = "USBAHNS_50";
+        public const string TrainFirstHalfIconKey = "FIRSTS1";
+        public const string TrainSecondHalfIconKey = "LASTS1";
+        public const string Delay0IconKey = "DELAY0";
+        public const string Delay1IconKey = "DELAY1";
+        public const string Delay2IconKey = "DELAY2";
+        public const string Delay3IconKey = "DELAY3";
+        public const string WaitingIconKey = "WAIT";
 
         public static readonly Dictionary<string, string> AirportIconKeys = new Dictionary<string, string> { { "S1", "S1FH" }, { "S8", "S8FH" } };
 
@@ -144,7 +149,7 @@ namespace MVGTimeTable
         public static readonly string[] TramMarkers = { "TRAM" };
         public static readonly string[] UBahnMarkers = { "UBAHN" };
         public static readonly string[] SBahnMarkers = { "SBAHN" };
-        public static readonly string[] AdditionalDestinationMarkers = { "VIA", "Ü.", "WEITER" };
+        public static readonly string[] AdditionalDestinationMarkers = { "VIA", "Ü.", "WEITER", "ÜBER" };
         public static readonly string[] NightLineMarkers = { "N" };
         public static readonly string[] ExpressLineMarkers = { "X" };
 
@@ -156,19 +161,15 @@ namespace MVGTimeTable
 
         public static readonly string[] USSpacedMarkers = BuildSpacedUSMarkersArray();
 
-        public const string FirstForegroundColor = "#FFE8E8E8";
-        public const string SecondForegroundColor = "#55F1F1F1";
-        public const string HeaderForegroundColor = "#99E8E8E8";
+        //public const string TableForegroundColor1 = "#FFE8E8E8";
+        //public const string TableForegroundColor2 = "#55F1F1F1";
+        //public const string HeaderForegroundColor = "#99E8E8E8";
+        //public const string TableBackgroundColor1 = "#FF00056C";
+        //public const string TableBackgroundColor2 = "#FF262A74";
+        //public const string HeaderBackgroundColor = "#FF000342";
+        //public const string NoConnectionForegroundColor = "#FFFF4E48";
+        //public const string WarningForegroundColor = "#FFFFEB85";
 
-        public const string FirstBackgroundColor = "#FF00056C";
-        public const string SecondBackgroundColor = "#FF262A74";
-        public const string HeaderBackgroundColor = "#FF000342";
-
-
-        public const string NoConnectionForegroundColor = "#FFFF4E48";
-        public const string WarningForegroundColor = "#FFFFEB85";
-
-        public const double DelayFontSizeCoeff = 0.55;
         public const int UndefinedSignThreshold = -3;
 
         public const string TimeSignSeparator = "  ";
@@ -185,19 +186,32 @@ namespace MVGTimeTable
 
         public static Dictionary<string, BitmapImage> icons;
 
+        private static readonly SvgColourServer[] foregroundColor = new SvgColourServer[2];
+
+
         /// ************************************************************************************************
         /// <summary>
         /// Create Dictionary with Bitmaps of the same height from SVG sources
         /// </summary>
         /// <param name="icons">Dictionary with icons</param>
         /// <param name="fontSize">Height of icons</param>
-        /// <returns></returns>
+        /// <param name="foregroundColor1">Foreground color for main text, it is used to change color of some icons</param>
+        /// <param name="foregroundColor2">Foreground color for additional text, it is used to change color of some icons</param>
+        /// <returns>true if Dictionary successfully created</returns>
         /// ************************************************************************************************
-        public static bool CreateIconsDictionaryFromSVG(out Dictionary<string, BitmapImage> icons, double fontSize)
+        public static bool CreateIconsDictionaryFromSVG(out Dictionary<string, BitmapImage> icons,
+                                                        double fontSize,
+                                                        string foregroundColor1,
+                                                        string foregroundColor2)
         {
             bool result = true;
 
             icons = new Dictionary<string, BitmapImage>();
+            System.Windows.Media.Color color1 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(foregroundColor1);
+            System.Windows.Media.Color color2 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(foregroundColor2);
+
+            foregroundColor[0] = new SvgColourServer(Color.FromArgb(color1.R, color1.G, color1.B));
+            foregroundColor[1] = new SvgColourServer(Color.FromArgb(color2.R, color2.G, color2.B));
 
             string[] svgNames = GetResourcesNamesFromFolder("SVGIcons");
 
@@ -205,8 +219,10 @@ namespace MVGTimeTable
             {
                 try
                 {
-                    BitmapImage bi = GetBitmapFromSVG(new Uri(SvgPath + svgName), fontSize);
                     string key = Path.GetFileNameWithoutExtension(svgName).ToUpperInvariant();
+                    bool changeColor1 = Array.IndexOf(FollowForegroundIconKey1, key) >= 0;
+                    bool changeColor2 = Array.IndexOf(FollowForegroundIconKey2, key) >= 0;
+                    BitmapImage bi = GetBitmapFromSVG(new Uri(SvgPath + svgName), fontSize, changeColor1 || changeColor2, changeColor1 ? 0 : 1);
                     icons.Add(key, bi);
                 }
                 catch (ArgumentException ex)
@@ -273,9 +289,11 @@ namespace MVGTimeTable
         /// </summary>
         /// <param name="uri">Uri of the SVG-file</param>
         /// <param name="height">Desired height of the BitmapImage</param>
+        /// <param name="changeColor">If true, image replaces white color with one of the foreground colors</param>
+        /// <param name="newSvgColorIndex"></param>
         /// <returns></returns>
         /// ************************************************************************************************
-        private static BitmapImage GetBitmapFromSVG(Uri uri, double height)
+        private static BitmapImage GetBitmapFromSVG(Uri uri, double height, bool changeColor, int newSvgColorIndex)
         {
             SvgDocument svgDocument;
             XmlDocument xmlDocument = new XmlDocument();
@@ -286,11 +304,68 @@ namespace MVGTimeTable
             }
 
             svgDocument = SvgDocument.Open(xmlDocument);
+            if (changeColor)
+            {
+                svgDocument = ChangeColor(svgDocument, newSvgColorIndex);// "#ff00ff00");
+            }
             Bitmap bitmap = svgDocument.Draw(0, (int)height);
             BitmapImage bitmapImage = ConvertImageToBitmapImage(bitmap);
 
             return bitmapImage;
         }
+
+        /// ************************************************************************************************
+        /// <summary>
+        /// Change color of the SvgDocument
+        /// </summary>
+        /// <param name="inputDocument">Svg document to change</param>
+        /// <param name="newSvgColorIndex">Index of the new foreground color [0-1]</param>
+        /// <returns></returns>
+        /// ************************************************************************************************
+        private static SvgDocument ChangeColor(SvgDocument inputDocument, int newSvgColorIndex)
+        {
+            SvgDocument outputDocument = inputDocument;
+            ApplyRecursive(outputDocument, newSvgColorIndex);
+            return outputDocument;
+        }
+
+        /// ************************************************************************************************
+        /// <summary>
+        /// Recursive function for change color of the all elements of the Svg document
+        /// </summary>
+        /// <param name="svgElement">Svg element</param>
+        /// <param name="newSvgColorIndex">Index of the new foreground color [0-1]</param>
+        /// ************************************************************************************************
+
+        public static void ApplyRecursive(SvgElement svgElement, int newSvgColorIndex)
+        {
+
+            foreach (var e in svgElement.Traverse(e => e.Children))
+            {
+                if (e.FillOpacity != 0.0f && e.StrokeOpacity != 0.0f)
+                {
+                    if (e.TryGetAttribute("fill", out string value))
+                    {
+                        if (string.Compare(value.ToUpperInvariant(), "#FFFFFF") == 0 || string.Compare(value.ToUpperInvariant(), "WHITE") == 0)
+                        {
+                            e.Fill = foregroundColor[newSvgColorIndex];
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="root"></param>
+        /// <param name="childrenSelector"></param>
+        /// <returns></returns>
+        public static IEnumerable<T> Traverse<T>(this T root, Func<T, IEnumerable<T>> childrenSelector)
+            => Enumerable.Repeat(root, 1).Traverse(childrenSelector);
+
+
 
         /// ************************************************************************************************
         /// <summary>

@@ -1,7 +1,60 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MVGLive.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Destination_1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Hauptbahnhof</Value>
+    </Setting>
+    <Setting Name="Destination_2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Karlsplatz</Value>
+    </Setting>
+    <Setting Name="Destination_3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Marienplatz</Value>
+    </Setting>
+    <Setting Name="Destination_4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ostbahnhof</Value>
+    </Setting>
+    <Setting Name="TableFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">36</Value>
+    </Setting>
+    <Setting Name="TableType" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="HeaderBackgroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF000342</Value>
+    </Setting>
+    <Setting Name="TableBackgroundColor1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF00056C</Value>
+    </Setting>
+    <Setting Name="TableBackgroundColor2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF262A74</Value>
+    </Setting>
+    <Setting Name="TableForegroundColor1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFE8E8E8</Value>
+    </Setting>
+    <Setting Name="TableForegroundColor2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#55F1F1F1</Value>
+    </Setting>
+    <Setting Name="HeaderFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">24</Value>
+    </Setting>
+    <Setting Name="HeaderForegroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#99E8E8E8</Value>
+    </Setting>
+    <Setting Name="TimerRefreshInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="CaptionFontSizeCoeff" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">1.3</Value>
+    </Setting>
+    <Setting Name="WarningForegroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFFEB85</Value>
+    </Setting>
+    <Setting Name="NoConnectionForegroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFF4E48</Value>
+    </Setting>
+    <Setting Name="CaptionForegroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFE8E8E8</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

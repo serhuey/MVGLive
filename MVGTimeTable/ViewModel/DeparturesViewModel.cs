@@ -24,50 +24,47 @@ namespace MVGTimeTable.ViewModel
         public FontFamily HeaderFontFamily { get; }
         public double HeaderFontSize { get; }
 
-        public string FirstBackgroundColor { get; } = Common.FirstBackgroundColor;
-        public string SecondBackgroundColor { get; } = Common.SecondBackgroundColor;
-        public string HeaderBackgroundColor { get; } = Common.HeaderBackgroundColor;
-        public string HeaderForegroundColor { get; } = Common.HeaderForegroundColor;
+        public string FirstBackgroundColor { get; set; }// = Common.TableBackgroundColor1;
+        public string SecondBackgroundColor { get; set; }// = Common.TableBackgroundColor2;
+        public string HeaderBackgroundColor { get; set; }// = Common.HeaderBackgroundColor;
+        public string HeaderForegroundColor { get; set; }// = Common.HeaderForegroundColor;
+        public string TableForegroundColor1 { get; set; }
+        public string TableForegroundColor2 { get; set; }
+        public string NoConnectionForegroundColor { get; set; }
+        public string WarningForegroundColor { get; set; }
 
         public Thickness HeaderMargin { get; } = new Thickness(0);
 
         public ObservableCollection<PreparedDeparture> PreparedDepartures { get; set; } = new ObservableCollection<PreparedDeparture>();
 
-        public DeparturesViewModel(string stationName, FontFamily fontFamily, double fontSize, int timerRefreshInterval, int timerRefreshStartInterval) :
-            this(stationName, fontFamily, fontSize, timerRefreshInterval, timerRefreshStartInterval, fontFamily, fontSize)
+
+        public DeparturesViewModel(MVGTimeTableSettings settings, int timerRefreshInterval, int timerRefreshStartInterval) 
         {
+            StationName = settings.StationName;
+            TableFontSize = settings.TableFontSize;
+            TableFontFamily = settings.TableFontFamily;
+            HeaderFontFamily = settings.HeaderFontFamily;
+            HeaderFontSize = settings.HeaderFontSize;
+            FirstBackgroundColor = settings.TableBackgroundColor1;
+            SecondBackgroundColor = settings.TableBackgroundColor2;
+            HeaderBackgroundColor = settings.HeaderBackgroundColor;
+            HeaderForegroundColor = settings.HeaderForegroundColor;
+            TableForegroundColor1 = settings.TableForegroundColor1;
+            TableForegroundColor2 = settings.TableForegroundColor2;
+            NoConnectionForegroundColor = settings.NoConnectionForegroundColor;
+            WarningForegroundColor = settings.WarningForegroundColor;
 
-        }
-
-        /// ************************************************************************************************
-        /// <summary>
-        /// Constructor with partameters
-        /// </summary>
-        /// <param name="stationName">Station name in German. E.g. "Böhmerwaldplatz"</param>
-        /// <param name="fontFamily">Font family</param>
-        /// <param name="fontSize">Font size - the main parameter for scaling</param>
-        /// <param name="timerRefreshInterval">Refresh interval of the departure table in seconds</param>
-        /// <param name="timerRefreshStartInterval">Delay of the first update of the departure table in seconds</param>
-        /// <param name="headerFontFamily">Header font family</param>
-        /// <param name="headerFontSize">Header font size</param>
-        /// ************************************************************************************************
-        public DeparturesViewModel(string stationName, FontFamily fontFamily, double fontSize, int timerRefreshInterval, int timerRefreshStartInterval, FontFamily headerFontFamily, double headerFontSize)
-        {
-            StationName = stationName;
-            departuresModel = new DeparturesModel(stationName, timerRefreshInterval, timerRefreshStartInterval);
-            TableFontSize = fontSize;
-            TableFontFamily = fontFamily;
-            HeaderFontFamily = headerFontFamily;
-            HeaderFontSize = headerFontSize;
-
-            Common.CreateIconsDictionaryFromSVG(out Common.icons, TableFontSize);
+            Common.CreateIconsDictionaryFromSVG(out Common.icons, TableFontSize, TableForegroundColor1, TableForegroundColor2);
 
             AddHeaderToDepartureDataSource(PreparedDepartures, empty: true);
             PreparedDepartures.Add(SetServiceMessage(Common.WarnMessageType[MessageType.Waiting], Common.Messages[MessageType.Waiting]));
 
+            departuresModel = new DeparturesModel(StationName, timerRefreshInterval, timerRefreshStartInterval);
             departuresModel.PropertyChanged += DeparturesModel_PropertyChanged;
             departuresModel.Start();
+
         }
+
 
         /// ************************************************************************************************
         /// <summary>

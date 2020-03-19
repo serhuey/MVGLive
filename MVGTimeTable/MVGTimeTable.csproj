@@ -41,6 +41,9 @@
     <Reference Include="Fizzler, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4ebff4844e382110, processorArchitecture=MSIL">
       <HintPath>..\packages\Fizzler.1.2.0\lib\netstandard2.0\Fizzler.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
     <Reference Include="Svg, Version=3.0.0.0, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
       <HintPath>..\packages\Svg.3.0.102\lib\net452\Svg.dll</HintPath>
     </Reference>
@@ -63,6 +66,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVGTimeTableSettings.cs" />
     <Compile Include="View\Converters\DelayImageMvc.cs" />
     <Compile Include="Model\ConnectionState.cs" />
     <Compile Include="ViewModel\DeparturesViewModel.cs" />
@@ -73,7 +77,6 @@
     <Compile Include="Common.cs" />
     <Compile Include="View\Converters\AdditionalDestinationMvc.cs" />
     <Compile Include="View\Converters\AdditionalLabelsMvc.cs" />
-    <Compile Include="View\Converters\FontSizeMvc.cs" />
     <Compile Include="View\Converters\ForegroundColorMvc.cs" />
     <Compile Include="View\Converters\GleisTextMvc.cs" />
     <Compile Include="View\Converters\HorizontalAlignmentMvc.cs" />

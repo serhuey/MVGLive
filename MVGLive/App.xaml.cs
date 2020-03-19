@@ -1,71 +1,92 @@
-﻿using System;
+﻿using MVGTimeTable;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
+using MVGLive.Properties;
 
 namespace MVGLive
 {
     public partial class App : Application
     {
-        /// <summary>
-        ///
-        /// </summary>
-        public static int TableFontSize { get; set; }
+        private static int tableType;
 
         /// <summary>
         /// 
         /// </summary>
-        public static int HeaderFontSize { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static FontFamily TableFontFamily { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static FontFamily HeaderFontFamily { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static string DefaultDirection1 { get; set; } = "Hirschgarten";
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static string DefaultDirection2 { get; set; } = "Briefzentrum";
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static string DefaultDirection3 { get; set; } = "Steubenplatz";
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static string DefaultDirection4 { get; set; } = "Hauptbahnhof";
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static List<string> Arguments { get; } = new List<string>();
-
         private static bool IsScreenSaverEnabled { get; } = ScreenSaver.GetScreenSaverActive();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public static List<string> Arguments { get; } = GetCommandLineArguments();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private static readonly MVGTimeTableSettings[] timeTableSettings = new MVGTimeTableSettings[4];
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            Arguments.AddRange(GetCommandLineArguments());
-            TableFontFamily = LoadEmbeddedFont("PT Sans");
-            HeaderFontFamily = LoadEmbeddedFont("PT Sans");
-            TableFontSize = 38;
-            HeaderFontSize = (int)(TableFontSize * 0.8f);
-
+            LoadSettings();
             DisableScreenSaver(IsScreenSaverEnabled);
 
-            Window mainWindow = new MainWindow4();
+            Window mainWindow;
+            switch (tableType)
+            {
+                case (int)MainWindowType.OneDestination: mainWindow = new MainWindow1(timeTableSettings); break;
+                case (int)MainWindowType.TwoDestinationsVertical: mainWindow = new MainWindow2(timeTableSettings); break;
+                case (int)MainWindowType.TwoDestinationsHorizontal: mainWindow = new MainWindow2a(timeTableSettings); break;
+                case (int)MainWindowType.ThreeDestinations: mainWindow = new MainWindow3(timeTableSettings); break;
+                case (int)MainWindowType.FourDestinations: mainWindow = new MainWindow4(timeTableSettings); break;
+                default: mainWindow = new MainWindow1(timeTableSettings); break;
+            }
             mainWindow.Show();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void LoadSettings()
+        {
+            string[] destinations = new string[] {  Settings.Default.Destination_1,
+                                                    Settings.Default.Destination_2,
+                                                    Settings.Default.Destination_3,
+                                                    Settings.Default.Destination_4 };
+
+            for (int i = 0; i < timeTableSettings.Length && i < destinations.Length; ++i)
+            {
+                timeTableSettings[i] = new MVGTimeTableSettings(stationName: destinations[i],
+                                                         tableBackgroundColor1: Settings.Default.TableBackgroundColor1,
+                                                         tableBackgroundColor2: Settings.Default.TableBackgroundColor2,
+                                                         tableForegroundColor1: Settings.Default.TableForegroundColor1,
+                                                         tableForegroundColor2: Settings.Default.TableForegroundColor2,
+                                                         headerBackgroundColor: Settings.Default.HeaderBackgroundColor,
+                                                         headerForegroundColor: Settings.Default.HeaderForegroundColor,
+                                                         noConnectionForegroundColor: Settings.Default.NoConnectionForegroundColor,
+                                                         warningForegroundColor: Settings.Default.WarningForegroundColor,
+                                                         tableFontSize: Settings.Default.TableFontSize,
+                                                         headerFontSize: Settings.Default.HeaderFontSize,
+                                                         tableFontFamily: LoadEmbeddedFont("PT Sans"),
+                                                         headerFontFamily: LoadEmbeddedFont("PT Sans"));
+            }
+            SetTableType((MainWindowType)Enum.ToObject(typeof(MainWindowType), Settings.Default.TableType));
+        }
+
+        /// ************************************************************************************************
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// ************************************************************************************************
+        private static void SetTableType(MainWindowType value)
+        {
+            tableType = Enum.IsDefined(typeof(MainWindowType), value) ? (int)value : (Enum.GetValues(typeof(MainWindowType)) as int[])[0];
         }
 
         /// ************************************************************************************************
@@ -75,7 +96,7 @@ namespace MVGLive
         /// <param name="fontFamilyName">Desired FontFamily name</param>
         /// <returns>Desired FontFamily if exists, Default FontFamily if not</returns>
         /// ************************************************************************************************
-        private FontFamily LoadEmbeddedFont(string fontFamilyName)
+        private static FontFamily LoadEmbeddedFont(string fontFamilyName)
         {
             Dictionary<string, FontFamily> fontFamilies = new Dictionary<string, FontFamily>();
             foreach (FontFamily family in Fonts.GetFontFamilies(new Uri("pack://application:,,,/"), "./Fonts/"))
@@ -91,7 +112,7 @@ namespace MVGLive
         /// </summary>
         /// <returns></returns>
         /// ************************************************************************************************
-        private List<string> GetCommandLineArguments()
+        private static List<string> GetCommandLineArguments()
         {
             string[] args = Environment.GetCommandLineArgs();
 

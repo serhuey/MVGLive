@@ -151,7 +151,6 @@ namespace MVGAPI
                 {
                     stationIdRequestQueue.Enqueue(stationName);
 
-                    Console.WriteLine("Elements in Queue:" + stationIdRequestQueue.Count.ToString());
                     if (!stationIdRequestBackgroundWorker.IsBusy)
                     {
                         stationIdRequestBackgroundWorker.RunWorkerAsync();
@@ -221,25 +220,35 @@ namespace MVGAPI
         /// <returns></returns>
         static public string PerformApiRequest(string url, int requestTimeOut = DefaultRequestTimeOut)
         {
-            HttpWebRequest requests = (HttpWebRequest)WebRequest.Create(url);
-            requests.ContentType = "application/json; charset=utf-8";
-            requests.Method = "GET";
-            requests.Timeout = requestTimeOut;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            HttpWebResponse response = null;
+            request.ContentType = "application/json; charset=utf-8";
+            request.Method = "GET";
+            request.Timeout = requestTimeOut;
 
             string result = null;
 
             try
             {
-                HttpWebResponse response = requests.GetResponse() as HttpWebResponse;
+                response = request.GetResponse() as HttpWebResponse;
 
-                using (Stream responseStream = response.GetResponseStream())
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
-                    result = reader.ReadToEnd();
+                    using (Stream responseStream = response.GetResponseStream())
+                    {
+                        StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+                        result = reader.ReadToEnd();
+                    }
                 }
+
+                response?.Close();
             }
             catch (Exception ex) when (ex is WebException || ex is System.Net.Sockets.SocketException || ex is ObjectDisposedException)
             {
+                if(response != null)
+                {
+                    response.Close();
+                }
                 result = null;
             }
 

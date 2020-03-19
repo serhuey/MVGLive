@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Sergei Grigorev. All rights reserved.
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
+using MVGTimeTable.ViewModel;
 using System;
 using System.Globalization;
 using System.Windows.Data;
@@ -15,21 +16,22 @@ namespace MVGTimeTable
             SolidColorBrush brush;
             string foregroundColor = "#FFFFFFFF";
 
-            if (values != null && values.Length != 0 && values[0] != null && parameter != null)
+            if (values != null && values.Length != 0 && values[0] != null && values[1]!= null && parameter != null)
             {
                 string product = values[0].ToString();
+                DeparturesViewModel viewModel = values[1] as DeparturesViewModel;
 
                 if (product == Common.WarnMessageType[MessageType.Warning])
                 {
-                    foregroundColor = Common.WarningForegroundColor;
+                    foregroundColor = viewModel.WarningForegroundColor ?? foregroundColor;
                 }
                 else if (product == Common.WarnMessageType[MessageType.NoConnection])
                 {
-                    foregroundColor = Common.NoConnectionForegroundColor;
+                    foregroundColor = viewModel.NoConnectionForegroundColor ?? foregroundColor;
                 }
                 else if (product == Common.HeaderProduct)
                 {
-                    foregroundColor = Common.HeaderForegroundColor;
+                    foregroundColor = viewModel.HeaderForegroundColor;
                 }
                 else
                 {
@@ -37,22 +39,22 @@ namespace MVGTimeTable
                     switch (parameter.ToString())
                     {
                         case "labelProduct":
-                            foregroundColor = Common.FirstForegroundColor;
+                            foregroundColor = viewModel.TableForegroundColor1 ?? foregroundColor;
                             break;
                         case "labelMainDestination":
-                            foregroundColor = Common.FirstForegroundColor;
+                            foregroundColor = viewModel.TableForegroundColor1 ?? foregroundColor;
                             break;
                         case "labelAdditionalDestination":
-                            foregroundColor = Common.SecondForegroundColor;
+                            foregroundColor = viewModel.TableForegroundColor2 ?? foregroundColor;
                             break;
                         case "labelGleis":
-                            foregroundColor = Common.HeaderForegroundColor;
+                            foregroundColor = viewModel.HeaderForegroundColor ?? foregroundColor;
                             break;
                         case "labelTimeToDeparture":
-                            foregroundColor = Common.FirstForegroundColor;
+                            foregroundColor = viewModel.TableForegroundColor1 ?? foregroundColor;
                             break;
                         case "labelDepartureTime":
-                            foregroundColor = Common.SecondForegroundColor;
+                            foregroundColor = viewModel.TableForegroundColor2 ?? foregroundColor;
                             break;
                     }
                 }
