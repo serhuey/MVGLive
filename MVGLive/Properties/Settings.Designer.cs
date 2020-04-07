@@ -26,48 +26,48 @@ namespace MVGLive.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Hauptbahnhof")]
-        public string Destination_1 {
+        public string Station1 {
             get {
-                return ((string)(this["Destination_1"]));
+                return ((string)(this["Station1"]));
             }
             set {
-                this["Destination_1"] = value;
+                this["Station1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Karlsplatz")]
-        public string Destination_2 {
+        public string Station2 {
             get {
-                return ((string)(this["Destination_2"]));
+                return ((string)(this["Station2"]));
             }
             set {
-                this["Destination_2"] = value;
+                this["Station2"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Marienplatz")]
-        public string Destination_3 {
+        public string Station3 {
             get {
-                return ((string)(this["Destination_3"]));
+                return ((string)(this["Station3"]));
             }
             set {
-                this["Destination_3"] = value;
+                this["Station3"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Ostbahnhof")]
-        public string Destination_4 {
+        public string Station4 {
             get {
-                return ((string)(this["Destination_4"]));
+                return ((string)(this["Station4"]));
             }
             set {
-                this["Destination_4"] = value;
+                this["Station4"] = value;
             }
         }
         
@@ -85,7 +85,7 @@ namespace MVGLive.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int TableType {
             get {
                 return ((int)(this["TableType"]));
@@ -193,18 +193,6 @@ namespace MVGLive.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1.3")]
-        public float CaptionFontSizeCoeff {
-            get {
-                return ((float)(this["CaptionFontSizeCoeff"]));
-            }
-            set {
-                this["CaptionFontSizeCoeff"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#FFFFEB85")]
         public string WarningForegroundColor {
             get {
@@ -236,6 +224,150 @@ namespace MVGLive.Properties {
             }
             set {
                 this["CaptionForegroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FFE8E800")]
+        public string TableForegroundColor3 {
+            get {
+                return ((string)(this["TableForegroundColor3"]));
+            }
+            set {
+                this["TableForegroundColor3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
+        public int FontSizeMin {
+            get {
+                return ((int)(this["FontSizeMin"]));
+            }
+            set {
+                this["FontSizeMin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("45")]
+        public int CaptionFontSize {
+            get {
+                return ((int)(this["CaptionFontSize"]));
+            }
+            set {
+                this["CaptionFontSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public int ClockFontSize {
+            get {
+                return ((int)(this["ClockFontSize"]));
+            }
+            set {
+                this["ClockFontSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FFE8E8E8")]
+        public string ClockForegroundColor {
+            get {
+                return ((string)(this["ClockForegroundColor"]));
+            }
+            set {
+                this["ClockForegroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FF000342")]
+        public string ClockBackgroundColor {
+            get {
+                return ((string)(this["ClockBackgroundColor"]));
+            }
+            set {
+                this["ClockBackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#55F1F1F1")]
+        public string BorderColor {
+            get {
+                return ((string)(this["BorderColor"]));
+            }
+            set {
+                this["BorderColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PT Sans")]
+        public string TableFontFamily {
+            get {
+                return ((string)(this["TableFontFamily"]));
+            }
+            set {
+                this["TableFontFamily"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PT Sans")]
+        public string HeaderFontFamily {
+            get {
+                return ((string)(this["HeaderFontFamily"]));
+            }
+            set {
+                this["HeaderFontFamily"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PT Sans")]
+        public string CaptionFontFamily {
+            get {
+                return ((string)(this["CaptionFontFamily"]));
+            }
+            set {
+                this["CaptionFontFamily"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PT Sans")]
+        public string ClockFontFamily {
+            get {
+                return ((string)(this["ClockFontFamily"]));
+            }
+            set {
+                this["ClockFontFamily"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FF000342")]
+        public string CaptionBackgroundColor {
+            get {
+                return ((string)(this["CaptionBackgroundColor"]));
+            }
+            set {
+                this["CaptionBackgroundColor"] = value;
             }
         }
     }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         x:Class="MVGLive.MainWindow2"
         mc:Ignorable="d"
-        Title="MainWindow2" Height="450" Width="800" Background="#FF00056C" WindowState="Maximized" Cursor="None" ResizeMode="NoResize" WindowStyle="None">
+        Title="MainWindow2" Height="450" Width="800" Background="{Binding ClockBackgroundColor}" WindowState="Maximized" Cursor="None" ResizeMode="NoResize" WindowStyle="None" Closed="Window_Closed">
 
-    <Grid x:Name="gridMain" Background="#FF00056C" DockPanel.Dock="Bottom" Cursor="None">
+    <Grid x:Name="gridMain" Background="{Binding ClockBackgroundColor}" DockPanel.Dock="Bottom" Cursor="None">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
@@ -16,11 +16,11 @@
             <ColumnDefinition Width="10*" />
             <ColumnDefinition Width="10*" />
         </Grid.ColumnDefinitions>
-        <Label x:Name="LabelTime" Content="00:00:00" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Foreground="#FFE2E2E2" Grid.Column="1" />
+        <Label x:Name="LabelTime" Content="00:00:00" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Foreground="{Binding ClockForegroundColor}" Grid.Column="1" />
 
-        <Border BorderBrush="#FF7477AC" BorderThickness="3" SnapsToDevicePixels="True" Margin="0" Grid.RowSpan="2" Grid.Row="1">
+        <Border BorderBrush="{Binding BorderColor}" BorderThickness="3" SnapsToDevicePixels="True" Margin="0" Grid.RowSpan="2" Grid.Row="1">
             <StackPanel Margin="0">
-                <Label x:Name="Text1" Margin="14,10,0,10" Background="{x:Null}" Foreground="#FFE2E2E2" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold">
+                <Label x:Name="Text1" Margin="14,10,0,10"  Foreground="{Binding CaptionForegroundColor}" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold">
                     <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type Label}, Mode=FindAncestor}}">
                         <TextBlock.Effect>
                             <DropShadowEffect Opacity="0.8" ShadowDepth="3" />
@@ -30,9 +30,9 @@
                 <MVGTimeTable:MVGTimeTable x:Name="Table1" />
             </StackPanel>
         </Border>
-        <Border BorderBrush="#FF7477AC" BorderThickness="0,3,3,3" SnapsToDevicePixels="True" Margin="0" Grid.Column="1" Grid.Row="1">
+        <Border BorderBrush="{Binding BorderColor}" BorderThickness="0,3,3,3" SnapsToDevicePixels="True" Margin="0" Grid.Column="1" Grid.Row="1">
             <StackPanel Margin="0">
-                <Label x:Name="Text2" Margin="14,10,0,10" Background="{x:Null}" Foreground="#FFE2E2E2" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold">
+                <Label x:Name="Text2" Margin="14,10,0,10"  Foreground="{Binding CaptionForegroundColor}" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold">
                     <TextBlock Text="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type Label}, Mode=FindAncestor}}">
                         <TextBlock.Effect>
                             <DropShadowEffect Opacity="0.8" ShadowDepth="3" />

@@ -107,9 +107,10 @@ namespace MVGTimeTable
                                                          "SGLEIS10", "SGLEIS11", "SGLEIS12", "SGLEIS13", "SGLEIS14", "SGLEIS15", "SGLEIS16" };
         public static readonly string[] FollowForegroundIconKey1 = {    UBahnMonoFullIconKey, SBahnMonoFullIconKey, USBahnsMonoFullIconKey,
                                                                         TrainFirstHalfIconKey, TrainSecondHalfIconKey, FussballIconKey,
-                                                                        ZooIconKey, MesseIconKey, OlympiaIconKey, WaitingIconKey };
+                                                                        ZooIconKey, MesseIconKey, OlympiaIconKey, WaitingIconKey, S1FlughafenIconKey, S8FlughafenIconKey};
         public static readonly string[] FollowForegroundIconKey2 = {    UBahnMonoHalfIconKey, SBahnMonoHalfIconKey, USBahnsMonoHalfIconKey,
                                                                         Delay1IconKey, Delay2IconKey, Delay3IconKey };
+        public static readonly string[] FollowForegroundIconKey3 = { NowIconKey };
 
         public const string DefaultUBahnIconKey = "UBAHN";
         public const string DefaultSBahnIconKey = "SBAHN";
@@ -141,8 +142,10 @@ namespace MVGTimeTable
         public const string Delay2IconKey = "DELAY2";
         public const string Delay3IconKey = "DELAY3";
         public const string WaitingIconKey = "WAIT";
+        public const string S1FlughafenIconKey = "S1FH";
+        public const string S8FlughafenIconKey = "S8FH";
 
-        public static readonly Dictionary<string, string> AirportIconKeys = new Dictionary<string, string> { { "S1", "S1FH" }, { "S8", "S8FH" } };
+        public static readonly Dictionary<string, string> AirportIconKeys = new Dictionary<string, string> { { SBahnIconKey[1], S1FlughafenIconKey }, { SBahnIconKey[8], S8FlughafenIconKey } };
 
         public static readonly string[] AirportMarkers = { "FLUGHAFEN" };
         public static readonly string[] BusMarkers = { "BUS" };
@@ -186,7 +189,7 @@ namespace MVGTimeTable
 
         public static Dictionary<string, BitmapImage> icons;
 
-        private static readonly SvgColourServer[] foregroundColor = new SvgColourServer[2];
+        private static readonly SvgColourServer[] foregroundColor = new SvgColourServer[3];
 
 
         /// ************************************************************************************************
@@ -202,16 +205,19 @@ namespace MVGTimeTable
         public static bool CreateIconsDictionaryFromSVG(out Dictionary<string, BitmapImage> icons,
                                                         double fontSize,
                                                         string foregroundColor1,
-                                                        string foregroundColor2)
+                                                        string foregroundColor2,
+                                                        string foregroundColor3)
         {
             bool result = true;
 
             icons = new Dictionary<string, BitmapImage>();
             System.Windows.Media.Color color1 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(foregroundColor1);
             System.Windows.Media.Color color2 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(foregroundColor2);
+            System.Windows.Media.Color color3 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(foregroundColor3);
 
             foregroundColor[0] = new SvgColourServer(Color.FromArgb(color1.R, color1.G, color1.B));
             foregroundColor[1] = new SvgColourServer(Color.FromArgb(color2.R, color2.G, color2.B));
+            foregroundColor[2] = new SvgColourServer(Color.FromArgb(color3.R, color3.G, color3.B));
 
             string[] svgNames = GetResourcesNamesFromFolder("SVGIcons");
 
@@ -222,7 +228,9 @@ namespace MVGTimeTable
                     string key = Path.GetFileNameWithoutExtension(svgName).ToUpperInvariant();
                     bool changeColor1 = Array.IndexOf(FollowForegroundIconKey1, key) >= 0;
                     bool changeColor2 = Array.IndexOf(FollowForegroundIconKey2, key) >= 0;
-                    BitmapImage bi = GetBitmapFromSVG(new Uri(SvgPath + svgName), fontSize, changeColor1 || changeColor2, changeColor1 ? 0 : 1);
+                    bool changeColor3 = Array.IndexOf(FollowForegroundIconKey3, key) >= 0;
+
+                    BitmapImage bi = GetBitmapFromSVG(new Uri(SvgPath + svgName), fontSize, changeColor1 || changeColor2 || changeColor3, changeColor1 ? 0 : (changeColor2 ? 1 : 2));
                     icons.Add(key, bi);
                 }
                 catch (ArgumentException ex)

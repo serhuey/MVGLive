@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:MVGTimeTable"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800" Background="{Binding FirstBackgroundColor}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+             d:DesignHeight="450" d:DesignWidth="800" Background="{Binding TableBackgroundColor1}" ScrollViewer.VerticalScrollBarVisibility="Disabled" SnapsToDevicePixels="True">
 
     <UserControl.Resources>
         <local:ProductLabelMvc x:Key="ProductLabelMvc" />
@@ -33,124 +33,164 @@
                     <Setter Property="Tag" Value="Header"></Setter>
                     <Setter Property="FontStretch" Value="Condensed"></Setter>
                     <Setter Property="FontSize" Value="{Binding Path=DataContext.HeaderFontSize, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.HeaderFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                     <Setter Property="SnapsToDevicePixels" Value="True"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="2">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="3">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="4">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="5">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="6">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="7">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="8">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="9">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="10">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="11">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="12">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="13">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="14">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="15">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="16">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="17">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="18">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="19">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="20">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="21">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="22">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="23">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="24">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="25">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="26">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="27">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="28">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="29">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="30">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="31">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="32">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="33">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="34">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="35">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="36">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="37">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="38">
-                    <Setter Property="Background" Value="{Binding Path=DataContext.SecondBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value="{Binding Path=DataContext.TableBackgroundColor2, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="ItemsControl.AlternationIndex" Value="39">
-                    <Setter Property="Background" Value ="{Binding Path=DataContext.FirstBackgroundColor, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="Background" Value ="{Binding Path=DataContext.TableBackgroundColor1, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
+                    <Setter Property="FontFamily" Value="{Binding Path=DataContext.TableFontFamily, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"></Setter>
                 </Trigger>
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="Background" Value="Transparent" />
@@ -175,7 +215,7 @@
 
     <DockPanel>
         <ListView x:Name="listViewTimeTable" DockPanel.Dock="Bottom" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding PreparedDepartures}"
-                  ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0" Background="#FF00056C" 
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0" Background="{Binding HeaderBackgroundColor}" 
                   AlternationCount="40" SnapsToDevicePixels="True" FontFamily="{Binding TableFontFamily}" FontSize="{Binding TableFontSize, FallbackValue=20}">
             <ListView.Resources>
                 <SolidColorBrush x:Key="ItemBackgroundHover" Color="Transparent" />

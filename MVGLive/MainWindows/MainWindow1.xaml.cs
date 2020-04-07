@@ -16,31 +16,47 @@ namespace MVGLive
     public partial class MainWindow1 : Window
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string BorderColor { get; private set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string ClockBackgroundColor { get; private set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string ClockForegroundColor { get; private set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string CaptionForegroundColor { get; private set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string CaptionBackgroundColor { get; private set; }
+
+        /// <summary>
         ///
         /// </summary>
-        public MainWindow1(MVGTimeTableSettings[] settings)
+        public MainWindow1()
         {
-            if (settings != null && settings.Length >= 1)
-            {
-                InitializeComponent();
+            DataContext = this;
+            BorderColor = Properties.Settings.Default.BorderColor;
+            ClockBackgroundColor = Properties.Settings.Default.ClockBackgroundColor;
+            ClockForegroundColor = Properties.Settings.Default.ClockForegroundColor;
+            CaptionForegroundColor = Properties.Settings.Default.CaptionForegroundColor;
+            CaptionBackgroundColor = Properties.Settings.Default.CaptionBackgroundColor;
 
-                MainCommon.SetupTables(new System.Windows.Controls.Label[] { Text1 },
-                                        new MVGTimeTable.MVGTimeTable[] { Table1 },
-                                        settings);
-
-                MainCommon.SetupTimeLabel(LabelTime, settings[0].TableFontFamily, settings[0].TableFontSize);
-                // Clock Refresh Timer
-                DispatcherTimer timerClock = new DispatcherTimer
-                {
-                    Interval = TimeSpan.FromSeconds(1)
-                };
-                timerClock.Tick += TimerClock_Tick;
-                timerClock.Start();
-            }
-            else
+            InitializeComponent();
+            MainCommon.SetupTables(new System.Windows.Controls.Label[] { Text1 }, new MVGTimeTable.MVGTimeTable[] { Table1 });
+            MainCommon.SetupTimeLabel(LabelTime);
+            DispatcherTimer timerClock = new DispatcherTimer
             {
-                Debug.Assert(false, "Wrong MainWindow1 constructor's parameter");
-            }
+                Interval = TimeSpan.FromSeconds(1)
+            };
+            timerClock.Tick += TimerClock_Tick;
+            timerClock.Start();
         }
 
         /// <summary>
@@ -51,6 +67,11 @@ namespace MVGLive
         private void TimerClock_Tick(object sender, EventArgs e)
         {
             MainCommon.UpdateClockLabel(LabelTime);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            App.Current.Shutdown();
         }
     }
 }

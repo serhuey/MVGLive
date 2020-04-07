@@ -16,7 +16,9 @@ namespace MVGAPI
 {
     public static class MVGAPI
     {
-        static public bool IsConnected { get; set; } = false;
+        public static bool IsConnected { get; set; } = false;
+        public static List<string> StationsList { get; }
+
         private const string StationType = "station";
         private const string RootUrlName = "https://www.mvg.de/api/fahrinfo";
         private const string QueryUrlName = RootUrlName + "/location/queryWeb?q=";
@@ -25,7 +27,7 @@ namespace MVGAPI
         private const string IdMvvStations = "MVVStations.txt";
         private const int DefaultRequestTimeOut = 15000;
         private static ConcurrentDictionary<string, string> localIdСache;
-        private readonly static ConcurrentQueue<string> stationIdRequestQueue = new ConcurrentQueue<string>();
+        private static readonly ConcurrentQueue<string> stationIdRequestQueue = new ConcurrentQueue<string>();
         private static readonly BackgroundWorker stationIdRequestBackgroundWorker = new BackgroundWorker();
 
 
@@ -35,14 +37,16 @@ namespace MVGAPI
         /// </summary>
         static MVGAPI()
         {
-            BuildLocalStationIdCash();
+            BuildLocalStationIdCache();
+            StationsList = new List<string>(localIdСache.Keys.Where(key => !string.IsNullOrEmpty(localIdСache[key].TrimStart(new char[]{ ' ' }))));
+
             stationIdRequestBackgroundWorker.DoWork += new DoWorkEventHandler(StationIdRequestBackgroundWorker_DoWork);
             stationIdRequestBackgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(StationIdRequestBackgroundWorker_RunWorkerCompleted);
         }
 
 
         /// <summary>
-        /// Get deserialized departures for the station with ID
+        /// Get deserialized departures for the station ID
         /// </summary>
         /// <param name="stationID">Unique station ID</param>
         /// <returns></returns>
@@ -137,7 +141,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
         /// <returns>Station ID, if station name exists, "" otherwise</returns>
-        static public string GetIdForStation(string stationName)
+        public static string GetIdForStation(string stationName)
         {
             if (string.IsNullOrEmpty(stationName)) return "";
 
@@ -205,7 +209,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="stationID">Unique numeric station ID</param>
         /// <returns></returns>
-        static public string GetJsonDepartures(string stationID)
+        public static string GetJsonDepartures(string stationID)
         {
             string url = DepartureUrl + stationID + DepartureUrlPostfix;
             string result = PerformApiRequest(url);
@@ -218,7 +222,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        static public string PerformApiRequest(string url, int requestTimeOut = DefaultRequestTimeOut)
+        public static string PerformApiRequest(string url, int requestTimeOut = DefaultRequestTimeOut)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             HttpWebResponse response = null;
@@ -245,7 +249,7 @@ namespace MVGAPI
             }
             catch (Exception ex) when (ex is WebException || ex is System.Net.Sockets.SocketException || ex is ObjectDisposedException)
             {
-                if(response != null)
+                if (response != null)
                 {
                     response.Close();
                 }
@@ -271,7 +275,7 @@ namespace MVGAPI
         /// Create array without duplicates
         /// </summary>
         /// <param name="deserializedDepartures"></param>
-        static public void DeleteDuplicates(ref DeserializedDepartures[] deserializedDepartures)
+        public static void DeleteDuplicates(ref DeserializedDepartures[] deserializedDepartures)
         {
             List<DeserializedDepartures> departuresNewList = new List<DeserializedDepartures>();
             List<int> arrayHashes = new List<int>();
@@ -294,7 +298,7 @@ namespace MVGAPI
         /// Primary key - departureTime,
         /// Secondary key - product+label
         /// </summary>
-        static public void Sort(ref DeserializedDepartures[] deserializedDepartures)
+        public static void Sort(ref DeserializedDepartures[] deserializedDepartures)
         {
             Array.Sort(deserializedDepartures, delegate (DeserializedDepartures dp1, DeserializedDepartures dp2)
             {
@@ -314,14 +318,14 @@ namespace MVGAPI
         /// This file was made from xls file downloaded here: https://www.opendata-oepnv.de/ht/de/organisation/verkehrsverbuende/mvv/startseite
         /// Each line of this file must content two strings (key and value) separated with tab
         /// </summary>
-        static private void BuildLocalStationIdCash()
+        private static void BuildLocalStationIdCache()
         {
             string fileContent = ReadResource(IdMvvStations);
             string separator = "\t";
             string[] splitContent;
             string line;
 
-            localIdСache = new ConcurrentDictionary<string, string>();
+            localIdСache = new ConcurrentDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
             using (StringReader reader = new StringReader(fileContent))
             {
@@ -337,7 +341,6 @@ namespace MVGAPI
                     {
                         continue;
                     }
-
                     localIdСache.TryAdd(splitContent[0], splitContent[1]);
                 }
             }

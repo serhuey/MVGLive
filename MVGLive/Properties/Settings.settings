@@ -2,23 +2,23 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MVGLive.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Destination_1" Type="System.String" Scope="User">
+    <Setting Name="Station1" Type="System.String" Scope="User">
       <Value Profile="(Default)">Hauptbahnhof</Value>
     </Setting>
-    <Setting Name="Destination_2" Type="System.String" Scope="User">
+    <Setting Name="Station2" Type="System.String" Scope="User">
       <Value Profile="(Default)">Karlsplatz</Value>
     </Setting>
-    <Setting Name="Destination_3" Type="System.String" Scope="User">
+    <Setting Name="Station3" Type="System.String" Scope="User">
       <Value Profile="(Default)">Marienplatz</Value>
     </Setting>
-    <Setting Name="Destination_4" Type="System.String" Scope="User">
+    <Setting Name="Station4" Type="System.String" Scope="User">
       <Value Profile="(Default)">Ostbahnhof</Value>
     </Setting>
     <Setting Name="TableFontSize" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">36</Value>
     </Setting>
     <Setting Name="TableType" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="HeaderBackgroundColor" Type="System.String" Scope="User">
       <Value Profile="(Default)">#FF000342</Value>
@@ -44,9 +44,6 @@
     <Setting Name="TimerRefreshInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
-    <Setting Name="CaptionFontSizeCoeff" Type="System.Single" Scope="User">
-      <Value Profile="(Default)">1.3</Value>
-    </Setting>
     <Setting Name="WarningForegroundColor" Type="System.String" Scope="User">
       <Value Profile="(Default)">#FFFFEB85</Value>
     </Setting>
@@ -55,6 +52,42 @@
     </Setting>
     <Setting Name="CaptionForegroundColor" Type="System.String" Scope="User">
       <Value Profile="(Default)">#FFE8E8E8</Value>
+    </Setting>
+    <Setting Name="TableForegroundColor3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFE8E800</Value>
+    </Setting>
+    <Setting Name="FontSizeMin" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="CaptionFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">45</Value>
+    </Setting>
+    <Setting Name="ClockFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="ClockForegroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFE8E8E8</Value>
+    </Setting>
+    <Setting Name="ClockBackgroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF000342</Value>
+    </Setting>
+    <Setting Name="BorderColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#55F1F1F1</Value>
+    </Setting>
+    <Setting Name="TableFontFamily" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PT Sans</Value>
+    </Setting>
+    <Setting Name="HeaderFontFamily" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PT Sans</Value>
+    </Setting>
+    <Setting Name="CaptionFontFamily" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PT Sans</Value>
+    </Setting>
+    <Setting Name="ClockFontFamily" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PT Sans</Value>
+    </Setting>
+    <Setting Name="CaptionBackgroundColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FF000342</Value>
     </Setting>
   </Settings>
 </SettingsFile>

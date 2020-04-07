@@ -4,9 +4,12 @@
 using MVGAPI;
 using MVGTimeTable.Model;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Configuration;
 using System.Globalization;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
@@ -18,18 +21,19 @@ namespace MVGTimeTable.ViewModel
         private readonly DeparturesModel departuresModel;
         private ConnectionState connectionStatus;
 
-        public string StationName { get; }
-        public FontFamily TableFontFamily { get; }
-        public double TableFontSize { get; }
-        public FontFamily HeaderFontFamily { get; }
-        public double HeaderFontSize { get; }
+        public string StationName { get; private set; }
+        public FontFamily TableFontFamily { get; private set; }
+        public int TableFontSize { get; private set; }
+        public FontFamily HeaderFontFamily { get; private set; }
+        public int HeaderFontSize { get; private set; }
 
-        public string FirstBackgroundColor { get; set; }// = Common.TableBackgroundColor1;
-        public string SecondBackgroundColor { get; set; }// = Common.TableBackgroundColor2;
-        public string HeaderBackgroundColor { get; set; }// = Common.HeaderBackgroundColor;
-        public string HeaderForegroundColor { get; set; }// = Common.HeaderForegroundColor;
+        public string TableBackgroundColor1 { get; set; }
+        public string TableBackgroundColor2 { get; set; }
+        public string HeaderBackgroundColor { get; set; }
+        public string HeaderForegroundColor { get; set; }
         public string TableForegroundColor1 { get; set; }
         public string TableForegroundColor2 { get; set; }
+        public string TableForegroundColor3 { get; set; }
         public string NoConnectionForegroundColor { get; set; }
         public string WarningForegroundColor { get; set; }
 
@@ -38,23 +42,13 @@ namespace MVGTimeTable.ViewModel
         public ObservableCollection<PreparedDeparture> PreparedDepartures { get; set; } = new ObservableCollection<PreparedDeparture>();
 
 
-        public DeparturesViewModel(MVGTimeTableSettings settings, int timerRefreshInterval, int timerRefreshStartInterval) 
+        public DeparturesViewModel(ApplicationSettingsBase settings, string stationNumberProperty, int timerRefreshInterval, int timerRefreshStartInterval, FontFamily tableFontFamily, FontFamily headerFontFamily)
         {
-            StationName = settings.StationName;
-            TableFontSize = settings.TableFontSize;
-            TableFontFamily = settings.TableFontFamily;
-            HeaderFontFamily = settings.HeaderFontFamily;
-            HeaderFontSize = settings.HeaderFontSize;
-            FirstBackgroundColor = settings.TableBackgroundColor1;
-            SecondBackgroundColor = settings.TableBackgroundColor2;
-            HeaderBackgroundColor = settings.HeaderBackgroundColor;
-            HeaderForegroundColor = settings.HeaderForegroundColor;
-            TableForegroundColor1 = settings.TableForegroundColor1;
-            TableForegroundColor2 = settings.TableForegroundColor2;
-            NoConnectionForegroundColor = settings.NoConnectionForegroundColor;
-            WarningForegroundColor = settings.WarningForegroundColor;
+            TableFontFamily = tableFontFamily;
+            HeaderFontFamily = headerFontFamily;
 
-            Common.CreateIconsDictionaryFromSVG(out Common.icons, TableFontSize, TableForegroundColor1, TableForegroundColor2);
+            CopySettingsToProperties(settings, stationNumberProperty);
+            Common.CreateIconsDictionaryFromSVG(out Common.icons, TableFontSize, TableForegroundColor1, TableForegroundColor2, TableForegroundColor3);
 
             AddHeaderToDepartureDataSource(PreparedDepartures, empty: true);
             PreparedDepartures.Add(SetServiceMessage(Common.WarnMessageType[MessageType.Waiting], Common.Messages[MessageType.Waiting]));
@@ -62,8 +56,82 @@ namespace MVGTimeTable.ViewModel
             departuresModel = new DeparturesModel(StationName, timerRefreshInterval, timerRefreshStartInterval);
             departuresModel.PropertyChanged += DeparturesModel_PropertyChanged;
             departuresModel.Start();
-
         }
+
+        private void CopySettingsToProperties(System.Configuration.ApplicationSettingsBase settings, string stationNumberProperty)
+        {
+            PropertyInfo[] properties = GetType().GetProperties();
+            object obj;
+            string propertyName;
+            SettingsPropertyCollection settingsProperties = settings.Properties;
+            List<string> settingsPropertiesNames = new List<string>();
+            foreach(SettingsProperty settingsProperty in settingsProperties)
+            {
+                settingsPropertiesNames.Add(settingsProperty.Name);
+            }
+            foreach (PropertyInfo pInfo in properties)
+            {
+                propertyName = pInfo.Name;
+
+                if (string.Compare(propertyName, nameof(StationName)) == 0)
+                {
+                    propertyName = stationNumberProperty;
+                }
+
+                if(!settingsPropertiesNames.Contains(propertyName))
+                {
+                    continue;
+                }
+                try
+                {
+                    obj = settings[propertyName];
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    continue;
+                }
+
+                if (pInfo.PropertyType == settings[propertyName].GetType())
+                {
+                    var settingValue = settings[propertyName];
+                    pInfo.SetValue(this, settingValue);
+                }
+            }
+            if(string.IsNullOrEmpty(StationName))
+            {
+                throw new ArgumentException("The station name for DeparturesViewModel is not correct");
+            }
+        }
+
+        //public DeparturesViewModel(MVGTimeTableSettings settings, int timerRefreshInterval, int timerRefreshStartInterval)
+        //{
+        //    StationName = settings.StationName;
+        //    TableFontSize = settings.TableFontSize;
+        //    TableFontFamily = settings.TableFontFamily;
+        //    HeaderFontFamily = settings.HeaderFontFamily;
+        //    HeaderFontSize = settings.HeaderFontSize;
+        //    TableBackgroundColor1 = settings.TableBackgroundColor1;
+        //    TableBackgroundColor2 = settings.TableBackgroundColor2;
+        //    HeaderBackgroundColor = settings.HeaderBackgroundColor;
+        //    HeaderForegroundColor = settings.HeaderForegroundColor;
+        //    TableForegroundColor1 = settings.TableForegroundColor1;
+        //    TableForegroundColor2 = settings.TableForegroundColor2;
+        //    TableForegroundColor3 = settings.TableForegroundColor3;
+
+        //    NoConnectionForegroundColor = settings.NoConnectionForegroundColor;
+        //    WarningForegroundColor = settings.WarningForegroundColor;
+
+        //    Common.CreateIconsDictionaryFromSVG(out Common.icons, TableFontSize, TableForegroundColor1, TableForegroundColor2, TableForegroundColor3);
+
+        //    AddHeaderToDepartureDataSource(PreparedDepartures, empty: true);
+        //    PreparedDepartures.Add(SetServiceMessage(Common.WarnMessageType[MessageType.Waiting], Common.Messages[MessageType.Waiting]));
+
+        //    departuresModel = new DeparturesModel(StationName, timerRefreshInterval, timerRefreshStartInterval);
+        //    departuresModel.PropertyChanged += DeparturesModel_PropertyChanged;
+        //    departuresModel.Start();
+
+        //}
 
 
         /// ************************************************************************************************
@@ -160,7 +228,7 @@ namespace MVGTimeTable.ViewModel
                 Product = Common.HeaderProduct,
                 Label = empty ? "" : "Linie",
                 Destination = empty ? "" : "Ziel",
-                Platform = empty ? "" : ((departuresModel.SGleisColumnPresent) ? "Gleis" : (departuresModel.GleisColumnPresent ? "HSt." : "")),
+                Platform = empty ? "" : (departuresModel.SGleisColumnPresent ? " Gleis" : (departuresModel.GleisColumnPresent ? " HSt." : "")),
                 Station = StationName,
                 LineBackgroundColor = "",
                 MinutesToDeparture = empty ? "" : "Abfahrt",

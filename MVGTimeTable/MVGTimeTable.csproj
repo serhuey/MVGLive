@@ -66,7 +66,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MVGTimeTableSettings.cs" />
     <Compile Include="View\Converters\DelayImageMvc.cs" />
     <Compile Include="Model\ConnectionState.cs" />
     <Compile Include="ViewModel\DeparturesViewModel.cs" />
