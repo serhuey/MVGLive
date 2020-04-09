@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -241,6 +244,7 @@ namespace MVGLive
 
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -259,6 +263,7 @@ namespace MVGLive
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -274,7 +279,7 @@ namespace MVGLive
             StationsList = new StationsListProvider(MVGAPI.MVGAPI.StationsList);
         }
 
-
+        /// ************************************************************************************************
         private void LoadProperties(bool callFromRestoreDefault = false)
         {
             if (!callFromRestoreDefault)
@@ -314,6 +319,7 @@ namespace MVGLive
             HeaderFontFamilySetting = Properties.Settings.Default.HeaderFontFamily;
         }
 
+        /// ************************************************************************************************
         private void SaveProperties()
         {
             Properties.Settings.Default.TableType = (int)MainWindowTypeSetting;
@@ -352,27 +358,32 @@ namespace MVGLive
             Properties.Settings.Default.HeaderFontFamily = HeaderFontFamilySetting;
         }
 
+        /// ************************************************************************************************
         private void RestoreDefaultProperties()
         {
             Properties.Settings.Default.Reset();
             LoadProperties(callFromRestoreDefault: true);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
         public ICommand OkCommand { get; set; }
 
+        /// ************************************************************************************************
         private void ExecuteOkMethod(object obj)
         {
             SaveProperties();
         }
 
+        /// ************************************************************************************************
         private bool CanExecuteOkMethod(object arg)
         {
             return true;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -387,34 +398,40 @@ namespace MVGLive
             }
         }
 
+        /// ************************************************************************************************
         private bool CanExecuteDefaultMethod(object arg)
         {
             return true;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
         public ICommand FontSizeChangedCommand { get; set; }
-
+        /// ************************************************************************************************
         private void ExecuteFontSizeChangedMethod(object obj)
         {
         }
+        /// ************************************************************************************************
         private bool CanExecuteFontSizeChangedMethod(object arg)
         {
             return true;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
         public ICommand FontSizePreviewTextInputCommand { get; set; }
 
+        /// ************************************************************************************************
         private void ExecuteFontSizePreviewTextMethod(object obj)
         {
             if (obj is TextCompositionEventArgs)
@@ -425,16 +442,19 @@ namespace MVGLive
 
         private static readonly Regex _regex = new Regex("[^0-9.-]+");
 
+        /// ************************************************************************************************
         private static bool IsFontSizeTextAllowed(string text)
         {
             return _regex.IsMatch(text);
         }
 
+        /// ************************************************************************************************
         private bool CanExecuteFontSizePreviewTextMethod(object arg)
         {
             return true;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -446,6 +466,7 @@ namespace MVGLive
 
         }
 
+        /// ************************************************************************************************
         private void ExecuteColorPickMethod(object parameter)
         {
             string value = GetPropertyByName(parameter);
@@ -463,6 +484,7 @@ namespace MVGLive
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -472,6 +494,7 @@ namespace MVGLive
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -496,6 +519,7 @@ namespace MVGLive
         }
 
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>

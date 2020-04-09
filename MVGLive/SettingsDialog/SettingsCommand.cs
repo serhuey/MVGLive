@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
+using System;
 using System.Windows.Input;
 
 namespace MVGLive
@@ -12,6 +15,7 @@ namespace MVGLive
         private readonly Action<object> _executemethod;
         private readonly Func<object, bool> _canexecutemethod;
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -23,6 +27,7 @@ namespace MVGLive
             _canexecutemethod = canexecutemethod;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -40,6 +45,7 @@ namespace MVGLive
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -49,6 +55,7 @@ namespace MVGLive
             remove { CommandManager.RequerySuggested -= value; }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>

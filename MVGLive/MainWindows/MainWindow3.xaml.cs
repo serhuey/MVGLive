@@ -2,9 +2,7 @@
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
 using MVGLive.MainWindows;
-using MVGTimeTable;
 using System;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -36,6 +34,7 @@ namespace MVGLive
         /// </summary>
         public string CaptionBackgroundColor { get; private set; }
 
+        /// ************************************************************************************************
         /// <summary>
         ///
         /// </summary>
@@ -61,6 +60,7 @@ namespace MVGLive
         }
 
 
+        /// ************************************************************************************************
         /// <summary>
         /// Clock Timer Event Handler
         /// </summary>
@@ -71,6 +71,7 @@ namespace MVGLive
             MainCommon.UpdateClockLabel(LabelTime);
         }
 
+        /// ************************************************************************************************
         private void Window_Closed(object sender, EventArgs e)
         {
             App.Current.Shutdown();

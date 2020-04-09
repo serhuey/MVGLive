@@ -40,7 +40,6 @@ namespace MVGTimeTable
         /// <summary>
         /// Add handlers to the Items.CurrentChanged and Column Property Changed events for all columns except Destination
         /// </summary>
-        /// ************************************************************************************************
         private void SetEventsHandlers()
         {
             listViewTimeTable.Items.CurrentChanged += Items_CurrentChanged;
@@ -58,17 +57,24 @@ namespace MVGTimeTable
         /// <summary>
         /// Column Width Changed Event Handler
         /// </summary>
-        /// ************************************************************************************************
         private void ColumnWidthChanged(object sender, PropertyChangedEventArgs e)
         {
             if (sender is GridViewColumn && e.PropertyName == "ActualWidth")
             {
                 GridViewColumn gridViewColumn = (GridViewColumn)sender;
-                if (gridViewColumn.ActualWidth > 0 && gridViewColumn.ActualWidth != savedWidths[gridViewColumn.Header.ToString()])
-                {
-                    savedWidths[gridViewColumn.Header.ToString()] = gridViewColumn.ActualWidth;
-                    SetUtmostColumnWidth();
-                }
+                string headerName = gridViewColumn.Header.ToString();
+                double minColumnWidth = 0.0;
+                //if (gridViewColumn.ActualWidth > 0 && gridViewColumn.ActualWidth != savedWidths[headerName])
+                //{
+                //    var dataContext = MVGTimeTableControl.DataContext;
+                //    if (dataContext is DeparturesViewModel && (dataContext as DeparturesViewModel).MinColumnsSize.ContainsKey(headerName))
+                //    {
+                //        minColumnWidth = (dataContext as DeparturesViewModel).MinColumnsSize[headerName];
+                //        gridViewColumn.Width = minColumnWidth;
+                //    }
+                //}
+                savedWidths[headerName] = gridViewColumn.ActualWidth > minColumnWidth ? gridViewColumn.ActualWidth : minColumnWidth;
+                SetUtmostColumnWidth();
             }
         }
 
@@ -76,7 +82,6 @@ namespace MVGTimeTable
         /// <summary>
         /// Autosize Columns of ListView. It's needed after update of the binded data.
         /// </summary>
-        /// ************************************************************************************************
         private void AutoSizeColumns()
         {
             if (listViewTimeTable.View is GridView gridView)
@@ -97,7 +102,6 @@ namespace MVGTimeTable
         /// <summary>
         /// Calculate width of the utmost column after an autosizing
         /// </summary>
-        /// ************************************************************************************************
         private void SetUtmostColumnWidth()
         {
             listViewTimeTable.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
@@ -124,5 +128,6 @@ namespace MVGTimeTable
                 gridView.Columns[Common.UtmostColumn].Width = utmostWidth;
             }
         }
-    }
+
+     }
 }

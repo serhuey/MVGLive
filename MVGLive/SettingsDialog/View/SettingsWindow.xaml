@@ -60,7 +60,13 @@
                 <Label Content="Uhr:" Margin="0" Padding="0,5,5,5" HorizontalContentAlignment="Right" Width="80" Height="30"/>
                 <ComboBox x:Name="FontChooser4" 
             ItemsSource="{Binding FontLibrary}"
-            SelectedValue="{Binding ClockFontFamilySetting}" Padding="7,6,0,0" FontSize="14" ScrollViewer.CanContentScroll="False" Height="26" Width="300" VerticalAlignment="Center" UseLayoutRounding="False" Background="White">
+            SelectedValue="{Binding ClockFontFamilySetting}" Padding="7,6,0,0" FontSize="14" ScrollViewer.CanContentScroll="False" Height="26" Width="300" VerticalAlignment="Center" UseLayoutRounding="False">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
                     <ComboBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel />

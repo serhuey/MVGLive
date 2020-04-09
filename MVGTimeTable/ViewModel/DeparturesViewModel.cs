@@ -38,10 +38,19 @@ namespace MVGTimeTable.ViewModel
         public string WarningForegroundColor { get; set; }
 
         public Thickness HeaderMargin { get; } = new Thickness(0);
-
+        public Dictionary<string, double> MinColumnsSize { get; set; } = new Dictionary<string, double>();
         public ObservableCollection<PreparedDeparture> PreparedDepartures { get; set; } = new ObservableCollection<PreparedDeparture>();
 
-
+        /// ************************************************************************************************
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="stationNumberProperty"></param>
+        /// <param name="timerRefreshInterval"></param>
+        /// <param name="timerRefreshStartInterval"></param>
+        /// <param name="tableFontFamily"></param>
+        /// <param name="headerFontFamily"></param>
         public DeparturesViewModel(ApplicationSettingsBase settings, string stationNumberProperty, int timerRefreshInterval, int timerRefreshStartInterval, FontFamily tableFontFamily, FontFamily headerFontFamily)
         {
             TableFontFamily = tableFontFamily;
@@ -52,13 +61,20 @@ namespace MVGTimeTable.ViewModel
 
             AddHeaderToDepartureDataSource(PreparedDepartures, empty: true);
             PreparedDepartures.Add(SetServiceMessage(Common.WarnMessageType[MessageType.Waiting], Common.Messages[MessageType.Waiting]));
+            FillMinColumnsSize();
 
             departuresModel = new DeparturesModel(StationName, timerRefreshInterval, timerRefreshStartInterval);
             departuresModel.PropertyChanged += DeparturesModel_PropertyChanged;
             departuresModel.Start();
         }
 
-        private void CopySettingsToProperties(System.Configuration.ApplicationSettingsBase settings, string stationNumberProperty)
+        /// ************************************************************************************************
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="stationNumberProperty"></param>
+        private void CopySettingsToProperties(ApplicationSettingsBase settings, string stationNumberProperty)
         {
             PropertyInfo[] properties = GetType().GetProperties();
             object obj;
@@ -104,35 +120,6 @@ namespace MVGTimeTable.ViewModel
             }
         }
 
-        //public DeparturesViewModel(MVGTimeTableSettings settings, int timerRefreshInterval, int timerRefreshStartInterval)
-        //{
-        //    StationName = settings.StationName;
-        //    TableFontSize = settings.TableFontSize;
-        //    TableFontFamily = settings.TableFontFamily;
-        //    HeaderFontFamily = settings.HeaderFontFamily;
-        //    HeaderFontSize = settings.HeaderFontSize;
-        //    TableBackgroundColor1 = settings.TableBackgroundColor1;
-        //    TableBackgroundColor2 = settings.TableBackgroundColor2;
-        //    HeaderBackgroundColor = settings.HeaderBackgroundColor;
-        //    HeaderForegroundColor = settings.HeaderForegroundColor;
-        //    TableForegroundColor1 = settings.TableForegroundColor1;
-        //    TableForegroundColor2 = settings.TableForegroundColor2;
-        //    TableForegroundColor3 = settings.TableForegroundColor3;
-
-        //    NoConnectionForegroundColor = settings.NoConnectionForegroundColor;
-        //    WarningForegroundColor = settings.WarningForegroundColor;
-
-        //    Common.CreateIconsDictionaryFromSVG(out Common.icons, TableFontSize, TableForegroundColor1, TableForegroundColor2, TableForegroundColor3);
-
-        //    AddHeaderToDepartureDataSource(PreparedDepartures, empty: true);
-        //    PreparedDepartures.Add(SetServiceMessage(Common.WarnMessageType[MessageType.Waiting], Common.Messages[MessageType.Waiting]));
-
-        //    departuresModel = new DeparturesModel(StationName, timerRefreshInterval, timerRefreshStartInterval);
-        //    departuresModel.PropertyChanged += DeparturesModel_PropertyChanged;
-        //    departuresModel.Start();
-
-        //}
-
 
         /// ************************************************************************************************
         /// <summary>
@@ -140,7 +127,6 @@ namespace MVGTimeTable.ViewModel
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        /// ************************************************************************************************
         private void DeparturesModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             switch (e.PropertyName)
@@ -162,7 +148,6 @@ namespace MVGTimeTable.ViewModel
         /// <param name="deserializedDepartures"></param>
         /// <param name="preparedDepartureCollection"></param>
         /// <returns>Hash code for departure response</returns>
-        /// ************************************************************************************************
         private void BuildDepartureDataSource(DateTime now, DeserializedDepartures[] deserializedDepartures, ObservableCollection<PreparedDeparture> preparedDepartures)
         {
             preparedDepartures.Clear();
@@ -221,18 +206,24 @@ namespace MVGTimeTable.ViewModel
             }
         }
 
+        /// ************************************************************************************************
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="preparedDepartures"></param>
+        /// <param name="empty"></param>
         private void AddHeaderToDepartureDataSource(ObservableCollection<PreparedDeparture> preparedDepartures, bool empty = false)
         {
             PreparedDeparture hd = new PreparedDeparture
             {
                 Product = Common.HeaderProduct,
-                Label = empty ? "" : "Linie",
-                Destination = empty ? "" : "Ziel",
-                Platform = empty ? "" : (departuresModel.SGleisColumnPresent ? " Gleis" : (departuresModel.GleisColumnPresent ? " HSt." : "")),
+                Label = empty ? "" : Common.HeaderTitles["Line"],
+                Destination = empty ? "" : Common.HeaderTitles["Destination"],
+                Platform = empty ? "" : (departuresModel.SGleisColumnPresent ? Common.HeaderTitles["PlatformS"] : (departuresModel.GleisColumnPresent ? Common.HeaderTitles["PlatformT"] : "")),
                 Station = StationName,
                 LineBackgroundColor = "",
-                MinutesToDeparture = empty ? "" : "Abfahrt",
-                DepartureTime = empty ? "" : "Zeit",
+                MinutesToDeparture = empty ? "" : Common.HeaderTitles["TimeToDeparture"],
+                DepartureTime = empty ? "" : Common.HeaderTitles["DepartureTime"],
                 FontSize = empty ? "1" : HeaderFontSize.ToString(CultureInfo.InvariantCulture),
                 Sev = false,
                 Delay = "",
@@ -247,7 +238,6 @@ namespace MVGTimeTable.ViewModel
         /// </summary>
         /// <param name="difference">Difference between now and time of departure</param>
         /// <returns>Minutes or Hours to departure string</returns>
-        /// ************************************************************************************************
         private string BuildMinutesToDeparture(TimeSpan difference)
         {
             StringBuilder minutesToDeparture = new StringBuilder();
@@ -276,7 +266,6 @@ namespace MVGTimeTable.ViewModel
         /// <param name="type">Type of the Service Message</param>
         /// <param name="message">Service message</param>
         /// <returns>Prepared departure with Service Message</returns>
-        /// ************************************************************************************************
         private PreparedDeparture SetServiceMessage(string type, string message)
         {
             PreparedDeparture fd = new PreparedDeparture
@@ -291,8 +280,18 @@ namespace MVGTimeTable.ViewModel
             return fd;
         }
 
+        private void FillMinColumnsSize()
+        {
+            foreach(string column in Common.HeaderTitles.Keys)
+            {
+                MinColumnsSize.Add(column, Common.MeasureText(Common.HeaderTitles[column], HeaderFontFamily.ToString(), HeaderFontSize));
+            }
+        }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// ************************************************************************************************
         protected void OnPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -301,6 +300,7 @@ namespace MVGTimeTable.ViewModel
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
 
+        /// ************************************************************************************************
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)

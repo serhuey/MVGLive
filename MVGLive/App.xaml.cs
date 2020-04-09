@@ -1,4 +1,6 @@
-﻿using MVGTimeTable;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -12,24 +14,24 @@ namespace MVGLive
     public partial class App : Application
     {
         /// <summary>
-        /// 
+        /// Initial screen saver state
         /// </summary>
         private static bool IsScreenSaverEnabled { get; } = ScreenSaver.GetScreenSaverActive();
 
         /// <summary>
-        /// 
+        /// Command line arguments
         /// </summary>
         public static List<string> Arguments { get; } = GetCommandLineArguments();
 
         /// <summary>
-        /// 
+        /// Font library with all system and embedded fonts
         /// </summary>
         public static Dictionary<string, FontFamily> FontLibrary { get; private set; } = new Dictionary<string, FontFamily>();
-
 
         private Window mainWindow;
         private Window settingsWindow;
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -37,15 +39,20 @@ namespace MVGLive
         /// <param name="e"></param>
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            bool noSettings = Arguments.Contains("ns");
+
             FillFontLibrary();
 
-            settingsWindow = new SettingsWindow
+            if (!noSettings)
             {
-                DataContext = new SettingsViewModel(FontLibrary.Keys.ToList())
-            };
+                settingsWindow = new SettingsWindow
+                {
+                    DataContext = new SettingsViewModel(FontLibrary.Keys.ToList())
+                };
+                settingsWindow.ShowDialog();
+            }
 
-            settingsWindow.ShowDialog();
-            if (settingsWindow.DialogResult == true)
+            if (noSettings || settingsWindow.DialogResult == true)
             {
                 Settings.Default.Save();
                 switch (Settings.Default.TableType)
@@ -69,6 +76,10 @@ namespace MVGLive
             }
         }
 
+        /// ************************************************************************************************
+        /// <summary>
+        /// Fill FontLibrary with all system and all embedded fonts
+        /// </summary>
         private static void FillFontLibrary()
         {
             List<string> fontFamiliesNames = new List<string>();
@@ -103,7 +114,6 @@ namespace MVGLive
         /// </summary>
         /// <param name="fontFamilyName">Desired FontFamily name</param>
         /// <returns>Desired FontFamily if exists, Default FontFamily if not</returns>
-        /// ************************************************************************************************
         public static FontFamily GetFontFromLibrary(string fontFamilyName)
         {
             return FontLibrary.ContainsKey(fontFamilyName) ? FontLibrary[fontFamilyName] : new FontFamily("Segoe UI");
@@ -114,7 +124,6 @@ namespace MVGLive
         /// Get List with parsed command line arguments
         /// </summary>
         /// <returns></returns>
-        /// ************************************************************************************************
         private static List<string> GetCommandLineArguments()
         {
             string[] args = Environment.GetCommandLineArgs();
@@ -129,6 +138,7 @@ namespace MVGLive
             return outputList;
         }
 
+        /// ************************************************************************************************
         private void Application_Exit(object sender, ExitEventArgs e)
         {
             EnableScreenSaver(IsScreenSaverEnabled);
@@ -139,8 +149,6 @@ namespace MVGLive
         /// Disable screensaver and sleep
         /// </summary>
         /// <param name="isScreenSaverEnabled">System screensaver status</param>
-        /// ************************************************************************************************
-
         private void DisableScreenSaver(bool isScreenSaverEnabled)
         {
             if (isScreenSaverEnabled)
@@ -155,8 +163,6 @@ namespace MVGLive
         /// Enable screensaver and sleep
         /// </summary>
         /// <param name="isScreenSaverEnabled">System screensaver status</param>
-        /// ************************************************************************************************
-
         private void EnableScreenSaver(bool isScreenSaverEnabled)
         {
             // if screen saver was enabled before app was started turn it on back

@@ -1,7 +1,6 @@
 ﻿// Copyright (c) Sergei Grigorev. All rights reserved.
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
-using MVGTimeTable;
 using MVGTimeTable.ViewModel;
 using System;
 using System.Globalization;
@@ -16,11 +15,12 @@ namespace MVGLive.MainWindows
     /// </summary>
     public static class MainCommon
     {
+        /// ************************************************************************************************
         /// <summary>
-        /// 
+        /// Sets all tables parameters
         /// </summary>
-        /// <param name="labels"></param>
-        /// <param name="tables"></param>
+        /// <param name="labels">Labels array in right order</param>
+        /// <param name="tables">Tables array in right order</param>
         public static void SetupTables(Label[] labels, MVGTimeTable.MVGTimeTable[] tables)
         {
             if (labels != null && labels.Length > 0 &&
@@ -58,11 +58,11 @@ namespace MVGLive.MainWindows
             }
         }
 
-
+        /// ************************************************************************************************
         /// <summary>
-        /// 
+        /// Setups time label
         /// </summary>
-        /// <param name="label"></param>
+        /// <param name="label">Label to setup</param>
         public static void SetupTimeLabel(Label label)
         {
             if (label != null)
@@ -73,10 +73,11 @@ namespace MVGLive.MainWindows
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// 
+        /// Updates clock label
         /// </summary>
-        /// <param name="label"></param>
+        /// <param name="label">Label to update</param>
         public static void UpdateClockLabel(Label label)
         {
             DateTime now = DateTime.Now;

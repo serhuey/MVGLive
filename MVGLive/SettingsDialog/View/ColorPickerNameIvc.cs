@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
+using System;
 using System.Globalization;
 using System.Windows.Data;
 
 namespace MVGLive
 {
+    /// ************************************************************************************************
     /// <summary>
     /// 
     /// </summary>
     public class ColorPickerNameIvc : IValueConverter
     {
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -30,6 +34,7 @@ namespace MVGLive
             return "";
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>

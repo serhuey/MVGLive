@@ -1,4 +1,7 @@
-﻿using AutoCompleteTextBox.Editors;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
+using AutoCompleteTextBox.Editors;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +21,7 @@ namespace MVGLive
         /// </summary>
         public List<string> StationsList { get; }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -29,6 +33,7 @@ namespace MVGLive
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>

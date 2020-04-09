@@ -6,6 +6,7 @@ using System;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Threading;
+using MVGTimeTable;
 
 namespace MVGTimeTable.Model
 {

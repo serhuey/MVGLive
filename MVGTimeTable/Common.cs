@@ -11,7 +11,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Threading;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Xml;
 
@@ -73,12 +75,19 @@ namespace MVGTimeTable
             new Dictionary<string, string[]> { { "S1", new string[] {   "de:09178:2680",         // 0 - first cars (Freising)
                                                                         "de:09162:3240" } } };   // 1 - last cars (Flughafen München)
 
+        public static readonly Dictionary<string, string> HeaderTitles =
+            new Dictionary<string, string> {    {"Line",  "Linie" },
+                                                {"Destination", "Ziel" },
+                                                {"PlatformS", "Gleis" },
+                                                {"PlatformT", "Hst" },
+                                                {"TimeToDeparture", "Abfahrt"},
+                                                {"DepartureTime", "Zeit"} };
         public static readonly Dictionary<Column, string> ColumnName =
-            new Dictionary<Column, string> {   { Column.Line, "Linie" },
-                                                { Column.Destination, "Ziel"},
-                                                { Column.TimeToDeparture, "Abfahrt"},
-                                                { Column.DepartureTime, "Abfahrtszeit"},
-                                                { Column.Platform, "Gleis"} };
+            new Dictionary<Column, string> {   { Column.Line, HeaderTitles["Line"] },
+                                                { Column.Destination, HeaderTitles["Destination"]},
+                                                { Column.TimeToDeparture, HeaderTitles["TimeToDeparture"]},
+                                                { Column.DepartureTime, HeaderTitles["DepartureTime"]},
+                                                { Column.Platform, HeaderTitles["PlatformS"]} };
 
         public static readonly Dictionary<MessageType, string> WarnMessageType =
             new Dictionary<MessageType, string> {   { MessageType.NoConnection, "NO_CONNECTION" },
@@ -164,15 +173,6 @@ namespace MVGTimeTable
 
         public static readonly string[] USSpacedMarkers = BuildSpacedUSMarkersArray();
 
-        //public const string TableForegroundColor1 = "#FFE8E8E8";
-        //public const string TableForegroundColor2 = "#55F1F1F1";
-        //public const string HeaderForegroundColor = "#99E8E8E8";
-        //public const string TableBackgroundColor1 = "#FF00056C";
-        //public const string TableBackgroundColor2 = "#FF262A74";
-        //public const string HeaderBackgroundColor = "#FF000342";
-        //public const string NoConnectionForegroundColor = "#FFFF4E48";
-        //public const string WarningForegroundColor = "#FFFFEB85";
-
         public const int UndefinedSignThreshold = -3;
 
         public const string TimeSignSeparator = "  ";
@@ -191,17 +191,15 @@ namespace MVGTimeTable
 
         private static readonly SvgColourServer[] foregroundColor = new SvgColourServer[3];
 
-
         /// ************************************************************************************************
         /// <summary>
-        /// Create Dictionary with Bitmaps of the same height from SVG sources
+        /// Creates Dictionary with Bitmaps of the same height from SVG sources
         /// </summary>
         /// <param name="icons">Dictionary with icons</param>
         /// <param name="fontSize">Height of icons</param>
         /// <param name="foregroundColor1">Foreground color for main text, it is used to change color of some icons</param>
         /// <param name="foregroundColor2">Foreground color for additional text, it is used to change color of some icons</param>
         /// <returns>true if Dictionary successfully created</returns>
-        /// ************************************************************************************************
         public static bool CreateIconsDictionaryFromSVG(out Dictionary<string, BitmapImage> icons,
                                                         double fontSize,
                                                         string foregroundColor1,
@@ -215,9 +213,9 @@ namespace MVGTimeTable
             System.Windows.Media.Color color2 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(foregroundColor2);
             System.Windows.Media.Color color3 = (System.Windows.Media.Color)System.Windows.Media.ColorConverter.ConvertFromString(foregroundColor3);
 
-            foregroundColor[0] = new SvgColourServer(Color.FromArgb(color1.R, color1.G, color1.B));
-            foregroundColor[1] = new SvgColourServer(Color.FromArgb(color2.R, color2.G, color2.B));
-            foregroundColor[2] = new SvgColourServer(Color.FromArgb(color3.R, color3.G, color3.B));
+            foregroundColor[0] = new SvgColourServer(System.Drawing.Color.FromArgb(color1.R, color1.G, color1.B));
+            foregroundColor[1] = new SvgColourServer(System.Drawing.Color.FromArgb(color2.R, color2.G, color2.B));
+            foregroundColor[2] = new SvgColourServer(System.Drawing.Color.FromArgb(color3.R, color3.G, color3.B));
 
             string[] svgNames = GetResourcesNamesFromFolder("SVGIcons");
 
@@ -251,14 +249,13 @@ namespace MVGTimeTable
 
         /// ************************************************************************************************
         /// <summary>
-        /// Calculate actual and scheduled times of departure in DateTime format and difference between now and actual departure time
+        /// Calculates actual and scheduled times of departure in DateTime format and difference between now and actual departure time
         /// </summary>
         /// <param name="dpTime">Time from DeserializedDeparture in Unix timespan format</param>
         /// <param name="dpDelay">Delay in minutes from DeserializedDeparture</param>
         /// <param name="actualTime">Actual time of departure</param>
         /// <param name="scheduledTime">Scheduled time of departure</param>
         /// <param name="difference">Difference between Actual time and now</param>
-        /// ************************************************************************************************
         public static void GetTimes(DateTime now, long dpTime, long dpDelay, out DateTime actualTime, out DateTime scheduledTime, out TimeSpan difference)
         {
             actualTime = DateTimeOffset.FromUnixTimeMilliseconds(dpTime).DateTime.ToLocalTime();
@@ -268,11 +265,10 @@ namespace MVGTimeTable
 
         /// ************************************************************************************************
         /// <summary>
-        /// Get all names of embedded resources in project folder
+        /// Gets all names of embedded resources in project folder
         /// </summary>
         /// <param name="folder">Folder name</param>
         /// <returns>Araay of the strings with file names</returns>
-        /// ************************************************************************************************
         private static string[] GetResourcesNamesFromFolder(string folder)
         {
             folder = folder.ToLowerInvariant() + "/";
@@ -293,14 +289,13 @@ namespace MVGTimeTable
 
         /// ************************************************************************************************
         /// <summary>
-        /// Get Bitmap with defined height from SVG-file with defined uri
+        /// Gets Bitmap with defined height from SVG-file with defined uri
         /// </summary>
         /// <param name="uri">Uri of the SVG-file</param>
         /// <param name="height">Desired height of the BitmapImage</param>
         /// <param name="changeColor">If true, image replaces white color with one of the foreground colors</param>
         /// <param name="newSvgColorIndex"></param>
         /// <returns></returns>
-        /// ************************************************************************************************
         private static BitmapImage GetBitmapFromSVG(Uri uri, double height, bool changeColor, int newSvgColorIndex)
         {
             SvgDocument svgDocument;
@@ -324,12 +319,11 @@ namespace MVGTimeTable
 
         /// ************************************************************************************************
         /// <summary>
-        /// Change color of the SvgDocument
+        /// Changes color of the SvgDocument
         /// </summary>
         /// <param name="inputDocument">Svg document to change</param>
         /// <param name="newSvgColorIndex">Index of the new foreground color [0-1]</param>
         /// <returns></returns>
-        /// ************************************************************************************************
         private static SvgDocument ChangeColor(SvgDocument inputDocument, int newSvgColorIndex)
         {
             SvgDocument outputDocument = inputDocument;
@@ -339,12 +333,28 @@ namespace MVGTimeTable
 
         /// ************************************************************************************************
         /// <summary>
+        /// Measures width for the string with defined font parameters
+        /// </summary>
+        /// <param name="text">Text to measure</param>
+        /// <param name="fontFamilyName">FontFamily name</param>
+        /// <param name="fontSize">FontSize</param>
+        /// <returns></returns>
+        public static double MeasureText(string text, string fontFamilyName, int fontSize)
+        {
+            FormattedText formattedText = new FormattedText(text,
+                                                            Thread.CurrentThread.CurrentCulture,
+                                                            FlowDirection.LeftToRight,
+                                                            new Typeface(fontFamilyName),
+                                                            fontSize, System.Windows.Media.Brushes.Black);
+            return formattedText.Width;
+        }
+
+        /// ************************************************************************************************
+        /// <summary>
         /// Recursive function for change color of the all elements of the Svg document
         /// </summary>
         /// <param name="svgElement">Svg element</param>
         /// <param name="newSvgColorIndex">Index of the new foreground color [0-1]</param>
-        /// ************************************************************************************************
-
         public static void ApplyRecursive(SvgElement svgElement, int newSvgColorIndex)
         {
 
@@ -363,6 +373,7 @@ namespace MVGTimeTable
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -377,11 +388,10 @@ namespace MVGTimeTable
 
         /// ************************************************************************************************
         /// <summary>
-        /// Convert legacy Image to BitmapImage
+        /// Converts legacy Image to BitmapImage
         /// </summary>
         /// <param name="image">Image object</param>
         /// <returns></returns>
-        /// ************************************************************************************************
         private static BitmapImage ConvertImageToBitmapImage(Image image)
         {
             using (var memory = new MemoryStream())
@@ -405,7 +415,6 @@ namespace MVGTimeTable
         /// It's needed to find them rightly.
         /// </summary>
         /// <returns>Output string array</returns>
-        /// ************************************************************************************************
         private static string[] BuildSpacedUSMarkersArray()
         {
             List<string> outputList = new List<string>();

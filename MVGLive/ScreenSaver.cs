@@ -10,6 +10,7 @@ namespace MVGLive
     /// </summary>
     public static class ScreenSaver
     {
+        /// ************************************************************************************************
         /// <summary>
         ///
         /// </summary>
@@ -25,6 +26,7 @@ namespace MVGLive
                                         SafeNativeMethods.EXECUTION_STATE.ES_SYSTEM_REQUIRED);         //Windows < Vista, forget away mode
         }
 
+        /// ************************************************************************************************
         /// <summary>
         ///
         /// </summary>
@@ -33,6 +35,7 @@ namespace MVGLive
             SafeNativeMethods.SetThreadExecutionState(SafeNativeMethods.EXECUTION_STATE.ES_CONTINUOUS);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Returns true if the screen saver is active
         /// </summary>
@@ -46,6 +49,7 @@ namespace MVGLive
             return isActive;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Activate or deactivate screensaver
         /// </summary>
@@ -58,6 +62,7 @@ namespace MVGLive
                active ? 1 : 0, ref nullVar, SafeNativeMethods.SPIF_SENDWININICHANGE);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Returns the screen saver timeout setting, in seconds
         /// </summary>
@@ -71,6 +76,7 @@ namespace MVGLive
             return value;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Set screensaver timeout value
         /// </summary>
@@ -83,6 +89,7 @@ namespace MVGLive
                value, ref nullVar, SafeNativeMethods.SPIF_SENDWININICHANGE);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Get actual screen saver status
         /// </summary>
@@ -96,6 +103,7 @@ namespace MVGLive
             return isRunning;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         ///From Microsoft's Knowledge Base article #140723:
         /// http://support.microsoft.com/kb/140723
@@ -120,6 +128,7 @@ namespace MVGLive
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         ///
         /// </summary>

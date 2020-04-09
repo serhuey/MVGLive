@@ -336,8 +336,38 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Gleis" x:Name="Platform">
+                    <GridViewColumn Header="Gleis" x:Name="Platform" >
                         <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel x:Name="GleisStackPanel" Orientation="Horizontal" Width="20">
+                                    <TextBlock TextAlignment="Center" HorizontalAlignment="Left" SnapsToDevicePixels="True" >
+                                        <TextBlock.Text>
+                                            <MultiBinding Converter="{StaticResource GleisTextMvc}">
+                                                <Binding Path="Product"/>
+                                                <Binding Path="Platform"/>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                        <TextBlock.Foreground>
+                                            <MultiBinding Converter="{StaticResource ForegroundColorMvc}" ConverterParameter="labelGleis">
+                                                <Binding Path="Product"/>
+                                                <Binding Path="DataContext" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}"/>
+                                            </MultiBinding>
+                                        </TextBlock.Foreground>
+                                    </TextBlock>
+                                    <Image Stretch="None" SnapsToDevicePixels="True" HorizontalAlignment="Center" Margin="10,0,10,0">
+                                        <Image.Source>
+                                            <MultiBinding Converter="{StaticResource GleisMvc}">
+                                                <Binding Path="Product" />
+                                                <Binding Path="Platform" />
+                                                <Binding Path="Station" />
+                                            </MultiBinding>
+                                        </Image.Source>
+                                    </Image>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                        <!--<GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid Margin="5,5,5,5" Width ="Auto" HorizontalAlignment="Stretch" >
                                     <Grid.ColumnDefinitions>
@@ -370,7 +400,8 @@
                                     </Image>
                                 </Grid>
                             </DataTemplate>
-                        </GridViewColumn.CellTemplate>
+                        </GridViewColumn.CellTemplate>-->
+
                     </GridViewColumn>
                     <GridViewColumn Header="Abfahrt" x:Name="TimeToDeparture">
                         <GridViewColumn.CellTemplate>
@@ -410,7 +441,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Abfahrtszeit" x:Name="DepartureTime">
+                    <GridViewColumn Header="Zeit" x:Name="DepartureTime">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid Margin="5,5,5,5" Width ="Auto">

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
+using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
@@ -10,6 +13,7 @@ namespace MVGLive
     /// </summary>
     public class StationEnabledIvc : IValueConverter
     {
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -45,6 +49,7 @@ namespace MVGLive
             return (Visibility)(stationNumber <= displayedStations ? Visibility.Visible : Visibility.Collapsed);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>

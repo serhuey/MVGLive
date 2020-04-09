@@ -12,6 +12,7 @@ namespace MVGTimeTable
 {
     internal static class ParseDestination
     {
+        /// ************************************************************************************************
         /// <summary>
         /// Get main destination string from full destination or null
         /// </summary>
@@ -68,6 +69,7 @@ namespace MVGTimeTable
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Get additional destination string from full destination or null
         /// </summary>
@@ -104,6 +106,7 @@ namespace MVGTimeTable
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Get both destinations if they are all needed. It's little bit faster than getting them separetely
         /// </summary>
@@ -167,6 +170,7 @@ namespace MVGTimeTable
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// True if string contains markers of U- and S-bahn
         /// </summary>
@@ -185,6 +189,7 @@ namespace MVGTimeTable
             return result;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Get image with "U", "S", "U S", First Cars, Last Cars, Ball, Zoo, Messe and Olymplic signs for destination
         /// </summary>
@@ -282,6 +287,7 @@ namespace MVGTimeTable
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Remove Letter U and S from destination string
         /// </summary>
@@ -305,6 +311,7 @@ namespace MVGTimeTable
             return destination;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Remove split markers from destination. This markers added during parsing and will be replaced with icons in the table
         /// </summary>
@@ -324,6 +331,7 @@ namespace MVGTimeTable
             return destination;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Remove letters Bf or Bf. from destination string
         /// </summary>
@@ -344,6 +352,7 @@ namespace MVGTimeTable
             return destination;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Remove text in brackets from destination string
         /// </summary>
@@ -359,6 +368,7 @@ namespace MVGTimeTable
             return destination;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Check football destination
         /// </summary>
@@ -373,6 +383,7 @@ namespace MVGTimeTable
                                         targetDictionary: Common.FussballDestinationsId);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Check Zoo destination
         /// </summary>
@@ -387,6 +398,7 @@ namespace MVGTimeTable
                                         targetDictionary: Common.ZooDestinationsId);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Check Messe destination
         /// </summary>
@@ -402,6 +414,7 @@ namespace MVGTimeTable
                                         targetDictionary: Common.MesseDestinationsId);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Check Olympia destination
         /// </summary>
@@ -417,6 +430,7 @@ namespace MVGTimeTable
                                         targetDictionary: Common.OlympiaDestinationsId);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Check target destination
         /// </summary>
@@ -451,6 +465,7 @@ namespace MVGTimeTable
             return !targetPassed & destinationDetected;
         }
 
+        /// ************************************************************************************************
         static private bool IsTargetDestinationId(string currentStation, string destination, string label, Dictionary<string, string[]> targetDictionary)
         {
             return string.Equals(label, "LINIE")
@@ -461,6 +476,7 @@ namespace MVGTimeTable
                                         targetDictionary: targetDictionary);
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Check, does the marker from special array exist in the input string
         /// </summary>
@@ -493,6 +509,7 @@ namespace MVGTimeTable
             return result;
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// Adding special markers in the destination string if the train is splitted in the future
         /// This markers will be replaced with icons by destination converters

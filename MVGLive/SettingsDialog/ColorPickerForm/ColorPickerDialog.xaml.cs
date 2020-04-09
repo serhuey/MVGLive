@@ -1,8 +1,9 @@
-﻿using System;
+﻿// Copyright (c) Sergei Grigorev. All rights reserved.
+// Licensed under the MIT License. See LICENSE file in the project root for full license information.
+
 using System.Windows;
 using System.Windows.Media;
-using ColorPickerWPF.Code;
-using ColorPickerWPF.Properties;
+
 
 namespace MVGLive
 {
@@ -24,6 +25,7 @@ namespace MVGLive
         /// </summary>
         private bool SimpleMode { get; set; }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -32,11 +34,12 @@ namespace MVGLive
             InitializeComponent();
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// 
+        /// Shows color picker dialog
         /// </summary>
-        /// <param name="color"></param>
-        /// <param name="caption"></param>
+        /// <param name="color">Displayed color</param>
+        /// <param name="caption">Displayed caption</param>
         /// <returns></returns>
         public static bool ShowDialog(ref Color color, string caption = "Farbwähler")
         {
@@ -57,34 +60,38 @@ namespace MVGLive
             return false;
         }
 
+        /// ************************************************************************************************
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
             Hide();
         }
 
+        /// ************************************************************************************************
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
             Hide();
         }
 
+        /// ************************************************************************************************
         private void MinMaxViewButton_OnClick(object sender, RoutedEventArgs e)
         {
             if (SimpleMode)
             {
                 SimpleMode = false;
-                MinMaxViewButton.Content = "<< Simple";
+                MinMaxViewButton.Content = "<< Einfach";
                 Width = WidthMax;
             }
             else
             {
                 SimpleMode = true;
-                MinMaxViewButton.Content = "Advanced >>";
+                MinMaxViewButton.Content = "Vorgerückt >>";
                 Width = WidthMin;
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
         /// 
         /// </summary>
@@ -93,13 +100,13 @@ namespace MVGLive
             if (SimpleMode)
             {
                 SimpleMode = false;
-                MinMaxViewButton.Content = "<< Simple";
+                MinMaxViewButton.Content = "<< Einfach";
                 Width = WidthMax;
             }
             else
             {
                 SimpleMode = true;
-                MinMaxViewButton.Content = "Advanced >>";
+                MinMaxViewButton.Content = "Vorgerückt >>";
                 Width = WidthMin;
             }
         }
