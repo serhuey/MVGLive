@@ -8,7 +8,7 @@ using System.Windows.Data;
 namespace MVGTimeTable
 {
     /// <summary>
-    /// Set graphic logo
+    /// Sets graphic logo
     /// </summary>
     public class ProductLabelMvc : IMultiValueConverter
     {

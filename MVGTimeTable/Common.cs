@@ -39,8 +39,8 @@ namespace MVGTimeTable
     {
         public const int UtmostColumn = 1;     //index of truncated column
         public const string SvgPath = "pack://application:,,,/MVGTimeTable;component/SVGIcons/";
-        public static readonly List<string> MultiplatformSbahnStations = new List<string>(new string[] { "OSTBAHNHOF", "PASING", "LAIM" });
-        public static readonly List<string> MultiplatformTramStations = new List<string>(new string[] { "KARLSPLATZ" });
+        public static readonly List<string> MultiplatformSbahnStations = new List<string>(new string[] { "OSTBAHNHOF", "PASING", "PASING BF", "PASING BF.", "LAIM", "LAIM BF", "LAIM BF." });
+        public static readonly List<string> MultiplatformTramStations = new List<string>(new string[] { "KARLSPLATZ", "KARLSPLATZ (STACHUS)" });
 
         public static readonly Dictionary<string, string[]> FussballDestinationsId =
             new Dictionary<string, string[]> { { "U6", new string[] {   "de:09162:470",         // Fröttmaning
@@ -109,17 +109,16 @@ namespace MVGTimeTable
                                                         "TRAM", "TRAM", "TRAM12", "TRAM", "TRAM", "TRAM15", "TRAM16", "TRAM17", "TRAM18", "TRAM19",
                                                          "TRAM20", "TRAM21", "TRAM", "TRAM23", "TRAM", "TRAM25", "TRAM", "TRAM27", "TRAM28", "TRAM29"};
 
-        public static readonly string[] GleisIconKey = { "HALTESTELLE", "GLEIS1", "GLEIS2", "GLEIS3", "GLEIS4", "GLEIS5", "GLEIS6", "GLEIS7", "GLEIS8", "GLEIS9",
+        public static readonly string[] GleisIconKey = { "HST", "GLEIS1", "GLEIS2", "GLEIS3", "GLEIS4", "GLEIS5", "GLEIS6", "GLEIS7", "GLEIS8", "GLEIS9",
                                                          "GLEIS10", "GLEIS11", "GLEIS12", "GLEIS13", "GLEIS14", "GLEIS15", "GLEIS16" };
 
-        public static readonly string[] SGleisIconKey = { "HALTESTELLE", "SGLEIS1", "SGLEIS2", "SGLEIS3", "SGLEIS4", "SGLEIS5", "SGLEIS6", "SGLEIS7", "SGLEIS8", "SGLEIS9",
+        public static readonly string[] SGleisIconKey = { "SGLEIS", "SGLEIS1", "SGLEIS2", "SGLEIS3", "SGLEIS4", "SGLEIS5", "SGLEIS6", "SGLEIS7", "SGLEIS8", "SGLEIS9",
                                                          "SGLEIS10", "SGLEIS11", "SGLEIS12", "SGLEIS13", "SGLEIS14", "SGLEIS15", "SGLEIS16" };
         public static readonly string[] FollowForegroundIconKey1 = {    UBahnMonoFullIconKey, SBahnMonoFullIconKey, USBahnsMonoFullIconKey,
                                                                         TrainFirstHalfIconKey, TrainSecondHalfIconKey, FussballIconKey,
                                                                         ZooIconKey, MesseIconKey, OlympiaIconKey, WaitingIconKey, S1FlughafenIconKey, S8FlughafenIconKey};
-        public static readonly string[] FollowForegroundIconKey2 = {    UBahnMonoHalfIconKey, SBahnMonoHalfIconKey, USBahnsMonoHalfIconKey,
-                                                                        Delay1IconKey, Delay2IconKey, Delay3IconKey };
-        public static readonly string[] FollowForegroundIconKey3 = { NowIconKey };
+        public static readonly string[] FollowForegroundIconKey2 = { UBahnMonoHalfIconKey, SBahnMonoHalfIconKey, USBahnsMonoHalfIconKey, SGleisIconKey[0] };
+        public static readonly string[] FollowForegroundIconKey3 = { NowIconKey, Delay1IconKey, Delay2IconKey, Delay3IconKey };
 
         public const string DefaultUBahnIconKey = "UBAHN";
         public const string DefaultSBahnIconKey = "SBAHN";
@@ -153,6 +152,7 @@ namespace MVGTimeTable
         public const string WaitingIconKey = "WAIT";
         public const string S1FlughafenIconKey = "S1FH";
         public const string S8FlughafenIconKey = "S8FH";
+
 
         public static readonly Dictionary<string, string> AirportIconKeys = new Dictionary<string, string> { { SBahnIconKey[1], S1FlughafenIconKey }, { SBahnIconKey[8], S8FlughafenIconKey } };
 
@@ -351,7 +351,7 @@ namespace MVGTimeTable
 
         /// ************************************************************************************************
         /// <summary>
-        /// Recursive function for change color of the all elements of the Svg document
+        /// Recursive function for changing color of the all elements of the Svg document
         /// </summary>
         /// <param name="svgElement">Svg element</param>
         /// <param name="newSvgColorIndex">Index of the new foreground color [0-1]</param>
@@ -388,7 +388,7 @@ namespace MVGTimeTable
 
         /// ************************************************************************************************
         /// <summary>
-        /// Converts legacy Image to BitmapImage
+        /// Converts legacy Windows Forms Image to BitmapImage
         /// </summary>
         /// <param name="image">Image object</param>
         /// <returns></returns>
@@ -407,6 +407,43 @@ namespace MVGTimeTable
 
                 return bitmapImage;
             }
+        }
+
+        /// <summary>
+        /// Calculates margin for the given name and fontSize
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="fontSize"></param>
+        /// <returns></returns>
+        public static Thickness GetMargin(string name, double fontSize)
+        {
+            Thickness th;
+            switch (name)
+            {
+                case "Line":
+                case "Linie":
+                case "stackPanelProductLabel":
+                    th = new Thickness(fontSize / 2.5, 0, fontSize / 1.5, 0); break;
+                case "Destination":
+                case "Ziel":
+                case "stackPanelMainDestination":
+                    th = new Thickness(0, 0, 0, 0); break;
+                case "stackPanelMinutes":
+                    th = new Thickness(0, 0, fontSize / 2.5, 0); break;
+                case "labelAdditionalDestination":
+                    th = new Thickness(0, 0, fontSize * 0.2, 0); break;
+                case "labelMainDestination":
+                    th = new Thickness(0, 0, fontSize * 0.2, 0); break;
+                case "gridGleis":
+                    th = new Thickness(fontSize * 0.2); break;
+                case "gridAbfahrt":
+                    th = new Thickness(fontSize * 0.2); break;
+                case "gridZeit":
+                    th = new Thickness(fontSize * 0.2); break;
+
+                default: th = new Thickness(0); break;
+            }
+            return th;
         }
 
         /// ************************************************************************************************

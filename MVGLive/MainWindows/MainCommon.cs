@@ -17,7 +17,7 @@ namespace MVGLive.MainWindows
     {
         /// ************************************************************************************************
         /// <summary>
-        /// Sets all tables parameters
+        /// Set all tables parameters
         /// </summary>
         /// <param name="labels">Labels array in right order</param>
         /// <param name="tables">Tables array in right order</param>

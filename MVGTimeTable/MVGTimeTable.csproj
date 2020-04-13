@@ -77,7 +77,6 @@
     <Compile Include="View\Converters\AdditionalDestinationMvc.cs" />
     <Compile Include="View\Converters\AdditionalLabelsMvc.cs" />
     <Compile Include="View\Converters\ForegroundColorMvc.cs" />
-    <Compile Include="View\Converters\GleisTextMvc.cs" />
     <Compile Include="View\Converters\HorizontalAlignmentMvc.cs" />
     <Compile Include="View\Converters\ImageMinutesValueMvc.cs" />
     <Compile Include="View\Converters\LabelMvc.cs" />
@@ -190,9 +189,6 @@
     <Resource Include="SVGIcons\Gleis9.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SVGIcons\Haltestelle.svg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="SVGIcons\SGleis1.svg" />
     <Resource Include="SVGIcons\SGleis10.svg" />
     <Resource Include="SVGIcons\SGleis11.svg" />
@@ -245,6 +241,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="SVGIcons\Delay0.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\HSt.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\SGleis.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

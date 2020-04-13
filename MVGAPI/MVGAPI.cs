@@ -45,8 +45,9 @@ namespace MVGAPI
         }
 
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Get deserialized departures for the station ID
+        /// Gets deserialized departures for the station ID
         /// </summary>
         /// <param name="stationID">Unique station ID</param>
         /// <returns></returns>
@@ -88,8 +89,9 @@ namespace MVGAPI
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Get Locations string for the query string
+        /// Gets Locations string for the query string
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
@@ -110,8 +112,9 @@ namespace MVGAPI
             return jsonstring;
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Get Location class for the station name in German
+        /// Gets Location class for the station name in German
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
         /// <returns></returns>
@@ -135,8 +138,9 @@ namespace MVGAPI
             return null;
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Get ID for the station name in German
+        /// Gets ID for the station name in German
         /// If there is no ID in local cache, put the station name in the request ID queue to avoid program freezing.
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
@@ -164,9 +168,11 @@ namespace MVGAPI
             }
         }
 
+
+        /// ************************************************************************************************
         /// <summary>
         /// Background worker RunWorkerCompleted event handler
-        /// Start new background worker cycle if the ID request queue is not empty
+        /// Starts new background worker cycle if the ID request queue is not empty
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -178,8 +184,9 @@ namespace MVGAPI
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Asynchronically get station ID
+        /// Asynchronically gets station ID
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -204,8 +211,9 @@ namespace MVGAPI
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Get JSON departure string for the stationID
+        /// Gets JSON departure string for the stationID
         /// </summary>
         /// <param name="stationID">Unique numeric station ID</param>
         /// <returns></returns>
@@ -217,8 +225,9 @@ namespace MVGAPI
             return result;
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Perform API request to the mvg web service
+        /// Performs API request to the mvg web service
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
@@ -259,8 +268,9 @@ namespace MVGAPI
             return result;
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Format new API deserialized departure to an old one.
+        /// Formats new API deserialized departure to an old one.
         /// </summary>
         /// <param name="deserializedDepartures">Array with deserialized departures in new format on the beginning and in an old format on the exit</param>
         static public void FormatNewAPItoOld(ref DeserializedDepartures[] deserializedDepartures)
@@ -271,8 +281,9 @@ namespace MVGAPI
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Create array without duplicates
+        /// Creates array without duplicates
         /// </summary>
         /// <param name="deserializedDepartures"></param>
         public static void DeleteDuplicates(ref DeserializedDepartures[] deserializedDepartures)
@@ -293,8 +304,9 @@ namespace MVGAPI
             deserializedDepartures = departuresNewList.ToArray();
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Sort deserializedDepartures
+        /// Sorts deserializedDepartures
         /// Primary key - departureTime,
         /// Secondary key - product+label
         /// </summary>
@@ -313,8 +325,9 @@ namespace MVGAPI
             });
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Build local dictionary with stations ID from embedded resource file
+        /// Builds local dictionary with stations ID from embedded resource file
         /// This file was made from xls file downloaded here: https://www.opendata-oepnv.de/ht/de/organisation/verkehrsverbuende/mvv/startseite
         /// Each line of this file must content two strings (key and value) separated with tab
         /// </summary>
@@ -346,8 +359,9 @@ namespace MVGAPI
             }
         }
 
+        /// ************************************************************************************************
         /// <summary>
-        /// Read embedded resource file as a string
+        /// Reads embedded resource file as a string
         /// </summary>
         /// <param name="name">Name of the embedded resource file</param>
         /// <returns>String from resource file or empty string if file doesn't exists</returns>

@@ -9,7 +9,7 @@ using System.Windows.Data;
 namespace MVGTimeTable
 {
     /// <summary>
-    /// Convert delay value to the delay image
+    /// Converst delay value to the delay image
     /// </summary>
     public class DelayImageMvc : IMultiValueConverter
     {

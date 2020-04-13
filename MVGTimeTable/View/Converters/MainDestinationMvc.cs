@@ -8,7 +8,7 @@ using System.Windows.Data;
 namespace MVGTimeTable
 {
     /// <summary>
-    /// Return destination string without additional destination if it exists
+    /// Returns destination string without additional destination if it exists
     /// </summary>
     public class MainDestinationMvc : IMultiValueConverter
     {

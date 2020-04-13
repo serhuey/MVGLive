@@ -38,7 +38,7 @@ namespace MVGTimeTable
                     return addition;
                 }
 
-                // Add one space instead of "0" before minutes - not very good idea, but with the "right to left flow" in flow panel the results are
+                // To add one space instead of "0" before minutes - is not very good idea, but with the "right to left flow" in flow panel the results are
                 // very strange - the text changes order and looks like ".Min 2".
                 if (iMinutes < 10)
                 {

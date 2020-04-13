@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Sergei Grigorev. All rights reserved.
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
+using MVGTimeTable.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,12 +21,39 @@ namespace MVGTimeTable
             { Common.ColumnName[Column.Platform], 0 }
         };
 
+        private readonly Dictionary<string, double> minWidths = new Dictionary<string, double>
+        {
+            { Common.ColumnName[Column.Line], 0 },
+            { Common.ColumnName[Column.Destination], 0 },
+            { Common.ColumnName[Column.TimeToDeparture], 0 },
+            { Common.ColumnName[Column.DepartureTime], 0 },
+            { Common.ColumnName[Column.Platform], 0 }
+        };
+
         public MVGTimeTable()
         {
             InitializeComponent();
             SetEventsHandlers();
+
         }
 
+        /// ************************************************************************************************
+        /// <summary>
+        /// Initializes array with minimum widths of the columns to set column width explicitely in case they are too narrow.
+        /// </summary>
+        private void SetMinWidth()
+        {
+            GridView gridView = listViewTimeTable.View as GridView;
+
+            foreach (GridViewColumn gridViewColumn in gridView.Columns)
+            {
+                string headerName = gridViewColumn.Header.ToString();
+                Thickness th = Common.GetMargin(headerName, (DataContext as DeparturesViewModel).TableFontSize);
+                minWidths[headerName] = (DataContext as DeparturesViewModel).MinColumnsSize[headerName] + th.Left + th.Right;
+            }
+        }
+
+        /// ************************************************************************************************
         /// <summary>
         /// Items CurrentChanged handler. This event is invoked when all items in table are updated
         /// </summary>
@@ -42,6 +70,7 @@ namespace MVGTimeTable
         /// </summary>
         private void SetEventsHandlers()
         {
+            this.DataContextChanged += MVGTable_DataContextChanged;
             listViewTimeTable.Items.CurrentChanged += Items_CurrentChanged;
             GridView gridView = listViewTimeTable.View as GridView;
             for (int i = 0; i < gridView.Columns.Count; ++i)
@@ -62,25 +91,25 @@ namespace MVGTimeTable
             if (sender is GridViewColumn && e.PropertyName == "ActualWidth")
             {
                 GridViewColumn gridViewColumn = (GridViewColumn)sender;
-                string headerName = gridViewColumn.Header.ToString();
-                double minColumnWidth = 0.0;
-                //if (gridViewColumn.ActualWidth > 0 && gridViewColumn.ActualWidth != savedWidths[headerName])
-                //{
-                //    var dataContext = MVGTimeTableControl.DataContext;
-                //    if (dataContext is DeparturesViewModel && (dataContext as DeparturesViewModel).MinColumnsSize.ContainsKey(headerName))
-                //    {
-                //        minColumnWidth = (dataContext as DeparturesViewModel).MinColumnsSize[headerName];
-                //        gridViewColumn.Width = minColumnWidth;
-                //    }
-                //}
-                savedWidths[headerName] = gridViewColumn.ActualWidth > minColumnWidth ? gridViewColumn.ActualWidth : minColumnWidth;
-                SetUtmostColumnWidth();
+                if (gridViewColumn.ActualWidth > 0 && gridViewColumn.ActualWidth != savedWidths[gridViewColumn.Header.ToString()])
+                {
+                    if (gridViewColumn.ActualWidth < minWidths[gridViewColumn.Header.ToString()])
+                    {
+                        savedWidths[gridViewColumn.Header.ToString()] = minWidths[gridViewColumn.Header.ToString()];
+                        gridViewColumn.Width = minWidths[gridViewColumn.Header.ToString()];
+                    }
+                    else
+                    {
+                        savedWidths[gridViewColumn.Header.ToString()] = gridViewColumn.ActualWidth;
+                        SetUtmostColumnWidth();
+                    }
+                }
             }
         }
 
         /// ************************************************************************************************
         /// <summary>
-        /// Autosize Columns of ListView. It's needed after update of the binded data.
+        /// Autosizes Columns of ListView. It's needed after update of the binded data.
         /// </summary>
         private void AutoSizeColumns()
         {
@@ -100,7 +129,7 @@ namespace MVGTimeTable
 
         /// ************************************************************************************************
         /// <summary>
-        /// Calculate width of the utmost column after an autosizing
+        /// Calculates width of the utmost column after an autosizing
         /// </summary>
         private void SetUtmostColumnWidth()
         {
@@ -129,5 +158,18 @@ namespace MVGTimeTable
             }
         }
 
-     }
+        /// ************************************************************************************************
+        /// <summary>
+        /// Event handler for Data Context Changed Event. Starts initializing MinWidth array if View is binded with view model
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MVGTable_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (DataContext is DeparturesViewModel)
+            {
+                SetMinWidth();
+            }
+        }
+    }
 }

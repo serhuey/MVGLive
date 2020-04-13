@@ -8,7 +8,7 @@ using System.Windows.Data;
 namespace MVGTimeTable
 {
     /// <summary>
-    /// Return string with line number for lines without graphic logo like most of U- and S-Bahn
+    /// Returns string with line number for lines without graphic logo like most of U- and S-Bahn
     /// </summary>
     public class LabelMvc : IMultiValueConverter
     {

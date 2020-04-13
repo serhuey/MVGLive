@@ -21,21 +21,7 @@ namespace MVGTimeTable
                 !double.TryParse(values[0].ToString(), out double fontSize))
                 return th;
 
-            switch (parameter.ToString())
-            {
-                case "stackPanelProductLabel":
-                    th = new Thickness(fontSize / 2.5, 0, fontSize / 1.5, 0); break;
-                case "stackPanelMainDestination":
-                    th = new Thickness(0, 0, 0, 0); break;
-                case "stackPanelMinutes":
-                    th = new Thickness(0, 0, fontSize / 2.5, 0); break;
-                case "labelAdditionalDestination":
-                    th = new Thickness(0, 0, fontSize * 0.2, 0); break;
-                case "labelMainDestination":
-                    th = new Thickness(0, 0, fontSize * 0.2, 0); break;
-
-                default: return th;
-            }
+            th = Common.GetMargin(parameter.ToString(), fontSize);
             return th;
         }
 

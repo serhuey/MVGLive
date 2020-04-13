@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="MVGLive.exe" version="1.2.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="MVGLive.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv1:assemblyIdentity name="MVGLive.exe" version="2.0.0.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="AppIcon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="MVGLive" version="1.2.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="MVGLive" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="MVGLive.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,6 +43,30 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AutoCompleteTextBox.dll" size="26624">
+      <assemblyIdentity name="AutoCompleteTextBox" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Y8SX3PhIqAhY0kgSIMcKpofUHpmnXUmI26v4dxihFXk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ColorPickerWPF.dll" size="107520">
+      <assemblyIdentity name="ColorPickerWPF" version="1.0.9.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VkZ5zOdtjQ9zfVkx7/EfZ1q5k1sujW4yJtfscR6sSAk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Fizzler.dll" size="34816">
       <assemblyIdentity name="Fizzler" version="1.2.0.0" publicKeyToken="4EBFF4844E382110" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -55,6 +79,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Xaml.Behaviors.dll" size="144768">
+      <assemblyIdentity name="Microsoft.Xaml.Behaviors" version="1.1.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>/3WTj+3uWWcGFxkW23Y6wQC8cWSnNG3XOa1hZg4Gi1o=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MVGAPI.dll" size="179712">
       <assemblyIdentity name="MVGAPI" version="1.2.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -62,31 +98,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JOvRtzNDrK5gqP1NSjVT3BODCcSiHvrWdRKVjWRZZ/g=</dsig:DigestValue>
+        <dsig:DigestValue>ReULaH2RMFyOqiIun2Nxb9sULWjGYjygBdLj9NzvE+A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MVGLive.exe" size="1763840">
-      <assemblyIdentity name="MVGLive" version="1.2.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MVGLive.exe" size="1853952">
+      <assemblyIdentity name="MVGLive" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>h9Xa/h1OtZgDhcRGvXIZM+S3wP9BWGdNksMeSS/IICo=</dsig:DigestValue>
+        <dsig:DigestValue>TmEUKp6aa2ox95MxEXB7OhfRLiFyTBH55iNCs63m6xY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MVGTimeTable.dll" size="497152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MVGTimeTable.dll" size="539648">
       <assemblyIdentity name="MVGTimeTable" version="1.2.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>++4Z8OvxyoKF+Mr9FEmpcvGsWD7AGrTIDcadZifiFP8=</dsig:DigestValue>
+        <dsig:DigestValue>XOL899Zp7z9WwWAQP7LgZCIk3NfJBOgSxB5XoGTbYAs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -126,22 +162,34 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="MVGLive.exe.config" size="562">
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WriteableBitmapEx.Wpf.dll" size="55808">
+      <assemblyIdentity name="WriteableBitmapEx.Wpf" version="1.5.0.0" publicKeyToken="50375CA6144F1C69" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>cqvh+bHQ+df4bLgizk2MJGmVQxl2Cph/FuTi3YHmvx8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="AppIcon.ico" size="35551">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>oLomnBvBXy/e1XP1qIC/7eeQviKDliW4z3biT5Kpbjg=</dsig:DigestValue>
+      <dsig:DigestValue>Ix7fIzGNd6xRs8QTGkdjNl3JhN5e7IlMg1/DXWbgOaE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MVGLive.ico" size="30163">
+  <file name="MVGLive.exe.config" size="4429">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>h6qLgJUwhU7MwCTfVbGEF+ASB1VeFnkytorEYS4ho7k=</dsig:DigestValue>
+      <dsig:DigestValue>5mUP4uT63JMynxQI7Ks3ZIVTMyP6aQg8mXtp70aMQbg=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

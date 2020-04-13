@@ -8,7 +8,7 @@ using System.Windows.Data;
 namespace MVGTimeTable
 {
     /// <summary>
-    /// Return string with additional destination, beginning with "via" word
+    /// Returns string with additional destination, beginning with "via" word
     /// </summary>
     public class AdditionalDestinationMvc : IMultiValueConverter
     {

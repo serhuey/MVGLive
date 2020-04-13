@@ -82,7 +82,6 @@ namespace MVGTimeTable.Model
         /// <param name="timerRefreshInterval">Timer interval in seconds</param>
         /// <param name="timerRefreshStartInterval">Timer start delay. It's usable if main form includes more
         /// than one TimeTable control.</param>
-        /// ************************************************************************************************
         public DeparturesModel(string stationName = "Hauptbahnhof", int timerRefreshInterval = 15, int timerRefreshStartInterval = 1)
         {
             this.stationName = stationName;
@@ -94,9 +93,8 @@ namespace MVGTimeTable.Model
 
         /// ************************************************************************************************
         /// <summary>
-        /// Start model's work.
+        /// Starts model's work.
         /// </summary>
-        /// ************************************************************************************************
         public void Start()
         {
             // Data Refresh timer
@@ -113,9 +111,8 @@ namespace MVGTimeTable.Model
 
         /// ************************************************************************************************
         /// <summary>
-        /// Start new asynchronous data receiving
+        /// Starts new asynchronous data receiving
         /// </summary>
-        /// ************************************************************************************************
         private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             stationID = GetStationID(stationName);
@@ -133,7 +130,6 @@ namespace MVGTimeTable.Model
         /// <summary>
         /// Backgroundworker RunWorkerCompleted event handler
         /// </summary>
-        /// ************************************************************************************************
         private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             DateTime now = DateTime.Now;
@@ -168,11 +164,10 @@ namespace MVGTimeTable.Model
 
         /// ************************************************************************************************
         /// <summary>
-        /// Get new connection status for current time
+        /// Gets new connection status for current time
         /// </summary>
         /// <param name="now">Current time</param>
         /// <returns>New connection status</returns>
-        /// ************************************************************************************************
         private ConnectionState GetNewConnectionStatus(DateTime now)
         {
             ConnectionState newConnectionStatus;
@@ -204,12 +199,11 @@ namespace MVGTimeTable.Model
 
         /// ************************************************************************************************
         /// <summary>
-        /// Calculate Hash Code for the DeserializedDeparture array with actual time
+        /// Calculates Hash Code for the DeserializedDeparture array with actual time
         /// </summary>
         /// <param name="deserializedDepartures">DeserializedDeparture array</param>
         /// <param name="now">Actual time</param>
         /// <returns>Hash code or null</returns>
-        /// ************************************************************************************************
         private int? GetResponseHashCode(DeserializedDepartures[] deserializedDepartures, DateTime now)
         {
             StringBuilder allValuesString = new StringBuilder();
@@ -234,11 +228,10 @@ namespace MVGTimeTable.Model
 
         /// ************************************************************************************************
         /// <summary>
-        /// Get string with the unique station ID
+        /// Gets string with the unique station ID
         /// </summary>
         /// <param name="stationName">Simple station name in German, e.g. "Böhmerwaldplatz"</param>
         /// <returns>Station ID</returns>
-        /// ************************************************************************************************
         private string GetStationID(string stationName)
         {
             if (!string.IsNullOrEmpty(stationName))
@@ -265,9 +258,8 @@ namespace MVGTimeTable.Model
 
         /// ************************************************************************************************
         /// <summary>
-        /// Refresh Timer Event Handler, run background worker
+        /// Refresh Timer Event Handler, runs background worker
         /// </summary>
-        /// ************************************************************************************************
         private void TimerRefresh_Tick(object sender, EventArgs e)
         {
             if (!backgroundWorker.IsBusy)

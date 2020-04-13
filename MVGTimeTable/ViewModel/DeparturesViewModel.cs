@@ -20,6 +20,8 @@ namespace MVGTimeTable.ViewModel
     {
         private readonly DeparturesModel departuresModel;
         private ConnectionState connectionStatus;
+        private double[] MinWidth;
+
 
         public string StationName { get; private set; }
         public FontFamily TableFontFamily { get; private set; }
@@ -40,6 +42,8 @@ namespace MVGTimeTable.ViewModel
         public Thickness HeaderMargin { get; } = new Thickness(0);
         public Dictionary<string, double> MinColumnsSize { get; set; } = new Dictionary<string, double>();
         public ObservableCollection<PreparedDeparture> PreparedDepartures { get; set; } = new ObservableCollection<PreparedDeparture>();
+
+
 
         /// ************************************************************************************************
         /// <summary>
@@ -81,7 +85,7 @@ namespace MVGTimeTable.ViewModel
             string propertyName;
             SettingsPropertyCollection settingsProperties = settings.Properties;
             List<string> settingsPropertiesNames = new List<string>();
-            foreach(SettingsProperty settingsProperty in settingsProperties)
+            foreach (SettingsProperty settingsProperty in settingsProperties)
             {
                 settingsPropertiesNames.Add(settingsProperty.Name);
             }
@@ -94,7 +98,7 @@ namespace MVGTimeTable.ViewModel
                     propertyName = stationNumberProperty;
                 }
 
-                if(!settingsPropertiesNames.Contains(propertyName))
+                if (!settingsPropertiesNames.Contains(propertyName))
                 {
                     continue;
                 }
@@ -114,7 +118,7 @@ namespace MVGTimeTable.ViewModel
                     pInfo.SetValue(this, settingValue);
                 }
             }
-            if(string.IsNullOrEmpty(StationName))
+            if (string.IsNullOrEmpty(StationName))
             {
                 throw new ArgumentException("The station name for DeparturesViewModel is not correct");
             }
@@ -208,7 +212,7 @@ namespace MVGTimeTable.ViewModel
 
         /// ************************************************************************************************
         /// <summary>
-        /// 
+        /// Adds header to the departure data source
         /// </summary>
         /// <param name="preparedDepartures"></param>
         /// <param name="empty"></param>
@@ -261,7 +265,7 @@ namespace MVGTimeTable.ViewModel
 
         /// ************************************************************************************************
         /// <summary>
-        /// Set Service Message as PreparedDeparture
+        /// Sets Service Message as PreparedDeparture
         /// </summary>
         /// <param name="type">Type of the Service Message</param>
         /// <param name="message">Service message</param>
@@ -280,12 +284,35 @@ namespace MVGTimeTable.ViewModel
             return fd;
         }
 
+        /// ************************************************************************************************
+        /// <summary>
+        /// 
+        /// </summary>
         private void FillMinColumnsSize()
         {
-            foreach(string column in Common.HeaderTitles.Keys)
+            string gleisText = Common.MultiplatformTramStations.Contains(StationName.ToUpperInvariant()) ? Common.HeaderTitles["PlatformT"] :
+                                (Common.MultiplatformSbahnStations.Contains(StationName.ToUpperInvariant()) ? Common.HeaderTitles["PlatformS"] : "");
+            string textToMeasure;
+
+            MinWidth = new double[Common.HeaderTitles.Count - 1];
+            foreach (string column in Common.HeaderTitles.Keys)
             {
-                MinColumnsSize.Add(column, Common.MeasureText(Common.HeaderTitles[column], HeaderFontFamily.ToString(), HeaderFontSize));
+                if (string.Compare(column, "PlatformT") == 0) continue;
+                if (string.Compare(column, "PlatformS") == 0)
+                {
+                    textToMeasure = gleisText;
+                }
+                else
+                {
+                    textToMeasure = Common.HeaderTitles[column];
+                }
+                MinColumnsSize.Add(Common.HeaderTitles[column], Common.MeasureText(textToMeasure, HeaderFontFamily.ToString(), HeaderFontSize));
             }
+            MinWidth[0] = MinColumnsSize["Linie"];
+            MinWidth[1] = MinColumnsSize["Ziel"];
+            MinWidth[2] = MinColumnsSize["Gleis"];
+            MinWidth[3] = MinColumnsSize["Abfahrt"];
+            MinWidth[4] = MinColumnsSize["Zeit"];
         }
 
 

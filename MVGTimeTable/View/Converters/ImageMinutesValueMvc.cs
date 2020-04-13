@@ -9,7 +9,7 @@ using System.Windows.Data;
 namespace MVGTimeTable
 {
     /// <summary>
-    /// Convert minutes string to picture "Jetzt" if value of minutes is less than 1 and greater than -3
+    /// Converts minutes string to picture "Jetzt" if value of minutes is less than 1 and greater than -3
     /// </summary>
     public class ImageMinutesValueMvc : IMultiValueConverter
     {
