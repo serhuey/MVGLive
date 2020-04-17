@@ -73,7 +73,7 @@ MVGLive.exe -ns
 * [Newtonsoft.Json v.12.0.2] (https://www.nuget.org/packages/Newtonsoft.Json) - Parsing the mvg.de response
 * [PT Sans font] (https://fonts.google.com/specimen/PT+Sans)
 * [Gudea font] (https://fonts.google.com/specimen/Gudea)
-* [Xara Photo & Graphic Designer 16.3.0.57723] (https://maven.apache.org/) - Vector icons drawing
+* [Xara Photo & Graphic Designer 16.3.0.57723] (https://www.magix.com/gb/photo-graphic/xara-photo-graphic-designer) - Vector icons drawing
 
 ## Authors
 
