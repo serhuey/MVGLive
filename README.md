@@ -48,7 +48,7 @@ MVGLive.exe -ns
 - Cancelled routes are no longer displayed.
 - The application correctly handles short network or remote server shutdowns using previously obtained data to display.
 - Tram route icons now use the color assigned to them on official maps.
-- Added Express Bus icon and modified for presentation on low screen resolutions displays.
+- Added and modified original Express Bus icon for presentation on low screen resolutions displays.
 
 ![Express Bus icon S v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/ExpressBusIcon.png)
 
