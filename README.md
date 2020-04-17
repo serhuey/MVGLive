@@ -10,29 +10,49 @@ Small WPF-based application to display a live schedule of public transport in Mu
 
 ![Settings v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/SettingsWindow_0.png)
 
+
 - The application is capable of displaying one to four schedules simultaneously.
 - You can also adjust the colors, size and typeface of the fonts.
 - To prevent the settings window from opening, for example, when the application has to start automatically at system startup and all settings have already been made, you need to use the command line option "-ns".
+
+```
+MVGLive.exe -ns
+```
+
 - The application blocks the screen saver and sleep mode after startup and restores them after its completion.
 - All data about the schedule and current arrival of transport are taken from the official site mvg.de.
 - In version 2.0, a local database with station identifiers has been added to reduce traffic to the official website.
-- Added special icons for U-Bahn and S-Bahn marks in destination string instead of the letters "U" and "S".
+- Special icons for U-Bahn and S-Bahn marks in destination string instead of the letters "U" and "S".
 
 ![Aditional U-S icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/3d_AdditionalDestinationUSIcons.png)
 
-- Also added are "First cars/Last cars" icons for branching routes such as S1 direction Flughafen/Freising.
+
+- There are "First cars/Last cars" icons for branching routes such as S1 direction Flughafen/Freising.
 
 ![Aditional First-Last icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/ForkedLines.png)
 
-- Added icons for routes that arrive late.
+
+- Special small icons for routes that arrive late.
 
 ![Aditional delay icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/DelayIcon.png)
 
-- Added a procedure that eliminates duplication of identical routes in one table.
+
+- Some multi-platform stations show special icons with platform number. The shape of platform's icon depends on the route type.
+
+![Multi-platform icons Tram v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/HstIcon.png)
+
+![Multi-platform icons S v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/GleisIcon.png)
+
+
+- Added a procedure that eliminates duplication of identical routes in one table. Sometimes mvg.de sends up to four identical routes for one request.
 - Cancelled routes are no longer displayed.
 - The application correctly handles short network or remote server shutdowns using previously obtained data to display.
 - Tram route icons now use the color assigned to them on official maps.
 - Added Express Bus icon and modified for presentation on low screen resolutions displays.
+
+![Express Bus icon S v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/ExpressBusIcon.png)
+
+
 - All icons are stored in Svg format. There is no more quality loss after changing the scale factor. The colour of some icons changes programmatically with the colour of the font to which they relate. This is not a problem for vector icons.
 
 ![SVG icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/6_SVG_Example.png)
@@ -47,17 +67,22 @@ Small WPF-based application to display a live schedule of public transport in Mu
 ## Built With
 
 * [Microsoft Visual Studio Community 2019, v.16.4.6] (https://visualstudio.microsoft.com/)
-* [AutoCompleteTextBox, v.1.1.0](https://github.com/quicoli/WPF-AutoComplete-TextBox)
+* [AutoCompleteTextBox, v.1.1.0] (https://github.com/quicoli/WPF-AutoComplete-TextBox)
 * [ColorPickerWPF, v.1.0.9] (https://github.com/drogoganor/ColorPickerWPF)
 * [WriteableBitmapEx v.1.5.1] (https://github.com/reneschulte/WriteableBitmapEx)
-* [Newtonsoft.Json v.12.0.2] (https://www.nuget.org/packages/Newtonsoft.Json) - Parsing the mvg.de responce
+* [Newtonsoft.Json v.12.0.2] (https://www.nuget.org/packages/Newtonsoft.Json) - Parsing the mvg.de response
 * [PT Sans font] (https://fonts.google.com/specimen/PT+Sans)
 * [Gudea font] (https://fonts.google.com/specimen/Gudea)
-* [Xara Photo & Graphic Designer 16.3.0.57723](https://maven.apache.org/) - Vector icons drawing
+* [Xara Photo & Graphic Designer 16.3.0.57723] (https://maven.apache.org/) - Vector icons drawing
 
 ## Authors
 
 * **Sergei Grigorev** 
+
+## Binaries
+
+You can download the zipped install package here: 
+(https://github.com/serhuey/MVGLive/blob/master/Deploy/MVGLiveSetup.zip)
 
 ## License
 
