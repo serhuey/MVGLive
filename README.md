@@ -32,7 +32,7 @@ MVGLive.exe -ns
 ![Aditional First-Last icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/ForkedLines.png)
 
 
-- Special small icons for routes that arrive late.
+- Special small icons for delayed routes.
 
 ![Aditional delay icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/DelayIcon.png)
 
