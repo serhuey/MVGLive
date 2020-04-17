@@ -60,7 +60,7 @@ MVGLive.exe -ns
 - The default PT Sans font is stored as an internal resource and does not require installation on the system.
 - All operations to receive data from the server are asynchronous.
 
-### Prerequisites
+## Prerequisites
 
 - .NET Framework 4.6.1
 
