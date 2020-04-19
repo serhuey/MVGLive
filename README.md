@@ -1,5 +1,5 @@
 # MVGLive v.2.0.0
-
+![logo](https://raw.githubusercontent.com/serhuey/MVGLive/master/GraphicsSource/AppIcon.png)
 Small WPF-based application to display a live schedule of public transport in Munich.
 
 ![Screenshot v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/Screenshot_1.png)
