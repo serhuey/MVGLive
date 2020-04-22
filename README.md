@@ -72,9 +72,11 @@ MVGLive.exe -ns
 * [ColorPickerWPF, v.1.0.9] (https://github.com/drogoganor/ColorPickerWPF)
 * [WriteableBitmapEx v.1.5.1] (https://github.com/reneschulte/WriteableBitmapEx)
 * [Newtonsoft.Json v.12.0.2] (https://www.nuget.org/packages/Newtonsoft.Json) - Parsing the mvg.de response
+* [Svg v.3.0.102] (https://github.com/vvvv/SVG) - Work with SVG graphics
+* [Fizzler v.1.2.0] (https://github.com/atifaziz/Fizzler)
 * [PT Sans font] (https://fonts.google.com/specimen/PT+Sans)
 * [Gudea font] (https://fonts.google.com/specimen/Gudea)
-* [Xara Photo & Graphic Designer 16.3.0.57723] (https://www.magix.com/gb/photo-graphic/xara-photo-graphic-designer) - Vector icons drawing
+* [Xara Photo & Graphic Designer v.16.3.0.57723] (https://www.magix.com/gb/photo-graphic/xara-photo-graphic-designer) - Vector icons drawing
 
 ## Authors
 
