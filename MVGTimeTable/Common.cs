@@ -105,20 +105,25 @@ namespace MVGTimeTable
                                                          "S",  "S",  "S",  "S",  "S",  "S",  "S",  "S",  "S",  "S",
                                                          "S20" };
 
-        public static readonly string[] TramIconKey = { "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM", "TRAM",
-                                                        "TRAM", "TRAM", "TRAM12", "TRAM", "TRAM", "TRAM15", "TRAM16", "TRAM17", "TRAM18", "TRAM19",
-                                                         "TRAM20", "TRAM21", "TRAM", "TRAM23", "TRAM", "TRAM25", "TRAM", "TRAM27", "TRAM28", "TRAM29"};
+        public static readonly string[] TramIconKey = { DefaultTramIconKey, DefaultTramIconKey, DefaultTramIconKey, DefaultTramIconKey, DefaultTramIconKey, DefaultTramIconKey, DefaultTramIconKey, DefaultTramIconKey, DefaultTramIconKey, DefaultTramIconKey,
+                                                        DefaultTramIconKey, DefaultTramIconKey, "TRAM12", DefaultTramIconKey, DefaultTramIconKey, "TRAM15", "TRAM16", "TRAM17", "TRAM18", "TRAM19",
+                                                         "TRAM20", "TRAM21", DefaultTramIconKey, "TRAM23", DefaultTramIconKey, "TRAM25", DefaultTramIconKey, "TRAM27", "TRAM28", "TRAM29"};
 
         public static readonly string[] GleisIconKey = { "HST", "GLEIS1", "GLEIS2", "GLEIS3", "GLEIS4", "GLEIS5", "GLEIS6", "GLEIS7", "GLEIS8", "GLEIS9",
                                                          "GLEIS10", "GLEIS11", "GLEIS12", "GLEIS13", "GLEIS14", "GLEIS15", "GLEIS16" };
 
         public static readonly string[] SGleisIconKey = { "SGLEIS", "SGLEIS1", "SGLEIS2", "SGLEIS3", "SGLEIS4", "SGLEIS5", "SGLEIS6", "SGLEIS7", "SGLEIS8", "SGLEIS9",
                                                          "SGLEIS10", "SGLEIS11", "SGLEIS12", "SGLEIS13", "SGLEIS14", "SGLEIS15", "SGLEIS16" };
+
+        public static readonly string[] DelayIconKey = { Delay00IconKey, Delay05IconKey, Delay10IconKey, Delay15IconKey, Delay20IconKey, Delay25IconKey, Delay30IconKey,
+                                                                         Delay35IconKey, Delay40IconKey, Delay45IconKey, Delay50IconKey, Delay55IconKey, Delay60IconKey};
+
         public static readonly string[] FollowForegroundIconKey1 = {    UBahnMonoFullIconKey, SBahnMonoFullIconKey, USBahnsMonoFullIconKey,
                                                                         TrainFirstHalfIconKey, TrainSecondHalfIconKey, FussballIconKey,
                                                                         ZooIconKey, MesseIconKey, OlympiaIconKey, WaitingIconKey, S1FlughafenIconKey, S8FlughafenIconKey};
         public static readonly string[] FollowForegroundIconKey2 = { UBahnMonoHalfIconKey, SBahnMonoHalfIconKey, USBahnsMonoHalfIconKey, SGleisIconKey[0] };
-        public static readonly string[] FollowForegroundIconKey3 = { NowIconKey, Delay1IconKey, Delay2IconKey, Delay3IconKey };
+        public static readonly string[] FollowForegroundIconKey3 = { NowIconKey, Delay1IconKey, Delay2IconKey, Delay3IconKey, Delay05IconKey, Delay10IconKey, Delay15IconKey, Delay20IconKey, Delay25IconKey, Delay30IconKey,
+                                                                         Delay35IconKey, Delay40IconKey, Delay45IconKey, Delay50IconKey, Delay55IconKey, Delay60IconKey};
 
         public const string DefaultUBahnIconKey = "UBAHN";
         public const string DefaultSBahnIconKey = "SBAHN";
@@ -149,9 +154,25 @@ namespace MVGTimeTable
         public const string Delay1IconKey = "DELAY1";
         public const string Delay2IconKey = "DELAY2";
         public const string Delay3IconKey = "DELAY3";
+
+        public const string Delay00IconKey = "DELAY0";
+        public const string Delay05IconKey = "DELAY_05";
+        public const string Delay10IconKey = "DELAY_10";
+        public const string Delay15IconKey = "DELAY_15";
+        public const string Delay20IconKey = "DELAY_20";
+        public const string Delay25IconKey = "DELAY_25";
+        public const string Delay30IconKey = "DELAY_30";
+        public const string Delay35IconKey = "DELAY_35";
+        public const string Delay40IconKey = "DELAY_40";
+        public const string Delay45IconKey = "DELAY_45";
+        public const string Delay50IconKey = "DELAY_50";
+        public const string Delay55IconKey = "DELAY_55";
+        public const string Delay60IconKey = "DELAY_60";
+
         public const string WaitingIconKey = "WAIT";
         public const string S1FlughafenIconKey = "S1FH";
         public const string S8FlughafenIconKey = "S8FH";
+        public const string LufthansaBusIconKey = "LUFTHANSABUS";
 
 
         public static readonly Dictionary<string, string> AirportIconKeys = new Dictionary<string, string> { { SBahnIconKey[1], S1FlughafenIconKey }, { SBahnIconKey[8], S8FlughafenIconKey } };
@@ -164,6 +185,7 @@ namespace MVGTimeTable
         public static readonly string[] AdditionalDestinationMarkers = { "VIA", "Ü.", "WEITER", "ÜBER" };
         public static readonly string[] NightLineMarkers = { "N" };
         public static readonly string[] ExpressLineMarkers = { "X" };
+        public static readonly string[] LufthansaMarkers = { "LUFTHANSA" };
 
         public static readonly string[] ULineMarkers = { "U", "(U)" };
         public static readonly string[] SLineMarkers = { "S", "(S)" };

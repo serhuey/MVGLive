@@ -37,10 +37,14 @@ namespace MVGTimeTable
             bool noConnection = product.Contains(Common.WarnMessageType[MessageType.NoConnection]);
             bool warning = product.Contains(Common.WarnMessageType[MessageType.Warning]);
             bool wait = product.Contains(Common.WarnMessageType[MessageType.Waiting]);
+            bool lufthansa = ParseDestination.IsMarkerPresent(label, Common.LufthansaMarkers);
 
             if (bus)
             {
-                iconKey = (sev ? (night ? Common.NSevBusIconKey : Common.SevBusIconKey) : (night ? Common.NBusIconKey : (xbus ? Common.ExpressBusIconKey : Common.BusIconKey)));
+                iconKey = sev ? (night ? Common.NSevBusIconKey : Common.SevBusIconKey) :
+                                (night ? Common.NBusIconKey :
+                                        (xbus ? Common.ExpressBusIconKey : Common.BusIconKey)
+                                );
             }
 
             if (tram)
@@ -65,6 +69,11 @@ namespace MVGTimeTable
                 {
                     iconKey = Common.AirportIconKeys[label];
                 }
+            }
+
+            if(lufthansa)
+            {
+                iconKey = Common.LufthansaBusIconKey;
             }
 
             if (wait)

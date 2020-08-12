@@ -21,10 +21,19 @@ namespace MVGTimeTable
             Match m = Regex.Match(delay, @"^-?\d*");
             if (m.Success && int.TryParse(m.Value, out int iMinutes) && iMinutes > Common.DelayThreshold1)
             {
-                string iconKey;
-                iconKey = iMinutes < Common.DelayThreshold2 ? Common.Delay1IconKey :
-                          (iMinutes < Common.DelayThreshold3 ? Common.Delay2IconKey : Common.Delay3IconKey);
-                return Common.icons[iconKey.ToUpperInvariant()];
+                int iconIndex = (iMinutes - 5) / 5 + 1;
+
+                if (iconIndex < 0)
+                {
+                    iconIndex = 0;
+                }
+
+                if (iconIndex > Common.DelayIconKey.Length - 1)
+                {
+                    iconIndex = Common.DelayIconKey.Length - 1;
+                }
+
+                return Common.icons[Common.DelayIconKey[iconIndex].ToUpperInvariant()];
             }
             else return Common.icons[Common.Delay0IconKey.ToUpperInvariant()];
         }

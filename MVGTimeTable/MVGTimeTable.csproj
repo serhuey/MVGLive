@@ -248,5 +248,22 @@
   <ItemGroup>
     <Resource Include="SVGIcons\SGleis.svg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\LuftHansaBus.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SVGIcons\Delay_05.svg" />
+    <Resource Include="SVGIcons\Delay_10.svg" />
+    <Resource Include="SVGIcons\Delay_15.svg" />
+    <Resource Include="SVGIcons\Delay_20.svg" />
+    <Resource Include="SVGIcons\Delay_25.svg" />
+    <Resource Include="SVGIcons\Delay_30.svg" />
+    <Resource Include="SVGIcons\Delay_35.svg" />
+    <Resource Include="SVGIcons\Delay_40.svg" />
+    <Resource Include="SVGIcons\Delay_45.svg" />
+    <Resource Include="SVGIcons\Delay_50.svg" />
+    <Resource Include="SVGIcons\Delay_55.svg" />
+    <Resource Include="SVGIcons\Delay_60.svg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

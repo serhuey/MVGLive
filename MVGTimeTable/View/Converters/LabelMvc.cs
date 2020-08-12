@@ -26,6 +26,11 @@ namespace MVGTimeTable
                 return "";
             }
 
+            if (ParseDestination.IsMarkerPresent(label, Common.LufthansaMarkers))
+            {
+                return "";
+            }
+
             if (ParseDestination.IsMarkerPresent(product, Common.BusMarkers))
             {
                 return label;
@@ -45,6 +50,7 @@ namespace MVGTimeTable
             {
                 return string.IsNullOrEmpty(Array.Find(Common.SBahnIconKey, str => str.Contains(label))) ? label : "";
             }
+
 
             return values[1].ToString();
         }

@@ -468,12 +468,16 @@ namespace MVGTimeTable
         /// ************************************************************************************************
         static private bool IsTargetDestinationId(string currentStation, string destination, string label, Dictionary<string, string[]> targetDictionary)
         {
-            return string.Equals(label, "LINIE")
-                ? false
-                : IsTargetDestination(currentStation: MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(currentStation, removeSplitMarkers: true, removeUS: true)),
-                                        destination: MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(destination, removeSplitMarkers: true, removeUS: true)),
-                                        label: label,
-                                        targetDictionary: targetDictionary);
+            return !string.Equals(label, "LINIE") 
+                    && IsTargetDestination(
+                        currentStation: MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(   currentStation,
+                                                                                            removeSplitMarkers: true,
+                                                                                            removeUS: true)),
+                        destination: MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(  destination,
+                                                                                        removeSplitMarkers: true,
+                                                                                        removeUS: true)),
+                        label: label,
+                        targetDictionary: targetDictionary);
         }
 
         /// ************************************************************************************************

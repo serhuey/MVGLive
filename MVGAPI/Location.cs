@@ -17,5 +17,7 @@ namespace MVGAPI
         public string aliases;
         public string link;
         public Lines lines;
+        public string tariffZones;
+        public int divaId;
     }
 }

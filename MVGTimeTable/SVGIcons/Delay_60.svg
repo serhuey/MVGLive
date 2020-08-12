@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Generator: Xara Designer (www.xara.com), SVG filter version: 6.3.0.31-->
+<svg fill="none" fill-rule="evenodd" stroke="black" stroke-width="0.501" stroke-linejoin="bevel" stroke-miterlimit="10" font-family="Times New Roman" font-size="16" style="font-variant-ligatures:none" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" overflow="visible" width="29.491pt" height="55.759pt" viewBox="1150.33 -722.599 29.491 55.759">
+ <defs>
+  <radialGradient id="RadialGradient" gradientUnits="userSpaceOnUse" cx="1167.267" cy="697.555" r="4.95122055659006">
+   <stop offset="0" stop-color="#ff3000"/>
+   <stop offset="0.1" stop-color="#ff3101"/>
+   <stop offset="0.2" stop-color="#ff3102"/>
+   <stop offset="0.3" stop-color="#ff3303"/>
+   <stop offset="0.4" stop-color="#ff3405"/>
+   <stop offset="0.5" stop-color="#ff3607"/>
+   <stop offset="0.6" stop-color="#ff390b"/>
+   <stop offset="0.7" stop-color="#ff3e11"/>
+   <stop offset="0.8" stop-color="#ff471c"/>
+   <stop offset="0.9" stop-color="#ff633f"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </radialGradient>
+ </defs>
+ <g id="Layer 1" transform="scale(1 -1)">
+  <g id="Group" stroke-linejoin="miter" stroke-linecap="round" stroke="none" stroke-width="0.5">
+   <rect x="1150.332" y="666.841" width="29.49" height="55.758" stroke-opacity="0.501961" fill-opacity="0.501961"/>
+   <path d="M 1165.77,708.785 L 1158.08,702.859 L 1156.66,697.554 L 1158.08,692.248 L 1161.96,688.364 L 1167.27,686.943 L 1172.57,688.365 L 1176.46,692.248 L 1177.88,697.554 L 1176.46,702.859 L 1172.57,706.743 L 1167.27,708.165 L 1167.27,697.555 L 1165.77,708.785 Z" stroke-opacity="0.498039" marker-start="none" marker-end="none" fill-opacity="0.498039" fill="url(#RadialGradient)"/>
+   <path d="M 1155.65,697.555 C 1155.65,703.967 1160.86,709.171 1167.27,709.171 C 1173.68,709.171 1178.88,703.967 1178.88,697.555 C 1178.88,691.143 1173.68,685.939 1167.27,685.939 C 1160.86,685.939 1155.65,691.143 1155.65,697.555 Z M 1176.86,697.555 C 1176.86,702.849 1172.56,707.146 1167.27,707.146 C 1161.97,707.146 1157.68,702.849 1157.68,697.555 C 1157.68,692.261 1161.97,687.964 1167.27,687.964 C 1172.56,687.964 1176.86,692.261 1176.86,697.555 Z" fill="#ffffff" marker-start="none" marker-end="none"/>
+  </g>
+ </g>
+</svg>

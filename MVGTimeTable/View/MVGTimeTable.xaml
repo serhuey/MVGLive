@@ -280,6 +280,7 @@
                                     <Label  x:Name="labelMainDestination">
                                         <MultiBinding Converter="{StaticResource MainDestinationMvc}">
                                             <Binding Path="Destination" />
+                                            <Binding Path= "Label" />
                                         </MultiBinding>
                                         <Label.Foreground>
                                             <MultiBinding Converter="{StaticResource ForegroundColorMvc}" ConverterParameter="labelMainDestination">

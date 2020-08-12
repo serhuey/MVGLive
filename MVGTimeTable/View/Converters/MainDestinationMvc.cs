@@ -14,9 +14,18 @@ namespace MVGTimeTable
     {
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values == null || values.Length == 0 || values[0] == null) return "";
+            if (values == null || values.Length < 2 || values[0] == null)
+            {
+                return "";
+            }
 
-            return ParseDestination.GetMainDestination(values[0].ToString(), removeUS: true, removeSplitMarkers: true);
+            string mainDestination = ParseDestination.GetMainDestination(values[0].ToString(), removeUS: true, removeSplitMarkers: true);
+            string label = values[1].ToString();
+            if(ParseDestination.IsMarkerPresent(label.ToUpperInvariant() , Common.LufthansaMarkers))
+            {
+                mainDestination = label + ": " + mainDestination;
+            }
+            return mainDestination;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

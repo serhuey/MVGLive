@@ -16,5 +16,7 @@ namespace MVGAPI
         public string departureId;
         public bool sev;
         public string platform;
+        public string stopPositionNumber;
     }
 }
+
