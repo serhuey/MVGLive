@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sergei Grigorev Softwareentwicklung")]
 [assembly: AssemblyProduct("MVGLive")]
-[assembly: AssemblyCopyright("Copyright 2020 Sergei Grigorev")]
+[assembly: AssemblyCopyright("Copyright 2022 Sergei Grigorev")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -48,7 +48,7 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.6")]
-[assembly: AssemblyFileVersion("2.0.0.6")]
+[assembly: AssemblyVersion("2.0.1.7")]
+[assembly: AssemblyFileVersion("2.0.1.7")]
 [assembly: NeutralResourcesLanguage("en")]
 [assembly: Guid("9C64CA42-C3C2-4783-93B3-8CA55B981A5E")]
