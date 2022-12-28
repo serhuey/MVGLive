@@ -85,7 +85,7 @@ MVGLive.exe -ns
 ## Binaries
 
 You can download the zipped install package here: 
-(https://github.com/serhuey/MVGLive/blob/master/Deploy/MVGLiveSetup.zip)
+(https://github.com/serhuey/MVGLive/blob/master/Deploy/MVGLiveSetup_2.0.0.6.zip)
 
 ## License
 
