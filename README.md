@@ -1,4 +1,4 @@
-# MVGLive v.2.0.0
+# MVGLive v.2.0.1
 <img src="https://raw.githubusercontent.com/serhuey/MVGLive/master/GraphicsSource/AppIcon.svg?sanitize=true" height="64">
 
 Small WPF-based application to display a live schedule of public transport in Munich.
@@ -9,7 +9,7 @@ Small WPF-based application to display a live schedule of public transport in Mu
 
 - The settings window opens at startup.
 
-![Settings v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/SettingsWindow_0.png)
+![Settings v.2.0.1](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/SettingsWindow_0.png)
 
 
 - The application is capable of displaying one to four schedules simultaneously.
@@ -25,24 +25,24 @@ MVGLive.exe -ns
 - In version 2.0, a local database with station identifiers has been added to reduce traffic to the official website.
 - Special icons for U-Bahn and S-Bahn marks in destination string instead of the letters "U" and "S".
 
-![Aditional U-S icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/3d_AdditionalDestinationUSIcons.png)
+![Aditional U-S icons v.2.0.1](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/3d_AdditionalDestinationUSIcons.png)
 
 
 - There are "First cars/Last cars" icons for branching routes such as S1 direction Flughafen/Freising.
 
-![Aditional First-Last icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/ForkedLines.png)
+![Aditional First-Last icons v.2.0.1](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/ForkedLines.png)
 
 
 - Special small icons for delayed routes.
 
-![Aditional delay icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/DelayIcon.png)
+![Aditional delay icons v.2.0.1](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/DelayIcon.png)
 
 
 - Some multi-platform stations show special icons with platform number. The shape of platform's icon depends on the route type.
 
-![Multi-platform icons Tram v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/HstIcon.png)
+![Multi-platform icons Tram v.2.0.1](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/HstIcon.png)
 
-![Multi-platform icons S v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/GleisIcon.png)
+![Multi-platform icons S v.2.0.1](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/GleisIcon.png)
 
 
 - Added a procedure that eliminates duplication of identical routes in one table. Sometimes mvg.de sends up to four identical routes for one request.
@@ -51,12 +51,12 @@ MVGLive.exe -ns
 - Tram route icons now use the color assigned to them on official maps.
 - Added and modified original Express Bus icon for presentation on low screen resolutions displays.
 
-![Express Bus icon S v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/ExpressBusIcon.png)
+![Express Bus icon S v.2.0.1](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/ExpressBusIcon.png)
 
 
 - All icons are stored in Svg format. There is no more quality loss after changing the scale factor. The colour of some icons changes programmatically with the colour of the font to which they relate. This is not a problem for vector icons.
 
-![SVG icons v.2.0.0](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/6_SVG_Example.png)
+![SVG icons v.2.0.1](https://raw.githubusercontent.com/serhuey/MVGLive/master/Images/6_SVG_Example.png)
 
 - The default PT Sans font is stored as an internal resource and does not require installation on the system.
 - All operations to receive data from the server are asynchronous.
@@ -71,7 +71,7 @@ MVGLive.exe -ns
 * [AutoCompleteTextBox, v.1.1.0] (https://github.com/quicoli/WPF-AutoComplete-TextBox)
 * [ColorPickerWPF, v.1.0.9] (https://github.com/drogoganor/ColorPickerWPF)
 * [WriteableBitmapEx v.1.5.1] (https://github.com/reneschulte/WriteableBitmapEx)
-* [Newtonsoft.Json v.12.0.2] (https://www.nuget.org/packages/Newtonsoft.Json) - Parsing the mvg.de response
+* [Newtonsoft.Json v.13.0.2] (https://www.nuget.org/packages/Newtonsoft.Json) - Parsing the mvg.de response
 * [Svg v.3.0.102] (https://github.com/vvvv/SVG) - Work with SVG graphics
 * [Fizzler v.1.2.0] (https://github.com/atifaziz/Fizzler)
 * [PT Sans font] (https://fonts.google.com/specimen/PT+Sans)
@@ -85,7 +85,7 @@ MVGLive.exe -ns
 ## Binaries
 
 You can download the zipped install package here: 
-(https://github.com/serhuey/MVGLive/blob/master/Deploy/MVGLiveSetup_2.0.0.6.zip)
+(https://github.com/serhuey/MVGLive/blob/master/Deploy/MVGLiveSetup_2.0.1.7.zip)
 
 ## License
 
