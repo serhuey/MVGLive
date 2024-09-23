@@ -80,7 +80,7 @@ MVGLive.exe -ns
 
 ## Authors
 
-* **Sergei Grigorev** 
+* **Sergei Grieg** 
 
 ## Binaries
 
