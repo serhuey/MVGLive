@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sergei Grigorev Softwareentwicklung")]
 [assembly: AssemblyProduct("MVGLive")]
-[assembly: AssemblyCopyright("Copyright 2022 Sergei Grigorev")]
+[assembly: AssemblyCopyright("Copyright 2025 Sergei Grigorev")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

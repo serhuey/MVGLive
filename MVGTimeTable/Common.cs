@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Sergei Grigorev. All rights reserved.
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
+using MVGAPI;
 using Svg;
 using System;
 using System.Collections;
@@ -40,7 +41,7 @@ namespace MVGTimeTable
         public const int UtmostColumn = 1;     //index of truncated column
         public const string SvgPath = "pack://application:,,,/MVGTimeTable;component/SVGIcons/";
         public static readonly List<string> MultiplatformSbahnStations = new List<string>(new string[] { "OSTBAHNHOF", "PASING", "PASING BF", "PASING BF.", "LAIM", "LAIM BF", "LAIM BF." });
-        public static readonly List<string> MultiplatformTramStations = new List<string>(new string[] { "KARLSPLATZ", "KARLSPLATZ (STACHUS)" });
+        public static List<string> MultiplatformTramStations = new List<string>(new string[] { "KARLSPLATZ", "KARLSPLATZ (STACHUS)" });
 
         public static readonly Dictionary<string, string[]> FussballDestinationsId =
             new Dictionary<string, string[]> { { "U6", new string[] {   "de:09162:470",         // Fröttmaning
@@ -174,6 +175,9 @@ namespace MVGTimeTable
         public const string S8FlughafenIconKey = "S8FH";
         public const string LufthansaBusIconKey = "LUFTHANSABUS";
 
+        public const string PlatformMarkerBusTram = "POS";
+        public const string PlatformMarkerUBahn = "U-BAHN";
+
 
         public static readonly Dictionary<string, string> AirportIconKeys = new Dictionary<string, string> { { SBahnIconKey[1], S1FlughafenIconKey }, { SBahnIconKey[8], S8FlughafenIconKey } };
 
@@ -212,6 +216,72 @@ namespace MVGTimeTable
         public static Dictionary<string, BitmapImage> icons;
 
         private static readonly SvgColourServer[] foregroundColor = new SvgColourServer[3];
+
+
+        /// ************************************************************************************************
+        /// <summary>
+        /// True if departures contain more than two platforms of any of three types (S, U or (H))
+        /// </summary>
+        /// <param name="deserializedDepartures"> </param>
+        static public bool CheckStationForMultiplatform(DeserializedDepartures[] deserializedDepartures)
+        {
+            List<string> busTramPlatforms = new List<string>();
+            List<string> uBahnPlatforms = new List<string>();
+            List<string> sBahnPlatforms = new List<string>();
+
+            bool uBahn, sBahn, busTram;
+
+            foreach (DeserializedDepartures dD in deserializedDepartures)
+            {
+                uBahn = false;
+                sBahn = false;
+                busTram = false;
+
+                if (dD.platform.ToUpperInvariant().Contains(PlatformMarkerUBahn))
+                {
+                    uBahn = true;
+                }
+                else
+                {
+                    if (dD.platform.ToUpperInvariant().Contains(PlatformMarkerBusTram))
+                    {
+                        busTram = true;
+                    }
+                    else
+                    {
+                        sBahn = true;
+                    }
+                }
+
+                if (!String.IsNullOrWhiteSpace(dD.platform))
+                {
+                    if (uBahn && !uBahnPlatforms.Contains(dD.platform)) uBahnPlatforms.Add(dD.platform);
+                    if (sBahn && !sBahnPlatforms.Contains(dD.platform)) sBahnPlatforms.Add(dD.platform);
+                    if (busTram && !busTramPlatforms.Contains(dD.platform)) busTramPlatforms.Add(dD.platform);
+                }
+            }
+            return uBahnPlatforms.Count > 2 || sBahnPlatforms.Count > 2 || busTramPlatforms.Count > 2;
+        }
+
+        /// ************************************************************************************************
+        /// <summary>
+        /// Adds new station in Multiplatform List if it doesn't contain this station.
+        /// </summary>
+        /// <param name="station">station name</param>
+        /// <returns>true if List has been apended</returns>
+        static public bool AppendMultiplatformStationList(string station)
+        {
+            if (!MultiplatformTramStations.Contains(station.ToUpperInvariant()))
+            {
+                MultiplatformTramStations.Add(station.ToUpperInvariant());
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         /// ************************************************************************************************
         /// <summary>

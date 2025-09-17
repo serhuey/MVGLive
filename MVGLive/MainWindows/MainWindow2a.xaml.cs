@@ -48,6 +48,7 @@ namespace MVGLive
             CaptionBackgroundColor = Properties.Settings.Default.CaptionBackgroundColor;
 
             InitializeComponent();
+            this.PreviewKeyUp += MainWindow2a_PreviewKeyUp;
             MainCommon.SetupTables(new System.Windows.Controls.Label[] { Text1, Text2 }, new MVGTimeTable.MVGTimeTable[] { Table1, Table2 });
             MainCommon.SetupTimeLabel(LabelTime);
             // Clock Refresh Timer
@@ -57,6 +58,14 @@ namespace MVGLive
             };
             timerClock.Tick += TimerClock_Tick;
             timerClock.Start();
+        }
+
+        private void MainWindow2a_PreviewKeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Escape)
+            {
+                App.Current.Shutdown();
+            }
         }
 
 

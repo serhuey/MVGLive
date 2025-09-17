@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Sergei Grigorev. All rights reserved.
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
+using MVGAPI;
 using MVGTimeTable.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,6 @@ namespace MVGTimeTable
         {
             InitializeComponent();
             SetEventsHandlers();
-
         }
 
         /// ************************************************************************************************
@@ -81,6 +81,7 @@ namespace MVGTimeTable
                 }
             }
         }
+
 
         /// ************************************************************************************************
         /// <summary>
@@ -171,5 +172,6 @@ namespace MVGTimeTable
                 SetMinWidth();
             }
         }
+
     }
 }

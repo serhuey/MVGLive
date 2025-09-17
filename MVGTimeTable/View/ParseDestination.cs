@@ -12,6 +12,8 @@ namespace MVGTimeTable
 {
     internal static class ParseDestination
     {
+        static IMVGAPI mvgApi = new MvgApiOld();
+
         /// ************************************************************************************************
         /// <summary>
         /// Get main destination string from full destination or null
@@ -470,10 +472,10 @@ namespace MVGTimeTable
         {
             return !string.Equals(label, "LINIE") 
                     && IsTargetDestination(
-                        currentStation: MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(   currentStation,
+                        currentStation: mvgApi.GetIdForStation(GetMainDestination(   currentStation,
                                                                                             removeSplitMarkers: true,
                                                                                             removeUS: true)),
-                        destination: MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(  destination,
+                        destination: mvgApi.GetIdForStation(GetMainDestination(  destination,
                                                                                         removeSplitMarkers: true,
                                                                                         removeUS: true)),
                         label: label,
@@ -530,7 +532,7 @@ namespace MVGTimeTable
 
             if (sortDepartures)
             {
-                MVGAPI.MVGAPI.Sort(ref departureResponse);
+                mvgApi.Sort(ref departureResponse);
             }
 
             for (int i = 0; i < departureResponse.Length - 1; ++i)
@@ -543,8 +545,8 @@ namespace MVGTimeTable
                     {
                         string splittedId0 = Common.ForkedDestinationsId[label][0];
                         string splittedId1 = Common.ForkedDestinationsId[label][1];
-                        string destinationId0 = MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(departureResponse[i].destination, removeSplitMarkers: true, removeUS: true, removeBf: true));
-                        string destinationId1 = MVGAPI.MVGAPI.GetIdForStation(GetMainDestination(departureResponse[i + 1].destination, removeSplitMarkers: true, removeUS: true, removeBf: true));
+                        string destinationId0 = mvgApi.GetIdForStation(GetMainDestination(departureResponse[i].destination, removeSplitMarkers: true, removeUS: true, removeBf: true));
+                        string destinationId1 = mvgApi.GetIdForStation(GetMainDestination(departureResponse[i + 1].destination, removeSplitMarkers: true, removeUS: true, removeBf: true));
                         if (splittedId0 == destinationId0 && splittedId1 == destinationId1)
                         {
                             departureResponse[i].destination += " " + Common.TrainFirstHalf;

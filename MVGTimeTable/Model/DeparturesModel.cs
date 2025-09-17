@@ -29,6 +29,7 @@ namespace MVGTimeTable.Model
         private string stationID;
         private DateTime timeConnectionLost;
         private DispatcherTimer timerRefresh;
+        private IMVGAPI mvgApi;
 
         #endregion Fields
 
@@ -82,8 +83,9 @@ namespace MVGTimeTable.Model
         /// <param name="timerRefreshInterval">Timer interval in seconds</param>
         /// <param name="timerRefreshStartInterval">Timer start delay. It's usable if main form includes more
         /// than one TimeTable control.</param>
-        public DeparturesModel(string stationName = "Hauptbahnhof", int timerRefreshInterval = 15, int timerRefreshStartInterval = 1)
+        public DeparturesModel(IMVGAPI mvgApi, string stationName = "Hauptbahnhof", int timerRefreshInterval = 15, int timerRefreshStartInterval = 1 )
         {
+            this.mvgApi = mvgApi;
             this.stationName = stationName;
             this.timerRefreshInterval = timerRefreshInterval;
             this.timerRefreshStartInterval = timerRefreshStartInterval;
@@ -118,7 +120,7 @@ namespace MVGTimeTable.Model
             stationID = GetStationID(stationName);
             if (!string.IsNullOrEmpty(stationID))
             {
-                newDepartureResponse = MVGAPI.MVGAPI.GetDeserializedDepartures(stationID);
+                newDepartureResponse = mvgApi.GetDeserializedDepartures(stationID);
             }
             else
             {
@@ -144,9 +146,18 @@ namespace MVGTimeTable.Model
             {
                 int? responseHashCode;
 
-                MVGAPI.MVGAPI.FormatNewAPItoOld(ref newDepartureResponse);
-                MVGAPI.MVGAPI.DeleteDuplicates(ref newDepartureResponse);
-                MVGAPI.MVGAPI.Sort(ref newDepartureResponse);
+                mvgApi.FormatNewAPItoOld(ref newDepartureResponse);
+                mvgApi.DeleteDuplicates(ref newDepartureResponse);
+                mvgApi.Sort(ref newDepartureResponse);
+
+                if(Common.CheckStationForMultiplatform(newDepartureResponse))
+                {
+                    if(Common.AppendMultiplatformStationList(stationName))
+                    {
+
+                    }
+
+                }
 
                 responseHashCode = GetResponseHashCode(newDepartureResponse, now);
                 if (responseHashCode != savedResponseHashCode)
@@ -173,7 +184,7 @@ namespace MVGTimeTable.Model
             ConnectionState newConnectionStatus;
             double noConnectionSeconds;
 
-            if (MVGAPI.MVGAPI.IsConnected)
+            if (mvgApi.IsConnected)
             {
                 newConnectionStatus = ConnectionState.CONNECTED;
             }
@@ -241,8 +252,8 @@ namespace MVGTimeTable.Model
 
                 if (stationName != savedStationName)
                 {
-                    savedStationID = MVGAPI.MVGAPI.GetIdForStation(stationName);
-                    if (MVGAPI.MVGAPI.IsConnected)
+                    savedStationID = mvgApi.GetIdForStation(stationName);
+                    if (mvgApi.IsConnected)
                     {
                         savedStationName = stationName;
                     }

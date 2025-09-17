@@ -21,7 +21,7 @@ namespace MVGTimeTable.ViewModel
         private readonly DeparturesModel departuresModel;
         private ConnectionState connectionStatus;
         private double[] MinWidth;
-
+        private IMVGAPI MvgApi;
 
         public string StationName { get; private set; }
         public FontFamily TableFontFamily { get; private set; }
@@ -55,10 +55,17 @@ namespace MVGTimeTable.ViewModel
         /// <param name="timerRefreshStartInterval"></param>
         /// <param name="tableFontFamily"></param>
         /// <param name="headerFontFamily"></param>
-        public DeparturesViewModel(ApplicationSettingsBase settings, string stationNumberProperty, int timerRefreshInterval, int timerRefreshStartInterval, FontFamily tableFontFamily, FontFamily headerFontFamily)
+        public DeparturesViewModel(ApplicationSettingsBase settings, 
+                                   string stationNumberProperty,
+                                   int timerRefreshInterval,
+                                   int timerRefreshStartInterval, 
+                                   FontFamily tableFontFamily, 
+                                   FontFamily headerFontFamily,
+                                   IMVGAPI mvgApi)
         {
             TableFontFamily = tableFontFamily;
             HeaderFontFamily = headerFontFamily;
+            MvgApi = mvgApi;
 
             CopySettingsToProperties(settings, stationNumberProperty);
             Common.CreateIconsDictionaryFromSVG(out Common.icons, TableFontSize, TableForegroundColor1, TableForegroundColor2, TableForegroundColor3);
@@ -67,7 +74,7 @@ namespace MVGTimeTable.ViewModel
             PreparedDepartures.Add(SetServiceMessage(Common.WarnMessageType[MessageType.Waiting], Common.Messages[MessageType.Waiting]));
             FillMinColumnsSize();
 
-            departuresModel = new DeparturesModel(StationName, timerRefreshInterval, timerRefreshStartInterval);
+            departuresModel = new DeparturesModel(MvgApi, StationName, timerRefreshInterval, timerRefreshStartInterval);
             departuresModel.PropertyChanged += DeparturesModel_PropertyChanged;
             departuresModel.Start();
         }

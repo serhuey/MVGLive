@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Sergei Grigorev. All rights reserved.
 // Licensed under the MIT License. See LICENSE file in the project root for full license information.
 
+using MVGAPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -276,7 +277,8 @@ namespace MVGLive
             DefaultCommand = new SettingsCommand(ExecuteDefaultMethod, CanExecuteDefaultMethod);
             FontSizeChangedCommand = new SettingsCommand(ExecuteFontSizeChangedMethod, CanExecuteFontSizeChangedMethod);
             FontSizePreviewTextInputCommand = new SettingsCommand(ExecuteFontSizePreviewTextMethod, CanExecuteFontSizePreviewTextMethod);
-            StationsList = new StationsListProvider(MVGAPI.MVGAPI.StationsList);
+            IMVGAPI mvgApi = new MvgApiOld();
+            StationsList = new StationsListProvider(mvgApi.StationsList);
         }
 
         /// ************************************************************************************************

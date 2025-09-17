@@ -8,6 +8,7 @@ using System.Windows.Media;
 using MVGLive.Properties;
 using System.Drawing.Text;
 using System.Linq;
+using MVGAPI;
 
 namespace MVGLive
 {
@@ -28,6 +29,8 @@ namespace MVGLive
         /// </summary>
         public static Dictionary<string, FontFamily> FontLibrary { get; private set; } = new Dictionary<string, FontFamily>();
 
+        private static IMVGAPI mvgApi;
+
         private Window mainWindow;
         private Window settingsWindow;
 
@@ -42,6 +45,8 @@ namespace MVGLive
             bool noSettings = Arguments.Contains("ns");
 
             FillFontLibrary();
+
+            mvgApi = new MvgApiOld();
 
             if (!noSettings)
             {
@@ -171,6 +176,15 @@ namespace MVGLive
                 ScreenSaver.SetScreenSaverActive(true);
             }
             ScreenSaver.EnableSleep();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static IMVGAPI GetMvgApi()
+        {
+            return mvgApi;
         }
     }
 }

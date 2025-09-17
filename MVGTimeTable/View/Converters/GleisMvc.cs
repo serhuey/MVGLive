@@ -3,6 +3,7 @@
 
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Data;
 
@@ -23,39 +24,37 @@ namespace MVGTimeTable
             string gleis = values[1].ToString();
             string station = values[2].ToString().ToUpperInvariant();
 
-            if (string.Compare(product.ToUpperInvariant(), Common.HeaderProduct) == 0)
+            if (ParseDestination.IsMarkerPresent(product, Common.UBahnMarkers) ||
+                string.Compare(product.ToUpperInvariant(), Common.HeaderProduct) == 0)
             {
-                if (string.Compare(gleis.ToUpperInvariant(), Common.HeaderTitles["PlatformT"].ToUpperInvariant()) == 0)
-                {
-                    return Common.icons[Common.GleisIconKey[0]];
-                }
-                if (string.Compare(gleis.ToUpperInvariant(), Common.HeaderTitles["PlatformS"].ToUpperInvariant()) == 0)
-                {
-                    return Common.icons[Common.SGleisIconKey[0]];
-                }
+                return null;
             }
-            else
+
+            if ((Common.MultiplatformTramStations.Contains(station) || 
+                Common.MultiplatformSbahnStations.Contains(station)) &&
+                !string.IsNullOrWhiteSpace(gleis))
             {
-                if (Common.MultiplatformTramStations.Contains(station) &&
-                    ParseDestination.IsMarkerPresent(product, Common.TramMarkers) &&
-                    !string.IsNullOrEmpty(gleis))
+                if (ParseDestination.IsMarkerPresent(product, Common.SBahnMarkers))
                 {
-                    if (int.TryParse(Regex.Match(gleis, @"\d+").Value, out int index) && index > 0 && index < Common.GleisIconKey.Length)
+                    if (int.TryParse(Regex.Match(gleis, @"\d+").Value, out int index) && index > 0 && index < Common.SGleisIconKey.Length)
                     {
-                        string iconKey = Common.GleisIconKey[index].ToUpperInvariant();
+                        string iconKey = Common.SGleisIconKey[index].ToUpperInvariant();
                         if (!string.IsNullOrEmpty(iconKey) && Common.icons.ContainsKey(iconKey))
                         {
                             return Common.icons[iconKey];
                         }
                     }
                 }
-                if (Common.MultiplatformSbahnStations.Contains(station) &&
-                    ParseDestination.IsMarkerPresent(product, Common.SBahnMarkers) &&
-                    !string.IsNullOrEmpty(gleis))
+                else 
+                if (ParseDestination.IsMarkerPresent(product, Common.TramMarkers) ||
+                    ParseDestination.IsMarkerPresent(product, Common.BusMarkers) ||
+                    ParseDestination.IsMarkerPresent(product, Common.NightLineMarkers) ||
+                    ParseDestination.IsMarkerPresent(product, Common.ExpressLineMarkers))
                 {
-                    if (int.TryParse(Regex.Match(gleis, @"\d+").Value, out int index) && index > 0 && index < Common.SGleisIconKey.Length)
+
+                    if (int.TryParse(Regex.Match(gleis, @"\d+").Value, out int index) && index > 0 && index < Common.GleisIconKey.Length)
                     {
-                        string iconKey = Common.SGleisIconKey[index].ToUpperInvariant();
+                        string iconKey = Common.GleisIconKey[index].ToUpperInvariant();
                         if (!string.IsNullOrEmpty(iconKey) && Common.icons.ContainsKey(iconKey))
                         {
                             return Common.icons[iconKey];

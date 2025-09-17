@@ -14,10 +14,10 @@ using System.Text;
 
 namespace MVGAPI
 {
-    public static class MVGAPI
+    public class MvgApiOld : IMVGAPI
     {
-        public static bool IsConnected { get; set; } = false;
-        public static List<string> StationsList { get; }
+        public bool IsConnected { get; set; } = false;
+        public List<string> StationsList { get; private set; }
 
         private const string StationType = "station";
         private const string RootUrlName = "https://www.mvg.de/api/fahrinfo";
@@ -33,12 +33,12 @@ namespace MVGAPI
 
 
         /// <summary>
-        /// Static constructor
+        /// Constructor
         /// </summary>
-        static MVGAPI()
+        public MvgApiOld()
         {
             BuildLocalStationIdCache();
-            StationsList = new List<string>(localIdСache.Keys.Where(key => !string.IsNullOrEmpty(localIdСache[key].TrimStart(new char[]{ ' ' }))));
+            StationsList = new List<string>(localIdСache.Keys.Where(key => !string.IsNullOrEmpty(localIdСache[key].TrimStart(new char[] { ' ' }))));
 
             stationIdRequestBackgroundWorker.DoWork += new DoWorkEventHandler(StationIdRequestBackgroundWorker_DoWork);
             stationIdRequestBackgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(StationIdRequestBackgroundWorker_RunWorkerCompleted);
@@ -51,7 +51,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="stationID">Unique station ID</param>
         /// <returns></returns>
-        public static DeserializedDepartures[] GetDeserializedDepartures(string stationID)
+        public DeserializedDepartures[] GetDeserializedDepartures(string stationID)
         {
             if (string.IsNullOrEmpty(stationID))
             {
@@ -95,7 +95,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
-        private static string GetLocations(string query, int requestTimeOut)
+        private string GetLocations(string query, int requestTimeOut)
         {
             string jsonstring;
             string url;
@@ -118,7 +118,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
         /// <returns></returns>
-        private static Location GetStations(string stationName, int requestTimeOut = DefaultRequestTimeOut)
+        private Location GetStations(string stationName, int requestTimeOut = DefaultRequestTimeOut)
         {
             try
             {
@@ -145,7 +145,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="stationName">Name of the desired station in German</param>
         /// <returns>Station ID, if station name exists, "" otherwise</returns>
-        public static string GetIdForStation(string stationName)
+        public string GetIdForStation(string stationName)
         {
             if (string.IsNullOrEmpty(stationName)) return "";
 
@@ -176,7 +176,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private static void StationIdRequestBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void StationIdRequestBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (!stationIdRequestQueue.IsEmpty && !stationIdRequestBackgroundWorker.IsBusy)
             {
@@ -190,7 +190,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private static void StationIdRequestBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void StationIdRequestBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             if (stationIdRequestQueue.TryDequeue(out string stationName))
             {
@@ -217,7 +217,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="stationID">Unique numeric station ID</param>
         /// <returns></returns>
-        public static string GetJsonDepartures(string stationID)
+        public string GetJsonDepartures(string stationID)
         {
             string url = DepartureUrl + stationID + DepartureUrlPostfix;
             string result = PerformApiRequest(url);
@@ -231,7 +231,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static string PerformApiRequest(string url, int requestTimeOut = DefaultRequestTimeOut)
+        public string PerformApiRequest(string url, int requestTimeOut = DefaultRequestTimeOut)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             HttpWebResponse response = null;
@@ -273,7 +273,7 @@ namespace MVGAPI
         /// Formats new API deserialized departure to an old one.
         /// </summary>
         /// <param name="deserializedDepartures">Array with deserialized departures in new format on the beginning and in an old format on the exit</param>
-        static public void FormatNewAPItoOld(ref DeserializedDepartures[] deserializedDepartures)
+        public void FormatNewAPItoOld(ref DeserializedDepartures[] deserializedDepartures)
         {
             foreach (DeserializedDepartures dD in deserializedDepartures)
             {
@@ -286,7 +286,7 @@ namespace MVGAPI
         /// Creates array without duplicates
         /// </summary>
         /// <param name="deserializedDepartures"></param>
-        public static void DeleteDuplicates(ref DeserializedDepartures[] deserializedDepartures)
+        public void DeleteDuplicates(ref DeserializedDepartures[] deserializedDepartures)
         {
             List<DeserializedDepartures> departuresNewList = new List<DeserializedDepartures>();
             List<int> arrayHashes = new List<int>();
@@ -310,7 +310,7 @@ namespace MVGAPI
         /// Primary key - departureTime,
         /// Secondary key - product+label
         /// </summary>
-        public static void Sort(ref DeserializedDepartures[] deserializedDepartures)
+        public void Sort(ref DeserializedDepartures[] deserializedDepartures)
         {
             Array.Sort(deserializedDepartures, delegate (DeserializedDepartures dp1, DeserializedDepartures dp2)
             {
@@ -331,7 +331,7 @@ namespace MVGAPI
         /// This file was made from xls file downloaded here: https://www.opendata-oepnv.de/ht/de/organisation/verkehrsverbuende/mvv/startseite
         /// Each line of this file must content two strings (key and value) separated with tab
         /// </summary>
-        private static void BuildLocalStationIdCache()
+        private void BuildLocalStationIdCache()
         {
             string fileContent = ReadResource(IdMvvStations);
             string separator = "\t";
@@ -365,7 +365,7 @@ namespace MVGAPI
         /// </summary>
         /// <param name="name">Name of the embedded resource file</param>
         /// <returns>String from resource file or empty string if file doesn't exists</returns>
-        private static string ReadResource(string name)
+        private string ReadResource(string name)
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             string[] resources = assembly.GetManifestResourceNames();

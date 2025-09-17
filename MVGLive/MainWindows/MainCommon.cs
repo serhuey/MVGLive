@@ -40,7 +40,8 @@ namespace MVGLive.MainWindows
                                                                     timerRefreshInterval: interval,
                                                                     timerRefreshStartInterval: currentStartInterval,
                                                                     tableFontFamily: App.GetFontFromLibrary(Properties.Settings.Default.TableFontFamily),
-                                                                    headerFontFamily: App.GetFontFromLibrary(Properties.Settings.Default.HeaderFontFamily));
+                                                                    headerFontFamily: App.GetFontFromLibrary(Properties.Settings.Default.HeaderFontFamily),
+                                                                    mvgApi: App.GetMvgApi());
 
                     currentStartInterval += startInterval;
 
